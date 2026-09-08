@@ -9,6 +9,12 @@ Causal derivation status:
 Critical-L3 / ESS framework status:
 **PARTLY CLASSICAL + PRIOR INDEPENDENT ORGANIZATION/FORMALIZATION**
 
+Structural-overlap status:
+**STRONG (PROGRAMMATIC LEVEL)**
+
+Distinctive-construction match status:
+**NOT FOUND (AS OF CURRENT AUDIT EVIDENCE)**
+
 Poincaré Mean Closure:
 **CONJECTURAL**
 
