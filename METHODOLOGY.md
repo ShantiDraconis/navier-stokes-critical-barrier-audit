@@ -17,3 +17,8 @@ No contradiction is declared without explicit derivation of both \(A\) and \(\ne
 ## Forensic principle
 
 Chronology and causality are separate propositions. Priority evidence can establish predating records but cannot by itself establish derivation by third parties.
+
+## Next comparison step
+
+Extract definition-level objects from external and prior Lean trees, then compare object-by-object with formula-level references (not names only).
+Use `python/lean_object_extract.py` as the first pass for object inventory generation.
