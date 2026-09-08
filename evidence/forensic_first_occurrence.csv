@@ -1,0 +1,4 @@
+concept,fagliari_source,fagliari_commit,fagliari_date,external_source,external_commit,external_date,exact_text_match,symbolic_match,structural_match,generic_classical_overlap,rarity_score,evidentiary_weight,caveat
+L3 critical invariance,UNKNOWN,UNKNOWN,UNKNOWN,https://github.com/openai/NavierStokesAndEuler,UNKNOWN,2026-09-08,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Populate from verified commit/file extraction
+pressure poisson relation,UNKNOWN,UNKNOWN,UNKNOWN,https://github.com/openai/NavierStokesAndEuler,UNKNOWN,2026-09-08,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Populate from verified commit/file extraction
+forcing term in NS,UNKNOWN,UNKNOWN,UNKNOWN,https://github.com/openai/NavierStokesAndEuler,UNKNOWN,2026-09-08,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,Populate from verified commit/file extraction
