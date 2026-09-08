@@ -1,10 +1,13 @@
-# Evidence Folder
+# Evidence
 
-This directory stores provenance and reproducibility evidence.
+This folder stores provenance metadata and integrity manifests.
 
-## Contents
+- `repositories.yaml`: canonical repository nodes
+- `commits.yaml`: commit-level records with UTC timestamps
+- `files.yaml`: manuscript/file evidence records
+- `comparison_schema.yaml`: future forensic comparison schema
+- `sha256_manifest.txt`: generated integrity lines for tracked files
 
-- `historical_commits.md`: curated list of prior-work commits and timestamps
-- `sha256_manifest.txt`: integrity manifest for archived evidence files
-- `user_prior_work/`: snapshots and references to the author's prior repositories
-- `external_publications/`: records of external/public publication artifacts
+Subdirectories:
+- `historical/`: archived historical snapshots and exports
+- `external/`: external publication references and metadata

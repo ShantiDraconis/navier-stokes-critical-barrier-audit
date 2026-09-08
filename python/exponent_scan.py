@@ -1,19 +1,23 @@
-"""Scan (alpha, beta) for baseline energy/L3 window constraints."""
+"""Scan alpha-beta concentration constraints."""
 
-from concentration_scaling import admissible_window
+from concentration_window import in_window
 
 
-def scan(alpha_values, beta_values):
+def scan(alpha_min=0.1, alpha_max=3.0, step=0.1):
+    alphas = []
+    x = alpha_min
+    while x <= alpha_max + 1e-12:
+        alphas.append(round(x, 10))
+        x += step
+
     out = []
-    for alpha in alpha_values:
-        for beta in beta_values:
-            if admissible_window(alpha, beta):
-                out.append((alpha, beta))
+    for alpha in alphas:
+        for beta in alphas:
+            if in_window(alpha, beta):
+                out.append({"alpha": alpha, "beta": beta})
     return out
 
 
 if __name__ == "__main__":
-    alphas = [x / 10 for x in range(1, 31)]
-    betas = [x / 10 for x in range(1, 31)]
-    pairs = scan(alphas, betas)
-    print(f"admissible_pairs={len(pairs)}")
+    pairs = scan()
+    print({"admissible_pairs": len(pairs), "sample": pairs[:5]})

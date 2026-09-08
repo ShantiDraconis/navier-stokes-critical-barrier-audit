@@ -1,0 +1,14 @@
+files:
+  - id: FILE:ESS_FRAMEWORK_2026_08_30
+    title: Conditional Critical-Space Regularity for Three-Dimensional Navier–Stokes Flow — An ESS Endpoint Framework with Auditable JHTDB Diagnostics
+    date: 2026-08-30
+    version: "1.0"
+    status: conditional_analysis
+    note: not_a_claim_of_clay_solution
+
+  - id: FILE:ESS_REVISED_AUDIT
+    title: Continuation to T* = infinity via Escauriaza–Seregin–Šverák
+    status: referee_proof_audit
+    small_data_global_regime: supported
+    arbitrary_data_global_L3_bound: open
+    clay_global_regularity_claim: NOT_ESTABLISHED

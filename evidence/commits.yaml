@@ -1,0 +1,58 @@
+commits:
+  - id: COMMIT:NS_I_2025_11_25
+    repo: REPO:NS_I_2025
+    sha: 63b248dd29f1817c457acdb00e116e2e9b0687cc
+    timestamp_utc: 2025-11-25T15:47:20Z
+    verification: verified_valid
+
+  - id: COMMIT:NS_CLASSICAL_FRAMEWORK
+    repo: REPO:NS_CLASSICAL_2025
+    sha: 53c91d97
+    full_sha: UNKNOWN
+    timestamp_utc: 2025-11-26T08:56:06Z
+    verification: UNKNOWN
+
+  - id: COMMIT:NS_CLASSICAL_LEAN_FIX
+    repo: REPO:NS_CLASSICAL_2025
+    sha: 33adee1c
+    full_sha: UNKNOWN
+    timestamp_utc: 2025-11-26T09:00:15Z
+    verification: UNKNOWN
+
+  - id: COMMIT:NS_CLASSICAL_MERGE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: 867045e966812b50b2304f0460288cf6449d8221
+    timestamp_utc: 2025-11-26T09:35:34Z
+    verification: verified_valid
+
+  - id: COMMIT:MILLENNIUM_SENSOR
+    repo: REPO:MILLENNIUM
+    sha: 23332179
+    full_sha: UNKNOWN
+    timestamp_utc: 2026-01-22T07:54:43Z
+    verification: UNKNOWN
+
+  - id: COMMIT:MILLENNIUM_THRESHOLD
+    repo: REPO:MILLENNIUM
+    sha: c70b6f72197085ae6ecc3130b75e685028a61d10
+    timestamp_utc: 2026-01-22T07:55:11Z
+    verification: verified_valid
+
+  - id: COMMIT:CRITICAL_L3_INITIAL
+    repo: REPO:CRITICAL_L3
+    sha: 8dd2e8c74770b30d3a2092b296edde7bbbdb5e81
+    timestamp_utc: 2026-08-29T21:04:51Z
+    verification: verified_valid
+
+  - id: COMMIT:NONCIRCULAR_FIX
+    repo: REPO:NONCIRCULAR
+    sha: 8647334
+    full_sha: UNKNOWN
+    timestamp_utc: 2026-08-30T11:08:52Z
+    verification: UNKNOWN
+
+  - id: COMMIT:NONCIRCULAR_MERGE
+    repo: REPO:NONCIRCULAR
+    sha: 8f12748eb160b937174825fe3e7bdccf05e8f9af
+    timestamp_utc: 2026-08-30T11:10:45Z
+    verification: verified_valid

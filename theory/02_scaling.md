@@ -1,3 +1,9 @@
 # 02 — Scaling
 
-Records Navier–Stokes scaling and identifies \(L^3\) as scale-critical in 3D.
+\[
+u_\lambda(x,t)=\lambda u(\lambda x, \lambda^2 t),
+\qquad
+\|u_\lambda\|_3 = \|u\|_3.
+\]
+
+\(L^3\) is scale-critical for 3D Navier–Stokes.

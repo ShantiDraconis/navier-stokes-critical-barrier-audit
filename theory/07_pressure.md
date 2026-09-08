@@ -1,7 +1,6 @@
-# 07 — Pressure Nonlocality
+# 07 — Pressure
 
-Analyzes
 \[
--\Delta p = \partial_i\partial_j(u_i u_j) - \nabla\cdot f,
+-\Delta p = \partial_i\partial_j(u_i u_j)-\nabla\cdot f
 \]
-with emphasis on support, compatibility, and nonlocal coupling under concentration regimes.
+with explicit convention declaration and nonlocality constraints.
