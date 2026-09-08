@@ -1,0 +1,35 @@
+node_types:
+  - PERSON
+  - REPO
+  - COMMIT
+  - FILE
+  - EXTERNAL
+  - THEOREM
+  - LEMMA
+  - CONCEPT
+  - CONJECTURE
+  - TARGET
+  - AUDIT
+  - TEST
+  - RESULT
+  - PROCESS
+edge_types:
+  - authored_by
+  - committed_by
+  - coauthored_by
+  - predates
+  - depends_on
+  - formalizes
+  - audits
+  - tests
+  - derives_from_classical_result
+  - conjectures
+  - postdates
+  - external_claim
+  - contradicts
+  - does_not_contradict
+  - unresolved_relation
+  - independent_of
+  - studies
+  - proposes_breakdown_across
+  - authored_prior_framework_for

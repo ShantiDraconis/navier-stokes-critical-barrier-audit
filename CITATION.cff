@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+title: "Critical-Barrier Audit of a Proposed Finite-Time Navier–Stokes Breakdown"
+message: "If you use this repository, please cite it."
+type: software
+authors:
+  - family-names: "Fagliari"
+    given-names: "Tiago Paschoalatto"
+repository-code: "https://github.com/ShantiDraconis/navier-stokes-critical-barrier-audit"
+license: "MIT"
+abstract: >
+  Independent provenance and mathematical audit repository for proposed
+  finite-time Navier–Stokes breakdown constructions.
+keywords:
+  - navier-stokes
+  - critical-l3
+  - ess
+  - provenance
+  - formal-verification
