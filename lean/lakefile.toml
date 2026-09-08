@@ -1,0 +1,6 @@
+name = "critical-barrier"
+version = "0.1.0"
+defaultTargets = ["CriticalBarrier"]
+
+[[lean_lib]]
+name = "CriticalBarrier"

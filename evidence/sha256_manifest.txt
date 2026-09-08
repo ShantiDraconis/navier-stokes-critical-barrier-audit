@@ -1,0 +1,3 @@
+# SHA-256 manifest
+# Format: <sha256>  <relative_path>
+# Run: sha256sum <files...> >> evidence/sha256_manifest.txt
