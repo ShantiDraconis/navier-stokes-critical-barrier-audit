@@ -5,6 +5,7 @@
 - Exact mathematical overlaps are present for standard Navier–Stokes identities.
 - Current evidence does **not** establish access, copying, or causal derivation.
 - The distinctive construction layer remains **NOT FOUND** in the audited prior work.
+- The expanded dossier in `priority/08_expanded_git_provenance_dossier.md` materially strengthens the chronology and structural-overlap record, but its newly added anchors should still be separated into verified versus reported tiers.
 
 ## Exact OpenAI locations
 
@@ -26,6 +27,17 @@
 | `navier-stokes-critical-L3` | `8dd2e8c74770b30d3a2092b296edde7bbbdb5e81` / `2026-08-29T21:04:51Z` | `priority/04_2026_critical_L3.md`, `evidence/historical_commits.md` | Pre-2026-09-08 critical-space program |
 | `navier-stokes-noncircular` | `8f12748eb160b937174825fe3e7bdccf05e8f9af` / `2026-08-30T11:10:45Z` | `priority/05_2026_noncircular_audit.md`, `evidence/forensic_first_occurrence.csv` | Machine-auditable manuscript track |
 
+## Expanded high-value pre-2026 anchors now tracked
+
+The new expanded dossier adds reported high-value anchors for:
+
+- a 2025-11-23 start date in `millennium-navier-stokes-I`,
+- a 2025-12-18 to 2025-12-19 `Millennium` cluster with projection / obstruction / closure / residual language,
+- `universal-emergent-logic-` commits describing residue, curvature, coupling, geometric decomposition, nonlinear closure obstruction, and residual stability,
+- an explicit public OpenAI comparator SHA on 2026-09-08 (`8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538`).
+
+These strengthen the argument for **documented anteriority of a broad research architecture**, but they still do not close the evidentiary gap required for a causal-derivation accusation.
+
 ## Matrix
 
 | OpenAI formula | Prior source in this audit | Verdict |
@@ -42,4 +54,3 @@
 - Supported: the OpenAI repo reuses classical Navier–Stokes identities and standard lifespan/pressure/scaling formalism.
 - Not supported: any claim that the distinctive reference-jet / forcing-cancellation construction was found in the audited prior repositories.
 - Not supported: any claim of derivation from the prior repositories without direct causal evidence.
-
