@@ -67,11 +67,61 @@ claims:
       and formal verification.
     status: SUPPORTED
 
+  - id: coupling-operator-priority
+    statement: >
+      Fagliari possessed a formal coupling operator K(R,d) converting
+      (residual magnitude, current observable state) to a dynamical
+      correction, formalised in CouplingOperator.lean, by 2025-12-19.
+    status: ESTABLISHED
+    evidence:
+      - repo: ShantiDraconis/universal-emergent-logic-
+        commit: f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
+        date: 2025-12-19T13:56:01Z
+        tier: 2_reported
+
+  - id: reference-section-priority
+    statement: >
+      Fagliari possessed a reference section c₀ with R(c₀)=0 in a NS
+      geometric decomposition document, by 2025-12-19.
+    status: ESTABLISHED
+    evidence:
+      - repo: ShantiDraconis/universal-emergent-logic-
+        commit: 730aa849b0d76b0202f08b490664aa11c164b2bf
+        date: 2025-12-19T17:17:28Z
+        tier: 2_reported
+
+  - id: critical-jets-priority
+    statement: >
+      Fagliari documented "microlocal analysis of critical jets" in
+      LRE_NS_SUMMARY.md by 2025-12-18.
+    status: ESTABLISHED
+    evidence:
+      - repo: ShantiDraconis/Millennium
+        commit: 4cdb6a61ae7a9189eab551b1099895578a8fbb56
+        date: 2025-12-18T21:07:43Z
+        tier: 2_reported
+
+  - id: additive-hf-perturbation-priority
+    statement: >
+      Fagliari documented the additive high-frequency perturbation schema
+      φ_new = φ + εv with P_Λ(v)=0 in a NS proof architecture document
+      by 2025-12-19.
+    status: ESTABLISHED
+    evidence:
+      - repo: ShantiDraconis/universal-emergent-logic-
+        commit: 2854eaf70a4cf91cef3b936304ae080ec69f4fb1
+        date: 2025-12-19T20:24:44Z
+        tier: 2_reported
+
   - id: reference-jet-priority
     statement: >
-      Fagliari possessed an equivalent of the later reference-jet
+      Fagliari possessed a unified reference-jet + carrier-jet structure
+      equivalent to the later OpenAI ReferenceJetBounds/ActualCurrentCarrierJets
       construction before September 2026.
     status: NOT_ESTABLISHED
+    note: >
+      Reference section c₀ and critical jets exist as separate precursors;
+      they are not yet unified into a single formal jet structure.
 
   - id: causal-derivation
     statement: >

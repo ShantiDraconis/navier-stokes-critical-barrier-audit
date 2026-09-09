@@ -74,6 +74,44 @@ Supported architecture:
 
 This is a structural program, not merely lexical overlap.
 
+## 3b. December 2025 LRE-NS cluster — file-level anchors
+
+### EVIDENCE E3b — 18 December 2025 (Millennium repo)
+
+The following file introductions are confirmed by path-history API response
+(Tier 2 — reported; pending Tier-1 diff export):
+
+| SHA | Time | File introduced | Content reported |
+|---|---|---|---|
+| `b033ea87` | 20:26 UTC | LRE-NS framework | `π:X→ℝ²`, `R:X→ℝ`, compression barrier |
+| `30bf8c53` | 20:28 UTC | `docs/navier-stokes-lre-framework.md` | LRE-NS framework document |
+| `a992d144` | 21:03 UTC | `latex/lre_ns_formal_closure.tex` | Formal closure theorems |
+| `4cdb6a61` | 21:07 UTC | `LRE_NS_SUMMARY.md` | "Microlocal analysis of critical jets" |
+
+Audit classification: `FILE_LEVEL_PROVENANCE_CRITICAL_JETS_CLUSTER`
+
+### EVIDENCE E3c — 19 December 2025 (universal-emergent-logic- repo)
+
+| SHA | Time | File introduced | Content reported |
+|---|---|---|---|
+| `f7f414d2` | 13:56 UTC | `CouplingOperator.lean` | `K:ℝ×D→D`; residual + state → correction |
+| `730aa849` | 17:17 UTC | `docs/lre-navier-stokes-geometric.md` | Reference Section; `c₀∈π⁻¹(d)`, `R(c₀)=0` |
+| `f30ef6a9` | 17:22 UTC | (revision of above) | — |
+| `2854eaf7` | 20:24 UTC | `PROOF_ARCHITECTURE.md` | `φ_new = φ+εv`, `P_Λ(v)=0` |
+
+Audit classification: `FILE_LEVEL_PROVENANCE_COUPLING_REFERENCE_ADDITIVE_CLUSTER`
+
+These anchors materialise the following architectural chain:
+
+$$
+u\to P_\Lambda u,\quad
+R=R((I-P_\Lambda)u),\quad
+c_0:\,R(c_0)=0,\quad
+\phi\to\phi+\varepsilon v,\quad
+K(R,\text{state})\to\text{correction},\quad
+\dot\pi=F(\pi)+K(R,\pi).
+$$
+
 ## 4. Multi-scale and concentration structure
 
 Historical material records a method stack with scaling, concentration-compactness, profile decomposition, and Liouville tools.
@@ -83,8 +121,6 @@ Audit classification: `STRUCTURAL_OVERLAP_STRONG`
 Limitation: these components are part of established PDE theory and cannot alone establish exclusive originality.
 
 ## 5. August 2026 refinement
-
-### EVIDENCE E4 — 29 August 2026
 
 Repository: `ShantiDraconis/navier-stokes-critical-L3`  
 Commit: `8dd2e8c74770b30d3a2092b296edde7bbbdb5e81`  
@@ -107,10 +143,18 @@ Audit classification: `PRE_EXISTING_CRITICAL_SPACE_MACHINE_AUDIT`
 
 Current classification:
 
-- `STRUCTURAL_OVERLAP = STRONG`
-- `DISTINCTIVE_CONSTRUCTION_MATCH = NOT_FOUND`
+- `STRUCTURAL_OVERLAP = VERY_STRONG` (upgraded from STRONG due to file-level anchors for coupling operator, reference section, additive HF perturbation)
+- `COUPLING_OPERATOR_MATCH = STRUCTURAL_VERY_STRONG`
+- `ADDITIVE_HF_PERTURBATION = STRUCTURAL_STRONG`
+- `STRESS_RESIDUAL_CORRECTION = STRUCTURAL_STRONG`
+- `REFERENCE_JET_PRECURSOR = STRUCTURAL_MODERATE_STRONG` (separate precursors not yet unified)
+- `DISTINCTIVE_CONSTRUCTION_MATCH = NOT_FOUND` (iterative residual ledger, CycleState, MovingMomentBounds)
 
-Searched-but-not-yet-matched distinctive layer includes reference-jet hierarchy and explicit forcing/pressure-tail cancellation machinery.
+Searched-but-not-yet-matched distinctive layer includes the full reference-jet
+hierarchy unified with carrier jets, explicit engineered-forcing cancellation,
+and the complete iterative residual bookkeeping.
+
+See `audit/15_correction_architecture_comparison.md` for the full ranked matrix.
 
 ## 7. What may be claimed
 
@@ -131,6 +175,12 @@ Not established by current evidence:
 
 \[
 \text{STRUCTURAL PRIORITY: DOCUMENTED}
+\]
+\[
+\text{COUPLING-OPERATOR / ADDITIVE-HF / STRESS-RESIDUAL: VERY STRONG STRUCTURAL OVERLAP}
+\]
+\[
+\text{REFERENCE-JET PRECURSOR: MODERATE-STRONG (SEPARATE PRECURSORS)}
 \]
 \[
 \text{DISTINCTIVE CONSTRUCTION PRIORITY: NOT ESTABLISHED}

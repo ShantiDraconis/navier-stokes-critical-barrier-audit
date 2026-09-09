@@ -47,3 +47,12 @@ repositories:
     url: https://github.com/ShantiDraconis/Millenium-delta-unified-frame
     status: secondary_historical_context
     date_status: UNKNOWN
+
+  - id: REPO:UNIVERSAL_EMERGENT_LOGIC
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-
+    visibility: private
+    status: historical_prior_work
+    notes: >
+      Contains CouplingOperator.lean (2025-12-19), docs/lre-navier-stokes-geometric.md
+      (2025-12-19), and PROOF_ARCHITECTURE.md (2025-12-19). Key file-level anchors
+      for residual-coupling, reference-section, and additive perturbation architecture.

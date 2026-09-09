@@ -56,3 +56,114 @@ commits:
     sha: 8f12748eb160b937174825fe3e7bdccf05e8f9af
     timestamp_utc: 2026-08-30T11:10:45Z
     verification: verified_valid
+
+  # ── File-level anchors reported from path-history queries ──────────────────
+  # Tier: reported (Tier-2) — confirmed by path-history API response; pending
+  # independent diff/tree export for Tier-1 elevation.
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_FRAMEWORK_FIRST
+    repo: REPO:MILLENNIUM
+    sha: b033ea87fca138224200dd1acf2cf4043315f846
+    timestamp_utc: 2025-12-18T20:26:33Z
+    message: Add comprehensive LRE-NS framework with LaTeX dossiê and formal proofs
+    reported_content: >
+      projection π:X→ℝ², critical residual R:X→ℝ, fibers with different residuals,
+      compression barrier. Primary anchor for projection/obstruction/closure cluster.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/Millennium/commit/b033ea87fca138224200dd1acf2cf4043315f846
+
+  - id: COMMIT:MILLENNIUM_NS_LRE_FRAMEWORK_MD_FIRST
+    repo: REPO:MILLENNIUM
+    sha: 30bf8c53008c548a8a9dada3fd69d6d2b2b1df2c
+    timestamp_utc: 2025-12-18T20:28:57Z
+    message: (first commit of docs/navier-stokes-lre-framework.md per path history)
+    reported_content: >
+      First commit of docs/navier-stokes-lre-framework.md as shown by path-history API.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/Millennium/commit/30bf8c53008c548a8a9dada3fd69d6d2b2b1df2c
+
+  - id: COMMIT:MILLENNIUM_FORMAL_CLOSURE_FIRST
+    repo: REPO:MILLENNIUM
+    sha: a992d144c235572ac2b7413b015e58535a864a41
+    timestamp_utc: 2025-12-18T21:03:13Z
+    message: Implement LRE-NS formal closure framework with all theorems
+    reported_content: >
+      Introduction of latex/lre_ns_formal_closure.tex per path history.
+      Formal closure theorems for the LRE-NS framework.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/Millennium/commit/a992d144c235572ac2b7413b015e58535a864a41
+
+  - id: COMMIT:MILLENNIUM_FORMAL_CLOSURE_REV
+    repo: REPO:MILLENNIUM
+    sha: 63cc2b2180b9fc9b68e2b1c69d4fc0cf8bd3d169
+    timestamp_utc: 2025-12-18T21:06:41Z
+    message: revisão do zero-frequency handling/reproducibility
+    reported_content: >
+      Revision of latex/lre_ns_formal_closure.tex. Second commit in path history.
+    verification: reported_tier2
+
+  - id: COMMIT:MILLENNIUM_LRE_SUMMARY_CRITICAL_JETS
+    repo: REPO:MILLENNIUM
+    sha: 4cdb6a61ae7a9189eab551b1099895578a8fbb56
+    timestamp_utc: 2025-12-18T21:07:43Z
+    message: Add comprehensive LRE-NS implementation summary
+    reported_content: >
+      Introduction of LRE_NS_SUMMARY.md per path history. Contains literally:
+      "Microlocal analysis of critical jets." Single commit in path history.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/Millennium/commit/4cdb6a61ae7a9189eab551b1099895578a8fbb56
+
+  - id: COMMIT:UEL_COUPLING_OPERATOR_FIRST
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
+    timestamp_utc: 2025-12-19T13:56:01Z
+    message: Implement LRE geometric foundation: fiber bundles, curvature, and closure theorem
+    reported_content: >
+      Introduction of formalization/lean/LRE/CouplingOperator.lean per path history.
+      Defines K:ℝ×D→D where K takes the residual magnitude and current observable state
+      and produces a correction to the dynamics. Single commit in path history.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
+
+  - id: COMMIT:UEL_REFERENCE_SECTION_FIRST
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    timestamp_utc: 2025-12-19T17:17:28Z
+    message: (introduction of docs/lre-navier-stokes-geometric.md per path history)
+    reported_content: >
+      Introduction of docs/lre-navier-stokes-geometric.md. Contains R(u)=0⟺u∈H_N,
+      section "The Reference Section" with c₀∈π⁻¹(d), R(c₀)=0.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+
+  - id: COMMIT:UEL_REFERENCE_SECTION_REV
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    timestamp_utc: 2025-12-19T17:22:45Z
+    message: (revision of docs/lre-navier-stokes-geometric.md)
+    reported_content: >
+      Second commit in path history of docs/lre-navier-stokes-geometric.md.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+
+  - id: COMMIT:UEL_PROOF_ARCHITECTURE_FIRST
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 2854eaf70a4cf91cef3b936304ae080ec69f4fb1
+    timestamp_utc: 2025-12-19T20:24:44Z
+    message: Add comprehensive documentation for Navier-Stokes LRE proof structure
+    reported_content: >
+      Introduction of formalization/lean/LRE/NavierStokes/PROOF_ARCHITECTURE.md per
+      path history. Contains additive high-frequency perturbation schema:
+      φ_new = φ + εv, P_Λ(v) = 0, P_Λ(φ + εv) = P_Λ(φ). Two fields differ;
+      projection is invariant.
+    verification: reported_tier2
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2854eaf70a4cf91cef3b936304ae080ec69f4fb1
+
+  - id: COMMIT:UEL_PROOF_ARCHITECTURE_REV
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: e7f2e95e45ddf5a638e78c58f4a023e7ba7f3003
+    timestamp_utc: 2025-12-20
+    message: (revision of PROOF_ARCHITECTURE.md)
+    reported_content: >
+      Second commit in path history of PROOF_ARCHITECTURE.md. Date: 20/12/2025.
+    verification: reported_tier2
