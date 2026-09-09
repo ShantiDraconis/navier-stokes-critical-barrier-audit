@@ -56,3 +56,304 @@ commits:
     sha: 8f12748eb160b937174825fe3e7bdccf05e8f9af
     timestamp_utc: 2026-08-30T11:10:45Z
     verification: verified_valid
+
+  # ── LRE geometric decomposition cluster (2025-12-18 / 19) ───────────────
+
+  - id: COMMIT:LRE_NS_GEOMETRIC_DECOMP
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    timestamp_utc: 2025-12-19T00:00:00Z
+    message: "Add complete Navier-Stokes geometric decomposition"
+    files:
+      - docs/lre-navier-stokes-geometric.md
+    content_anchors:
+      - "pi(u) = P_N u"
+      - "R(u) = norm(u - P_N u)^2"
+      - "residual coupling operator T"
+      - "quantitative obstruction theorem"
+    classification: STRUCTURAL_FORTE
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_CLOSURE_OBSTRUCTION
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    timestamp_utc: 2025-12-19T17:22:45Z
+    message: "Explicit closure obstruction for nonlinearity"
+    files:
+      - docs/lre-navier-stokes-geometric.md
+    content_anchors:
+      - "P_N[(u.grad)u] != (P_N u).grad(P_N u)"
+    classification: STRUCTURAL_FORTE
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_EHRESMANN_PR37_MERGE
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 14322ff2e8f38df302c6f2f6b41754db79d5a900
+    timestamp_utc: 2025-12-19T00:00:00Z
+    message: "Implement geometric foundation for LRE: residual as Ehresmann connection curvature"
+    pr: 37
+    content_anchors:
+      - "d/dt pi(u) = F(pi(u)) + K(R(u), pi(u))"
+      - "CouplingOperator not_factorizable"
+      - "residual as Ehresmann connection curvature"
+    classification: STRUCTURAL_MUITO_FORTE
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_CURVATURE_THEORY
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: ce960a1ba8ce7a893d645131d12d1a7ab06eddd9
+    timestamp_utc: 2025-12-19T00:00:00Z
+    message: "Add CurvatureTheory.lean, ResidualCurvatureForm, CouplingCurvature.lean"
+    files:
+      - CurvatureTheory.lean
+      - CouplingCurvature.lean
+      - NavierStokes.lean
+    content_anchors:
+      - "K <= alpha * Omega"
+      - "topological blow-up theory"
+    classification: STRUCTURAL_FORTE
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_GEOMETRIC_INFO_LOSS
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 92ae80cf78bf7d94c78795ea0929dc73cd145a97
+    timestamp_utc: 2025-12-19T00:00:00Z
+    message: "Geometric theory of information loss in projective systems"
+    pr: 34
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_1
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 1ed0ded98d26966189fc5936914fd964d42cbd7a
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_2
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 0f3ae4e275068f81f516b45b14289dd1a699e659
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_3
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_4
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_5
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 3d4d3e51866e03420e97ff3b21dde2a1fca1cc4d
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_META_FRAMEWORK_CORE
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 507135a16a64116e7baf15154e03dc40740b08bb
+    timestamp_utc: 2025-12-19T00:00:00Z
+    message: "Implement LRE meta-framework core and ODE modules"
+    files:
+      - ResidualStability.lean
+    content_anchors:
+      - "dR/dt <= a(t)R - bR + cR^2"
+      - "a(t) ~ norm(grad u_{<=Lambda})_inf"
+      - "b ~ nu Lambda^2"
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:HCS_RBC_CONTINUOUS_DISCRETE
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 36513742ecf2c3568d6e429689bb2b74d195fd7d
+    timestamp_utc: 2025-12-19T00:00:00Z
+    content_anchors:
+      - "R' >= alpha R^3"
+      - "R' <= -alpha R^3"
+      - "R' <= delta R - alpha R^3"
+      - "R_{n+1} >= R_n + alpha R_n^3"
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  # ── Millennium NS cluster (2025-12-18) ──────────────────────────────────
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_CLUSTER_1
+    repo: REPO:MILLENNIUM
+    sha: 4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_CLUSTER_2
+    repo: REPO:MILLENNIUM
+    sha: 54a13fedc2149f4368959d5694fd077010684f58
+    timestamp_utc: 2025-12-18T00:00:00Z
+    content_anchors:
+      - "compression barrier"
+      - "critical residual obstruction"
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_CLUSTER_3
+    repo: REPO:MILLENNIUM
+    sha: 5a888677611ec79eb959f368e941699217487c2d
+    timestamp_utc: 2025-12-18T00:00:00Z
+    content_anchors:
+      - "critical cascade"
+      - "spectral concentration"
+      - "self-similar blow-up profile"
+      - "critical jets"
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_CLUSTER_4
+    repo: REPO:MILLENNIUM
+    sha: b9b4768206ee3d817cbbaf35bb7da92dc835c4e1
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_CLUSTER_5
+    repo: REPO:MILLENNIUM
+    sha: 0d601255e51be349a1fd38eacfcbd2fda17ced77
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_NS_CLOSURE_SEQ_1
+    repo: REPO:MILLENNIUM
+    sha: d1c29035c449cc213ac822afaeb3c213b04da39f
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_NS_CLOSURE_SEQ_2
+    repo: REPO:MILLENNIUM
+    sha: dfa3942f527f54ce92e61c9756052379b56e733e
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_NS_CLOSURE_SEQ_3
+    repo: REPO:MILLENNIUM
+    sha: b7e9fd22fb6ac794589e2ee65aeedf37f56e323e
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_NS_CLOSURE_SEQ_4
+    repo: REPO:MILLENNIUM
+    sha: b8b5c433b6f69b5676bdcbb9aa9c282e4af99881
+    timestamp_utc: 2025-12-18T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:MILLENNIUM_PR249_MERGE
+    repo: REPO:MILLENNIUM
+    sha: 6054851e80b463b3c994fef2acc110983769c309
+    timestamp_utc: 2025-12-18T00:00:00Z
+    pr: 249
+    message: "Add LRE projection-obstruction framework for Navier-Stokes Clay problem"
+    content_anchors:
+      - "C(u) = (iota circ pi)(u)"
+      - "Res(u) = u - C(u)"
+      - "residual in high-frequency microstructure"
+    classification: STRUCTURAL_MUITO_FORTE
+    verification: sha_recorded
+
+  # ── Residual stability merge cluster (2025-12-19) ────────────────────────
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_MERGE_1
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 51644f5f8def81905637b59a8834f18b1192b3b3
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_MERGE_2
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 0982941f39312ab0496d0112c796a0539ee76151
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_MERGE_3
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 8c35193f7b0bc12efe6416b1fda0291f3734300f
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_MERGE_4
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 71232a08bd4fa8a6af702c64fb99c4d0360802aa
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_RESIDUAL_STABILITY_MERGE_5
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  # ── Four proof-assistant formalization cluster ───────────────────────────
+
+  - id: COMMIT:NS_LEAN_COQ_ISABELLE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: cca881c665f67c67d96a4f84371fb51cd9c858a0
+    timestamp_utc: 2025-11-25T00:00:00Z
+    classification: PROVENANCE
+    verification: sha_recorded
+
+  - id: COMMIT:NS_FORMALIZATIONS_MERGE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: dc55830546d50d66ccf602250c16c5c366dd4a30
+    timestamp_utc: 2025-11-25T00:00:00Z
+    classification: PROVENANCE
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_UC_FOUR_LANGUAGES
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: 8332c7183e6418c7c878270b24a66bbb29e8340d
+    timestamp_utc: 2025-12-19T00:00:00Z
+    classification: PROVENANCE
+    verification: sha_recorded
+
+  - id: COMMIT:LRE_PR67_FOUR_LANGUAGES_MERGE
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: c3ae2eff9e7d870effc03bb54b8f03b54e4a08c4
+    timestamp_utc: 2025-12-19T00:00:00Z
+    pr: 67
+    classification: PROVENANCE
+    verification: sha_recorded
+
+  # ── Obstruction theorem second anchor ────────────────────────────────────
+
+  - id: COMMIT:LRE_OBSTRUCTION_THEOREM_NS
+    repo: REPO:NAVIER_STOKES_CRITICAL_BARRIER_AUDIT
+    sha: a762e7b76464656236075548343f596ab8bc6815
+    timestamp_utc: 2025-12-19T00:00:00Z
+    content_anchors:
+      - "E(c) + E(c0) >= kappa R(c)"
+    classification: STRUCTURAL
+    verification: sha_recorded
+
+  # ── NS-I early commit (2025-11-23) ───────────────────────────────────────
+
+  - id: COMMIT:NS_I_2025_11_23
+    repo: REPO:NS_I_2025
+    sha: 64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f
+    timestamp_utc: 2025-11-23T00:00:00Z
+    classification: CHRONOLOGICAL
+    verification: sha_recorded
