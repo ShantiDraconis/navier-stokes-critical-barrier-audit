@@ -15,6 +15,9 @@ repositories:
     url: https://github.com/ShantiDraconis/universal-emergent-logic-
     visibility: private
     status: historical_framework
+    status: historical_prior_work
+    status: historical_framework
+    date_status: REPORTED_PENDING_ARCHIVAL_CAPTURE
   - id: REPO:CRITICAL_L3
     url: https://github.com/ShantiDraconis/navier-stokes-critical-L3
     visibility: private
@@ -55,3 +58,57 @@ repositories:
     url: https://github.com/ShantiDraconis/Millenium-delta-unified-frame
     status: secondary_historical_context
     date_status: UNKNOWN
+  - id: REPO:UNIVERSE00
+    url: https://github.com/ShantiDraconis/Universe-0-0
+    visibility: private
+    status: central_secondary_repository
+    date_status: commits_reported_2025_2026
+    description: >
+      Repository containing the LRE Projection Framework article and Clay NS dossier.
+      Key anchor f900684c3785ffbd9707291225b2c1751ae3e3eb reportedly contains
+      the LRE Projection Framework paper together with a Clay NS dossier package.
+      Also contains commit 073a9d8097cb3e4e190316361939c8fe0af7ed1b (Discrete
+      Geometric Correction) and d35d6b02bbf17e4453ed9460ff527f7c5a758e86
+      (NS regularity merge).
+    audit_tier: tier_2_reported_pending_archival
+    note: >
+      All commits in this repository are reported-chronology pending independent
+      export or archival capture.
+
+
+  # ── Repos with direct probatory commits identified 2026-09-09 ──────────────
+
+  - id: REPO:UEL
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-
+    visibility: private
+    status: historical_prior_work
+    notes: >
+      Contains Law of Structural Residue (LRE) full framework from 2025-12-19,
+      including CurvatureTheory, CouplingCurvature, NS geometric decomposition,
+      residual stability, and all proof-assistant formalizations (Lean/Coq/Isabelle/Agda).
+
+  - id: REPO:OPENAI_NS
+    url: https://github.com/openai/NavierStokesAndEuler
+    visibility: public
+    status: external_comparator
+    notes: >
+      Public OpenAI repository. Anchor commit 8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538
+      first appeared publicly 2026-09-08. Presence of this commit proves publication date,
+      NOT when internal OpenAI work began.
+  - id: REPO:UEL
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-
+    visibility: private
+    status: central_secondary_repository
+    date_status: first_commits_reported_2025-12-19
+    description: >
+      Second central repository for the LRE (Law of Residual Emergence) framework.
+      Documents the complete LRE theory, geometric Navier-Stokes decomposition,
+      residual stability inequalities, curvature/holonomy formalism, and multi-assistant
+      proof infrastructure (Lean, Coq, Isabelle, Agda). Contains 42+ commits reported
+      from 2025-12-19 onward covering foundation through LRE-UC/RBC layers.
+    audit_tier: tier_2_reported_pending_archival
+    note: >
+      The commit 730aa849b0d76b0202f08b490664aa11c164b2bf is cited as GitHub-verified
+      with message "Complete formalization of LRE Theorem 1 and Navier-Stokes application"
+      and "Add complete Navier-Stokes geometric decomposition". All other commits in this
+      repository are reported-chronology pending independent export/archival.
