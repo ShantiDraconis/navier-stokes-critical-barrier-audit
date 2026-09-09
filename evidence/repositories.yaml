@@ -53,6 +53,23 @@ repositories:
     url: https://github.com/ShantiDraconis/Millenium-delta-unified-frame
     status: secondary_historical_context
     date_status: UNKNOWN
+  - id: REPO:UNIVERSE00
+    url: https://github.com/ShantiDraconis/Universe-0-0
+    visibility: private
+    status: central_secondary_repository
+    date_status: commits_reported_2025_2026
+    description: >
+      Repository containing the LRE Projection Framework article and Clay NS dossier.
+      Key anchor f900684c3785ffbd9707291225b2c1751ae3e3eb reportedly contains
+      the LRE Projection Framework paper together with a Clay NS dossier package.
+      Also contains commit 073a9d8097cb3e4e190316361939c8fe0af7ed1b (Discrete
+      Geometric Correction) and d35d6b02bbf17e4453ed9460ff527f7c5a758e86
+      (NS regularity merge).
+    audit_tier: tier_2_reported_pending_archival
+    note: >
+      All commits in this repository are reported-chronology pending independent
+      export or archival capture.
+
 
   # ── Repos with direct probatory commits identified 2026-09-09 ──────────────
 

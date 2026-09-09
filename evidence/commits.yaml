@@ -1945,3 +1945,57 @@ commits:
     layer: UNKNOWN
     verification: reported_pending_archival
     canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/3641787e452b737d734f9bba54d234b60a57c5e0
+
+  # --- Millennium: additional anchor from problem statement (2025-12-18) ---
+  - id: COMMIT:MILLENNIUM_LRE_NS_FRAMEWORK_DEC18
+    repo: REPO:MILLENNIUM
+    sha: b033ea87fca138224200dd1acf2cf4043315f846
+    reported_date: 2025-12-18
+    message: LRE-NS framework
+    layer: C2_lre_ns_cluster
+    verification: reported_pending_archival
+    note: >
+      Listed in problem statement as a fundamental anchor for the LRE-NS framework
+      dated 2025-12-18. Not previously enumerated in dossier 08.
+    canonical_url: https://github.com/ShantiDraconis/Millennium/commit/b033ea87fca138224200dd1acf2cf4043315f846
+
+  # Millennium: merge PR #249 (anchor for projection/compression/residual architecture)
+  - id: COMMIT:MILLENNIUM_MERGE_PR249
+    repo: REPO:MILLENNIUM
+    sha: 6054851e80b463b3c994fef2acc110983769c309
+    reported_date: 2025-12-19
+    message: "Merge PR #249 — LRE projection-obstruction for Clay NS"
+    layer: C2_lre_ns_cluster
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/Millennium/commit/6054851e80b463b3c994fef2acc110983769c309
+
+  # --- Universe-0-0 commits ---
+  - id: COMMIT:U00_LRE_PROJECTION_CLAY_DOSSIER
+    repo: REPO:UNIVERSE00
+    sha: f900684c3785ffbd9707291225b2c1751ae3e3eb
+    reported_date: UNKNOWN
+    message: LRE Projection Framework article + Clay NS dossier
+    layer: lre_projection_article
+    verification: reported_pending_archival
+    note: >
+      Problem statement identifies this as the LRE Projection Framework article
+      together with the Clay NS dossier in Universe-0-0.
+    canonical_url: https://github.com/ShantiDraconis/Universe-0-0/commit/f900684c3785ffbd9707291225b2c1751ae3e3eb
+
+  - id: COMMIT:U00_NS_REGULARITY_MERGE
+    repo: REPO:UNIVERSE00
+    sha: d35d6b02bbf17e4453ed9460ff527f7c5a758e86
+    reported_date: UNKNOWN
+    message: Merge NS regularity
+    layer: ns_regularity_merge
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/Universe-0-0/commit/d35d6b02bbf17e4453ed9460ff527f7c5a758e86
+
+  - id: COMMIT:U00_DISCRETE_GEO_CORRECTION
+    repo: REPO:UNIVERSE00
+    sha: 073a9d8097cb3e4e190316361939c8fe0af7ed1b
+    reported_date: UNKNOWN
+    message: Discrete Geometric Correction
+    layer: discrete_geometric_correction
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/Universe-0-0/commit/073a9d8097cb3e4e190316361939c8fe0af7ed1b
