@@ -1,0 +1,43 @@
+zenodo_records:
+  - id: ZENODO:15164501
+    classification: ZENODO_PUBLIC_PRIOR_ART
+    verification_status: PUBLIC_URL_USER_REPORTED_PENDING_DIRECT_METADATA_CAPTURE
+    record_url: https://zenodo.org/records/15164501
+    doi: 10.5281/zenodo.15164501
+    title: Equations of Major Unsolved Problems in Mathematics
+    creators:
+      - Tiago Fagliari aka Draconis Shanti
+    zenodo_creation_date: 2025-04-06
+    publication_type: preprint
+    license: CC-BY-4.0
+    subjects:
+      - Navier-Stokes
+      - Millennium
+    version: original_april_2025_version_preserved
+    files:
+      - file_name: UNKNOWN_IN_CURRENT_ENVIRONMENT
+        md5_or_zenodo_checksum: UNKNOWN_IN_CURRENT_ENVIRONMENT
+        note: Zenodo file list/checksum not directly retrievable from this sandbox at update time.
+    github_linkage:
+      repo: REQUIRES_CONTENT_COMPARISON
+      path: REQUIRES_CONTENT_COMPARISON
+      first_introduction_sha: REQUIRES_CONTENT_COMPARISON
+      parent_sha: REQUIRES_CONTENT_COMPARISON
+      author_committer_utc: REQUIRES_CONTENT_COMPARISON
+      pr: REQUIRES_CONTENT_COMPARISON
+    formula_targets:
+      - formula: "u -> π(u) -> C(u) -> Res(u)"
+        mathematical_function: projection / closure / residual decomposition
+        classification: CANDIDATE_CHAIN_TARGET_ONLY
+      - formula: "d/dt π(u) = F(π(u)) + K(R(u), π(u))"
+        mathematical_function: projected evolution with residual coupling
+        classification: CANDIDATE_CHAIN_TARGET_ONLY
+      - formula: "u_{q+1} = u_q + C_q"
+        mathematical_function: explicit iterative correction step
+        classification: MISSING_FROM_CURRENT_CAPTURE
+      - formula: "R_{q+1} = R(u_{q+1})"
+        mathematical_function: residual evolution
+        classification: MISSING_FROM_CURRENT_CAPTURE
+    source_basis:
+      - User-supplied Zenodo URL and metadata in the task statement
+      - Current sandbox could not resolve zenodo.org directly; direct API/file capture remains pending
