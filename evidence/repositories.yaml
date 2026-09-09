@@ -47,3 +47,23 @@ repositories:
     url: https://github.com/ShantiDraconis/Millenium-delta-unified-frame
     status: secondary_historical_context
     date_status: UNKNOWN
+
+  # ── Repos with direct probatory commits identified 2026-09-09 ──────────────
+
+  - id: REPO:UEL
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-
+    visibility: private
+    status: historical_prior_work
+    notes: >
+      Contains Law of Structural Residue (LRE) full framework from 2025-12-19,
+      including CurvatureTheory, CouplingCurvature, NS geometric decomposition,
+      residual stability, and all proof-assistant formalizations (Lean/Coq/Isabelle/Agda).
+
+  - id: REPO:OPENAI_NS
+    url: https://github.com/openai/NavierStokesAndEuler
+    visibility: public
+    status: external_comparator
+    notes: >
+      Public OpenAI repository. Anchor commit 8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538
+      first appeared publicly 2026-09-08. Presence of this commit proves publication date,
+      NOT when internal OpenAI work began.
