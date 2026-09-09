@@ -15,6 +15,18 @@ Structural-overlap status:
 Distinctive-construction match status:
 **NOT FOUND (AS OF CURRENT AUDIT EVIDENCE)**
 
+Stress-correction mechanism status:
+**FOUND (STRUCTURAL, PRE-2026)**
+
+Iterative correction hierarchy status:
+**NOT FOUND**
+
+Reference section + critical jets status:
+**FOUND SEPARATELY**
+
+Exact ReferenceJet / CarrierJet status:
+**NOT FOUND**
+
 Poincaré Mean Closure:
 **CONJECTURAL**
 

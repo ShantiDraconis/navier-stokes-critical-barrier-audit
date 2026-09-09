@@ -38,6 +38,19 @@ The new expanded dossier adds reported high-value anchors for:
 
 These strengthen the argument for **documented anteriority of a broad research architecture**, but they still do not close the evidentiary gap required for a causal-derivation accusation.
 
+## Structural correspondence matrix
+
+| Prior source | Repository / SHA | Structural role | Audit verdict |
+| --- | --- | --- | --- |
+| Reference section `c_0 = P_N u` | `ShantiDraconis/universal-emergent-logic-` / `730aa849b0d76b0202f08b490664aa11c164b2bf` | reference object in the fiber | `FOUND` |
+| `critical jets` | `ShantiDraconis/universal-emergent-logic-` / `f30ef6a9d19af290a8f461d60d70da091d73d6ed` | jet machinery present | `FOUND` |
+| `C(u) = ιπ(u)` and `Res(u) = u - C(u)` | `ShantiDraconis/Millennium` / `4af517e3f1ea5d04be1c6bbd8953209fa2139e82`, `6054851e80b463b3c994fef2acc110983769c309` | reference reconstruction + defect | `FOUND` |
+| `d/dt π(u) = F(π(u)) + K(R(u), π(u))` | `ShantiDraconis/universal-emergent-logic-` / `14322ff2e8f38df302c6f2f6b41754db79d5a900` | continuous correction law | `FOUND` |
+| `Residual -> dynamical correction` | `ShantiDraconis/universal-emergent-logic-` / `14322ff2e8f38df302c6f2f6b41754db79d5a900` | residual-to-correction mechanism | `FOUND` |
+| `The residue is the Reynolds stress tensor` | `ShantiDraconis/universal-emergent-logic-` / `f30ef6a9d19af290a8f461d60d70da091d73d6ed` | stress ontology | `FOUND` |
+| curvature prevents cancellation | `ShantiDraconis/universal-emergent-logic-` / `507135a16a64116e7baf15154e03dc40740b08bb` | cancellation concept present, but negative | `FOUND (ANTI-CANCELLATION)` |
+| `carrierFrequency`, `ReferenceJet`, `CarrierJet` | `openai/NavierStokesAndEuler` distinctive layer | named later construction | `NO PRIOR EXACT MATCH EXPORTED` |
+
 ## Matrix
 
 | OpenAI formula | Prior source in this audit | Verdict |
@@ -45,12 +58,15 @@ These strengthen the argument for **documented anteriority of a broad research a
 | `∂_t u + (u·∇)u - Δu + ∇p = f` | `millennium-navier-stokes-I` / `63b248dd29f1817c457acdb00e116e2e9b0687cc` | `EXACT_CLASSICAL_MATCH` |
 | `-Δp = ∂_i∂_j(u_i u_j)` / `p = R_i R_j(u_i u_j)` | `navier-stokes-noncircular` / `8f12748eb160b937174825fe3e7bdccf05e8f9af` | `EXACT_CLASSICAL_MATCH` |
 | `T* = sup{T : strong solution exists on [0,T)}` | `Millennium` / `c70b6f72197085ae6ecc3130b75e685028a61d10` and `navier-stokes-critical-L3` / `8dd2e8c74770b30d3a2092b296edde7bbbdb5e81` | `STRUCTURAL_MATCH` |
-| `u_{0,λ}(x) = λ u_0(λx)` and `‖u_{0,λ}‖_3 = ‖u_0‖_3` | no exact prior-match file exported in current evidence | `STRUCTURAL_ONLY` |
+| projection -> representative -> residual | `Millennium` / `4af517e3f1ea5d04be1c6bbd8953209fa2139e82` and `6054851e80b463b3c994fef2acc110983769c309` | `STRUCTURAL_STRONG_MATCH` |
+| reference section + critical jets | `universal-emergent-logic-` / `730aa849b0d76b0202f08b490664aa11c164b2bf`, `f30ef6a9d19af290a8f461d60d70da091d73d6ed` | `STRUCTURAL_PRECURSOR_ONLY` |
+| residual -> Reynolds stress -> correction | `universal-emergent-logic-` / `14322ff2e8f38df302c6f2f6b41754db79d5a900`, `730aa849b0d76b0202f08b490664aa11c164b2bf`, `f30ef6a9d19af290a8f461d60d70da091d73d6ed` | `STRUCTURAL_STRONG_MATCH` |
 | `Q^{-(1/2+h)}`, `Q^{1/2}`, `Q^{1/2-h}`, `carrierFrequency` | no exact prior-match file exported in current evidence | `NO_MATCH_FOUND` |
 | BKM / vorticity integral blow-up criterion | prior classical material only | `EXACT_CLASSICAL_MATCH` |
 
 ## What is and is not supported
 
 - Supported: the OpenAI repo reuses classical Navier–Stokes identities and standard lifespan/pressure/scaling formalism.
+- Supported: the pre-2026 Fagliari corpus already contains a project-residual-stress-correct architecture, with reference-section and jet components present separately.
 - Not supported: any claim that the distinctive reference-jet / forcing-cancellation construction was found in the audited prior repositories.
 - Not supported: any claim of derivation from the prior repositories without direct causal evidence.

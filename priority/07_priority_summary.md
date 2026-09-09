@@ -36,6 +36,41 @@ The new dossier records a much denser set of reported pre-2026-09-08 anchors, in
 
 These additions materially strengthen the chronology narrative and the structural-overlap narrative.
 
+## Newly documented structural chains
+
+### Reference / residual chain
+
+The strongest newly documented pre-2026 chain is now:
+
+\[
+u \to \pi(u)=P_Nu=c_0 \to \text{reference section} \to R(u) \to u_\perp.
+\]
+
+Linked reported anchors:
+
+- `ShantiDraconis/universal-emergent-logic-` / `730aa849b0d76b0202f08b490664aa11c164b2bf`
+- `ShantiDraconis/Millennium` / `4af517e3f1ea5d04be1c6bbd8953209fa2139e82`
+- `ShantiDraconis/Millennium` / `6054851e80b463b3c994fef2acc110983769c309`
+
+### Stress / correction chain
+
+Also documented in the reported corpus:
+
+\[
+R(u) \to K(R,d) \to \text{Reynolds stress} \to \text{dynamical correction}.
+\]
+
+This supports a **stress-correction mechanism** before 2026-09-08, even though an explicit iterative hierarchy `S_q \to C_q \to S_{q+1}` is still not found.
+
+### Reference section plus jets
+
+The updated audit now separates:
+
+- `reference section` / `c_0 = P_N u`, and
+- `critical jets`.
+
+That combination is a **strong structural precursor** to a later `ReferenceJet`-type architecture, but it is still not an exact named or fully matched jet construction.
+
 ## Caveats explicitly tracked
 
 - The expanded dossier separates **independently verified anchors already stored in this repository** from **reported additional anchors that still need line-level export or independent archival capture**.

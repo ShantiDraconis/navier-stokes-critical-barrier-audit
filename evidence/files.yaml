@@ -25,6 +25,7 @@ files:
     repo: REPO:MILLENNIUM
     path: problems/NavierStokes/local-global-bridge.md
     reference_commit: c70b6f72197085ae6ecc3130b75e685028a61d10
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/c70b6f72197085ae6ecc3130b75e685028a61d10
     modified_date_utc: 2025-12-04T18:43:53Z
     verification_status: REPORTED_PENDING_LINE_EXPORT
 
@@ -33,6 +34,78 @@ files:
     repo: REPO:MILLENNIUM
     path: docs/universal-tree/05-methods.md
     reference_commit: c70b6f72197085ae6ecc3130b75e685028a61d10
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/c70b6f72197085ae6ecc3130b75e685028a61d10
     modified_date_utc: UNKNOWN
     verification_status: REPORTED_PENDING_LINE_EXPORT
 
+  - id: FILE:MILLENNIUM_LRE_FRAMEWORK
+    title: LRE-NS projection/closure framework with closure representative and residual
+    repo: REPO:MILLENNIUM
+    path: docs/navier-stokes/lre_framework.md
+    reference_commit: 4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    modified_date_utc: 2025-12-18T20:25:20Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_NS_GEOMETRIC_DOC
+    title: geometric Navier-Stokes decomposition with reference section and residual coupling
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: docs/lre-navier-stokes-geometric.md
+    reference_commit: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_LRE_INDEX
+    title: LRE index with F(d) and K(R,d) residual-correction language
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: LRE-INDEX.md
+    reference_commit: 14322ff2e8f38df302c6f2f6b41754db79d5a900
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/14322ff2e8f38df302c6f2f6b41754db79d5a900
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_README_COUPLING
+    title: README statement that CouplingOperator K maps residual to dynamical correction
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: README.md
+    reference_commit: 14322ff2e8f38df302c6f2f6b41754db79d5a900
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/14322ff2e8f38df302c6f2f6b41754db79d5a900
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_OPERATORS_PY
+    title: Python operators module identifying residue as Reynolds stress tensor
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: src/lre/operators.py
+    reference_commit: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_APPLICATIONS_PY
+    title: Python applications module mapping full flow, mean flow, Reynolds averaging, and Reynolds stress
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: src/lre/applications.py
+    reference_commit: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_QUANTITATIVE_OBSTRUCTION
+    title: quantitative obstruction file with explicit anti-cancellation statement
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: QuantitativeObstruction.lean
+    reference_commit: 507135a16a64116e7baf15154e03dc40740b08bb
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/507135a16a64116e7baf15154e03dc40740b08bb
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
+
+  - id: FILE:UEL_NS_SUMMARY
+    title: summary file with microlocal analysis of critical jets
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: LRE_NS_SUMMARY.md
+    reference_commit: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    modified_date_utc: 2025-12-19T00:00:00Z
+    verification_status: REPORTED_PENDING_LINE_EXPORT
