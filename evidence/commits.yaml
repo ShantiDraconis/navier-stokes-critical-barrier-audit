@@ -57,6 +57,425 @@ commits:
     timestamp_utc: 2026-08-30T11:10:45Z
     verification: verified_valid
 
+  # ── millennium-navier-stokes-I  (full chain 2025-11-23 .. 2025-11-25) ──────
+
+  - id: COMMIT:NS_I_SBFE_COLLAPSE_INITIAL
+    repo: REPO:NS_I_2025
+    sha: 64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f
+    timestamp_utc: 2025-11-23
+    message: "Implement Navier-Stokes SBFE/I collapse analysis framework"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f
+    verification: unverified_by_current_audit
+    evidentiary_weight: ANCHOR_EARLIEST_NS_I
+
+  - id: COMMIT:NS_I_COLLAPSE_DETECTION_MERGE
+    repo: REPO:NS_I_2025
+    sha: a42ffbaf35d3e56882b68fd61adeb3793f995e7a
+    timestamp_utc: 2025-11-24
+    message: "Merge PR #1 — collapse detection framework"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/a42ffbaf35d3e56882b68fd61adeb3793f995e7a
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_SYMBOLIC_MERGE
+    repo: REPO:NS_I_2025
+    sha: b7a03dc4f6630945dd7fe03da3270260892e9649
+    timestamp_utc: 2025-11-24
+    message: "Merge PR #2 — symbolic experimental framework"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/b7a03dc4f6630945dd7fe03da3270260892e9649
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_ICOLLAPSE_LATEX_PY
+    repo: REPO:NS_I_2025
+    sha: 777d58e6f1eda3872a809492183ce432ead4f030
+    timestamp_utc: 2025-11-25
+    message: "I-collapse framework + LaTeX + Python"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/777d58e6f1eda3872a809492183ce432ead4f030
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_CONSTANT_I
+    repo: REPO:NS_I_2025
+    sha: 1cd176fa02d0827cff24f61cfc27dbda21109c25
+    timestamp_utc: 2025-11-25
+    message: "0/0 Constant I framework for NS collapse"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/1cd176fa02d0827cff24f61cfc27dbda21109c25
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_CLASSICAL_MD
+    repo: REPO:NS_I_2025
+    sha: e206aeea0e1c3528c6266c4b3e916b2d3d31ffba
+    timestamp_utc: 2025-11-25
+    message: "navier-stokes-classical.md"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/e206aeea0e1c3528c6266c4b3e916b2d3d31ffba
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_FORMALISM_DOC
+    repo: REPO:NS_I_2025
+    sha: 079633d5f7af26576cc9baf0b911e5e0dbdb21f7
+    timestamp_utc: 2025-11-25
+    message: "Navier–Stokes formalism documentation"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/079633d5f7af26576cc9baf0b911e5e0dbdb21f7
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_FUNCTIONAL_MERGE
+    repo: REPO:NS_I_2025
+    sha: 233f1456221b3564bfb09c9f87b5fdeabb09f76c
+    timestamp_utc: 2025-11-25
+    message: "Merge branch functional NS"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/233f1456221b3564bfb09c9f87b5fdeabb09f76c
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_COMPLETE_ANALYTICAL
+    repo: REPO:NS_I_2025
+    sha: 12f8b424646fba8e278a99f7cf350f3d2c7eb09e
+    timestamp_utc: 2025-11-25
+    message: "Complete analytical/functional/geometric formulation"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/12f8b424646fba8e278a99f7cf350f3d2c7eb09e
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_SUMMARY_MERGE
+    repo: REPO:NS_I_2025
+    sha: 6f6e1492670d30f7e76a87b1fd9f1f2386c32e89
+    timestamp_utc: 2025-11-25
+    message: "Merge NS summary branch"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/6f6e1492670d30f7e76a87b1fd9f1f2386c32e89
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_ICOLLAPSE_SYMBOLIC
+    repo: REPO:NS_I_2025
+    sha: 4ad6cf294f266c764ac160ded72ea6d92d1e42d2
+    timestamp_utc: 2025-11-25
+    message: "I-Collapse symbolic framework"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/4ad6cf294f266c764ac160ded72ea6d92d1e42d2
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_I_FORMAL_MERGE
+    repo: REPO:NS_I_2025
+    sha: b3f1e3d0d25d2f3bd903a695a51526504369f64d
+    timestamp_utc: 2025-11-25
+    message: "Merge formal framework"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/b3f1e3d0d25d2f3bd903a695a51526504369f64d
+    verification: unverified_by_current_audit
+
+  # Already in file as COMMIT:NS_I_2025_11_25 (63b248dd) — Merge PR #3 verified_valid
+
+  # ── millennium-navier-stokes-classical  (2025-11-25 .. 2025-11-26) ─────────
+
+  - id: COMMIT:NS_CLASSICAL_CLAY_LATEX
+    repo: REPO:NS_CLASSICAL_2025
+    sha: d853205ed10e33279327b759adc3135bcd2a262c
+    timestamp_utc: 2025-11-25
+    message: "Clay-compatible NS documentation/LaTeX/code"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/d853205ed10e33279327b759adc3135bcd2a262c
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_CLASSICAL_PR1_MERGE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: 24a5687d52fd58de406c72ef7a9048f767086d11
+    timestamp_utc: 2025-11-25
+    message: "Merge PR #1 — classical NS documentation"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/24a5687d52fd58de406c72ef7a9048f767086d11
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_CLASSICAL_MAINTHEOREM_PY
+    repo: REPO:NS_CLASSICAL_2025
+    sha: be02b6d0e080620eb948623734372699d84039f4
+    timestamp_utc: 2025-11-25
+    message: "MainTheorem.py, Clay theorem on T^3"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/be02b6d0e080620eb948623734372699d84039f4
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_CLASSICAL_PR4_T3_MERGE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: 139f1c6be12cf43baf8e072031340c2767023467
+    timestamp_utc: 2025-11-25
+    message: "Merge PR #4 — NS statement on T^3"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/139f1c6be12cf43baf8e072031340c2767023467
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_CLASSICAL_PR3_MAINTHEOREM
+    repo: REPO:NS_CLASSICAL_2025
+    sha: 9b7b16c97a98c5b378deb43571ef89bd57e20765
+    timestamp_utc: 2025-11-25
+    message: "Merge PR #3 — MainTheorem.py"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/9b7b16c97a98c5b378deb43571ef89bd57e20765
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:NS_CLASSICAL_LEAN_COQ_ISABELLE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: cca881c665f67c67d96a4f84371fb51cd9c858a0
+    timestamp_utc: 2025-11-25
+    message: "Lean + Coq + Isabelle NS formalizations"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/cca881c665f67c67d96a4f84371fb51cd9c858a0
+    verification: unverified_by_current_audit
+    evidentiary_weight: PROOF_ASSISTANT_FORMALIZATION_2025
+
+  - id: COMMIT:NS_CLASSICAL_PR5_LEAN_AGDA
+    repo: REPO:NS_CLASSICAL_2025
+    sha: dc55830546d50d66ccf602250c16c5c366dd4a30
+    timestamp_utc: 2025-11-25
+    message: "Merge PR #5 — Lean/Coq/Isabelle/Agda"
+    url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/dc55830546d50d66ccf602250c16c5c366dd4a30
+    verification: unverified_by_current_audit
+    evidentiary_weight: PROOF_ASSISTANT_FORMALIZATION_2025
+
+  # 867045e already in file as COMMIT:NS_CLASSICAL_MERGE — verified_valid
+
+  # ── ShantiDraconis/Millennium  (2025-12-02 .. 2025-12-19) ─────────────────
+
+  - id: COMMIT:MILLENNIUM_RH_NS_DELTA_1
+    repo: REPO:MILLENNIUM
+    sha: 17686f99ff0b79711cbd3d2eac39261ac5d9c6c1
+    timestamp_utc: 2025-12-02
+    message: "Riemann–NS Δ Framework"
+    url: https://github.com/ShantiDraconis/Millennium/commit/17686f99ff0b79711cbd3d2eac39261ac5d9c6c1
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_DELTA_RH_NS
+    repo: REPO:MILLENNIUM
+    sha: 09a64f76154950d1180482a3aeca1d3259b64554
+    timestamp_utc: 2025-12-02
+    message: "Δ Framework RH–NS"
+    url: https://github.com/ShantiDraconis/Millennium/commit/09a64f76154950d1180482a3aeca1d3259b64554
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_MATH_DOC_NS
+    repo: REPO:MILLENNIUM
+    sha: 2fb3dd10a95eda9b2be6c73b7f37faba8b47fd14
+    timestamp_utc: 2025-12-02
+    message: "Mathematical documentation incl. NS"
+    url: https://github.com/ShantiDraconis/Millennium/commit/2fb3dd10a95eda9b2be6c73b7f37faba8b47fd14
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_FINAL_FORMULAS_MERGE
+    repo: REPO:MILLENNIUM
+    sha: eb1d18947d3ea9096e04597c0d521a5f5c8822fc
+    timestamp_utc: 2025-12-03
+    message: "Merge final formulas RH/NS"
+    url: https://github.com/ShantiDraconis/Millennium/commit/eb1d18947d3ea9096e04597c0d521a5f5c8822fc
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR35
+    repo: REPO:MILLENNIUM
+    sha: 6bb2de92f25710d176d61abbfd2618f675571f3b
+    timestamp_utc: 2025-12-03
+    message: "Merge PR #35"
+    url: https://github.com/ShantiDraconis/Millennium/commit/6bb2de92f25710d176d61abbfd2618f675571f3b
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_RH_NS_CONTRAST
+    repo: REPO:MILLENNIUM
+    sha: ba13ed25f0666972517605c85d089b4e22593669
+    timestamp_utc: 2025-12-03
+    message: "RH–NS contrast merge"
+    url: https://github.com/ShantiDraconis/Millennium/commit/ba13ed25f0666972517605c85d089b4e22593669
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR37_DELTA
+    repo: REPO:MILLENNIUM
+    sha: 5b24414d493af377a060e33ba7c8a0451ccaa5bef
+    timestamp_utc: 2025-12-03
+    message: "Merge PR #37 Δ framework"
+    url: https://github.com/ShantiDraconis/Millennium/commit/5b24414d493af377a060eba0b66eaf2b8d045bef
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR36_DELTA_LATEX
+    repo: REPO:MILLENNIUM
+    sha: d2fe5791723f87740417c959c68f4d1aa071f91d
+    timestamp_utc: 2025-12-03
+    message: "Merge PR #36 Δ Framework LaTeX"
+    url: https://github.com/ShantiDraconis/Millennium/commit/d2fe5791723f87740417c959c68f4d1aa071f91d
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_LRE_PROJECTION_OBSTRUCTION
+    repo: REPO:MILLENNIUM
+    sha: 4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    timestamp_utc: 2025-12-18
+    message: "Navier-Stokes LRE projection-obstruction framework"
+    url: https://github.com/ShantiDraconis/Millennium/commit/4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    verification: unverified_by_current_audit
+    evidentiary_weight: PRIMARY_LRE_PROJECTION_ANCHOR
+    formulas_present:
+      - "u = π(u) + R(u)"
+      - "projection-obstruction decomposition"
+
+  - id: COMMIT:MILLENNIUM_NS_README
+    repo: REPO:MILLENNIUM
+    sha: c8614ba00daa5667f20f5ebb59221a1aacbdd574
+    timestamp_utc: 2025-12-18
+    message: "Comprehensive NS README"
+    url: https://github.com/ShantiDraconis/Millennium/commit/c8614ba00daa5667f20f5ebb59221a1aacbdd574
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_LRE_DOSSIER_BARRIER
+    repo: REPO:MILLENNIUM
+    sha: 54a13fedc2149f4368959d5694fd077010684f58
+    timestamp_utc: 2025-12-18
+    message: "LRE dossier + compression barrier"
+    url: https://github.com/ShantiDraconis/Millennium/commit/54a13fedc2149f4368959d5694fd077010684f58
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_NS_LRE_INTEGRATION
+    repo: REPO:MILLENNIUM
+    sha: 93af0514148ada7b69c822d690d589c5a27e0b8b
+    timestamp_utc: 2025-12-18
+    message: "NS LRE integration guide"
+    url: https://github.com/ShantiDraconis/Millennium/commit/93af0514148ada7b69c822d690d589c5a27e0b8b
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_NS_LRE_IMPL_SUMMARY
+    repo: REPO:MILLENNIUM
+    sha: 003eaba057081f262ea40cea0ab698af43109151
+    timestamp_utc: 2025-12-18
+    message: "NS LRE implementation summary"
+    url: https://github.com/ShantiDraconis/Millennium/commit/003eaba057081f262ea40cea0ab698af43109151
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_COMPRESSION_BARRIER_LEAN
+    repo: REPO:MILLENNIUM
+    sha: 5a888677611ec79eb959f368e941699217487c2d
+    timestamp_utc: 2025-12-18
+    message: "Compression Barrier LaTeX + Lean"
+    url: https://github.com/ShantiDraconis/Millennium/commit/5a888677611ec79eb959f368e941699217487c2d
+    verification: unverified_by_current_audit
+    evidentiary_weight: LEAN_FORMALIZATION
+
+  - id: COMMIT:MILLENNIUM_NS_FORMAL_CLOSURE_COMPLETE
+    repo: REPO:MILLENNIUM
+    sha: b9b4768206ee3d817cbbaf35bb7da92dc835c4e1
+    timestamp_utc: 2025-12-18
+    message: "Complete NS formal closure documentation"
+    url: https://github.com/ShantiDraconis/Millennium/commit/b9b4768206ee3d817cbbaf35bb7da92dc835c4e1
+    verification: unverified_by_current_audit
+    evidentiary_weight: PRIMARY_FORMAL_CLOSURE_ANCHOR
+
+  - id: COMMIT:MILLENNIUM_LRE_NS_CLOSURE_COMPLETE
+    repo: REPO:MILLENNIUM
+    sha: 0d601255e51be349a1fd38eacfcbd2fda17ced77
+    timestamp_utc: 2025-12-18
+    message: "Complete formal closure framework LRE-NS"
+    url: https://github.com/ShantiDraconis/Millennium/commit/0d601255e51be349a1fd38eacfcbd2fda17ced77
+    verification: unverified_by_current_audit
+    evidentiary_weight: PRIMARY_FORMAL_CLOSURE_ANCHOR
+
+  - id: COMMIT:MILLENNIUM_CLOSURE_COMPLETION_SUMMARY
+    repo: REPO:MILLENNIUM
+    sha: d1c29035c449cc213ac822afaeb3c213b04da39f
+    timestamp_utc: 2025-12-18
+    message: "Closure completion summary"
+    url: https://github.com/ShantiDraconis/Millennium/commit/d1c29035c449cc213ac822afaeb3c213b04da39f
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR254_LRE_CLOSURE
+    repo: REPO:MILLENNIUM
+    sha: dfa3942f527f54ce92e61c9756052379b56e733e
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #254 — formal LRE-NS closure"
+    url: https://github.com/ShantiDraconis/Millennium/commit/dfa3942f527f54ce92e61c9756052379b56e733e
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR253
+    repo: REPO:MILLENNIUM
+    sha: b7e9fd22fb6ac794589e2ee65aeedf37f56e323e
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #253"
+    url: https://github.com/ShantiDraconis/Millennium/commit/b7e9fd22fb6ac794589e2ee65aeedf37f56e323e
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_FORMAL_CLOSURE_BRANCH_MERGE
+    repo: REPO:MILLENNIUM
+    sha: 38c864e242e357650052051486fddc8473987ea3
+    timestamp_utc: 2025-12-19
+    message: "Formal closure branch merge"
+    url: https://github.com/ShantiDraconis/Millennium/commit/38c864e242e357650052051486fddc8473987ea3
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR255
+    repo: REPO:MILLENNIUM
+    sha: 7dc508e3b1228c28adf04afaafb263d25c17726d
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #255"
+    url: https://github.com/ShantiDraconis/Millennium/commit/7dc508e3b1228c28adf04afaafb263d25c17726d
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_FORMAL_CLOSURE_MERGE
+    repo: REPO:MILLENNIUM
+    sha: d38499d54a3a9610d29271f65e72f3843a6510d5
+    timestamp_utc: 2025-12-19
+    message: "Formal closure merge"
+    url: https://github.com/ShantiDraconis/Millennium/commit/d38499d54a3a9610d29271f65e72f3843a6510d5
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR252_FORMAL_CLOSURE
+    repo: REPO:MILLENNIUM
+    sha: b8b5c433b6f69b5676bdcbb9aa9c282e4af99881
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #252 — Formal Closure"
+    url: https://github.com/ShantiDraconis/Millennium/commit/b8b5c433b6f69b5676bdcbb9aa9c282e4af99881
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR251_CRITICAL_RESIDUAL
+    repo: REPO:MILLENNIUM
+    sha: ce295769703fb8fc5d73e6427c2b9a3bf8ac3ce4
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #251 — critical residual obstruction"
+    url: https://github.com/ShantiDraconis/Millennium/commit/ce295769703fb8fc5d73e6427c2b9a3bf8ac3ce4
+    verification: unverified_by_current_audit
+    evidentiary_weight: CRITICAL_RESIDUAL_OBSTRUCTION_ANCHOR
+
+  - id: COMMIT:MILLENNIUM_PR250_LRE_DOSSIER
+    repo: REPO:MILLENNIUM
+    sha: d2a98075f6fe5d4f01ece3757895fc1dee9360d7
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #250 — LRE dossier"
+    url: https://github.com/ShantiDraconis/Millennium/commit/d2a98075f6fe5d4f01ece3757895fc1dee9360d7
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_DOSSIER_PREP_MERGE
+    repo: REPO:MILLENNIUM
+    sha: eb017b4d41e024ada89d20436cfa8a2c86332769
+    timestamp_utc: 2025-12-19
+    message: "prepare-navier-stokes-dossier merge"
+    url: https://github.com/ShantiDraconis/Millennium/commit/eb017b4d41e024ada89d20436cfa8a2c86332769
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:MILLENNIUM_PR249_LRE_PROJECTION_CLAY
+    repo: REPO:MILLENNIUM
+    sha: 6054851e80b463b3c994fef2acc110983769c309
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #249 — LRE projection-obstruction for Clay NS"
+    url: https://github.com/ShantiDraconis/Millennium/commit/6054851e80b463b3c994fef2acc110983769c309
+    verification: unverified_by_current_audit
+    evidentiary_weight: PRIMARY_PROJECTION_CHAIN_ANCHOR
+    formulas_present:
+      - "u → π(u) → C(u) → Res(u) = u - C(u)"
+      - "high-frequency residual microstructure"
+
+  # ── universal-emergent-logic-  LRE Foundation  (2025-12-19) ───────────────
+
+  - id: COMMIT:UEL_LRE_IMPL
+    repo: REPO:UEL
+    sha: 29e6d1f3a03d39a904fcde7694e3599d8716e8b0
+    timestamp_utc: 2025-12-19
+    message: "Law of Structural Residue implementation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/29e6d1f3a03d39a904fcde7694e3599d8716e8b0
+    verification: unverified_by_current_audit
+    evidentiary_weight: LRE_FOUNDATION_EARLIEST_IN_UEL
+
+  - id: COMMIT:UEL_LRE_DOCS
+    repo: REPO:UEL
+    sha: 294141b0f13a015da92b25880d67a765f7150f14
+    timestamp_utc: 2025-12-19
+    message: "Complete LRE framework docs"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/294141b0f13a015da92b25880d67a765f7150f14
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_COMPLETE_IMPL
+    repo: REPO:UEL
+    sha: 46b2799048a2a6d26f4009969446233833b8a339
+    timestamp_utc: 2025-12-19
+    message: "Complete LRE implementation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/46b2799048a2a6d26f4009969446233833b8a339
+    verification: unverified_by_current_audit
   # --- universal-emergent-logic- commits ---
   # D1: Foundation layer — reported 2025-12-19
   - id: COMMIT:UEL_LSR_IMPL
@@ -89,6 +508,10 @@ commits:
   - id: COMMIT:UEL_LRE_INTEGRATION
     repo: REPO:UEL
     sha: c46ce3f5d1b36939455901d61776ee9c45407493
+    timestamp_utc: 2025-12-19
+    message: "LRE integration structure"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/c46ce3f5d1b36939455901d61776ee9c45407493
+    verification: unverified_by_current_audit
     reported_date: 2025-12-19
     message: LRE integration structure
     layer: D1_foundation
@@ -98,6 +521,10 @@ commits:
   - id: COMMIT:UEL_LRE_SUMMARY
     repo: REPO:UEL
     sha: e91a374fdb5b65efb8d052754290d7523db4cfb2
+    timestamp_utc: 2025-12-19
+    message: "LRE summary"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/e91a374fdb5b65efb8d052754290d7523db4cfb2
+    verification: unverified_by_current_audit
     reported_date: 2025-12-19
     message: LRE summary
     layer: D1_foundation
@@ -107,6 +534,19 @@ commits:
   - id: COMMIT:UEL_LRE_QUICKREF
     repo: REPO:UEL
     sha: ed5168101a8cbba10197c850a83ab80cdbf241ef
+    timestamp_utc: 2025-12-19
+    message: "LRE quick reference"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ed5168101a8cbba10197c850a83ab80cdbf241ef
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_CORE_NS_OPERATORS
+    repo: REPO:UEL
+    sha: f5d070d49557622c7168cd7b354d5d9629ce3fc6
+    timestamp_utc: 2025-12-19
+    message: "LRE core + Navier-Stokes operators"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f5d070d49557622c7168cd7b354d5d9629ce3fc6
+    verification: unverified_by_current_audit
+    evidentiary_weight: NS_OPERATORS_REGISTERED
     reported_date: 2025-12-19
     message: LRE quick reference
     layer: D1_foundation
@@ -125,6 +565,11 @@ commits:
   - id: COMMIT:UEL_LRE_AXIOMS_LEAN
     repo: REPO:UEL
     sha: b457b06584c49554af65b92196860479c33a8276
+    timestamp_utc: 2025-12-19
+    message: "LRE axioms + Lean + applications"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/b457b06584c49554af65b92196860479c33a8276
+    verification: unverified_by_current_audit
+    evidentiary_weight: LEAN_AXIOMS
     reported_date: 2025-12-19
     message: LRE axioms + Lean + applications
     layer: D1_foundation
@@ -134,6 +579,10 @@ commits:
   - id: COMMIT:UEL_LRE_ISABELLE
     repo: REPO:UEL
     sha: 5a6dd104dc6d16de84c608b9fe7112f3169629a8
+    timestamp_utc: 2025-12-19
+    message: "LRE + Isabelle/HOL"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/5a6dd104dc6d16de84c608b9fe7112f3169629a8
+    verification: unverified_by_current_audit
     reported_date: 2025-12-19
     message: LRE + Isabelle/HOL
     layer: D1_foundation
@@ -143,6 +592,10 @@ commits:
   - id: COMMIT:UEL_UIA_LRE_BRIDGE
     repo: REPO:UEL
     sha: 9c298002f8cd5cd46421e9c2bdf21cdfdc797a9b
+    timestamp_utc: 2025-12-19
+    message: "UIA–LRE bridge"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/9c298002f8cd5cd46421e9c2bdf21cdfdc797a9b
+    verification: unverified_by_current_audit
     reported_date: 2025-12-19
     message: UIA-LRE bridge
     layer: D1_foundation
@@ -152,6 +605,166 @@ commits:
   - id: COMMIT:UEL_LRE_CORE_MODULES
     repo: REPO:UEL
     sha: 0853ab6eb7c8f7211de8d8fa4f15872a9bfa2881
+    timestamp_utc: 2025-12-19
+    message: "LRE core modules"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0853ab6eb7c8f7211de8d8fa4f15872a9bfa2881
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_THEORY_FORMALIZATION
+    repo: REPO:UEL
+    sha: c28f84e8e1a47623c3bc0c620f5b0dc26af92bbf
+    timestamp_utc: 2025-12-19
+    message: "LRE theory/formalization/applications"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/c28f84e8e1a47623c3bc0c620f5b0dc26af92bbf
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_FIBER_BUNDLES_CURVATURE
+    repo: REPO:UEL
+    sha: f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
+    timestamp_utc: 2025-12-19
+    message: "Fiber bundles, curvature, closure theorem"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
+    verification: unverified_by_current_audit
+    evidentiary_weight: FIBER_BUNDLE_CURVATURE_CLOSURE_REGISTERED
+    formulas_present:
+      - "fiber bundle curvature"
+      - "closure theorem"
+
+  - id: COMMIT:UEL_LEAN_TOY_MODEL
+    repo: REPO:UEL
+    sha: 33ddf123c25046feb392145b8e0299fd7f0ffbe9
+    timestamp_utc: 2025-12-19
+    message: "Lean formalization + toy model"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/33ddf123c25046feb392145b8e0299fd7f0ffbe9
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR36_QUANTITATIVE_CLOSURE_OBSTRUCTION
+    repo: REPO:UEL
+    sha: 2f0a3d8714cfac4adda138d815d3e57c30086bec
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #36 — quantitative closure obstruction"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2f0a3d8714cfac4adda138d815d3e57c30086bec
+    verification: unverified_by_current_audit
+    evidentiary_weight: QUANTITATIVE_CLOSURE_OBSTRUCTION_ANCHOR
+
+  - id: COMMIT:UEL_PR35_GEOMETRIC_FOUNDATION
+    repo: REPO:UEL
+    sha: fa9c4f3ce26232795e29c3066a1e7a10bcb9748c
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #35 — geometric foundation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/fa9c4f3ce26232795e29c3066a1e7a10bcb9748c
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR33_LEAN_LRE
+    repo: REPO:UEL
+    sha: 15f44698e69cb75c42541d22b35dd9b68d2bbccf
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #33 — Lean LRE"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/15f44698e69cb75c42541d22b35dd9b68d2bbccf
+    verification: unverified_by_current_audit
+
+  # ── UEL  Geometry/Coupling  (2025-12-19) ──────────────────────────────────
+
+  - id: COMMIT:UEL_LRE_QUANTITATIVE_DYNAMICS
+    repo: REPO:UEL
+    sha: f2feb3a3ed3c1e7f42582b78cbb899dbd5fdd9e7
+    timestamp_utc: 2025-12-19
+    message: "LRE quantitative dynamics"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f2feb3a3ed3c1e7f42582b78cbb899dbd5fdd9e7
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_RESIDUE_CURVATURE_HOLONOMY
+    repo: REPO:UEL
+    sha: b6f656254e0933a596613e285cccc06cd316edee
+    timestamp_utc: 2025-12-19
+    message: "Explicit residue, curvature, holonomy"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/b6f656254e0933a596613e285cccc06cd316edee
+    verification: unverified_by_current_audit
+    formulas_present:
+      - "residue"
+      - "curvature"
+      - "holonomy"
+
+  - id: COMMIT:UEL_CURVATURE_THEORY_COUPLING_NS
+    repo: REPO:UEL
+    sha: ce960a1ba8ce7a893d645131d12d1a7ab06eddd9
+    timestamp_utc: 2025-12-19
+    message: "CurvatureTheory + CouplingCurvature + enhanced NS"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ce960a1ba8ce7a893d645131d12d1a7ab06eddd9
+    verification: unverified_by_current_audit
+    evidentiary_weight: COUPLING_CURVATURE_NS_PRIMARY_ANCHOR
+
+  - id: COMMIT:UEL_GEOMETRIC_EVOLUTION_DOC
+    repo: REPO:UEL
+    sha: 90112d62e49ba9a2df89ebdeaf8bbdaddf831ae1
+    timestamp_utc: 2025-12-19
+    message: "Geometric evolution documentation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/90112d62e49ba9a2df89ebdeaf8bbdaddf831ae1
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_GEOMETRIC_EVOLUTION_IMPL
+    repo: REPO:UEL
+    sha: 4a2467c1a87aca5e758ee9792e0fb222f4cd97b0
+    timestamp_utc: 2025-12-19
+    message: "Geometric evolution implementation notes"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/4a2467c1a87aca5e758ee9792e0fb222f4cd97b0
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR37_RESIDUAL_EHRESMANN
+    repo: REPO:UEL
+    sha: 14322ff2e8f38df302c6f2f6b41754db79d5a900
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #37 — residual as Ehresmann curvature"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/14322ff2e8f38df302c6f2f6b41754db79d5a900
+    verification: unverified_by_current_audit
+    evidentiary_weight: PRIMARY_COUPLING_OPERATOR_ANCHOR
+    formulas_present:
+      - "d/dt π(u) = F(π(u)) + K(R(u), π(u))"
+      - "CouplingOperator not factorable by π(u) alone"
+
+  # ── UEL  NS Geometric Decomposition  (2025-12-19 / 2025-12-20) ────────────
+
+  - id: COMMIT:UEL_NS_GEOMETRIC_DECOMP_THEOREM1
+    repo: REPO:UEL
+    sha: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    timestamp_utc: 2025-12-19
+    message: "Complete LRE Theorem 1 + complete NS geometric decomposition"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+    verification: unverified_by_current_audit
+    evidentiary_weight: PRIMARY_NS_GEOMETRIC_DECOMP_ANCHOR
+    formulas_present:
+      - "docs/lre-navier-stokes-geometric.md (creation)"
+      - "C, D, π, R decomposition"
+      - "curvature"
+      - "coupling"
+
+  - id: COMMIT:UEL_NS_CLOSURE_NONLINEAR_FIX
+    repo: REPO:UEL
+    sha: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    timestamp_utc: 2025-12-19
+    message: "Review/fix + clarification nonlinear NS closure"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    verification: unverified_by_current_audit
+    evidentiary_weight: NONLINEAR_CLOSURE_INEQUALITY_ANCHOR
+    formulas_present:
+      - "P_N[(u·∇)u] ≠ (P_N u)·∇"
+      - "docs/lre-navier-stokes-geometric.md (modification)"
+
+  - id: COMMIT:UEL_THEOREM1_DOC
+    repo: REPO:UEL
+    sha: 0ced515a9b52e3776a9ddc4cc12dc8c652c849c9
+    timestamp_utc: 2025-12-19
+    message: "Theorem 1 documentation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0ced515a9b52e3776a9ddc4cc12dc8c652c849c9
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_LRE_CURVATURE_THEORY
+    repo: REPO:UEL
+    sha: e68f81b2ad71eb7cef67ec09971891f2899cd5ce
+    timestamp_utc: 2025-12-19
+    message: "Comprehensive NS LRE curvature theory"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/e68f81b2ad71eb7cef67ec09971891f2899cd5ce
+    verification: unverified_by_current_audit
     reported_date: 2025-12-19
     message: LRE core modules
     layer: D1_foundation
@@ -293,6 +906,44 @@ commits:
   - id: COMMIT:UEL_NS_MODULE_DOCS
     repo: REPO:UEL
     sha: 9cb7e53c6ba996116fbf663756efe8eb638a02a0
+    timestamp_utc: 2025-12-19
+    message: "NS module/docs"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/9cb7e53c6ba996116fbf663756efe8eb638a02a0
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_QUANTITATIVE_OBSTRUCTION
+    repo: REPO:UEL
+    sha: a762e7b76464656236075548343f596ab8bc6815
+    timestamp_utc: 2025-12-19
+    message: "Quantitative Obstruction formalization"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/a762e7b76464656236075548343f596ab8bc6815
+    verification: unverified_by_current_audit
+
+  # ── UEL  Residual Stability  (2025-12-19 / 2025-12-20) ───────────────────
+
+  - id: COMMIT:UEL_NS_RESIDUAL_STABILITY_INEQ_1
+    repo: REPO:UEL
+    sha: 1ed0ded98d26966189fc5936914fd964d42cbd7a
+    timestamp_utc: 2025-12-19
+    message: "NS Residual Stability Inequality"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/1ed0ded98d26966189fc5936914fd964d42cbd7a
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_RESIDUAL_PHASE1_3
+    repo: REPO:UEL
+    sha: 0f3ae4e275068f81f516b45b14289dd1a699e659
+    timestamp_utc: 2025-12-19
+    message: "Phase 1–3 residual stability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0f3ae4e275068f81f516b45b14289dd1a699e659
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_RESIDUAL_STABILITY_INEQ_2
+    repo: REPO:UEL
+    sha: 4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+    timestamp_utc: 2025-12-19
+    message: "Residual Stability Inequality NS"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+    verification: unverified_by_current_audit
     reported_date: UNKNOWN
     message: NS module/docs
     layer: D3_ns_geometric_decomp
@@ -339,6 +990,102 @@ commits:
   - id: COMMIT:UEL_NS_RESIDUAL_COMPREHENSIVE
     repo: REPO:UEL
     sha: abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+    timestamp_utc: 2025-12-19
+    message: "Comprehensive NS residual stability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_RESIDUAL_STABILITY_COMPLETE
+    repo: REPO:UEL
+    sha: 3d4d3e51866e03420e97ff3b21dde2a1fca1cc4d
+    timestamp_utc: 2025-12-19
+    message: "Complete NS Residual Stability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/3d4d3e51866e03420e97ff3b21dde2a1fca1cc4d
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_FORMALIZATION_DOC
+    repo: REPO:UEL
+    sha: a80e27fb85fff2ac8d77cb84c937474be977aa50
+    timestamp_utc: 2025-12-19
+    message: "NS formalization documentation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/a80e27fb85fff2ac8d77cb84c937474be977aa50
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_RESIDUAL_HOLONOMY
+    repo: REPO:UEL
+    sha: 469910d3a18d6a2891525da5f1a1a3dd6ec00799
+    timestamp_utc: 2025-12-19
+    message: "NS residual stability + holonomy"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/469910d3a18d6a2891525da5f1a1a3dd6ec00799
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_META_ODE_RESIDUAL
+    repo: REPO:UEL
+    sha: 507135a16a64116e7baf15154e03dc40740b08bb
+    timestamp_utc: 2025-12-19
+    message: "LRE meta-framework + ODE ResidualStability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/507135a16a64116e7baf15154e03dc40740b08bb
+    verification: unverified_by_current_audit
+    evidentiary_weight: ODE_RESIDUAL_STABILITY_ANCHOR
+
+  - id: COMMIT:UEL_PR52_NS_RESIDUAL
+    repo: REPO:UEL
+    sha: 51644f5f8def81905637b59a8834f18b1192b3b3
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #52 NS residual stability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/51644f5f8def81905637b59a8834f18b1192b3b3
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR53_NS_RESIDUAL_INEQ
+    repo: REPO:UEL
+    sha: 0982941f39312ab0496d0112c796a0539ee76151
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #53 NS residual inequality"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0982941f39312ab0496d0112c796a0539ee76151
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR49_RESIDUAL_STABILITY
+    repo: REPO:UEL
+    sha: 71232a08bd4fa8a6af702c64fb99c4d0360802aa
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #49 Residual Stability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/71232a08bd4fa8a6af702c64fb99c4d0360802aa
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR50_RESIDUAL_STABILITY
+    repo: REPO:UEL
+    sha: 8c35193f7b0bc12efe6416b1fda0291f3734300f
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #50 residual stability"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/8c35193f7b0bc12efe6416b1fda0291f3734300f
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR54_RESIDUAL_LEAN
+    repo: REPO:UEL
+    sha: 203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #54 Residual Stability Lean"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+    verification: unverified_by_current_audit
+    evidentiary_weight: LEAN_RESIDUAL_STABILITY_MERGE
+
+  # ── UEL  NS proof framework  (2025-12-19) ─────────────────────────────────
+
+  - id: COMMIT:UEL_LRE_NS_REFORMULATION
+    repo: REPO:UEL
+    sha: 7696053864cd54d899dc1785a0b6ed98baf46515
+    timestamp_utc: 2025-12-19
+    message: "LRE core ontology + NS reformulation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/7696053864cd54d899dc1785a0b6ed98baf46515
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_KAPPA_REFORMULATION
+    repo: REPO:UEL
+    sha: 2ceba2ac14e9541561d76307af538ed91817c2af
+    timestamp_utc: 2025-12-19
+    message: "NS κ reformulation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2ceba2ac14e9541561d76307af538ed91817c2af
+    verification: unverified_by_current_audit
     reported_date: UNKNOWN
     message: Comprehensive NS residual stability
     layer: D4_residual_stability
@@ -394,6 +1141,149 @@ commits:
   - id: COMMIT:UEL_NS_LRE_PROOF_FRAMEWORK
     repo: REPO:UEL
     sha: ace0acc3abd1067cd63bd94adfeffa962977bc9b
+    timestamp_utc: 2025-12-19
+    message: "Comprehensive NS LRE proof framework"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ace0acc3abd1067cd63bd94adfeffa962977bc9b
+    verification: unverified_by_current_audit
+    evidentiary_weight: COMPREHENSIVE_NS_LRE_PROOF_FRAMEWORK
+
+  - id: COMMIT:UEL_NS_LRE_PROOF_DOC
+    repo: REPO:UEL
+    sha: 2854eaf70a4cf91cef3b936304ae080ec69f4fb1
+    timestamp_utc: 2025-12-19
+    message: "NS LRE proof documentation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2854eaf70a4cf91cef3b936304ae080ec69f4fb1
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_NS_LRE_VISUAL_IMPL
+    repo: REPO:UEL
+    sha: ecf354c0fef4a1add3018ea596b115b7ade05042
+    timestamp_utc: 2025-12-19
+    message: "NS-LRE visual/implementation summary"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ecf354c0fef4a1add3018ea596b115b7ade05042
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR46_COMPLETE_NS_LRE
+    repo: REPO:UEL
+    sha: 693554152c69d7ecaae4924c2fab129d205175b9
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #46 complete NS/LRE application"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/693554152c69d7ecaae4924c2fab129d205175b9
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR42_QUANTITATIVE_NS
+    repo: REPO:UEL
+    sha: ea6fb367528afc70a23f9070f7f4b255c3408914
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #42 Quantitative Obstruction + NS"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ea6fb367528afc70a23f9070f7f4b255c3408914
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR56_NS_BLOWUP_RESIDUAL
+    repo: REPO:UEL
+    sha: 8b1aedfdd81b188b7b3d9ba91c9fbf4f0a47cda1
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #56 NS blow-up via residual curvature"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/8b1aedfdd81b188b7b3d9ba91c9fbf4f0a47cda1
+    verification: unverified_by_current_audit
+    evidentiary_weight: NS_BLOWUP_VIA_RESIDUAL_CURVATURE_ANCHOR
+
+  # ── UEL  LRE-UC / RBC  (2025-12-19) ──────────────────────────────────────
+
+  - id: COMMIT:UEL_LRE_UC_LEAN_AGDA
+    repo: REPO:UEL
+    sha: 8332c7183e6418c7c878270b24a66bbb29e8340d
+    timestamp_utc: 2025-12-19
+    message: "LRE-UC Lean/Coq/Isabelle/Agda"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/8332c7183e6418c7c878270b24a66bbb29e8340d
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_UNIVERSAL_PROBLEM_RBC
+    repo: REPO:UEL
+    sha: 70f3d6353a96a95a1e83c65fbd71039734e3c8b5
+    timestamp_utc: 2025-12-19
+    message: "Universal Problem + RBC"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/70f3d6353a96a95a1e83c65fbd71039734e3c8b5
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_UC_NS_REFORMULATION
+    repo: REPO:UEL
+    sha: b84f70631451b5bacbf521ad912808f3f49b8fe3
+    timestamp_utc: 2025-12-19
+    message: "LRE-UC core + NS reformulation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/b84f70631451b5bacbf521ad912808f3f49b8fe3
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_UC_COMPLETE
+    repo: REPO:UEL
+    sha: 2469b722f971df80c8a524c696f4c77ceb34817b
+    timestamp_utc: 2025-12-19
+    message: "Complete LRE-UC"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2469b722f971df80c8a524c696f4c77ceb34817b
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_LRE_UC_SHELL_MODEL
+    repo: REPO:UEL
+    sha: 32f4028b5282f7d23e1e092a757b9a4a4854aec4
+    timestamp_utc: 2025-12-19
+    message: "LRE-UC + shell-model verification"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/32f4028b5282f7d23e1e092a757b9a4a4854aec4
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR74
+    repo: REPO:UEL
+    sha: 69791af621832f39b9d6a585018436e2494afc2f
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #74"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/69791af621832f39b9d6a585018436e2494afc2f
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR70
+    repo: REPO:UEL
+    sha: 3219b8697a24c03727121bdb0262d25a441f140e
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #70"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/3219b8697a24c03727121bdb0262d25a441f140e
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR69_RBC
+    repo: REPO:UEL
+    sha: 6b408279937acb99be81a9e8970743d50108dd08
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #69 — RBC theorem"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/6b408279937acb99be81a9e8970743d50108dd08
+    verification: unverified_by_current_audit
+
+  - id: COMMIT:UEL_PR67_FOUR_PROOF_LANGUAGES
+    repo: REPO:UEL
+    sha: c3ae2eff9e7d870effc03bc54b8f03b54e4a08c4
+    timestamp_utc: 2025-12-19
+    message: "Merge PR #67, four proof languages"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/c3ae2eff9e7d870effc03bc54b8f03b54e4a08c4
+    verification: unverified_by_current_audit
+    evidentiary_weight: FOUR_PROOF_LANGUAGES_ANCHOR
+
+  - id: COMMIT:UEL_HCS_RBC_OPERATIONAL
+    repo: REPO:UEL
+    sha: 36513742ecf2c3568d6e429689bb2b74d195fd7d
+    timestamp_utc: 2025-12-19
+    message: "HCS-RBC operational implementation"
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/36513742ecf2c3568d6e429689bb2b74d195fd7d
+    verification: unverified_by_current_audit
+
+  # ── External comparator ────────────────────────────────────────────────────
+
+  - id: COMMIT:OPENAI_NS_ANCHOR
+    repo: REPO:OPENAI_NS
+    sha: 8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538
+    timestamp_utc: 2026-09-08
+    message: "(OpenAI NavierStokesAndEuler public anchor)"
+    url: https://github.com/openai/NavierStokesAndEuler/commit/8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538
+    verification: public_record
+    evidentiary_weight: CHRONOLOGICAL_COMPARATOR_ONLY
+    notes: >
+      Proves only that this commit was publicly visible on 2026-09-08.
+      Does NOT prove when internal OpenAI work began.
     reported_date: UNKNOWN
     message: Comprehensive NS LRE proof framework
     layer: D5_proof_framework
