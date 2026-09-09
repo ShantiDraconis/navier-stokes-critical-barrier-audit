@@ -82,9 +82,110 @@ Audit classification: `STRUCTURAL_OVERLAP_STRONG`
 
 Limitation: these components are part of established PDE theory and cannot alone establish exclusive originality.
 
-## 5. August 2026 refinement
+## 5. December 2025 LRE–NS strengthening
 
-### EVIDENCE E4 — 29 August 2026
+### EVIDENCE E4 — 18 December 2025
+
+Repository: `ShantiDraconis/Millennium`  
+Commit: `4af517e3f1ea5d04be1c6bbd8953209fa2139e82`  
+Reported role: projection/closure framework with representative reconstruction and residual language.
+
+Reported chain:
+
+\[
+u \xrightarrow{\pi} d \xrightarrow{\iota} \mathcal C(u)=\iota\pi(u), \qquad \operatorname{Res}(u)=u-\mathcal C(u).
+\]
+
+Audit classification: `STRUCTURAL_STRONG_REFERENCE_REPRESENTATIVE`
+
+### EVIDENCE E5 — 19 December 2025
+
+Repository: `ShantiDraconis/universal-emergent-logic-`  
+Commit: `730aa849b0d76b0202f08b490664aa11c164b2bf`  
+Reported role: complete geometric Navier–Stokes decomposition with reference section and unresolved coupling.
+
+Reported chain:
+
+\[
+\pi(u)=P_Nu=c_0, \qquad R(u)=\|u-P_Nu\|^2, \qquad u=u_N+u_\perp.
+\]
+
+and the projected coupling term
+
+\[
+\mathcal T(u_N,u_\perp)=-P_N\!\left[(u_\perp\cdot\nabla)u_N+(u_N\cdot\nabla)u_\perp+(u_\perp\cdot\nabla)u_\perp\right].
+\]
+
+Audit classification: `STRUCTURAL_STRONG_REFERENCE_SECTION`
+
+### EVIDENCE E6 — 19 December 2025
+
+Repository: `ShantiDraconis/universal-emergent-logic-`  
+Commit: `14322ff2e8f38df302c6f2f6b41754db79d5a900`  
+Reported role: projected dynamics corrected by residual coupling.
+
+\[
+\frac{d}{dt}\pi(u)=F(\pi(u))+K(R(u),\pi(u)).
+\]
+
+Audit classification: `STRUCTURAL_CONTINUOUS_CORRECTION_FOUND`
+
+## 6. Structural chain now documented in the prior corpus
+
+The strongest pre-2026 chain that can now be documented from the audited corpus is:
+
+\[
+u \to \pi(u) \to \text{reference/closure representative} \to \operatorname{Res}(u) \to \text{high-frequency component} \to \mathcal T \to K \to \text{dynamical correction}.
+\]
+
+Parallel chain:
+
+\[
+\text{critical spectral decomposition} \to \text{critical residual} \to \text{Reynolds stress} \to \text{closure defect} \to \text{corrected projected dynamics}.
+\]
+
+This is stronger than a mere shared residual vocabulary.
+
+## 7. Reference section versus exact ReferenceJet
+
+The updated audit must now distinguish two levels:
+
+1. **Found separately in the prior corpus**
+   - `reference section` / `c_0 = P_N u` / `R(c_0)=0`
+   - `critical jets`
+2. **Not yet established as an exact match**
+   - `ReferenceJet`
+   - `CarrierJet`
+
+Correct classification:
+
+- `REFERENCE_SECTION = FOUND`
+- `CRITICAL_JETS = FOUND`
+- `REFERENCEJET = STRUCTURAL_STRONG_PRECURSOR_ONLY`
+- `CARRIERJET = NOT_FOUND`
+
+## 8. Stress-correction mechanism versus iterative hierarchy
+
+The best-supported stress chain is now:
+
+\[
+u_\perp \to R(u) \to K(R) \sim \text{Reynolds stress} \to \text{correction to } \dot u_N.
+\]
+
+So the audit should separate:
+
+- **stress-correction mechanism:** `FOUND (STRUCTURAL)`
+- **iterative stress hierarchy:** `NOT_FOUND`
+
+Likewise, the current corpus supports **continuous correction** but still does not export a discrete iteration of the form
+
+\[
+u_{q+1}=u_q+w_{q+1}.
+\]
+
+## 9. August 2026 refinement
+
+### EVIDENCE E7 — 29 August 2026
 
 Repository: `ShantiDraconis/navier-stokes-critical-L3`  
 Commit: `8dd2e8c74770b30d3a2092b296edde7bbbdb5e81`  
@@ -94,7 +195,7 @@ Establishes repository existence before 8 September 2026.
 
 Caveat: initial commit content may be minimal; do not over-attribute later mathematical sections to that SHA alone.
 
-### EVIDENCE E5 — 30 August 2026
+### EVIDENCE E8 — 30 August 2026
 
 Repository: `ShantiDraconis/navier-stokes-noncircular`  
 Commit: `8f12748eb160b937174825fe3e7bdccf05e8f9af`
@@ -103,20 +204,20 @@ Machine-auditable manuscript scaffold includes critical-space quantities, pressu
 
 Audit classification: `PRE_EXISTING_CRITICAL_SPACE_MACHINE_AUDIT`
 
-## 6. Structural overlap vs distinctive construction
+## 10. Structural overlap vs distinctive construction
 
 Current classification:
 
 - `STRUCTURAL_OVERLAP = STRONG`
 - `DISTINCTIVE_CONSTRUCTION_MATCH = NOT_FOUND`
 
-Searched-but-not-yet-matched distinctive layer includes reference-jet hierarchy and explicit forcing/pressure-tail cancellation machinery.
+Searched-but-not-yet-matched distinctive layer includes named reference/carrier jets, explicit forcing/pressure-tail cancellation machinery, and a discrete correction ladder.
 
-## 7. What may be claimed
+## 11. What may be claimed
 
 Defensible claim: pre-08/09/2026 records document a robust independent structural program for NS singularity/regularity analysis, including critical-space and formal-audit organization.
 
-## 8. What may not yet be claimed
+## 12. What may not yet be claimed
 
 Not established by current evidence:
 
@@ -127,7 +228,7 @@ Not established by current evidence:
 5. prize entitlement,
 6. refutation of external result.
 
-## 9. Central audit conclusion
+## 13. Central audit conclusion
 
 \[
 \text{STRUCTURAL PRIORITY: DOCUMENTED}

@@ -14,6 +14,7 @@ repositories:
   - id: REPO:UNIVERSAL_EMERGENT_LOGIC
     url: https://github.com/ShantiDraconis/universal-emergent-logic-
     visibility: private
+    status: historical_framework
     status: historical_prior_work
     status: historical_framework
     date_status: REPORTED_PENDING_ARCHIVAL_CAPTURE
@@ -25,6 +26,10 @@ repositories:
     url: https://github.com/ShantiDraconis/navier-stokes-noncircular
     visibility: private
     status: historical_prior_work
+  - id: REPO:OPENAI_NS
+    url: https://github.com/openai/NavierStokesAndEuler
+    visibility: public
+    status: external_public_comparator
   - id: REPO:AUDIT_CURRENT
     url: https://github.com/ShantiDraconis/navier-stokes-critical-barrier-audit
     visibility: private

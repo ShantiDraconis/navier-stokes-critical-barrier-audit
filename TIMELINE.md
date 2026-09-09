@@ -19,9 +19,19 @@ Initial NS framework — `millennium-navier-stokes-I`
 SHA: `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f`
 Reported earliest currently logged `millennium-navier-stokes-I` anchor  
 SHA: `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f`  
+Repo: `ShantiDraconis/millennium-navier-stokes-I`  
+Commit URL: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f  
 Status: reported in expanded dossier; pending independent export into this repository
 
 ## 2025-11-25
+Formal Navier-Stokes framework  
+SHA: `63b248dd29f1817c457acdb00e116e2e9b0687cc`  
+Repo: `ShantiDraconis/millennium-navier-stokes-I`
+
+## 2025-11-26
+Classical / functional spaces / Lean-Coq framework  
+SHAs: `53c91d97`, `33adee1c`, `867045e966812b50b2304f0460288cf6449d8221`  
+Repo: `ShantiDraconis/millennium-navier-stokes-classical`
 Formal Navier-Stokes framework + Lean/Coq/Isabelle formalizations  
 SHA: `63b248dd29f1817c457acdb00e116e2e9b0687cc`  
 SHA: `cca881c665f67c67d96a4f84371fb51cd9c858a0` (NS Lean/Coq/Isabelle)  
@@ -130,26 +140,34 @@ SHAs: `3641787e452b737d734f9bba54d234b60a57c5e0`, `11d38e1bef995d2eadc7edf1f2ac0
 ## 2025-12-18 to 2025-12-19
 Reported dense LRE–NS projection / closure / residual cluster across `Millennium` and `universal-emergent-logic-`  
 Representative SHAs: `4af517e3f1ea5d04be1c6bbd8953209fa2139e82`, `6054851e80b463b3c994fef2acc110983769c309`, `14322ff2e8f38df302c6f2f6b41754db79d5a900`, `730aa849b0d76b0202f08b490664aa11c164b2bf`, `f30ef6a9d19af290a8f461d60d70da091d73d6ed`  
-Status: reported in expanded dossier; pending independent export into this repository
+Status: reported in expanded dossier; pending independent export into this repository  
+Key linked artifacts: reference section `c_0 = P_N u`, closure representative `C(u) = ιπ(u)`, projected correction `d/dt π(u) = F + K`, Reynolds-stress / residual-correction language
 
 ## 2026-01-22
+Broader Millennium critical-threshold framework  
+SHAs: `23332179`, `c70b6f72197085ae6ecc3130b75e685028a61d10`  
+Repo: `ShantiDraconis/Millennium`
 Broader `Millennium` critical-threshold and local-global bridge framework  
 SHAs: `23332179`, `c70b6f72197085ae6ecc3130b75e685028a61d10`
 
 ## 2026-08-29
 Critical-L3 repository  
-SHA: `8dd2e8c74770b30d3a2092b296edde7bbbdb5e81`
+SHA: `8dd2e8c74770b30d3a2092b296edde7bbbdb5e81`  
+Repo: `ShantiDraconis/navier-stokes-critical-L3`
 
 ## 2026-08-30
 Machine-auditable Navier-Stokes manuscript  
-SHAs: `8647334`, `8f12748eb160b937174825fe3e7bdccf05e8f9af`
+SHAs: `8647334`, `8f12748eb160b937174825fe3e7bdccf05e8f9af`  
+Repo: `ShantiDraconis/navier-stokes-noncircular`
 
 ## 2026-08-30
 ESS/JHTDB conditional framework version 1.0
 
 ## 2026-09-08
-External OpenAI proposed Navier-Stokes result
-Public anchor SHA: `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538`
+External OpenAI proposed Navier-Stokes result  
+SHA: `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538`  
+Repo: `openai/NavierStokesAndEuler`  
+Commit URL: https://github.com/openai/NavierStokesAndEuler/commit/8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538
 
 ## 2026-09-08 or later
 Current critical-barrier audit repository
