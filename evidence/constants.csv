@@ -1,0 +1,21 @@
+name,value,unit,source,notes
+c,2.99792458e8,m/s,NIST CODATA 2018,exact
+hbar,1.054571817e-34,J·s,NIST CODATA 2018,exact
+G,6.67430e-11,m³/(kg·s²),NIST CODATA 2018,
+l_P,1.61626e-35,m,NIST CODATA 2018,l_P = sqrt(hbar G / c^3)
+M_P_kg,2.17643e-8,kg,NIST CODATA 2018,M_P = sqrt(hbar c / G)
+M_P_GeV,1.22090e19,GeV,NIST CODATA 2018,conventional Planck mass
+M_Pbar_GeV,2.43532e18,GeV,derived,reduced Planck mass = M_P / sqrt(8 pi)
+J_per_GeV,1.602176634e-10,J,NIST CODATA 2018,exact by definition since 2019 SI revision
+Mpc_m,3.0856775814913673e22,m,IAU,1 Mpc in metres
+H0,67.4,km/s/Mpc,Planck 2018 arXiv:1807.06209,±0.5 km/s/Mpc
+Omega_m,0.315,dimensionless,Planck 2018 arXiv:1807.06209,±0.007
+omega_c,0.120,dimensionless,Planck 2018 arXiv:1807.06209,Omega_c h^2; ±0.001
+omega_b,0.0224,dimensionless,Planck 2018 arXiv:1807.06209,Omega_b h^2; ±0.0001
+h,0.674,dimensionless,derived,h = H0 / (100 km/s/Mpc)
+Omega_Lambda,0.685,dimensionless,derived,1 - Omega_m (flat Universe)
+m_H_GeV,125.20,GeV,PDG 2025,±0.11 GeV; Higgs boson mass
+v_GeV,246.22,GeV,PDG / EW precision,electroweak vev
+Lambda_cc,1.09e-52,m^-2,Planck 2018 derived,cosmological constant in SI
+Lambda_lP2,2.85e-122,dimensionless,derived,Lambda * l_P^2; Padmanabhan notation ~10^-123
+R_Pbar,1.40e120,dimensionless,derived,M_Pbar^4 / rho_Lambda; Formulation A
