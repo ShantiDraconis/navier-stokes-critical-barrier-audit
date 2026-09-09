@@ -24,7 +24,10 @@ files:
     title: local-global bridge notes (smooth compact data -> blow-up branch)
     repo: REPO:MILLENNIUM
     path: problems/NavierStokes/local-global-bridge.md
+    repo_url: https://github.com/ShantiDraconis/Millennium
     reference_commit: c70b6f72197085ae6ecc3130b75e685028a61d10
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/c70b6f72197085ae6ecc3130b75e685028a61d10
+    file_url: https://github.com/ShantiDraconis/Millennium/blob/c70b6f72197085ae6ecc3130b75e685028a61d10/problems/NavierStokes/local-global-bridge.md
     modified_date_utc: 2025-12-04T18:43:53Z
     verification_status: REPORTED_PENDING_LINE_EXPORT
 
@@ -32,7 +35,23 @@ files:
     title: methods stack notes (scaling + concentration-compactness + profile decomposition + Liouville)
     repo: REPO:MILLENNIUM
     path: docs/universal-tree/05-methods.md
+    repo_url: https://github.com/ShantiDraconis/Millennium
     reference_commit: c70b6f72197085ae6ecc3130b75e685028a61d10
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/c70b6f72197085ae6ecc3130b75e685028a61d10
+    file_url: https://github.com/ShantiDraconis/Millennium/blob/c70b6f72197085ae6ecc3130b75e685028a61d10/docs/universal-tree/05-methods.md
     modified_date_utc: UNKNOWN
     verification_status: REPORTED_PENDING_LINE_EXPORT
 
+  - id: FILE:UEL_LRE_NS_GEOMETRIC
+    title: lre-navier-stokes geometric decomposition and coupling-hypothesis notes
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    path: docs/lre-navier-stokes-geometric.md
+    repo_url: https://github.com/ShantiDraconis/universal-emergent-logic-
+    reference_commit: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+    file_url: https://github.com/ShantiDraconis/universal-emergent-logic-/blob/730aa849b0d76b0202f08b490664aa11c164b2bf/docs/lre-navier-stokes-geometric.md
+    revised_by_commit: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    revised_commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    revised_file_url: https://github.com/ShantiDraconis/universal-emergent-logic-/blob/f30ef6a9d19af290a8f461d60d70da091d73d6ed/docs/lre-navier-stokes-geometric.md
+    modified_date_utc: 2025-12-19T17:17:00Z
+    verification_status: REPORTED_WITH_ORIGINAL_COMMIT_AND_FILE_URL
