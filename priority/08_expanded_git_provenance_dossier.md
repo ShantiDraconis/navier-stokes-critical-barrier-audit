@@ -688,3 +688,61 @@ which introduces `π:X→ℝ²`, `R:X→ℝ`, and the compression barrier.
 
 See `audit/15_correction_architecture_comparison.md` for the full ranked
 structural comparison against the OpenAI correction-cycle architecture.
+
+## Direct-link appendix for the new high-value structural anchors
+
+| Repository | SHA | Commit URL | Reported structural role |
+| --- | --- | --- | --- |
+| `ShantiDraconis/millennium-navier-stokes-I` | `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f` | https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f | earliest currently logged collapse-framework anchor |
+| `ShantiDraconis/Millennium` | `4af517e3f1ea5d04be1c6bbd8953209fa2139e82` | https://github.com/ShantiDraconis/Millennium/commit/4af517e3f1ea5d04be1c6bbd8953209fa2139e82 | closure representative `C(u)=ιπ(u)` and defect `Res(u)=u-C(u)` |
+| `ShantiDraconis/Millennium` | `6054851e80b463b3c994fef2acc110983769c309` | https://github.com/ShantiDraconis/Millennium/commit/6054851e80b463b3c994fef2acc110983769c309 | merge anchor for the LRE projection-obstruction package |
+| `ShantiDraconis/universal-emergent-logic-` | `14322ff2e8f38df302c6f2f6b41754db79d5a900` | https://github.com/ShantiDraconis/universal-emergent-logic-/commit/14322ff2e8f38df302c6f2f6b41754db79d5a900 | projected evolution law `d/dt π(u)=F(π(u))+K(R(u),π(u))` |
+| `ShantiDraconis/universal-emergent-logic-` | `730aa849b0d76b0202f08b490664aa11c164b2bf` | https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf | reference section `c_0=P_Nu`, unresolved energy, and residual coupling |
+| `ShantiDraconis/universal-emergent-logic-` | `f30ef6a9d19af290a8f461d60d70da091d73d6ed` | https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed | Reynolds-stress and nonlinear-closure clarification in the reported corpus |
+| `ShantiDraconis/universal-emergent-logic-` | `507135a16a64116e7baf15154e03dc40740b08bb` | https://github.com/ShantiDraconis/universal-emergent-logic-/commit/507135a16a64116e7baf15154e03dc40740b08bb | residual stability and anti-cancellation branch |
+| `openai/NavierStokesAndEuler` | `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538` | https://github.com/openai/NavierStokesAndEuler/commit/8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538 | public comparator anchor on 2026-09-08 |
+
+## Structural-equivalence detail added by this audit pass
+
+### Reference / closure / residual architecture
+
+Two independently reported pre-2026 chains now matter:
+
+1. `Millennium` closure reconstruction:
+
+\[
+ u \xrightarrow{\pi} d \xrightarrow{\iota} \mathcal C(u)=\iota\pi(u),
+ \qquad \operatorname{Res}(u)=u-\mathcal C(u).
+\]
+
+2. `universal-emergent-logic-` geometric decomposition:
+
+\[
+\pi(u)=P_Nu=c_0,
+\qquad R(u)=\|u-P_Nu\|^2,
+\qquad u=u_N+u_\perp.
+\]
+
+Together they support a prior **reference/resolved state + unresolved defect** architecture.
+
+### Stress / correction architecture
+
+The reported corpus also supports:
+
+\[
+R(u) \to K(R,d) \to \text{Reynolds stress} \to \text{dynamical correction}.
+\]
+
+This is strong enough to upgrade the audit wording from “stress hierarchy not found” to:
+
+- **stress-correction mechanism found**,
+- **iterative stress hierarchy not found**.
+
+### Reference section plus jets
+
+The reported corpus now contains both:
+
+- a **reference section** `c_0 = P_N u`, and
+- **critical jets**.
+
+That combination is a strong structural precursor to a later `ReferenceJet`-type object, but it is still not an exact named jet correspondence.

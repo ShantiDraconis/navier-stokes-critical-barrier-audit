@@ -38,6 +38,17 @@ MovingMomentBounds / moment repair:
 
 Engineered forcing cancellation:
 **NOT ESTABLISHED**
+Stress-correction mechanism status:
+**FOUND (STRUCTURAL, PRE-2026)**
+
+Iterative correction hierarchy status:
+**NOT FOUND**
+
+Reference section + critical jets status:
+**FOUND SEPARATELY**
+
+Exact ReferenceJet / CarrierJet status:
+**NOT FOUND**
 
 Poincaré Mean Closure:
 **CONJECTURAL**
