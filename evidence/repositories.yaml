@@ -11,6 +11,10 @@ repositories:
     url: https://github.com/ShantiDraconis/Millennium
     visibility: private
     status: historical_framework
+  - id: REPO:UNIVERSAL_EMERGENT_LOGIC
+    url: https://github.com/ShantiDraconis/universal-emergent-logic-
+    visibility: private
+    status: historical_prior_work
   - id: REPO:CRITICAL_L3
     url: https://github.com/ShantiDraconis/navier-stokes-critical-L3
     visibility: private

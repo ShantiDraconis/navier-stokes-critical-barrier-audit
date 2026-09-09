@@ -1,9 +1,50 @@
 commits:
+  - id: COMMIT:NS_I_2025_11_23_SBFE_COLLAPSE
+    repo: REPO:NS_I_2025
+    sha: 64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f
+    timestamp_utc: 2025-11-23T02:27:00Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f
+    summary: SBFE/I collapse analysis
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:NS_I_2025_11_25_I_COLLAPSE_LATEX
+    repo: REPO:NS_I_2025
+    sha: 777d58e6f1eda3872a809492183ce432ead4f030
+    timestamp_utc: 2025-11-25T04:14:00Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/777d58e6f1eda3872a809492183ce432ead4f030
+    summary: I-collapse plus LaTeX plus Python
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:NS_I_2025_11_25_CONSTANT_I
+    repo: REPO:NS_I_2025
+    sha: 1cd176fa02d0827cff24f61cfc27dbda21109c25
+    timestamp_utc: 2025-11-25T04:19:00Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/1cd176fa02d0827cff24f61cfc27dbda21109c25
+    summary: 0/0 Constant I and collapse framework
+    verification: reported_with_original_commit_url
+
   - id: COMMIT:NS_I_2025_11_25
     repo: REPO:NS_I_2025
     sha: 63b248dd29f1817c457acdb00e116e2e9b0687cc
     timestamp_utc: 2025-11-25T15:47:20Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/63b248dd29f1817c457acdb00e116e2e9b0687cc
     verification: verified_valid
+
+  - id: COMMIT:NS_CLASSICAL_2025_11_25_CLAY_DOCS
+    repo: REPO:NS_CLASSICAL_2025
+    sha: d853205ed10e33279327b759adc3135bcd2a262c
+    timestamp_utc: 2025-11-25T06:34:00Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/d853205ed10e33279327b759adc3135bcd2a262c
+    summary: Documentation, LaTeX, and Clay-compatible code
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:NS_CLASSICAL_2025_11_25_LEAN_COQ_ISABELLE
+    repo: REPO:NS_CLASSICAL_2025
+    sha: cca881c665f67c67d96a4f84371fb51cd9c858a0
+    timestamp_utc: 2025-11-25T21:04:00Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/cca881c665f67c67d96a4f84371fb51cd9c858a0
+    summary: Lean, Coq, and Isabelle Navier-Stokes formalization
+    verification: reported_with_original_commit_url
 
   - id: COMMIT:NS_CLASSICAL_FRAMEWORK
     repo: REPO:NS_CLASSICAL_2025
@@ -23,7 +64,145 @@ commits:
     repo: REPO:NS_CLASSICAL_2025
     sha: 867045e966812b50b2304f0460288cf6449d8221
     timestamp_utc: 2025-11-26T09:35:34Z
+    commit_url: https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/867045e966812b50b2304f0460288cf6449d8221
+    summary: Functional spaces Navier-Stokes merge anchor
     verification: verified_valid
+
+  - id: COMMIT:MILLENNIUM_2025_12_18_LRE_PROJECTION
+    repo: REPO:MILLENNIUM
+    sha: 4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    timestamp_utc: 2025-12-18T20:25:00Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    summary: LRE projection-obstruction Navier-Stokes
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:MILLENNIUM_2025_12_18_COMPRESSION_BARRIER
+    repo: REPO:MILLENNIUM
+    sha: 54a13fedc2149f4368959d5694fd077010684f58
+    timestamp_utc: 2025-12-18T20:49:00Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/54a13fedc2149f4368959d5694fd077010684f58
+    summary: Compression barrier
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:MILLENNIUM_2025_12_18_COMPRESSION_BARRIER_LEAN
+    repo: REPO:MILLENNIUM
+    sha: 5a888677611ec79eb959f368e941699217487c2d
+    timestamp_utc: 2025-12-18T20:55:00Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/5a888677611ec79eb959f368e941699217487c2d
+    summary: Compression barrier plus Lean
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:MILLENNIUM_2025_12_18_FORMAL_CLOSURE
+    repo: REPO:MILLENNIUM
+    sha: b9b4768206ee3d817cbbaf35bb7da92dc835c4e1
+    timestamp_utc: 2025-12-18T21:03:00Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/b9b4768206ee3d817cbbaf35bb7da92dc835c4e1
+    summary: Formal closure Navier-Stokes
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:MILLENNIUM_2025_12_18_COMPLETE_FORMAL_CLOSURE
+    repo: REPO:MILLENNIUM
+    sha: 0d601255e51be349a1fd38eacfcbd2fda17ced77
+    timestamp_utc: 2025-12-18T23:03:00Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/0d601255e51be349a1fd38eacfcbd2fda17ced77
+    summary: Complete formal closure LRE-NS
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:MILLENNIUM_2025_12_19_MERGE_PR_249
+    repo: REPO:MILLENNIUM
+    sha: 6054851e80b463b3c994fef2acc110983769c309
+    timestamp_utc: 2025-12-19T03:17:00Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/6054851e80b463b3c994fef2acc110983769c309
+    pr_url: https://github.com/ShantiDraconis/Millennium/pull/249
+    summary: Merge PR #249 projection-obstruction Navier-Stokes
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_LRE_CORE
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: f5d070d49557622c7168cd7b354d5d9629ce3fc6
+    timestamp_utc: 2025-12-19T13:35:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f5d070d49557622c7168cd7b354d5d9629ce3fc6
+    summary: LRE core plus Navier-Stokes operators
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_GEOMETRIC_DECOMP
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    timestamp_utc: 2025-12-19T17:17:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+    relevant_file: docs/lre-navier-stokes-geometric.md
+    file_url: https://github.com/ShantiDraconis/universal-emergent-logic-/blob/730aa849b0d76b0202f08b490664aa11c164b2bf/docs/lre-navier-stokes-geometric.md
+    summary: Geometric decomposition plus coupling hypothesis
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_GEOMETRIC_REVIEW
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    timestamp_utc: 2025-12-19T17:22:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    relevant_file: docs/lre-navier-stokes-geometric.md
+    file_url: https://github.com/ShantiDraconis/universal-emergent-logic-/blob/f30ef6a9d19af290a8f461d60d70da091d73d6ed/docs/lre-navier-stokes-geometric.md
+    summary: Revision of the geometric decomposition file with non-closure inequality
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_RSI
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 1ed0ded98d26966189fc5936914fd964d42cbd7a
+    timestamp_utc: 2025-12-19T17:43:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/1ed0ded98d26966189fc5936914fd964d42cbd7a
+    summary: Residual Stability Inequality
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_RESIDUAL_PHASES
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 0f3ae4e275068f81f516b45b14289dd1a699e659
+    timestamp_utc: 2025-12-19T17:50:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0f3ae4e275068f81f516b45b14289dd1a699e659
+    summary: Residual stability phases
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_NS_RESIDUAL_STABILITY
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+    timestamp_utc: 2025-12-19T17:54:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+    summary: Navier-Stokes residual stability
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_COMPREHENSIVE_RESIDUAL
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+    timestamp_utc: 2025-12-19T17:55:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+    summary: Comprehensive residual-stability framework
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_19_NS_PROOF_FRAMEWORK
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: ace0acc3abd1067cd63bd94adfeffa962977bc9b
+    timestamp_utc: 2025-12-19T20:23:00Z
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ace0acc3abd1067cd63bd94adfeffa962977bc9b
+    summary: LRE Navier-Stokes proof framework
+    verification: reported_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_20_MERGE_GEOMETRIC
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 693554152c69d7ecaae4924c2fab129d205175b9
+    timestamp_utc: 2025-12-20
+    timestamp_precision: day_only_reported
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/693554152c69d7ecaae4924c2fab129d205175b9
+    summary: Merge complete Navier-Stokes/LRE geometric application
+    verification: reported_date_only_with_original_commit_url
+
+  - id: COMMIT:UEL_2025_12_20_MERGE_PR_54
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+    timestamp_utc: 2025-12-20
+    timestamp_precision: day_only_reported
+    commit_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+    pr_url: https://github.com/ShantiDraconis/universal-emergent-logic-/pull/54
+    summary: Merge PR #54 residual stability Lean
+    verification: reported_date_only_with_original_commit_url
 
   - id: COMMIT:MILLENNIUM_SENSOR
     repo: REPO:MILLENNIUM
@@ -36,12 +215,14 @@ commits:
     repo: REPO:MILLENNIUM
     sha: c70b6f72197085ae6ecc3130b75e685028a61d10
     timestamp_utc: 2026-01-22T07:55:11Z
+    commit_url: https://github.com/ShantiDraconis/Millennium/commit/c70b6f72197085ae6ecc3130b75e685028a61d10
     verification: verified_valid
 
   - id: COMMIT:CRITICAL_L3_INITIAL
     repo: REPO:CRITICAL_L3
     sha: 8dd2e8c74770b30d3a2092b296edde7bbbdb5e81
     timestamp_utc: 2026-08-29T21:04:51Z
+    commit_url: https://github.com/ShantiDraconis/navier-stokes-critical-L3/commit/8dd2e8c74770b30d3a2092b296edde7bbbdb5e81
     verification: verified_valid
 
   - id: COMMIT:NONCIRCULAR_FIX
@@ -55,4 +236,5 @@ commits:
     repo: REPO:NONCIRCULAR
     sha: 8f12748eb160b937174825fe3e7bdccf05e8f9af
     timestamp_utc: 2026-08-30T11:10:45Z
+    commit_url: https://github.com/ShantiDraconis/navier-stokes-noncircular/commit/8f12748eb160b937174825fe3e7bdccf05e8f9af
     verification: verified_valid
