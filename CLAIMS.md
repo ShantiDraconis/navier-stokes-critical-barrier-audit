@@ -29,6 +29,8 @@ Use `python/claim_status.py` to validate status assignments and reference requir
 
 ## Supplemental structural-priority claims (forensic taxonomy)
 
+This supplemental YAML block uses a separate forensic taxonomy (`ESTABLISHED`, `SUPPORTED`, `NOT_ESTABLISHED`) and is descriptive only; `python/claim_status.py` validates only the `CLAIM-*` Markdown table rows above.
+
 ```yaml
 claims:
   - id: priority-collapse-framework
@@ -128,4 +130,3 @@ claims:
       The later OpenAI construction was derived from Fagliari's work.
     status: NOT_ESTABLISHED
 ```
-
