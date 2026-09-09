@@ -6,6 +6,7 @@
 - Current evidence does **not** establish access, copying, or causal derivation.
 - The distinctive construction layer remains **NOT FOUND** in the audited prior work.
 - The expanded dossier in `priority/08_expanded_git_provenance_dossier.md` materially strengthens the chronology and structural-overlap record, but its newly added anchors should still be separated into verified versus reported tiers.
+- For the ordered projection → representative → residual → carrier/jet → coupling → correction chain, see `audit/15_projection_chain_audit_map.md`.
 
 ## Exact OpenAI locations
 
