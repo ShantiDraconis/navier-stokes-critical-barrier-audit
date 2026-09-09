@@ -57,7 +57,7 @@ commits:
     timestamp_utc: 2026-08-30T11:10:45Z
     verification: verified_valid
 
-  # ── File-level anchors reported from path-history queries ──────────────────
+  # ── File-level Millennium anchors from path-history queries ─────────────────
   # Tier: reported (Tier-2) — confirmed by path-history API response; pending
   # independent diff/tree export for Tier-1 elevation.
 
@@ -101,6 +101,7 @@ commits:
     reported_content: >
       Revision of latex/lre_ns_formal_closure.tex. Second commit in path history.
     verification: reported_tier2
+    url: https://github.com/ShantiDraconis/Millennium/commit/63cc2b2180b9fc9b68e2b1c69d4fc0cf8bd3d169
 
   - id: COMMIT:MILLENNIUM_LRE_SUMMARY_CRITICAL_JETS
     repo: REPO:MILLENNIUM
@@ -113,57 +114,478 @@ commits:
     verification: reported_tier2
     url: https://github.com/ShantiDraconis/Millennium/commit/4cdb6a61ae7a9189eab551b1099895578a8fbb56
 
-  - id: COMMIT:UEL_COUPLING_OPERATOR_FIRST
-    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+  # --- universal-emergent-logic- commits ---
+  # D1: Foundation layer — reported 2025-12-19
+  - id: COMMIT:UEL_LSR_IMPL
+    repo: REPO:UEL
+    sha: 29e6d1f3a03d39a904fcde7694e3599d8716e8b0
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: Law of Structural Residue implementation
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/29e6d1f3a03d39a904fcde7694e3599d8716e8b0
+
+  - id: COMMIT:UEL_LRE_FRAMEWORK_DOCS
+    repo: REPO:UEL
+    sha: 294141b0f13a015da92b25880d67a765f7150f14
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: Complete LRE framework docs
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/294141b0f13a015da92b25880d67a765f7150f14
+
+  - id: COMMIT:UEL_LRE_IMPLEMENTATION
+    repo: REPO:UEL
+    sha: 46b2799048a2a6d26f4009969446233833b8a339
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: Complete LRE implementation
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/46b2799048a2a6d26f4009969446233833b8a339
+
+  - id: COMMIT:UEL_LRE_INTEGRATION
+    repo: REPO:UEL
+    sha: c46ce3f5d1b36939455901d61776ee9c45407493
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE integration structure
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/c46ce3f5d1b36939455901d61776ee9c45407493
+
+  - id: COMMIT:UEL_LRE_SUMMARY
+    repo: REPO:UEL
+    sha: e91a374fdb5b65efb8d052754290d7523db4cfb2
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE summary
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/e91a374fdb5b65efb8d052754290d7523db4cfb2
+
+  - id: COMMIT:UEL_LRE_QUICKREF
+    repo: REPO:UEL
+    sha: ed5168101a8cbba10197c850a83ab80cdbf241ef
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE quick reference
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ed5168101a8cbba10197c850a83ab80cdbf241ef
+
+  - id: COMMIT:UEL_LRE_CORE_NS
+    repo: REPO:UEL
+    sha: f5d070d49557622c7168cd7b354d5d9629ce3fc6
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE core + Navier-Stokes operators
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f5d070d49557622c7168cd7b354d5d9629ce3fc6
+
+  - id: COMMIT:UEL_LRE_AXIOMS_LEAN
+    repo: REPO:UEL
+    sha: b457b06584c49554af65b92196860479c33a8276
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE axioms + Lean + applications
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/b457b06584c49554af65b92196860479c33a8276
+
+  - id: COMMIT:UEL_LRE_ISABELLE
+    repo: REPO:UEL
+    sha: 5a6dd104dc6d16de84c608b9fe7112f3169629a8
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE + Isabelle/HOL
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/5a6dd104dc6d16de84c608b9fe7112f3169629a8
+
+  - id: COMMIT:UEL_UIA_LRE_BRIDGE
+    repo: REPO:UEL
+    sha: 9c298002f8cd5cd46421e9c2bdf21cdfdc797a9b
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: UIA-LRE bridge
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/9c298002f8cd5cd46421e9c2bdf21cdfdc797a9b
+
+  - id: COMMIT:UEL_LRE_CORE_MODULES
+    repo: REPO:UEL
+    sha: 0853ab6eb7c8f7211de8d8fa4f15872a9bfa2881
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE core modules
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0853ab6eb7c8f7211de8d8fa4f15872a9bfa2881
+
+  - id: COMMIT:UEL_LRE_THEORY_FORMAL
+    repo: REPO:UEL
+    sha: c28f84e8e1a47623c3bc0c620f5b0dc26af92bbf
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: LRE theory/formalization/applications
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/c28f84e8e1a47623c3bc0c620f5b0dc26af92bbf
+
+  - id: COMMIT:UEL_FIBER_BUNDLES
+    repo: REPO:UEL
     sha: f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
     timestamp_utc: 2025-12-19T13:56:01Z
-    message: Implement LRE geometric foundation: fiber bundles, curvature, and closure theorem
+    reported_date: 2025-12-19
+    message: Fiber bundles, curvature, closure theorem
     reported_content: >
       Introduction of formalization/lean/LRE/CouplingOperator.lean per path history.
       Defines K:ℝ×D→D where K takes the residual magnitude and current observable state
       and produces a correction to the dynamics. Single commit in path history.
-    verification: reported_tier2
-    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f7f414d2ea66fa7a04d4de390f0e9357dfd980ae
 
-  - id: COMMIT:UEL_REFERENCE_SECTION_FIRST
-    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+  - id: COMMIT:UEL_LEAN_TOY
+    repo: REPO:UEL
+    sha: 33ddf123c25046feb392145b8e0299fd7f0ffbe9
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: Lean formalization + toy model
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/33ddf123c25046feb392145b8e0299fd7f0ffbe9
+
+  - id: COMMIT:UEL_MERGE_PR36_CLOSURE
+    repo: REPO:UEL
+    sha: 2f0a3d8714cfac4adda138d815d3e57c30086bec
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: "Merge PR #36 — quantitative closure obstruction"
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2f0a3d8714cfac4adda138d815d3e57c30086bec
+
+  - id: COMMIT:UEL_MERGE_PR35_GEO
+    repo: REPO:UEL
+    sha: fa9c4f3ce26232795e29c3066a1e7a10bcb9748c
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: "Merge PR #35 — geometric foundation"
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/fa9c4f3ce26232795e29c3066a1e7a10bcb9748c
+
+  - id: COMMIT:UEL_MERGE_PR33_LEAN
+    repo: REPO:UEL
+    sha: 15f44698e69cb75c42541d22b35dd9b68d2bbccf
+    timestamp_utc: UNKNOWN
+    reported_date: 2025-12-19
+    message: "Merge PR #33 — Lean LRE"
+    layer: D1_foundation
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/15f44698e69cb75c42541d22b35dd9b68d2bbccf
+
+  # D2: Geometric coupling layer
+  - id: COMMIT:UEL_LRE_QUANT_DYN
+    repo: REPO:UEL
+    sha: f2feb3a3ed3c1e7f42582b78cbb899dbd5fdd9e7
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: LRE quantitative dynamics
+    layer: D2_geometric_coupling
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f2feb3a3ed3c1e7f42582b78cbb899dbd5fdd9e7
+
+  - id: COMMIT:UEL_RESIDUE_CURVATURE
+    repo: REPO:UEL
+    sha: b6f656254e0933a596613e285cccc06cd316edee
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Explicit residue, curvature, holonomy
+    layer: D2_geometric_coupling
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/b6f656254e0933a596613e285cccc06cd316edee
+
+  - id: COMMIT:UEL_CURVATURE_THEORY
+    repo: REPO:UEL
+    sha: ce960a1ba8ce7a893d645131d12d1a7ab06eddd9
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: CurvatureTheory + CouplingCurvature + enhanced NS
+    layer: D2_geometric_coupling
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ce960a1ba8ce7a893d645131d12d1a7ab06eddd9
+
+  - id: COMMIT:UEL_MERGE_PR37_EHRESMANN
+    repo: REPO:UEL
+    sha: 14322ff2e8f38df302c6f2f6b41754db79d5a900
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: "Merge PR #37 — residual as Ehresmann curvature"
+    layer: D2_geometric_coupling
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/14322ff2e8f38df302c6f2f6b41754db79d5a900
+
+  # D3: Geometric Navier-Stokes decomposition — KEY CLUSTER
+  - id: COMMIT:UEL_THEOREM1_NS_DECOMP
+    repo: REPO:UEL
     sha: 730aa849b0d76b0202f08b490664aa11c164b2bf
     timestamp_utc: 2025-12-19T17:17:28Z
-    message: (introduction of docs/lre-navier-stokes-geometric.md per path history)
+    reported_date: UNKNOWN
+    message: "Complete formalization of LRE Theorem 1 and Navier-Stokes application; Add complete Navier-Stokes geometric decomposition"
     reported_content: >
       Introduction of docs/lre-navier-stokes-geometric.md. Contains R(u)=0⟺u∈H_N,
       section "The Reference Section" with c₀∈π⁻¹(d), R(c₀)=0.
-    verification: reported_tier2
-    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+    layer: D3_ns_geometric_decomp
+    verification: github_verified_by_reporter
+    github_verification_note: >
+      SHA, message, and canonical URL confirmed in GitHub commit object.
+      Creates docs/lre-navier-stokes-geometric.md with explicit C,D,pi,R
+      decomposition language and closure obstruction P_N[(u·∇)u] ≠ (P_Nu)·∇(P_Nu).
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
 
-  - id: COMMIT:UEL_REFERENCE_SECTION_REV
-    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+  - id: COMMIT:UEL_NS_NONLINEAR_CLOSURE
+    repo: REPO:UEL
     sha: f30ef6a9d19af290a8f461d60d70da091d73d6ed
     timestamp_utc: 2025-12-19T17:22:45Z
-    message: (revision of docs/lre-navier-stokes-geometric.md)
+    reported_date: UNKNOWN
+    message: Review/fix + clarification nonlinear NS closure
     reported_content: >
       Second commit in path history of docs/lre-navier-stokes-geometric.md.
-    verification: reported_tier2
-    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+    layer: D3_ns_geometric_decomp
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+
+  - id: COMMIT:UEL_THEOREM1_DOCS
+    repo: REPO:UEL
+    sha: 0ced515a9b52e3776a9ddc4cc12dc8c652c849c9
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Theorem 1 documentation
+    layer: D3_ns_geometric_decomp
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0ced515a9b52e3776a9ddc4cc12dc8c652c849c9
+
+  - id: COMMIT:UEL_NS_LRE_CURVATURE
+    repo: REPO:UEL
+    sha: e68f81b2ad71eb7cef67ec09971891f2899cd5ce
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Comprehensive NS LRE curvature theory
+    layer: D3_ns_geometric_decomp
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/e68f81b2ad71eb7cef67ec09971891f2899cd5ce
+
+  - id: COMMIT:UEL_NS_MODULE_DOCS
+    repo: REPO:UEL
+    sha: 9cb7e53c6ba996116fbf663756efe8eb638a02a0
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: NS module/docs
+    layer: D3_ns_geometric_decomp
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/9cb7e53c6ba996116fbf663756efe8eb638a02a0
+
+  - id: COMMIT:UEL_QUANT_OBSTRUCTION
+    repo: REPO:UEL
+    sha: a762e7b76464656236075548343f596ab8bc6815
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Quantitative Obstruction formalization
+    layer: D3_ns_geometric_decomp
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/a762e7b76464656236075548343f596ab8bc6815
+
+  # D4: Residual stability layer
+  - id: COMMIT:UEL_NS_RESIDUAL_STABILITY
+    repo: REPO:UEL
+    sha: 1ed0ded98d26966189fc5936914fd964d42cbd7a
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: NS Residual Stability Inequality
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/1ed0ded98d26966189fc5936914fd964d42cbd7a
+
+  - id: COMMIT:UEL_PHASE123_STABILITY
+    repo: REPO:UEL
+    sha: 0f3ae4e275068f81f516b45b14289dd1a699e659
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Phase 1-3 residual stability
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/0f3ae4e275068f81f516b45b14289dd1a699e659
+
+  - id: COMMIT:UEL_RESIDUAL_STABILITY_INEQ
+    repo: REPO:UEL
+    sha: 4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Residual Stability Inequality NS
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/4cb3cd8ae5d24d5b79825346fb59ed47ff95bc9f
+
+  - id: COMMIT:UEL_NS_RESIDUAL_COMPREHENSIVE
+    repo: REPO:UEL
+    sha: abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Comprehensive NS residual stability
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/abdaa41189864f85d3b9f8c8fec6b3ec4431eab5
+
+  - id: COMMIT:UEL_NS_RESIDUAL_COMPLETE
+    repo: REPO:UEL
+    sha: 3d4d3e51866e03420e97ff3b21dde2a1fca1cc4d
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Complete NS Residual Stability
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/3d4d3e51866e03420e97ff3b21dde2a1fca1cc4d
+
+  - id: COMMIT:UEL_META_ODE_RESIDUAL
+    repo: REPO:UEL
+    sha: 507135a16a64116e7baf15154e03dc40740b08bb
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: LRE meta-framework + ODE ResidualStability
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/507135a16a64116e7baf15154e03dc40740b08bb
+
+  - id: COMMIT:UEL_MERGE_PR54_RESIDUAL_LEAN
+    repo: REPO:UEL
+    sha: 203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: "Merge PR #54 Residual Stability Lean"
+    layer: D4_residual_stability
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/203ce4ff62809fbcf403ee03e89c3bc70ed608ec
+
+  # D5: Proof-framework / reformulation layer
+  - id: COMMIT:UEL_CORE_ONTOLOGY_NS
+    repo: REPO:UEL
+    sha: 7696053864cd54d899dc1785a0b6ed98baf46515
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: LRE core ontology + NS reformulation
+    layer: D5_proof_framework
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/7696053864cd54d899dc1785a0b6ed98baf46515
+
+  - id: COMMIT:UEL_NS_KAPPA_REFORM
+    repo: REPO:UEL
+    sha: 2ceba2ac14e9541561d76307af538ed91817c2af
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: NS kappa reformulation
+    layer: D5_proof_framework
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2ceba2ac14e9541561d76307af538ed91817c2af
+
+  - id: COMMIT:UEL_NS_LRE_PROOF_FRAMEWORK
+    repo: REPO:UEL
+    sha: ace0acc3abd1067cd63bd94adfeffa962977bc9b
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: Comprehensive NS LRE proof framework
+    layer: D5_proof_framework
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/ace0acc3abd1067cd63bd94adfeffa962977bc9b
+
+  - id: COMMIT:UEL_MERGE_PR46_NS_LRE
+    repo: REPO:UEL
+    sha: 693554152c69d7ecaae4924c2fab129d205175b9
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: "Merge PR #46 complete NS/LRE application"
+    layer: D5_proof_framework
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/693554152c69d7ecaae4924c2fab129d205175b9
 
   - id: COMMIT:UEL_PROOF_ARCHITECTURE_FIRST
-    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    repo: REPO:UEL
     sha: 2854eaf70a4cf91cef3b936304ae080ec69f4fb1
     timestamp_utc: 2025-12-19T20:24:44Z
     message: Add comprehensive documentation for Navier-Stokes LRE proof structure
+    layer: D5_proof_framework
     reported_content: >
       Introduction of formalization/lean/LRE/NavierStokes/PROOF_ARCHITECTURE.md per
       path history. Contains additive high-frequency perturbation schema:
       φ_new = φ + εv, P_Λ(v) = 0, P_Λ(φ + εv) = P_Λ(φ). Two fields differ;
       projection is invariant.
     verification: reported_tier2
-    url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2854eaf70a4cf91cef3b936304ae080ec69f4fb1
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2854eaf70a4cf91cef3b936304ae080ec69f4fb1
 
   - id: COMMIT:UEL_PROOF_ARCHITECTURE_REV
-    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    repo: REPO:UEL
     sha: e7f2e95e45ddf5a638e78c58f4a023e7ba7f3003
-    timestamp_utc: 2025-12-20
+    timestamp_utc: UNKNOWN
     message: (revision of PROOF_ARCHITECTURE.md)
+    layer: D5_proof_framework
     reported_content: >
-      Second commit in path history of PROOF_ARCHITECTURE.md. Date: 20/12/2025.
+      Second commit in path history of PROOF_ARCHITECTURE.md. Date reported as 20/12/2025.
     verification: reported_tier2
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/e7f2e95e45ddf5a638e78c58f4a023e7ba7f3003
+
+  # D6: LRE-UC / RBC layer
+  - id: COMMIT:UEL_HCS_RBC
+    repo: REPO:UEL
+    sha: 36513742ecf2c3568d6e429689bb2b74d195fd7d
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: HCS-RBC operational implementation
+    layer: D6_lre_uc_rbc
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/36513742ecf2c3568d6e429689bb2b74d195fd7d
+
+  # Additional commits from problem statement (not yet classified in dossier)
+  - id: COMMIT:UEL_EXTRA_01
+    repo: REPO:UEL
+    sha: 2db96230dd6f99267c17927bac7f767571ae006d
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: UNKNOWN — additional reported anchor
+    layer: UNKNOWN
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/2db96230dd6f99267c17927bac7f767571ae006d
+
+  - id: COMMIT:UEL_EXTRA_02
+    repo: REPO:UEL
+    sha: 89206e4a667745cc7b3f868bac62cfeb11c8d240
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: UNKNOWN — additional reported anchor
+    layer: UNKNOWN
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/89206e4a667745cc7b3f868bac62cfeb11c8d240
+
+  - id: COMMIT:UEL_EXTRA_03
+    repo: REPO:UEL
+    sha: a3ccbf31c08284110b32518060c7d18ac6359f6a
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: UNKNOWN — additional reported anchor
+    layer: UNKNOWN
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/a3ccbf31c08284110b32518060c7d18ac6359f6a
+
+  - id: COMMIT:UEL_EXTRA_04
+    repo: REPO:UEL
+    sha: 3641787e452b737d734f9bba54d234b60a57c5e0
+    timestamp_utc: UNKNOWN
+    reported_date: UNKNOWN
+    message: UNKNOWN — additional reported anchor
+    layer: UNKNOWN
+    verification: reported_pending_archival
+    canonical_url: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/3641787e452b737d734f9bba54d234b60a57c5e0
