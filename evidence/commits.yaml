@@ -25,6 +25,125 @@ commits:
     timestamp_utc: 2025-11-26T09:35:34Z
     verification: verified_valid
 
+  - id: COMMIT:UEL_COUPLING_GENEALOGY
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 730aa849b0d76b0202f08b490664aa11c164b2bf
+    timestamp_utc: UNKNOWN
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: complete NS geometric decomposition; strong adjacent stress/coupling genealogy
+
+  - id: COMMIT:UEL_LRE_GEOMETRIC_EVOLUTION
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: ce960a1ba8ce7a893d645131d12d1a7ab06eddd9
+    timestamp_utc: 2025-12-19T17:04:59Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: residual curvature, coupling curvature, operator K, and NS expansion
+
+  - id: COMMIT:UEL_RESIDUAL_CURVATURE_MERGE
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 14322ff2e8f38df302c6f2f6b41754db79d5a900
+    timestamp_utc: 2025-12-19T22:36:36Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: projected evolution with residual-generated coupling correction
+
+  - id: COMMIT:UEL_LRE_OPERATORS_NS
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: f5d070d49557622c7168cd7b354d5d9629ce3fc6
+    timestamp_utc: UNKNOWN
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: LRE operator layer including Navier-Stokes applications
+
+  - id: COMMIT:UEL_DYNAMIC_GRID_RESIDUAL_CORRECTION
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 3641787e452b737d734f9bba54d234b60a57c5e0
+    timestamp_utc: 2025-12-26T03:23:42Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: explicit field-level evolution corrected by K(R)
+
+  - id: COMMIT:UEL_RBC_CORRECTION_DOCS
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 2db96230dd6f99267c17927bac7f767571ae006d
+    timestamp_utc: UNKNOWN
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: RBC correction documentation; false friend for iterative correction
+
+  - id: COMMIT:UEL_RBC_CORRECTION_SUMMARY
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: 89206e4a667745cc7b3f868bac62cfeb11c8d240
+    timestamp_utc: UNKNOWN
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: RBC correction implementation summary; false friend for iterative correction
+
+  - id: COMMIT:UEL_RBC_MATH_CORRECTION
+    repo: REPO:UNIVERSAL_EMERGENT_LOGIC
+    sha: a3ccbf31c08284110b32518060c7d18ac6359f6a
+    timestamp_utc: UNKNOWN
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: mathematical RBC correction; not an NS iterative update rule
+
+  - id: COMMIT:MILLENNIUM_JET_PROJECTION_OBSTRUCTION
+    repo: REPO:MILLENNIUM
+    sha: 4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+    timestamp_utc: 2025-12-18T20:25:20Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: critical residual/projection framework anchor
+
+  - id: COMMIT:MILLENNIUM_NS_DOCS_CLUSTER
+    repo: REPO:MILLENNIUM
+    sha: c8614ba00daa5667f20f5ebb59221a1aacbdd574
+    timestamp_utc: 2025-12-18T20:27:07Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: Navier-Stokes documentation anchor
+
+  - id: COMMIT:MILLENNIUM_COMPRESSION_BARRIER
+    repo: REPO:MILLENNIUM
+    sha: 54a13fedc2149f4368959d5694fd077010684f58
+    timestamp_utc: 2025-12-18T20:49:42Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: compression barrier anchor
+
+  - id: COMMIT:MILLENNIUM_LRE_IMPLEMENTATION_SUMMARY
+    repo: REPO:MILLENNIUM
+    sha: 003eaba057081f262ea40cea0ab698af43109151
+    timestamp_utc: 2025-12-18T20:52:49Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: NS LRE implementation summary anchor
+
+  - id: COMMIT:MILLENNIUM_LATEX_LEAN_CLUSTER
+    repo: REPO:MILLENNIUM
+    sha: 5a888677611ec79eb959f368e941699217487c2d
+    timestamp_utc: 2025-12-18T20:55:16Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: LaTeX and Lean anchor in the jet-related cluster
+
+  - id: COMMIT:MILLENNIUM_FORMAL_CLOSURE
+    repo: REPO:MILLENNIUM
+    sha: b9b4768206ee3d817cbbaf35bb7da92dc835c4e1
+    timestamp_utc: 2025-12-18T21:03:07Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: formal closure anchor
+
+  - id: COMMIT:MILLENNIUM_COMPLETE_FORMAL_CLOSURE
+    repo: REPO:MILLENNIUM
+    sha: 0d601255e51be349a1fd38eacfcbd2fda17ced77
+    timestamp_utc: 2025-12-18T23:03:05Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: complete formal closure anchor
+
+  - id: COMMIT:MILLENNIUM_RH_NS_CASCADE
+    repo: REPO:MILLENNIUM
+    sha: 11d38e1bef995d2eadc7edf1f2ac06d0b3691644
+    timestamp_utc: 2025-12-26T19:33:11Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: adjacent control/correction term, not exact F=-R cancellation
+
+  - id: COMMIT:MILLENNIUM_SPECTRAL_UNIFICATION_NS
+    repo: REPO:MILLENNIUM
+    sha: 4e578b3606a79bfcf91a1980ab14afaca5af6583
+    timestamp_utc: 2025-12-27T15:00:05Z
+    verification: REPORTED_PENDING_ARCHIVAL_CAPTURE
+    note: Lyapunov/RH correction term; cancellation-adjacent only
+
   - id: COMMIT:MILLENNIUM_SENSOR
     repo: REPO:MILLENNIUM
     sha: 23332179
