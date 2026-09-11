@@ -148,10 +148,15 @@ zenodo_records:
     record_url: https://zenodo.org/records/15768350
     doi: 10.5281/zenodo.15768350
     doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
-    title: UNKNOWN
-    zenodo_publication_date: UNKNOWN
+    title: "From Spheres to Singularities: A Multidimensional Collapse toward the Indeterminate Constant I"
+    title_status: REPORTED
+    zenodo_publication_date: 2025-06-29
+    zenodo_publication_date_status: INFERRED_FROM_ID_SEQUENCE
     zenodo_created_timestamp: UNKNOWN
     zenodo_modified_timestamp: UNKNOWN
+    ns_direct_match: UNKNOWN_PENDING_CONTENT_CAPTURE
+    genealogy_class: SINGULARITY_COLLAPSE_PRECURSOR_CANDIDATE
+    pre_cutoff: YES
   - id: ZENODO:16399978
     role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
     verification_status: USER_REPORTED_METADATA_PENDING_PRIMARY_CAPTURE
@@ -173,9 +178,134 @@ zenodo_records:
     historical_access_status_status: REPORTED
     current_access_status: UNKNOWN
     current_access_status_status: MISSING
+    ns_direct_match: UNKNOWN_PENDING_CONTENT_CAPTURE
+    genealogy_class: CURVATURE_SINGULARITY_PRECURSOR_CANDIDATE
+    pre_cutoff: YES
     source_basis:
       - User supplied title, DOI, date, version, and restricted-files historical note
       - Direct Zenodo API/page verification was not available in the current environment
+  - id: ZENODO:14934901
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_REPORTED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/14934901
+    doi: 10.5281/zenodo.14934901
+    doi_status: REPORTED_FROM_PROBLEM_STATEMENT
+    title: "Formalizing Algebraic Properties of I: Exploring Physical Phenomena and Integrating I into Advanced Theories"
+    title_status: REPORTED
+    creators:
+      - Tiago Fagliari
+    zenodo_publication_date: 2025-02-27
+    zenodo_publication_date_status: REPORTED
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+    ns_direct_match: NO
+    genealogy_class: EARLY_FORMALIZATION
+    pre_cutoff: YES
+    source_basis:
+      - Problem statement chronology listing "27/02/2025 (Formalizing Algebraic Properties of I; Zenodo 14934901)"
+  - id: ZENODO:14948466
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_REPORTED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/14948466
+    doi: 10.5281/zenodo.14948466
+    doi_status: REPORTED_FROM_PROBLEM_STATEMENT
+    title: Indeterminate Algebra
+    title_status: REPORTED
+    creators:
+      - Tiago Fagliari
+    zenodo_publication_date: 2025-03-01
+    zenodo_publication_date_status: REPORTED
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+    ns_direct_match: NO
+    genealogy_class: EARLY_ALGEBRA_FORMALIZATION
+    pre_cutoff: YES
+    source_basis:
+      - Problem statement chronology listing "01/03/2025 (Indeterminate Algebra; 14948466)"
+  - id: ZENODO:15080581
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: UPLOAD_DRAFT_REPORTED_RECORD_PENDING_PUBLICATION
+    record_url: PENDING
+    upload_url: https://zenodo.org/uploads/15080581
+    doi: PENDING
+    doi_status: NOT_YET_ASSIGNED
+    title: "Circular Economy on the Moon: A Framework for Space Waste Management"
+    title_status: REPORTED
+    creators:
+      - Tiago Fagliari
+    internal_document_date: 2025-04-07
+    internal_document_date_status: REPORTED
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+    ns_direct_match: NO
+    dynamical_objects_found:
+      - formula: "dI/dx = -k[I(x) - I*]"
+        type: FIRST_ORDER_ODE
+        status: FOUND
+      - formula: "I(x) = I* + (I_0 - I*)e^{-kx}"
+        type: EXPONENTIAL_SOLUTION
+        status: FOUND
+      - formula: "I(x) -> I* as x -> infinity"
+        type: ASYMPTOTIC_LIMIT_STATE
+        status: FOUND
+      - formula: "lambda selects I*(lambda)"
+        type: CONTROL_PARAMETER
+        status: FOUND
+    genealogy_class: STRUCTURAL_DYNAMICAL_PRECURSOR_CANDIDATE
+    target_equivalence: NOT_ESTABLISHED
+    pre_cutoff: YES
+    source_basis:
+      - Problem statement describing document content; upload URL provided
+      - Primary record/DOI not yet established; publish needed
+    next_action: Publish upload to final record; obtain zenodo.org/records/XXXXXXXX + DOI + checksum.
+  - id: ZENODO:17208467
+    role: LEAN_SCAFFOLD_EVIDENCE
+    verification_status: PDF_PROVIDED_REPORTED_DOI
+    record_url: https://zenodo.org/records/17208467
+    doi: 10.5281/zenodo.17208467
+    doi_status: REPORTED_FROM_PDF
+    title: "Auditable Scaffolds in Lean: Axioms-Free Formalizations of Chemical Reactions, Logistic Maps, Relativistic Singularities, and Quantum Uncertainty"
+    title_status: REPORTED
+    creators:
+      - Tiago Fagliari
+    internal_document_date: 2025-09-29
+    internal_document_date_status: REPORTED_FROM_PDF_COVER_PAGE
+    zenodo_publication_date: 2025-09-29
+    zenodo_publication_date_status: REPORTED
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+    ns_direct_match: NOT_YET_ESTABLISHED
+    lean_scaffold_evidence: FOUND
+    axioms_free_proof: FOUND
+    singularity_language: FOUND
+    temporal_relation_to_target: PRE_CUTOFF
+    genealogy_class: EARLY_FORMALIZATION_LEAN_SCAFFOLD
+    pre_cutoff: YES
+    source_basis:
+      - PDF provided by user; "Version September 29, 2025" on cover page; DOI 10.5281/zenodo.17208467
+  - id: ZENODO:15814417
+    role: MILLENNIUM_PROBLEMS_CORPUS_CANDIDATE
+    verification_status: ID_REPORTED_RESTRICTED_FILES_PENDING_OPEN
+    record_url: https://zenodo.org/records/15814417
+    doi: 10.5281/zenodo.15814417
+    doi_status: INFERRED_FROM_RECORD_PATTERN
+    title: "Axiomatic Foundations for New Classes of Numbers in Response to the Millennium Problems"
+    title_status: REPORTED
+    creators:
+      - Tiago Fagliari
+    zenodo_created_date: 2025-07-05
+    zenodo_created_date_status: REPORTED
+    zenodo_publication_date: UNKNOWN
+    access: restricted_files
+    ns_direct_match: UNKNOWN_PENDING_ACCESS
+    millennium_problems_explicit: YES
+    genealogy_class: MILLENNIUM_PROBLEMS_EXPLICIT_PRECURSOR
+    pre_cutoff: YES
+    source_basis:
+      - Problem statement: "zenodo 15814417, Axiomatic Foundations for New Classes of Numbers in Response to the Millennium Problems, criado em 05/07/2025, com arquivos Restricted"
+    next_action: Open restricted files to establish content; verify Zenodo publication date and DOI.
+
 
 zenodo_search_targets:
   - id: ZENODO:N7_EXPERIMENTAL_VALIDATION
