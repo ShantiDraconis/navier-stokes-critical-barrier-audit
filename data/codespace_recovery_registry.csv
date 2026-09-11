@@ -1,0 +1,19 @@
+record_id,repository,codespace,branch,machine,storage_or_usage,last_used,forensic_status
+CS-001,ShantiDraconis/Trans,zany garbanzo,main,16-core,usage-report,9-months-ago,REPOSITORY_RECOVERABLE_CODESPACE_LOCAL_UNKNOWN
+CS-002,ShantiDraconis/universal,jubilant space umbrella,main,2-core,0.76-GB,10-months-ago,FORMAL_TREE_AND_NONEMPTY_SOURCES_RECOVERED
+CS-003,ShantiDraconis/music-harmonic-00,miniature fortnight,main,2-core,0.64-GB,10-months-ago,REPOSITORY_RECOVERABLE_CODESPACE_LOCAL_UNKNOWN
+CS-004,ShantiDraconis/music-harmonic-00,legendary guide,copilot/add-musical-theory-articles,16-core,0.64-GB,10-months-ago,BRANCH_REQUIRES_FORENSIC_SCAN
+CS-005,ShantiDraconis/psychology-symbolic-00,improved dollop,main,2-core,0.64-GB,10-months-ago,REPOSITORY_RECOVERABLE_CODESPACE_LOCAL_UNKNOWN
+CS-006,ShantiDraconis/zero-engine-00,cautious succotash,main,2-core,0.64-GB,10-months-ago,PRIORITY_COMMON_INFRASTRUCTURE_SCAN
+CS-007,ShantiDraconis/0-0,friendly space broccoli,main,2-core,usage-report,10-months-ago,PRIORITY_SYMBOLIC_ORIGIN_SCAN
+CS-008,ShantiDraconis/olympic-00-chama,scaling couscous,main,2-core,0.64-GB,10-months-ago,LOWER_MATH_AUDIT_PRIORITY
+CS-009,ShantiDraconis/Trans,literate pancake,main,4-core,usage-report,10-months-ago,REPOSITORY_RECOVERABLE_CODESPACE_LOCAL_UNKNOWN
+CS-010,ShantiDraconis/symbolic-linguistics-00,zany cod,main,2-core,0.64-GB,10-months-ago,CROSS_DOMAIN_PROVENANCE_SCAN
+CS-011,ShantiDraconis/latex-library-global,animated engine,main,2-core,0.64-GB,10-months-ago,PRIORITY_LATEX_PROVENANCE_SCAN
+CS-012,ShantiDraconis/-sbfe-physics-unified,cautious tribble,main,2-core,0.64-GB,10-months-ago,PRIORITY_PHYSICS_INFRASTRUCTURE_SCAN
+CS-013,ShantiDraconis/-millennium-bsd-hodge-yangmills-I,literate yodel,main,2-core,0.64-GB,10-months-ago,PRIORITY_FORMALIZATION_SCAN
+CS-014,ShantiDraconis/millennium-navier-stokes-I,verbose winner,main,2-core,0.64-GB,10-months-ago,PRIORITY_NS_FORMALIZATION_RECOVERY
+CS-015,ShantiDraconis/millennium-p-vs-np-I,curly rotary-phone,main,2-core,0.64-GB,10-months-ago,PRIORITY_FORMALIZATION_SCAN
+CS-016,ShantiDraconis/millennium-symbolic-program,crispy cod,main,2-core,0.64-GB,10-months-ago,PRIORITY_SYMBOLIC_FORMALIZATION_SCAN
+CS-017,ShantiDraconis/millennium-riemann-I,redesigned space trout,main,2-core,0.64-GB,10-months-ago,PRIORITY_FORMALIZATION_SCAN
+CS-018,ShantiDraconis/i-constant-core,literate adventure,main,unknown,unknown,10-months-ago,PRIORITY_I_CONSTANT_ORIGIN_SCAN
