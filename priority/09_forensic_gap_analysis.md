@@ -81,7 +81,7 @@ derivation/copying.  An access-and-causality record requires independent evidenc
 | Evidence type | Possible sources | Current status |
 |---|---|---|
 | Repo was public at relevant date | GitHub visibility log / Wayback Machine | NOT CHECKED |
-| Publication / Zenodo deposit | zenodo.org, arXiv, OSF | NOT CHECKED |
+| Publication / Zenodo deposit | zenodo.org, arXiv, OSF | PARTIAL — Zenodo DOI `10.5281/zenodo.15164501` logged as a 2025-04-06 public prior-art anchor; direct file/checksum capture still pending |
 | External issue, PR, or fork from the account | GitHub API `forks`, `issues`, `stargazers` | NOT CHECKED |
 | Observable clone/download by OpenAI account | not visible without server logs | UNAVAILABLE |
 | Communication / email record | personal records | NOT CHECKED |
