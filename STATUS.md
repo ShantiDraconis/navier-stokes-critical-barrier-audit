@@ -12,10 +12,43 @@ Critical-L3 / ESS framework status:
 **PARTLY CLASSICAL + PRIOR INDEPENDENT ORGANIZATION/FORMALIZATION**
 
 Structural-overlap status:
+**VERY STRONG (PROGRAMMATIC LEVEL) — upgraded from STRONG**
+
+Coupling-operator match (K(R,d) vs CorrectionStep):
+**STRUCTURAL VERY STRONG**
+
+Additive high-frequency perturbation match (φ+εv vs m+h):
+**STRUCTURAL STRONG**
+
+Stress / residual / correction chain match:
+**STRUCTURAL STRONG**
+
+Reference-section precursor (c₀, R(c₀)=0 + critical jets):
+**STRUCTURAL MODERATE-STRONG (SEPARATE PRECURSORS — not yet unified)**
 **STRONG (PROGRAMMATIC LEVEL) — spectral projection, residual, coupling operator, closure obstruction, residual stability, curvature, blow-up via residual curvature all registered in 2025**
 
 Distinctive-construction match status:
 **NOT FOUND (AS OF CURRENT AUDIT EVIDENCE)**
+
+Iterative residual ledger (R_{q+1}−R_q full NS cross terms):
+**NOT FOUND**
+
+MovingMomentBounds / moment repair:
+**NO MATCH FOUND**
+
+Engineered forcing cancellation:
+**NOT ESTABLISHED**
+Stress-correction mechanism status:
+**FOUND (STRUCTURAL, PRE-2026)**
+
+Iterative correction hierarchy status:
+**NOT FOUND**
+
+Reference section + critical jets status:
+**FOUND SEPARATELY**
+
+Exact ReferenceJet / CarrierJet status:
+**NOT FOUND**
 
 Poincaré Mean Closure:
 **CONJECTURAL**

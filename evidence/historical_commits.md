@@ -245,17 +245,52 @@ Until commit trees, raw files, or diff captures are archived locally, treat the 
    - Commit: `8f12748eb160b937174825fe3e7bdccf05e8f9af`
    - URL: https://github.com/ShantiDraconis/navier-stokes-noncircular/commit/8f12748eb160b937174825fe3e7bdccf05e8f9af
 
-## Additional reported anchors now tracked for follow-up archival capture
+## Additional high-value anchors with canonical repository and commit links
 
-See `priority/08_expanded_git_provenance_dossier.md` for the full expanded chronology. High-priority reported anchors include:
+These remain reported chronology unless their raw trees, blobs, or diffs are archived locally.
 
-- earliest reported `millennium-navier-stokes-I` start: `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f` on 2025-11-23,
-- `Millennium` LRE–NS projection / closure cluster: `4af517e3f1ea5d04be1c6bbd8953209fa2139e82`, `b9b4768206ee3d817cbbaf35bb7da92dc835c4e1`, `0d601255e51be349a1fd38eacfcbd2fda17ced77`, `6054851e80b463b3c994fef2acc110983769c309`,
-- `universal-emergent-logic-` geometric / residual anchors: `14322ff2e8f38df302c6f2f6b41754db79d5a900`, `730aa849b0d76b0202f08b490664aa11c164b2bf`, `f30ef6a9d19af290a8f461d60d70da091d73d6ed`, `507135a16a64116e7baf15154e03dc40740b08bb`,
-- external public comparator anchor: `openai/NavierStokesAndEuler` at `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538` on 2026-09-08.
+### `ShantiDraconis/millennium-navier-stokes-I`
+
+- 2025-11-23 — `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f`
+  - URL: https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f
+  - Relevance: earliest currently tracked start anchor for the collapse-framework line.
+
+### `ShantiDraconis/Millennium`
+
+- 2025-12-18 — `4af517e3f1ea5d04be1c6bbd8953209fa2139e82`
+  - URL: https://github.com/ShantiDraconis/Millennium/commit/4af517e3f1ea5d04be1c6bbd8953209fa2139e82
+  - Relevance: projection / closure / residual framework with closure representative chronology.
+- 2025-12-18 — `0d601255e51be349a1fd38eacfcbd2fda17ced77`
+  - URL: https://github.com/ShantiDraconis/Millennium/commit/0d601255e51be349a1fd38eacfcbd2fda17ced77
+  - Relevance: formal closure framework continuation.
+- 2025-12-19 — `6054851e80b463b3c994fef2acc110983769c309`
+  - URL: https://github.com/ShantiDraconis/Millennium/commit/6054851e80b463b3c994fef2acc110983769c309
+  - Relevance: merge anchor consolidating the LRE projection-obstruction package for Navier–Stokes.
+
+### `ShantiDraconis/universal-emergent-logic-`
+
+- 2025-12-19 — `14322ff2e8f38df302c6f2f6b41754db79d5a900`
+  - URL: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/14322ff2e8f38df302c6f2f6b41754db79d5a900
+  - Relevance: projected evolution law `d/dt π(u) = F(π(u)) + K(R(u), π(u))`.
+- 2025-12-19 — `730aa849b0d76b0202f08b490664aa11c164b2bf`
+  - URL: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/730aa849b0d76b0202f08b490664aa11c164b2bf
+  - Relevance: reference section, Galerkin decomposition, unresolved energy, and residual coupling cluster.
+- 2025-12-19 — `f30ef6a9d19af290a8f461d60d70da091d73d6ed`
+  - URL: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/f30ef6a9d19af290a8f461d60d70da091d73d6ed
+  - Relevance: nonlinear closure clarification and Reynolds-stress language in the reported corpus.
+- 2025-12-19 — `507135a16a64116e7baf15154e03dc40740b08bb`
+  - URL: https://github.com/ShantiDraconis/universal-emergent-logic-/commit/507135a16a64116e7baf15154e03dc40740b08bb
+  - Relevance: residual-stability / anti-cancellation branch.
+
+### Public comparator anchor
+
+- `openai/NavierStokesAndEuler`
+  - 2026-09-08 — `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538`
+  - URL: https://github.com/openai/NavierStokesAndEuler/commit/8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538
 
 ## Verification note
 
+Keep SHA, timestamp, and verification state snapshots in `evidence/user_prior_work/` when exported.
 - The audit now preserves commit links, file links when the exact path is known, and PR links when the historical merge object exposes them.
 - When the exact file export or PR is not yet independently recovered, the field remains `UNKNOWN` rather than inferred.
 - Keep SHA, timestamp, and verification state snapshots in `evidence/user_prior_work/` when exported.
