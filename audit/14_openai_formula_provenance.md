@@ -71,6 +71,18 @@ The new expanded dossier adds reported high-value anchors for:
 
 These strengthen the argument for **documented anteriority of a broad research architecture**, but they still do not close the evidentiary gap required for a causal-derivation accusation.
 
+### File-level anchors confirmed by path-history API (Tier 2)
+
+| File (prior repo) | Intro SHA | Date | Reported content |
+|---|---|---|---|
+| `docs/navier-stokes-lre-framework.md` (Millennium) | `30bf8c53` | 2025-12-18T20:28:57Z | LRE-NS framework first commit |
+| `latex/lre_ns_formal_closure.tex` (Millennium) | `a992d144` | 2025-12-18T21:03:13Z | Formal closure theorems |
+| `LRE_NS_SUMMARY.md` (Millennium) | `4cdb6a61` | 2025-12-18T21:07:43Z | "Microlocal analysis of critical jets" |
+| `formalization/lean/LRE/CouplingOperator.lean` (universal-emergent-logic-) | `f7f414d2` | 2025-12-19T13:56:01Z | `K:ℝ×D→D`; residual + state → correction |
+| `docs/lre-navier-stokes-geometric.md` (universal-emergent-logic-) | `730aa849` | 2025-12-19T17:17:28Z | Reference Section; `c₀`, `R(c₀)=0` |
+| `formalization/lean/LRE/NavierStokes/PROOF_ARCHITECTURE.md` (universal-emergent-logic-) | `2854eaf7` | 2025-12-19T20:24:44Z | `φ_new = φ + εv`, `P_Λ(v)=0` |
+
+See `audit/15_correction_architecture_comparison.md` for the full structural analysis.
 ## Structural correspondence matrix
 
 | Prior source | Repository / SHA | Structural role | Audit verdict |
@@ -126,6 +138,13 @@ These strengthen the argument for **documented anteriority of a broad research a
 | `u_{0,λ}(x) = λ u_0(λx)` and `‖u_{0,λ}‖_3 = ‖u_0‖_3` | no exact prior-match file exported in current evidence | `STRUCTURAL_ONLY` |
 | `Q^{-(1/2+h)}`, `Q^{1/2}`, `Q^{1/2-h}`, `carrierFrequency` | no exact prior-match file exported in current evidence | `NO_MATCH_FOUND` |
 | BKM / vorticity integral blow-up criterion | prior classical material only | `EXACT_CLASSICAL_MATCH` |
+| `CorrectionStep`: `m_new = updated(m,h)`, `W_new = W + X` | `CouplingOperator.lean` `f7f414d2` / `PROOF_ARCHITECTURE.md` `2854eaf7` (19/12/2025) | `STRUCTURAL_VERY_STRONG` |
+| `covarianceChange(X)` in residual difference | Reynolds stress = residual coupling (multiple commits, `universal-emergent-logic-`) | `STRUCTURAL_STRONG` |
+| `section ReferenceJets` / `ReferenceJetBounds.lean` | `730aa849` reference section `c₀`, `R(c₀)=0` + `4cdb6a61` critical jets | `STRUCTURAL_MODERATE_STRONG` (separate precursors) |
+| Iterative residual ledger `R_{q+1} - R_q = all cross terms` | Not found at NS level; closest: RBC `R_{n+1}-R_n ≥ αR_n³` | `NOT_FOUND` |
+| `MovingMomentBounds` / mean/defect/wave increments / gauge debt | Only classical momentum conservation | `NO_MATCH` |
+| `StressActivation` / `TransitionRamp` | Spectral cutoff `P_Λ` found; activation primitive not matched | `NOT_MATCHED` |
+| Engineered forcing cancellation `f_correction = -Residual` | Residual feedback and forcing found; precise cancellation not established | `NOT_ESTABLISHED` |
 | `u = π(u) + R(u)` (spectral projection decomposition) | `Millennium` / `4af517e3` (2025-12-18) | `STRUCTURAL_MATCH` |
 | High-frequency residual `R_Λ(u)` | `Millennium` / `4af517e3`, `0d601255` (2025-12-18) | `STRUCTURAL_MATCH` |
 | `d/dt π(u) = F(π(u)) + K(R(u),π(u))` | `universal-emergent-logic-` / `14322ff2` (2025-12-19) | `STRUCTURAL_MATCH` |
@@ -137,6 +156,11 @@ These strengthen the argument for **documented anteriority of a broad research a
 ## What is and is not supported
 
 - Supported: the OpenAI repo reuses classical Navier–Stokes identities and standard lifespan/pressure/scaling formalism.
+- Supported: very strong structural overlap exists between the prior K(R,d) coupling-operator architecture and the OpenAI CorrectionStep cycle-state architecture.
+- Supported: strong structural overlap exists between the prior Reynolds-stress/residual-coupling language and the OpenAI covariance-change/residual-difference language.
+- Supported: the prior corpus contains additive high-frequency perturbation φ+εv and a reference section c₀ with R(c₀)=0 separately, both dated December 2025.
+- Not supported: any claim that the distinctive reference-jet / forcing-cancellation construction was found **unified** in the audited prior repositories.
 - Supported: the pre-2026 Fagliari corpus already contains a project-residual-stress-correct architecture, with reference-section and jet components present separately.
 - Not supported: any claim that the distinctive reference-jet / forcing-cancellation construction was found in the audited prior repositories.
 - Not supported: any claim of derivation from the prior repositories without direct causal evidence.
+- Not supported: that the full iterative residual ledger R_{q+1}−R_q or MovingMomentBounds has a prior-corpus match.

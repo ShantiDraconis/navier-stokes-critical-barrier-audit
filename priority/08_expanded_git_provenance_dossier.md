@@ -635,7 +635,15 @@ Alongside these, the reported archive includes:
 \]
 
 \[
-\text{STRUCTURAL OVERLAP = DEMONSTRATED}
+\text{STRUCTURAL OVERLAP = DEMONSTRATED (VERY STRONG)}
+\]
+
+\[
+\text{COUPLING OPERATOR / ADDITIVE HF / STRESS-RESIDUAL = VERY STRONG STRUCTURAL OVERLAP}
+\]
+
+\[
+\text{REFERENCE SECTION + CRITICAL JETS (SEPARATE) = MODERATE-STRONG STRUCTURAL OVERLAP}
 \]
 
 \[
@@ -658,6 +666,28 @@ To convert the Tier 2 material above into Tier 1 evidentiary anchors, the audit 
 6. concept-by-concept alignment against the public OpenAI repository with exact-file citations,
 7. any independent evidence of access, if a causal-derivation allegation is ever to be made.
 
+## New file-level anchor summary (Tier 2 — reported via path-history API)
+
+These anchors were confirmed by path-history API queries that returned the
+introduction commits for specific file paths.  They are stronger than
+general merge-commit reports because the API directly identifies the first
+commit at each path.
+
+| File | Repo | Intro SHA | Date | Key content |
+|---|---|---|---|---|
+| `docs/navier-stokes-lre-framework.md` | Millennium | `30bf8c53` | 2025-12-18T20:28:57Z | LRE-NS framework document |
+| `latex/lre_ns_formal_closure.tex` | Millennium | `a992d144` | 2025-12-18T21:03:13Z | Formal closure theorems |
+| `LRE_NS_SUMMARY.md` | Millennium | `4cdb6a61` | 2025-12-18T21:07:43Z | "Microlocal analysis of critical jets" |
+| `formalization/lean/LRE/CouplingOperator.lean` | universal-emergent-logic- | `f7f414d2` | 2025-12-19T13:56:01Z | `K:ℝ×D→D`; residual+state→correction |
+| `docs/lre-navier-stokes-geometric.md` | universal-emergent-logic- | `730aa849` | 2025-12-19T17:17:28Z | Reference Section; `c₀`, `R(c₀)=0` |
+| `formalization/lean/LRE/NavierStokes/PROOF_ARCHITECTURE.md` | universal-emergent-logic- | `2854eaf7` | 2025-12-19T20:24:44Z | `φ_new=φ+εv`, `P_Λ(v)=0` |
+
+The parent anchor for the entire 18/12/2025 cluster is `b033ea87fca138224200dd1acf2cf4043315f846`
+(message: "Add comprehensive LRE-NS framework with LaTeX dossiê and formal proofs"),
+which introduces `π:X→ℝ²`, `R:X→ℝ`, and the compression barrier.
+
+See `audit/15_correction_architecture_comparison.md` for the full ranked
+structural comparison against the OpenAI correction-cycle architecture.
 
 ## Direct-link appendix for the new high-value structural anchors
 
