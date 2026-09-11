@@ -182,7 +182,7 @@ The canonical status layer in `audit/evidence/` now separates two results:
 3. That the missing links
    `R_q → C_q`, `u_{q+1}=u_q+C_q`, and `R_{q+1}=R(u_{q+1})`
    were already present in the deposited content.
-4. That the “specific experimental validation of Navier-Stokes N7” link has not
+4. That the “specific experimental validation of Navier-Stokes N7” has not
    yet been identified with a DOI and archived metadata in this repository.
 
 ---

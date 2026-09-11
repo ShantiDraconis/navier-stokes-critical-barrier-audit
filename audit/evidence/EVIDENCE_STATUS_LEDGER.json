@@ -47,8 +47,15 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "N/A",
-      "file_path": "N/A",
-      "line_range": "N/A",
+      "file_path": [
+        "N/A"
+      ],
+      "line_range": [
+        {
+          "file": "N/A",
+          "lines": "N/A"
+        }
+      ],
       "assertion": "Direct Zenodo API/page access was unavailable in the current environment during this audit because zenodo.org DNS resolution failed.",
       "status": "VERIFIED",
       "verification_method": "Direct HTTPS requests from this sandbox failed on 2026-09-11 and were observed in the command output.",
@@ -74,8 +81,15 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "PENDING",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "2-7",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "2-7"
+        }
+      ],
       "assertion": "The current audit assigns ROLE = ZENODO_PUBLIC_PRIOR_ART to DOI 10.5281/zenodo.15164501.",
       "status": "VERIFIED",
       "verification_method": "Directly observed in the working tree audit metadata file.",
@@ -438,8 +452,15 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "18-21",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "18-21"
+        }
+      ],
       "assertion": "The exact Zenodo file list for DOI 10.5281/zenodo.15164501 has not been directly captured in this audit.",
       "status": "MISSING",
       "verification_method": "The audit metadata records the field as unknown and direct Zenodo access was unavailable.",
@@ -465,8 +486,15 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "18-21",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "18-21"
+        }
+      ],
       "assertion": "The exact Zenodo file checksum set for DOI 10.5281/zenodo.15164501 has not been directly captured in this audit.",
       "status": "MISSING",
       "verification_method": "The audit metadata records the checksum as unknown and direct Zenodo access was unavailable.",
@@ -492,8 +520,15 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "194-205",
+      "file_path": [
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "194-205"
+        }
+      ],
       "assertion": "Related identifiers, version relationships, and linked-record metadata for DOI 10.5281/zenodo.15164501 are not yet established in this audit.",
       "status": "MISSING",
       "verification_method": "The dossier explicitly lists related identifiers as a pending direct-capture target and primary-source access remained unavailable.",
@@ -563,8 +598,15 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "PENDING",
-      "file_path": "priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "182-205",
+      "file_path": [
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "182-205"
+        }
+      ],
       "assertion": "No file-level comparison currently establishes mathematical equivalence between the April 2025 Zenodo deposit and the later December 2025 LRE/projection/coupling chain.",
       "status": "MISSING",
       "verification_method": "The dossier explicitly preserves the comparison as pending and no direct deposit file capture exists in this environment.",
@@ -590,8 +632,15 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "PENDING",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "45-50",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "45-50"
+        }
+      ],
       "assertion": "The current audit retains https://zenodo.org/records/17204147 only as UNVERIFIED_RELATED_ZENODO.",
       "status": "VERIFIED",
       "verification_method": "Directly observed in the working tree audit metadata file.",
@@ -617,8 +666,15 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "51-66",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "51-66"
+        }
+      ],
       "assertion": "The reported title for https://zenodo.org/records/17204147 is Navier–Stokes Existence and Smoothness: A Hybrid Approach Integrating Symbolic Reformulation, Functional Analysis, and Certified Computation (Copy).",
       "status": "REPORTED",
       "verification_method": "Retained from a secondary-search report only; the Zenodo primary source was not directly accessible here.",
@@ -644,8 +700,15 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "PENDING",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "68-76",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "68-76"
+        }
+      ],
       "assertion": "No concrete primary-source DOI, record URL, file set, or metadata packet has been identified for the alleged specific experimental validation of Navier-Stokes N7.",
       "status": "MISSING",
       "verification_method": "The target is explicitly registered as missing and no primary-source record was located in the current environment.",
@@ -671,8 +734,15 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "PENDING",
-      "file_path": "evidence/zenodo_records.yaml",
-      "line_range": "69-76",
+      "file_path": [
+        "evidence/zenodo_records.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "69-76"
+        }
+      ],
       "assertion": "RELATIONSHIP = NOT_ESTABLISHED for any linkage between the alleged N7 validation source and the currently logged Zenodo records.",
       "status": "MISSING",
       "verification_method": "The audit explicitly records the relationship as not established and no primary-source linkage evidence was found.",
