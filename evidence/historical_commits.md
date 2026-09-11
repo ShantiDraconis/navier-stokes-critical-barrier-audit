@@ -258,7 +258,7 @@ See `priority/08_expanded_git_provenance_dossier.md` for the full expanded chron
 
 - The audit now preserves commit links, file links when the exact path is known, and PR links when the historical merge object exposes them.
 - When the exact file export or PR is not yet independently recovered, the field remains `UNKNOWN` rather than inferred.
-Keep SHA, timestamp, and verification state snapshots in `user_prior_work/` when exported.
+- Keep SHA, timestamp, and verification state snapshots in `evidence/user_prior_work/` when exported.
 To obtain `verified_valid` status, query the GitHub API for
 `repos/{owner}/{repo}/commits/{sha}` and confirm `verification.verified = true`.
 Until commit trees, raw files, or diff captures are archived locally, treat the additional anchors above as reported chronology rather than independently captured evidence packets.

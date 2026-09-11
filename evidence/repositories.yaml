@@ -14,7 +14,6 @@ repositories:
   - id: REPO:UNIVERSAL_EMERGENT_LOGIC
     url: https://github.com/ShantiDraconis/universal-emergent-logic-
     visibility: private
-    status: historical_prior_work
     status: historical_framework
     date_status: REPORTED_PENDING_ARCHIVAL_CAPTURE
   - id: REPO:CRITICAL_L3
