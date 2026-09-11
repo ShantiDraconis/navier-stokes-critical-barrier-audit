@@ -7,11 +7,7 @@ It does **not** convert Zenodo deposits into Git commits, and it does **not**
 attribute later December 2025 LRE machinery to the April 2025 Zenodo deposit
 without content comparison.
 
-The new classification introduced here is:
-
-\[
-\boxed{\texttt{ZENODO\_PUBLIC\_PRIOR\_ART}}
-\]
+The new classification introduced here is: `ZENODO_PUBLIC_PRIOR_ART`.
 
 This category is stronger than a private-commit timestamp for the narrow question
 of **public availability**, but weaker than a file-level Git comparison for the
