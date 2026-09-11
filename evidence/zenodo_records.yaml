@@ -62,6 +62,120 @@ zenodo_records:
     source_basis:
       - Secondary-search result reported a potentially related Zenodo record
       - No direct Zenodo API/page verification was possible in the current environment
+  - id: ZENODO:14950453
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/14950453
+    doi: 10.5281/zenodo.14950453
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:14977667
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/14977667
+    doi: 10.5281/zenodo.14977667
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15170089
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15170089
+    doi: 10.5281/zenodo.15170089
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15172871
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15172871
+    doi: 10.5281/zenodo.15172871
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220150
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220150
+    doi: 10.5281/zenodo.15220150
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220186
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220186
+    doi: 10.5281/zenodo.15220186
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220196
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220196
+    doi: 10.5281/zenodo.15220196
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220224
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220224
+    doi: 10.5281/zenodo.15220224
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15768350
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15768350
+    doi: 10.5281/zenodo.15768350
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:16399978
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: USER_REPORTED_METADATA_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/16399978
+    doi: 10.5281/zenodo.16399978
+    doi_status: USER_REPORTED_EXACT_DOI
+    title: Symbolic Curvature and the Universal Collapse Constant I = 0/0: A Unified Resolution of Scientific Paradigms
+    creators:
+      - Tiago Fagliari
+    zenodo_publication_date: 2025-07-24
+    zenodo_publication_date_status: REPORTED
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_created_timestamp_status: MISSING
+    zenodo_modified_timestamp: UNKNOWN
+    zenodo_modified_timestamp_status: MISSING
+    version: v1
+    version_status: REPORTED
+    historical_access_status: public_record_restricted_files_in_indexed_snapshot
+    historical_access_status_status: REPORTED
+    current_access_status: UNKNOWN
+    current_access_status_status: MISSING
+    source_basis:
+      - User supplied title, DOI, date, version, and restricted-files historical note
+      - Direct Zenodo API/page verification was not available in the current environment
 
 zenodo_search_targets:
   - id: ZENODO:N7_EXPERIMENTAL_VALIDATION
