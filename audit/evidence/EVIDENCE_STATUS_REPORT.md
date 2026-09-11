@@ -50,7 +50,7 @@ all repeat the same underlying reported Zenodo metadata for `10.5281/zenodo.1516
 Only the following propositions are supported in the VERIFIED-only layer:
 
 1. The current audit classifies `10.5281/zenodo.15164501` as `ZENODO_PUBLIC_PRIOR_ART`.
-2. The current audit classifies `https://zenodo.org/records/17204147` as `UNVERIFIED_RELATED_ZENODO`.
+2. The current audit classifies `10.5281/zenodo.17204147` as `UNVERIFIED_RELATED_ZENODO`.
 3. Direct Zenodo access was unavailable in the current environment during this audit.
 
 ### VERIFIED-only priority claim table

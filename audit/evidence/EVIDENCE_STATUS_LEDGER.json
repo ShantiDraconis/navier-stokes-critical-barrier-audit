@@ -101,8 +101,30 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md; evidence/external_publications/README.md; TIMELINE.md",
-      "line_range": "evidence/zenodo_records.yaml:2-7; priority/12_zenodo_public_prior_art_dossier.md:24-27; evidence/external_publications/README.md:7-10; TIMELINE.md:3-7",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md",
+        "evidence/external_publications/README.md",
+        "TIMELINE.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "2-7"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "24-27"
+        },
+        {
+          "file": "evidence/external_publications/README.md",
+          "lines": "7-10"
+        },
+        {
+          "file": "TIMELINE.md",
+          "lines": "3-7"
+        }
+      ],
       "assertion": "DOI 10.5281/zenodo.15164501 and the record URL identify the external Zenodo public-prior-art candidate under review.",
       "status": "REPORTED",
       "verification_method": "Known from repository files and user-supplied task metadata, but not independently verified against Zenodo in this environment.",
@@ -128,8 +150,25 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md; TIMELINE.md",
-      "line_range": "evidence/zenodo_records.yaml:7-10; priority/12_zenodo_public_prior_art_dossier.md:26-35; TIMELINE.md:5-7",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md",
+        "TIMELINE.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "7-10"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "26-35"
+        },
+        {
+          "file": "TIMELINE.md",
+          "lines": "5-7"
+        }
+      ],
       "assertion": "The reported title for DOI 10.5281/zenodo.15164501 is Equations of Major Unsolved Problems in Mathematics.",
       "status": "REPORTED",
       "verification_method": "Repeated in repository files but not directly verified against the Zenodo primary source.",
@@ -155,8 +194,20 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "evidence/zenodo_records.yaml:8-10; priority/12_zenodo_public_prior_art_dossier.md:28-30",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "8-10"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "28-30"
+        }
+      ],
       "assertion": "The reported creator for DOI 10.5281/zenodo.15164501 is Tiago Fagliari aka Draconis Shanti.",
       "status": "REPORTED",
       "verification_method": "Present in repository-derived Zenodo metadata only; direct Zenodo verification unavailable here.",
@@ -182,8 +233,30 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md; evidence/external_publications/README.md; TIMELINE.md",
-      "line_range": "evidence/zenodo_records.yaml:11-13; priority/12_zenodo_public_prior_art_dossier.md:28-35; evidence/external_publications/README.md:7-10; TIMELINE.md:3-7",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md",
+        "evidence/external_publications/README.md",
+        "TIMELINE.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "11-13"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "28-35"
+        },
+        {
+          "file": "evidence/external_publications/README.md",
+          "lines": "7-10"
+        },
+        {
+          "file": "TIMELINE.md",
+          "lines": "3-7"
+        }
+      ],
       "assertion": "The reported Zenodo creation/publication date for DOI 10.5281/zenodo.15164501 is 2025-04-06.",
       "status": "REPORTED",
       "verification_method": "Repository-reported external metadata only; direct Zenodo or archived primary-source confirmation unavailable here.",
@@ -209,8 +282,20 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "evidence/zenodo_records.yaml:11-13; priority/12_zenodo_public_prior_art_dossier.md:30-33",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "11-13"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "30-33"
+        }
+      ],
       "assertion": "The reported publication type for DOI 10.5281/zenodo.15164501 is preprint.",
       "status": "REPORTED",
       "verification_method": "Repository-derived metadata only; no direct Zenodo fetch.",
@@ -236,8 +321,20 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "evidence/zenodo_records.yaml:12-13; priority/12_zenodo_public_prior_art_dossier.md:31-33",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "12-13"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "31-33"
+        }
+      ],
       "assertion": "The reported license for DOI 10.5281/zenodo.15164501 is CC-BY-4.0.",
       "status": "REPORTED",
       "verification_method": "Repository-derived metadata only; no direct Zenodo fetch.",
@@ -263,8 +360,20 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "evidence/zenodo_records.yaml:13-16; priority/12_zenodo_public_prior_art_dossier.md:32-34",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "13-16"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "32-34"
+        }
+      ],
       "assertion": "The reported subjects for DOI 10.5281/zenodo.15164501 include Navier-Stokes and Millennium.",
       "status": "REPORTED",
       "verification_method": "Repository-derived metadata only; not independently checked against Zenodo.",
@@ -290,8 +399,20 @@
       "repository": "EXTERNAL:ZENODO",
       "commit_sha": "UNKNOWN",
       "blob_sha": "UNKNOWN",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md",
-      "line_range": "evidence/zenodo_records.yaml:17-17; priority/12_zenodo_public_prior_art_dossier.md:33-35",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "17-17"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "33-35"
+        }
+      ],
       "assertion": "The reported version note for DOI 10.5281/zenodo.15164501 is that the original April 2025 version is preserved.",
       "status": "REPORTED",
       "verification_method": "Repository-derived note only; no direct Zenodo version string or relation graph was captured.",
@@ -398,8 +519,25 @@
       "repository": "MIXED",
       "commit_sha": "MIXED",
       "blob_sha": "MIXED",
-      "file_path": "evidence/zenodo_records.yaml; TIMELINE.md; evidence/commits.yaml",
-      "line_range": "evidence/zenodo_records.yaml:11-17; TIMELINE.md:3-18; evidence/commits.yaml:2-118",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "TIMELINE.md",
+        "evidence/commits.yaml"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "11-17"
+        },
+        {
+          "file": "TIMELINE.md",
+          "lines": "3-18"
+        },
+        {
+          "file": "evidence/commits.yaml",
+          "lines": "2-118"
+        }
+      ],
       "assertion": "If the reported Zenodo date is accurate, DOI 10.5281/zenodo.15164501 is earlier than the currently logged November 2025 private GitHub anchors and is therefore a candidate earliest public anchor.",
       "status": "INFERRED",
       "verification_method": "Chronology comparison derived from a reported Zenodo date plus repository commit timeline.",
@@ -560,8 +698,30 @@
       "repository": "REPO:AUDIT_CURRENT",
       "commit_sha": "PENDING",
       "blob_sha": "PENDING",
-      "file_path": "evidence/zenodo_records.yaml; priority/12_zenodo_public_prior_art_dossier.md; evidence/external_publications/README.md; TIMELINE.md",
-      "line_range": "evidence/zenodo_records.yaml:2-44; priority/12_zenodo_public_prior_art_dossier.md:22-39,163-180; evidence/external_publications/README.md:5-14,24-27; TIMELINE.md:3-7",
+      "file_path": [
+        "evidence/zenodo_records.yaml",
+        "priority/12_zenodo_public_prior_art_dossier.md",
+        "evidence/external_publications/README.md",
+        "TIMELINE.md"
+      ],
+      "line_range": [
+        {
+          "file": "evidence/zenodo_records.yaml",
+          "lines": "2-44"
+        },
+        {
+          "file": "priority/12_zenodo_public_prior_art_dossier.md",
+          "lines": "22-39,163-180"
+        },
+        {
+          "file": "evidence/external_publications/README.md",
+          "lines": "5-14,24-27"
+        },
+        {
+          "file": "TIMELINE.md",
+          "lines": "3-7"
+        }
+      ],
       "assertion": "Multiple repository files repeating the same Zenodo metadata for DOI 10.5281/zenodo.15164501 count as one dependent reported source, not independent corroboration.",
       "status": "INFERRED",
       "verification_method": "Compared repeated repository statements and found no independent primary-source capture behind them in the current environment.",
