@@ -33,12 +33,28 @@ MARKERS = {
 REQUIRED = [
     "CITATION.cff", "CLAIMS.md", "LIMITATIONS.md", "METHODOLOGY.md",
     "PRIORITY.md", "STATUS.md", "TIMELINE.md",
+    "audit/MASTER_AUDIT_INDEX.md",
     "audit/18_master_error_framework_provenance.md",
     "audit/19_remote_unmerged_commit_inventory.md",
     "audit/20_zenodo_22180836_evidence.md",
     "audit/21_citation_and_evidence_guide.md",
+    "audit/22_global_repository_gap_scan.md",
+    "audit/23_derivation_history_exact_path.md",
+    "audit/24_claim_evidence_matrix.md",
+    "audit/25_theorem_status_matrix.md",
+    "audit/26_bridge_obligations.md",
+    "audit/27_reproducibility_protocol.md",
+    "audit/28_audit_file_tree.md",
+    "audit/29_test_and_ci_record.md",
+    "evidence/repositories.yaml",
+    "evidence/commits.yaml",
+    "evidence/forensic_first_occurrence.csv",
+    "evidence/provenance_chain.md",
+    "data/chronology.csv",
+    "data/provenance_edges.csv",
     "proofs/audit_bridge_lemmas.md",
     "tests/test_audit_invariants.py",
+    "tests/test_provenance_tables.py",
 ]
 
 
@@ -72,7 +88,7 @@ def main() -> int:
                 findings.append({"path": rel, "marker": name, "count": count})
 
     report = {
-        "schema": "audit-integrity-v1",
+        "schema": "audit-integrity-v2",
         "required_missing": missing,
         "marker_findings": findings,
         "manifest_entries": len(manifest),
