@@ -1,5 +1,6 @@
 zenodo_records:
   - id: ZENODO:15164501
+    role: ZENODO_PUBLIC_PRIOR_ART
     classification: ZENODO_PUBLIC_PRIOR_ART
     verification_status: PUBLIC_URL_USER_REPORTED_PENDING_DIRECT_METADATA_CAPTURE
     record_url: https://zenodo.org/records/15164501
@@ -41,3 +42,35 @@ zenodo_records:
     source_basis:
       - User-supplied Zenodo URL and metadata in the task statement
       - Current sandbox could not resolve zenodo.org directly; direct API/file capture remains pending
+  - id: ZENODO:17204147
+    role: UNVERIFIED_RELATED_ZENODO
+    classification: UNVERIFIED_RELATED_ZENODO
+    verification_status: SECONDARY_SEARCH_REPORTED_ONLY
+    record_url: https://zenodo.org/records/17204147
+    doi: 10.5281/zenodo.17204147
+    title: Navier–Stokes Existence and Smoothness: A Hybrid Approach Integrating Symbolic Reformulation, Functional Analysis, and Certified Computation (Copy)
+    creators:
+      - Tiago Fagliari
+    zenodo_creation_date: UNKNOWN
+    publication_type: UNKNOWN
+    license: UNKNOWN
+    subjects:
+      - UNKNOWN
+    version: UNKNOWN
+    files:
+      - file_name: UNKNOWN
+        md5_or_zenodo_checksum: UNKNOWN
+        note: Only a secondary-search report was available; no direct Zenodo metadata capture exists in this environment.
+    source_basis:
+      - Secondary-search result reported a potentially related Zenodo record
+      - No direct Zenodo API/page verification was possible in the current environment
+
+zenodo_search_targets:
+  - id: ZENODO:N7_EXPERIMENTAL_VALIDATION
+    status: MISSING
+    relationship: NOT_ESTABLISHED
+    description: specific experimental validation of Navier-Stokes N7
+    note: >
+      No concrete primary-source DOI, record URL, file, or metadata packet has been
+      identified. Similar titles, subjects, dates, or neighboring Zenodo records are
+      not treated as proof of this relationship.

@@ -6,12 +6,12 @@ Store links and archived metadata for external publication events relevant to th
 
 | Type | DOI / URL | Date | Status |
 |------|-----------|------|--------|
-| `ZENODO_PUBLIC_PRIOR_ART` | `10.5281/zenodo.15164501` / https://zenodo.org/records/15164501 | 2025-04-06 | public URL logged; direct file/checksum capture pending |
+| `ZENODO_PUBLIC_PRIOR_ART` | `10.5281/zenodo.15164501` / https://zenodo.org/records/15164501 | 2025-04-06 (reported) | repository-reported public anchor; direct file/checksum capture pending |
 
-This Zenodo anchor is earlier than the November/December 2025 private commit chain
-and is therefore important for **public-priority chronology**. It does **not** by
-itself prove that every later LRE / coupling / correction formula was already
-present in the April deposit.
+This Zenodo anchor is a **reported candidate** earlier than the November/December
+2025 private commit chain and is therefore important for **public-priority
+chronology**. It does **not** by itself prove that every later LRE / coupling /
+correction formula was already present in the April deposit.
 
 ## Primary comparator
 
@@ -22,7 +22,7 @@ present in the April deposit.
 ## Notes
 
 - This date (2026-09-08) is the reference point for the priority gap calculation.
-- Zenodo DOI `10.5281/zenodo.15164501` adds a public Fagliari anchor on 2025-04-06.
+- Zenodo DOI `10.5281/zenodo.15164501` adds a reported public Fagliari anchor on 2025-04-06.
 - Priority gap: `2026-09-08` minus `2025-12-19` (earliest D1 UEL anchor) = approximately **264 days**.
 - The public date confirms public Git publication; it does not bound when internal OpenAI work began.
 

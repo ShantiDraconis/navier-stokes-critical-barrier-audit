@@ -23,8 +23,8 @@ question of **which exact formulas were already present**.
 
 | Field | Value | Status |
 |---|---|---|
-| DOI | `10.5281/zenodo.15164501` | PUBLIC URL supplied |
-| Record URL | <https://zenodo.org/records/15164501> | PUBLIC URL supplied |
+| DOI | `10.5281/zenodo.15164501` | REPORTED (identifier known; primary source not directly fetched here) |
+| Record URL | <https://zenodo.org/records/15164501> | REPORTED (URL known; primary source not directly fetched here) |
 | Title | *Equations of Major Unsolved Problems in Mathematics* | REPORTED |
 | Creator | `Tiago Fagliari aka Draconis Shanti` | REPORTED |
 | Zenodo creation date | `2025-04-06` | REPORTED |
@@ -35,8 +35,8 @@ question of **which exact formulas were already present**.
 | File list | `UNKNOWN_IN_CURRENT_ENVIRONMENT` | direct Zenodo fetch pending |
 | Zenodo checksum / MD5 | `UNKNOWN_IN_CURRENT_ENVIRONMENT` | direct Zenodo fetch pending |
 
-**Audit consequence:** this record is now the earliest currently logged **public**
-anchor tied to the Fagliari Navier–Stokes/Millennium line.
+**Audit consequence:** this record is now the earliest currently logged
+**reported public** anchor tied to the Fagliari Navier–Stokes/Millennium line.
 
 ---
 
@@ -61,7 +61,7 @@ Therefore the audit rule for this dossier is:
 ## C. Expanded chronology spine with the new public layer
 
 ```text
-Zenodo public anchor
+Reported Zenodo public candidate
   2025-04-06  DOI 10.5281/zenodo.15164501
       ↓
 Private GitHub NS framework line
@@ -99,8 +99,8 @@ ZENODO_PUBLIC_PRIOR_ART
     ├── license: CC-BY 4.0
     ├── subjects: Navier-Stokes; Millennium
     ├── public-strength:
-    │   ├── proves public registration by 2025-04-06
-    │   └── stronger than a private-only commit for publicity
+    │   ├── REPORTED public registration by 2025-04-06
+    │   └── candidate stronger-than-private publicity anchor if verified
     ├── missing-direct-capture:
     │   ├── Zenodo file list
     │   ├── Zenodo checksums
@@ -160,12 +160,24 @@ GitHub chronology already logged in this repository
 
 ## F. What the April Zenodo anchor now proves
 
-1. A publicly timestamped Fagliari/Draconis-Shanti Navier–Stokes/Millennium item
-   existed by **2025-04-06**.
-2. The priority audit now has a public anchor earlier than the previously logged
-   November 2025 private-commit chain.
-3. Public-priority evidence is now stronger for **public availability** than for
-   **exact formula identity**.
+The canonical status layer in `audit/evidence/` now separates two results:
+
+### VERIFIED-only result
+
+1. The current environment did **not** independently verify the Zenodo metadata for
+   record `15164501`.
+2. Therefore the Zenodo layer does **not yet** supply a VERIFIED public timestamp.
+3. No VERIFIED mathematical equivalence is established between the April deposit and
+   the December 2025 LRE chain.
+
+### VERIFIED + REPORTED context
+
+1. Existing repository materials **report** that a Fagliari/Draconis-Shanti
+   Navier–Stokes/Millennium Zenodo item existed by **2025-04-06**.
+2. In that REPORTED context, the audit has a **candidate** public anchor earlier
+   than the currently logged November 2025 private-commit chain.
+3. This supports further verification work on **public availability**, not exact
+   formula identity.
 
 ## G. What it still does not prove
 

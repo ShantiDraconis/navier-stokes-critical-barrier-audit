@@ -1,10 +1,10 @@
 # Timeline (UTC)
 
 ## 2025-04-06
-Zenodo public prior-art anchor  
+Zenodo public prior-art candidate  
 DOI: `10.5281/zenodo.15164501`  
 Record: *Equations of Major Unsolved Problems in Mathematics*  
-Status: `ZENODO_PUBLIC_PRIOR_ART` — public URL logged; direct file/checksum capture pending
+Status: `ZENODO_PUBLIC_PRIOR_ART` (reported) — public URL logged; direct file/checksum capture pending
 
 ## 2025-11-23
 Earliest currently linked `millennium-navier-stokes-I` collapse anchor  
