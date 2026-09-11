@@ -1,38 +1,168 @@
 \documentclass[11pt]{article}
-\usepackage{amsmath,amssymb,amsthm}
-\usepackage{hyperref}
-
-\title{Critical-Barrier Audit of a Proposed Finite-Time Navier--Stokes Breakdown}
-\author{Independent Audit Repository}
-\date{\today}
-
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\title{A Provenance-Aware Critical-Barrier Audit for a Navier--Stokes Research Program}
+\author{Tiago Paschoalatto Fagliari\\Research identity: ShantiDraconis}
+\date{September 2026}
 \begin{document}
 \maketitle
-
 \begin{abstract}
-This report separates chronological provenance from mathematical validity,
-and audits a proposed finite-time Navier--Stokes breakdown construction
-against critical $L^3$ regularity, concentration scaling, forcing smoothness,
-and pressure compatibility constraints.
+We present a reproducible audit architecture for a multi-repository research program on three-dimensional incompressible Navier--Stokes regularity and related error-parameter models. The contribution of this article is methodological rather than a claim of resolution of the Clay Millennium problem. We reconstruct a timestamped development path from collapse/regularity formulations through projection--residual decompositions, residual correction dynamics, parameter gaps, weighted and sensitivity-based error decompositions, vector-valued error coordinates, phase models, and later critical-space/noncircular analysis. We formalize elementary internal lemmas in multiple proof assistants, introduce machine-readable provenance and claim-status graphs, and provide executable tests and counterexamples to invalid inference patterns. A Navier--Stokes diagnostic ratio
+\[
+\varepsilon_{NS}(u)=\frac{\|(u\cdot\nabla)u\|_{L^2}}{\nu\|\Delta u\|_{L^2}}
+\]
+is shown to be invariant under the classical three-dimensional Navier--Stokes scaling whenever defined. We identify the decisive unresolved bridge: no result presently established by this audit proves that control or vanishing of the repository-defined error state implies a recognized critical regularity criterion such as bounded $L^\infty_tL^3_x$. The audit therefore distinguishes reproducible research infrastructure and internally proved identities from unresolved PDE implications.
 \end{abstract}
 
-\section{Priority and provenance status}
-Chronological pre-existence is documented for specific components, while
-causal derivation remains not established.
+\section{Introduction}
+Long mathematical research programs often mix theorem statements, heuristic models, numerical evidence, proof-assistant experiments, repository history, and later reconstructions. This makes retrospective evaluation difficult. We address the problem by treating provenance and mathematical validity as distinct axes.
 
-\section{Classical baseline}
-The ESS endpoint implication and its blowup alternative role are treated as
-classical dependencies.
+The present corpus contains a documented Navier--Stokes research line beginning in late 2025, followed by projection/residual and error-parameter frameworks and later critical-space analyses. Our objective is to reconstruct this path without using chronology as a substitute for proof.
 
-\section{Audit workflow}
-The claim pipeline is: external hypothesis extraction, $L^3$/ESS consistency,
-energy-concentration checks, forcing-smoothness checks, pressure-compatibility
-checks, and final status assignment.
+\paragraph{Scope.} This paper does not claim a proof of global regularity or finite-time singularity for three-dimensional Navier--Stokes. Instead, it provides an auditable framework in which such a claim would have to discharge explicit bridge obligations.
 
-\section{Current scientific status}
-No contradiction has been rigorously closed at this stage; status remains
-UNRESOLVED for refutation.
+\section{Classical setting}
+We consider the incompressible Navier--Stokes equations
+\begin{align}
+\partial_tu +(u\cdot\nabla)u + \nabla p &= \nu\Delta u + f,\\
+\nabla\cdot u &=0,
+\end{align}
+with the precise domain, forcing and solution class required to be declared for each theorem. The classical scaling on $\mathbb R^3$ is
+\[
+u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2t).
+\]
+Critical quantities are invariant under this transformation.
 
-\bibliographystyle{plain}
-\bibliography{bibliography}
+\section{Historical derivation architecture}
+The audit reconstructs the research path
+\[
+\text{collapse/singularity}\to\text{classical formalization}\to\text{local--global bridge}\to\text{projection/residual}\to\text{correction dynamics}\to\text{error/gap parameters}\to\text{percentage models}\to\text{error coordinates}\to\text{phase models}\to\text{critical-space audit}.
+\]
+Each arrow is recorded in a machine-readable provenance graph and is labeled as chronological, structural, refinement, specialization, or open mathematical bridge.
+
+\section{Error parameterization}
+Let a problem state be described by parameters $\theta=(\theta_1,\ldots,\theta_n)$ and targets $\theta^*$. Define nonnegative gaps
+\[
+\Delta_i=d_i(\theta_i,\theta_i^*).
+\]
+A weighted scalarization is
+\[
+E_w=\sum_iw_i g_i(\Delta_i),\qquad w_i\ge0,\quad\sum_iw_i=1.
+\]
+For $E_w>0$ define
+\[
+C_i^{(w)}=100\frac{w_i g_i(\Delta_i)}{E_w}.
+\]
+\begin{lemma}[Normalization]
+If $E_w>0$, then $\sum_iC_i^{(w)}=100$.
+\end{lemma}
+\begin{proof}
+\[
+\sum_iC_i^{(w)}=\frac{100}{E_w}\sum_iw_ig_i(\Delta_i)=100.
+\]
+\end{proof}
+This proves normalization, not canonicity of the coordinates or weights.
+
+\subsection{Sensitivity decomposition}
+For $s_i=|\partial E/\partial\theta_i|$, a local alternative is
+\[
+C_i^{(s)}=100\frac{s_i\Delta_i}{\sum_js_j\Delta_j},
+\]
+when the denominator is positive. This model is not generally equivalent to fixed structural weighting.
+
+\section{Error-coordinate geometry}
+Represent the unresolved state by
+\[
+\varepsilon(P)=(\varepsilon_1,\ldots,\varepsilon_n)\in\mathbb R_+^n,
+\qquad
+\|\varepsilon(P)\|_2=\left(\sum_i\varepsilon_i^2\right)^{1/2}.
+\]
+\begin{lemma}
+$\|\varepsilon\|_2=0$ iff every coordinate is zero.
+\end{lemma}
+\begin{proof}
+All squares are nonnegative, so their finite sum is zero exactly when each square is zero.
+\end{proof}
+For nonzero initial magnitude define
+\[
+\mathcal P_k=100\left(1-\frac{\|\varepsilon^{(k)}\|}{\|\varepsilon^{(0)}\|}\right).
+\]
+Norm contraction implies nondecreasing $\mathcal P_k$. However, monotone decrease does not imply convergence to zero: $1+1/(n+1)$ is strictly decreasing and converges to $1$.
+
+\section{A scale-invariant Navier--Stokes diagnostic}
+Consider
+\[
+\varepsilon_{NS}(u)=\frac{\|(u\cdot\nabla)u\|_2}{\nu\|\Delta u\|_2},
+\]
+when the denominator is nonzero.
+\begin{proposition}[Scaling invariance]
+Under $u_\lambda(x,t)=\lambda u(\lambda x,\lambda^2t)$ on $\mathbb R^3$,
+\[
+\varepsilon_{NS}(u_\lambda)=\varepsilon_{NS}(u)
+\]
+whenever both sides are defined.
+\end{proposition}
+\begin{proof}
+The nonlinear term scales pointwise as $\lambda^3[(u\cdot\nabla)u](\lambda x,\lambda^2t)$. Thus
+\[
+\|(u_\lambda\cdot\nabla)u_\lambda\|_2^2
+=\lambda^6\lambda^{-3}\|(u\cdot\nabla)u\|_2^2,
+\]
+so its norm scales as $\lambda^{3/2}$. Likewise $\Delta u_\lambda=\lambda^3(\Delta u)(\lambda x,\lambda^2t)$ and $\|\Delta u_\lambda\|_2=\lambda^{3/2}\|\Delta u\|_2$. The factors cancel.
+\end{proof}
+\begin{remark}
+Scaling invariance makes the diagnostic structurally interesting but does not imply a regularity criterion. A universal threshold requires an independent coercive estimate.
+\end{remark}
+
+\section{Phase decomposition and limitations}
+For a pure mode $Ae^{i\omega t}$ with $\omega\ne0$, integration over an integer number of periods gives zero mean. This does not imply pointwise smallness; $\sin t$ has zero period mean but unit amplitude. Consequently phase cancellation cannot establish regularity without a theorem connecting the cancelled component to a recognized PDE norm.
+
+\section{Counterexample library}
+The audit records the following invalid inference patterns:
+\begin{enumerate}[label=(\arabic*)]
+\item monotone error reduction $\not\Rightarrow$ convergence to zero;
+\item zero time average $\not\Rightarrow$ pointwise control;
+\item scaling invariance $\not\Rightarrow$ regularity criterion;
+\item finite computational verification $\not\Rightarrow$ universal quantification;
+\item normalized percentages $\not\Rightarrow$ model-independent probabilities.
+\end{enumerate}
+
+\section{Critical-space bridge}
+A decisive target is a theorem of the form
+\[
+\text{repository control condition}
+\Longrightarrow
+u\in L^\infty(0,T;L^3(\mathbb R^3)),
+\]
+where the right-hand velocity symbol is understood as $u$. Under appropriate classical hypotheses, endpoint $L^3$ control supplies a regularity mechanism. The first implication is currently an open bridge in this audit.
+
+\section{Formal verification architecture}
+The repository contains Lean and Coq material and audit-lemma counterparts in Coq, Isabelle/HOL and Agda. Formal status is theorem-specific. A proof is classified as kernel-checked only after exact compilation with transitive assumptions audited.
+
+\section{Provenance methodology}
+For significant historical objects the audit preserves or seeks full commit SHA, parent SHA, tree SHA, blob SHA, author and committer dates, immutable URLs and raw-byte SHA-256. Zenodo/DOI metadata is a separate archival layer. Git chronology establishes repository history but not worldwide mathematical priority.
+
+\section{Research operating environment}
+The audit is implemented as a typed research hub. Numerical outputs carry epistemic statuses such as `MODEL\_DERIVED`, `MATHEMATICAL\_DERIVATION`, `DIAGNOSTIC\_NOT\_REGULARITY\_THEOREM`, and `OPEN\_BRIDGE`. This prevents calculator results from being silently promoted to theorem status.
+
+\section{Discussion}
+The reconstructed corpus exhibits a coherent progression from residual obstruction to measurable gap, from gap to parameterized error, and from scalar error to vector/phase representations. The progression is historically meaningful and computationally useful. The main unresolved scientific question is whether one of these diagnostics controls a classical critical regularity quantity with sufficient uniformity.
+
+\section{Conclusion}
+The project is presently strongest as a provenance-aware mathematical audit and research operating environment. Several internal identities are proved and executable; the Navier--Stokes diagnostic is scale invariant; and outstanding theorem obligations are explicit. The classical Millennium conclusion remains open until the repository-to-critical-space bridge is proved.
+
+\section*{Data and code availability}
+Audit data, formalizations, tests, provenance tables and manuscript source are maintained in the public repository `ShantiDraconis/navier-stokes-critical-barrier-audit`.
+
+\section*{Claim-scope declaration}
+Repository chronology and internal formal consistency are not substitutes for independent mathematical proof. External-priority or causal-derivation claims require evidence beyond structural similarity and Git timestamps.
 \end{document}
