@@ -1,3 +1,18 @@
+zenodo_id,record_id,doi,concept_doi,version,title,creator,orcid,internal_document_date,zenodo_created,zenodo_publication_date,zenodo_modified,historical_access,public_file_access_date,retrieval_date,filename,size,checksum,license,access,metadata_status
+14934901,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+14948466,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+14950453,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+14977667,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15040732,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15080581,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15170089,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15172871,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15220150,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15220186,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15220196,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15220224,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+15768350,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
+16399978,,,,,,,,,,,,UNKNOWN,,2026-09-11T14:10:37Z,,,,,NOT_FOUND,NOT_FOUND
 record_id,doi,doi_status,role,title,title_status,creators,creators_status,zenodo_publication_date,zenodo_publication_date_status,zenodo_created_timestamp,zenodo_created_timestamp_status,zenodo_modified_timestamp,zenodo_modified_timestamp_status,version,version_status,historical_access_status,historical_access_status_status,current_access_status,current_access_status_status,direct_zenodo_primary_access,file_list_status,checksum_status,related_identifiers_status,documentary_priority_use,notes,next_action
 15164501,10.5281/zenodo.15164501,REPORTED_EXACT_DOI,ZENODO_PUBLIC_PRIOR_ART,Equations of Major Unsolved Problems in Mathematics,REPORTED,Tiago Fagliari aka Draconis Shanti,REPORTED,2025-04-06,REPORTED,UNKNOWN,MISSING,UNKNOWN,MISSING,original_april_2025_version_preserved,REPORTED,reported_public_record,REPORTED,UNKNOWN,MISSING,UNAVAILABLE_IN_CURRENT_ENVIRONMENT,MISSING,MISSING,MISSING,REPORTED_CANDIDATE_PUBLIC_ANCHOR_ONLY,Public-priority candidate only; not independently verified in this environment.,Verify directly from Zenodo API/page and capture file/checksum metadata.
 14950453,10.5281/zenodo.14950453,INFERRED_FROM_STANDARD_PATTERN,ZENODO_HISTORICAL_CORPUS_CANDIDATE,UNKNOWN,MISSING,,MISSING,UNKNOWN,MISSING,UNKNOWN,MISSING,UNKNOWN,MISSING,UNKNOWN,MISSING,UNKNOWN,MISSING,UNKNOWN,MISSING,UNAVAILABLE_IN_CURRENT_ENVIRONMENT,MISSING,MISSING,MISSING,NONE_UNTIL_PRIMARY_CAPTURE,Record ID supplied by user; other metadata not yet captured.,Retrieve primary Zenodo metadata and original archived file.
