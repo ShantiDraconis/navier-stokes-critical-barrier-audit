@@ -33,7 +33,9 @@ jobs:
         working-directory: formal/lean
         run: |
           lake build
-          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean && exit 1 || true
+          lake env lean CriticalBarrier/BridgeLogic.lean
+          lake env lean CriticalBarrier/NumericClassAudit.lean
+          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean && exit 1 || true
 
       - name: Install Coq
         run: |
