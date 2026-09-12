@@ -13,19 +13,56 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+
       - name: Unit tests for audit invariants
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+
       - name: Static audit-package integrity scan
         run: python scripts/audit_integrity.py > audit-integrity-report.txt
+
+      - name: Install Lean toolchain
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+
+      - name: Build Lean audit library
+        working-directory: formal/lean
+        run: |
+          lake build
+          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean && exit 1 || true
+
+      - name: Install Coq
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y coq
+
+      - name: Compile Coq audit bridge
+        run: |
+          coqc formal/coq/BridgeLogic.v
+          grep -nE '\bAdmitted\b|\badmit\b|\bAxiom\b' formal/coq/BridgeLogic.v && exit 1 || true
+
+      - name: Record unexecuted prover scope
+        run: |
+          printf '%s\n' \
+            'Isabelle: SOURCE_PRESENT_NOT_EXECUTED_IN_THIS_WORKFLOW' \
+            'Agda: SOURCE_PRESENT_NOT_EXECUTED_IN_THIS_WORKFLOW' \
+            > multiprover-scope.txt
+
       - name: Show integrity report
         if: always()
-        run: cat audit-integrity-report.txt || true
-      - name: Upload integrity report
+        run: |
+          cat audit-integrity-report.txt || true
+          cat multiprover-scope.txt || true
+
+      - name: Upload integrity reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: audit-integrity-report
-          path: audit-integrity-report.txt
+          path: |
+            audit-integrity-report.txt
+            multiprover-scope.txt
