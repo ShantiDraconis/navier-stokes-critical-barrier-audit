@@ -1,172 +1,129 @@
 # Repository Index and Evidence Map
 
-This file is the navigation layer for the complete audit. It tells a reviewer where to find each class of evidence and which status applies to it.
+This is the navigation layer for the audit. It separates documentary provenance, formal verification, mathematical validity, external comparison, and causal claims.
 
-## Read first
+## Read first — final review path
 
-1. `README.md` — scope, evidence firewall, principal dates, and navigation.
-2. `STATUS.md` — current scientific and provenance status.
-3. `TIMELINE.md` — chronological evidence map in UTC.
-4. `CLAIMS.md` — claim inventory and claim boundaries.
-5. `LIMITATIONS.md` — explicit limitations and unresolved evidentiary gaps.
-6. `METHODOLOGY.md` — audit methodology.
-7. `PRIORITY.md` — priority/provenance summary.
-8. `audit/16_chat_provenance_ledger.md` — reconstructed ChatGPT-conversation genealogy and hash/export protocol.
+1. `README.md` — repository overview.
+2. `STATUS.md` — current scientific/provenance status.
+3. `TIMELINE.md` — chronology.
+4. `CLAIMS.md` — claim inventory and boundaries.
+5. `audit/49_final_two_stage_referee_and_nsb2_verdict.md` — **final two-stage referee report and release-gate verdict**.
+6. `audit/50_nsb2_journal_grade_analytic_obligations.tex` — **journal-grade LaTeX statement of B2.1–B2.10**.
+7. `data/ns_b2_review_certificate.csv` — **machine-readable certificate/status matrix**.
+8. `audit/47_ns_b2_critical_tail_derivation_and_cross_problem_sources.md` — critical-tail derivation and negative scalar-residual result.
+9. `audit/48_ns_yang_mills_cross_problem_historical_bridge.md` — authenticated cross-problem historical bridge.
+10. `audit/35_peer_review_master_protocol.md` — evidence and proof-status policy.
+11. `audit/44_peer_review_gap_theorem_submission_plan.md` — publication tracks and open bridge obligations.
+12. `audit/16_chat_provenance_ledger.md` — reconstructed conversation genealogy and export/hash protocol.
 
 ## Evidence firewall
 
-The repository distinguishes five questions that must never be collapsed into one another:
+Never collapse these questions into one:
 
 - documentary priority;
 - mathematical equivalence;
 - public availability;
-- submission/exposure to an external system;
+- submission/exposure;
 - causal derivation.
 
-A date proves chronology only to the extent that its source is independently verifiable. A structural match does not prove copying. A submission does not prove training use. Causal derivation remains unresolved unless direct evidence establishes it.
+Chronology is not proof. Structural overlap is not copying. A formal interface is not a proof of an analytic hypothesis. A repository timestamp is not necessarily a public-publication timestamp.
 
-## Root files
+## Final NS-B2 status
 
-- `README.md` — executive overview and navigation.
-- `INDEX.md` — this complete navigation map.
-- `STATUS.md` — current evidentiary/scientific status.
-- `TIMELINE.md` — dated chronology.
-- `CLAIMS.md` — claim ledger.
-- `PRIORITY.md` — priority summary.
-- `METHODOLOGY.md` — audit method.
-- `LIMITATIONS.md` — limitations and evidentiary cautions.
-- `CITATION.cff` — citation metadata.
-- `CONTRIBUTING.md` — contribution rules.
-- `LICENSE` — repository license.
+The decisive target is
 
-## Audit files
+`Navier–Stokes + explicit admissibility hypotheses -> NS-B2`.
 
-### External target and hypothesis extraction
+Current result:
 
-- `audit/01_external_claims.md` — external claims being audited.
-- `audit/02_exact_hypotheses.md` — precise hypotheses used in the mathematical audit.
+- scalar high-frequency `L2` residual alone: **INSUFFICIENT** by concentration scaling;
+- Littlewood–Paley critical-tail repair: **MATHEMATICALLY MOTIVATED / CONDITIONAL**;
+- fixed-cutoff `energy + H_J -> L3`: **PROVED FROM EXPLICIT HYPOTHESES**;
+- derivation of uniform `H_J` or equivalent critical control from NS dynamics: **OPEN ANALYTIC BRIDGE**;
+- completed Clay solution: **NOT ESTABLISHED**.
 
-### Mathematical compatibility tests
+## Principal provenance files
 
-- `audit/03_L3_consistency_test.md` — critical-L3 consistency.
-- `audit/04_energy_concentration_test.md` — energy/concentration analysis.
-- `audit/05_forcing_smoothness_test.md` — smooth-forcing compatibility.
-- `audit/06_pressure_compatibility_test.md` — pressure compatibility.
-- `audit/07_support_compatibility_test.md` — support/localization compatibility.
-- `audit/08_scaling_exponents.md` — scaling exponents.
-- `audit/09_required_cancellations.md` — cancellation requirements.
-- `audit/10_candidate_contradictions.md` — candidate contradiction ledger.
-- `audit/11_failed_refutation_attempts.md` — failed/insufficient refutation attempts, retained for auditability.
-- `audit/12_open_questions.md` — unresolved mathematical questions.
+- `audit/13_cross_repository_forensic_index.md`
+- `audit/14_openai_formula_provenance.md`
+- `audit/15_correction_architecture_comparison.md`
+- `audit/15_git_provenance_full.md`
+- `audit/15_projection_chain_audit_map.md`
+- `audit/15_uel_structural_analysis.md`
+- `audit/16_related_commit_derivations.md`
+- `audit/48_ns_yang_mills_cross_problem_historical_bridge.md`
 
-### Provenance, cross-repository and architecture comparison
+## Mathematical audit files
 
-- `audit/13_cross_repository_forensic_index.md` — cross-repository forensic map.
-- `audit/13_final_status.md` — prior final-status checkpoint.
-- `audit/14_openai_formula_provenance.md` — formula-level provenance comparison against the later public OpenAI repository.
-- `audit/15_correction_architecture_comparison.md` — residual/correction architecture comparison.
-- `audit/15_git_provenance_full.md` — full Git provenance ledger and principal historical SHAs.
-- `audit/15_projection_chain_audit_map.md` — projection → unresolved component → residual/closure chain.
-- `audit/15_uel_structural_analysis.md` — Universal Emergent Logic structural analysis.
-- `audit/16_chat_provenance_ledger.md` — conversation-derived genealogy, verification levels, export/hash procedure.
-- `audit/16_cosmology_baseline.md` — cosmology-baseline material used as genealogical context, not as proof of Navier–Stokes equivalence by itself.
-- `audit/16_related_commit_derivations.md` — related historical commit derivations.
+- `audit/03_L3_consistency_test.md`
+- `audit/04_energy_concentration_test.md`
+- `audit/05_forcing_smoothness_test.md`
+- `audit/06_pressure_compatibility_test.md`
+- `audit/07_support_compatibility_test.md`
+- `audit/08_scaling_exponents.md`
+- `audit/09_required_cancellations.md`
+- `audit/10_candidate_contradictions.md`
+- `audit/11_failed_refutation_attempts.md`
+- `audit/12_open_questions.md`
+- `audit/47_ns_b2_critical_tail_derivation_and_cross_problem_sources.md`
+- `audit/49_final_two_stage_referee_and_nsb2_verdict.md`
+- `audit/50_nsb2_journal_grade_analytic_obligations.tex`
 
-## Evidence directory
+## Formal verification and CI
 
-Use `evidence/` for primary-source-oriented evidence packs, commit/path inventories, integrity records, formula crosswalks, and the LRE evidence inventory. The central item referenced by `STATUS.md` is:
+- `.github/workflows/audit-integrity.yml` — Python tests, registry validation, integrity scan, Lean build/checks, Coq compilation/checks; Isabelle/Agda explicitly recorded as unexecuted in that workflow.
+- `formal/lean/` — Lean audit modules.
+- `formal/coq/` — Coq audit modules.
+- `tools/scan_sorry_certificates.py` — declaration-level historical gap scanner; source-clean status still requires a build/kernel certificate.
+- `data/ns_b2_review_certificate.csv` — release-grade status matrix.
 
-- `evidence/lre_evidence_inventory.md` — object-by-object inventory of what is established, structural, absent, or unresolved.
+No theorem with `sorry`, `admit`, `Admitted`, `postulate`, `axiom`, `oops`, vacuous `True`, or an equivalent escape hatch may be advertised as a completed proof unless the relevant dependency and assumption status is explicitly part of the theorem claim.
 
-Also use `evidence/provenance_chain.md` where referenced by `STATUS.md` for the chronological Git chain.
+## Historical anchors directly recovered from GitHub
 
-## Priority directory
+Important authenticated full-SHA anchors include:
 
-Use `priority/` for structured prior-work summaries and pre-2026-09-08 chronology. These files are intended to answer: “what object existed, where, and by what date?”
+- `2025-11-23T02:27:31Z` — `millennium-navier-stokes-I@64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f`.
+- `2025-11-25T04:14:58Z` — `777d58e6f1eda3872a809492183ce432ead4f030`.
+- `2025-11-25T04:19:53Z` — `1cd176fa02d0827cff24f61cfc27dbda21109c25`.
+- `2025-11-25T15:47:20Z` — `63b248dd29f1817c457acdb00e116e2e9b0687cc`.
+- `2025-11-25T21:04:43Z` — `millennium-navier-stokes-classical@cca881c665f67c67d96a4f84371fb51cd9c858a0`.
+- `2025-12-02T21:36:26Z` — `Millennium@17686f99ff0b79711cbd3d2eac39261ac5d9c6c1`.
+- `2025-12-18T20:20:34Z` — `Universe-0-0@f900684c3785ffbd9707291225b2c1751ae3e3eb`.
+- `2025-12-18T20:25:20Z` — `Millennium@4af517e3f1ea5d04be1c6bbd8953209fa2139e82`.
+- `2025-12-19T13:35:07Z` — `universal-emergent-logic-@f5d070d49557622c7168cd7b354d5d9629ce3fc6`.
+- `2025-12-19T17:17:28Z` — `730aa849b0d76b0202f08b490664aa11c164b2bf`.
+- `2025-12-19T17:43:21Z` — `1ed0ded98d26966189fc5936914fd964d42cbd7a`.
+- `2025-12-19T17:55:31Z` — `abdaa41189864f85d3b9f8c8fec6b3ec4431eab5`.
+- `2025-12-19T20:17:38Z` — `2ceba2ac14e9541561d76307af538ed91817c2af`.
+- `2025-12-19T20:23:05Z` — `ace0acc3abd1067cd63bd94adfeffa962977bc9b`.
+- `2025-12-19T20:24:44Z` — `2854eaf70a4cf91cef3b936304ae080ec69f4fb1`.
+- `2026-08-30T11:10:45Z` — `navier-stokes-noncircular@8f12748eb160b937174825fe3e7bdccf05e8f9af`.
 
-## Theory directory
+These dates establish account-associated corpus chronology only.
 
-Use `theory/` for the mathematical framework, classical dependencies, definitions, and the target dichotomy. Theory files do not by themselves establish provenance; they should be cross-referenced with Git/Zenodo evidence.
+## Quarantined provenance
 
-## Formal directories
+PR #20 corrects source attribution for LRE commits and quarantines three rows previously tied to `Millennium@c70b6f72...`. That commit is not valid evidence for the claimed December-2025 NS paths. The correct first occurrences remain unresolved pending path-history recovery. The rejected citation is retained in caveats to preserve the audit trail.
 
-- `formal/lean/` — Lean formalization/scaffolding.
-- `formal/coq/` — Coq formalization/scaffolding.
+## Conversation provenance
 
-Any theorem marked with placeholders, assumptions, axioms, `sorry`, `admit`, or equivalent must not be described as a completed proof without an independent proof audit.
+Conversation-derived dates remain `REPORTED_CONVERSATION_METADATA` until the original account export is supplied. Current earliest recovered interaction is `2023-04-08T21:18:05Z`; this is not an independently verified account-creation date.
 
-## Numerical / computational directories
+Required primary-evidence procedure:
 
-- `python/` — scripts for numerical or consistency checks.
-- `data/` — input or derived audit data.
-- `results/` — verified/falsified/numerical/unresolved outputs.
-- `graph/` — node-edge provenance/evidence graph and visual maps.
-
-## Automation / integrity
-
-- `.github/workflows/audit-integrity.yml` — automated integrity checks.
-- `.github/agents/` — audit-agent configuration/scaffolding.
-
-## Principal dated anchors
-
-### Public archival / publication anchors
-
-- `2025-04-06` — Zenodo record `15164501`, DOI `10.5281/zenodo.15164501`, currently treated as a reported public prior-art anchor until all archival/checksum evidence is independently captured in-repository.
-- `2026-09-08` — public comparison snapshot in `openai/NavierStokesAndEuler`, SHA `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538`.
-
-### Git provenance anchors
-
-- `2025-11-23` — `millennium-navier-stokes-I`, SHA `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f`.
-- `2025-11-25` — collapse/formal NS expansion, including `777d58e6f1eda3872a809492183ce432ead4f030` and HEAD checkpoint `63b248dd29f1817c457acdb00e116e2e9b0687cc`.
-- `2025-11-26` — `millennium-navier-stokes-classical`, first I-architecture anchor `53c91d97c2ace924b4436825f3a53aa67ab87ad7`; later checkpoint `867045e966812b50b2304f0460288cf6449d8221`.
-- `2025-12-18T20:26:33Z` — `b033ea87fca138224200dd1acf2cf4043315f846`, LRE-NS framework / compression barrier cluster.
-- `2025-12-18T20:28:57Z` — `30bf8c53008c548a8a9dada3fd69d6d2b2b1df2c`, NS documentation.
-- `2025-12-18T21:03:13Z` — `a992d144c235572ac2b7413b015e58535a864a41`, formal closure.
-- `2025-12-18T21:07:43Z` — `4cdb6a61ae7a9189eab551b1099895578a8fbb56`, critical jets / microlocal analysis.
-- `2025-12-19T13:56:01Z` — `f7f414d2ea66fa7a04d4de390f0e9357dfd980ae`, residual-to-dynamical correction genealogy.
-- `2025-12-19T17:17:28Z` — `730aa849b0d76b0202f08b490664aa11c164b2bf`, reference section / geometric NS decomposition.
-- `2025-12-19T20:24:44Z` — `2854eaf70a4cf91cef3b936304ae080ec69f4fb1`, additive high-frequency perturbation architecture.
-- `2026-08-30` — `navier-stokes-noncircular`, SHA `8f12748eb160b937174825fe3e7bdccf05e8f9af`.
-
-## Conversation-provenance chronology
-
-Conversation-derived dates are a separate evidence class. Until checked against an original ChatGPT account export, they MUST be labeled `REPORTED_CONVERSATION_METADATA` rather than primary-source verified timestamps.
-
-Current reconstructed milestones include:
-
-- `2023-04-08T21:18:05Z` — earliest currently recovered ChatGPT interaction in available context; account-creation date remains unverified.
-- `2023-05-28T20:39:02Z` — second early recovered interaction.
-- `2024-02-26T20:08:52Z` — quantitative/cross-scale precursor.
-- `2024-03-12T05:06:48Z` — earliest reconstructed symbolic-indeterminacy architecture involving `1/0` and `1/infinity`.
-- `2024-04-18T21:15:21Z` — indeterminacy treated as a reusable/universal mechanism.
-- `2025-01-28` — reconstructed explicit `I = 0/0` universal-object stage.
-- `2025-01-29T10:58:33Z` — difference/limit/indeterminacy stage.
-- `2025-03-02T05:19:54Z` — adaptive parameter chosen locally to satisfy a constraint.
-- `2025-04-14T23:03:04Z` — reconstructed joint treatment of the seven Millennium Problems.
-- `2025-07-09T08:24:00Z` — reconstructed common difference/Delta architecture.
-- `2025-07-10T12:29:42Z` — reconstructed `0/0 = I` application across multiple Millennium Problems.
-- `2025-08-06T13:43:58Z` — common formalization stage in Lean.
-- `2025-09-14T02:48:01Z` — common HorizonLab formal-structure stage.
-
-See `audit/16_chat_provenance_ledger.md` for the full reconstructed genealogy and verification protocol.
-
-## ChatGPT export requirement
-
-The following item is still missing and is necessary to turn reconstructed conversation chronology into primary-source evidence:
-
-`Original ChatGPT account export` — expected to contain `conversations.json` and/or HTML/JSON export artifacts.
-
-Required procedure:
-
-1. preserve the ZIP unchanged;
-2. compute SHA-256 before parsing;
+1. preserve original export ZIP unchanged;
+2. compute SHA-256;
 3. extract conversation/message IDs and timestamps;
-4. hash derived conversation/message artifacts;
-5. build Chat → Git → Zenodo crosswalks;
-6. publish hashes and relevant excerpts, not unrelated private conversations.
+4. hash derived artifacts;
+5. construct Chat -> Git -> Zenodo crosswalks;
+6. publish only relevant excerpts/hashes, not unrelated private material.
 
-## Current comparison conclusion
+## Publication/readiness boundary
 
-The audit currently supports documentary anteriority for multiple pre-2026 objects and very strong programmatic structural overlap in parts of the residual/projection/correction architecture. It does NOT currently establish a distinctive-construction identity for the entire later construction, causal derivation, plagiarism, training use, or a completed Clay Millennium solution.
+Acceptable now: provenance/reproducibility paper, negative scalar-residual coercivity theorem, critical-defect/open-theorem program, research-software paper.
 
-See `STATUS.md`, `audit/15_correction_architecture_comparison.md`, and `audit/16_chat_provenance_ledger.md` for the current boundary conditions.
+Not acceptable now: completed NS Millennium solution, global first-priority claim, plagiarism/copying claim, training-use claim, or causal-derivation claim.
+
+See `audit/49_final_two_stage_referee_and_nsb2_verdict.md` for the canonical final wording.

@@ -1,0 +1,9 @@
+ID,STATUS,RESIDUE_MATH,CONSTANTE
+B2.9,PROVED_MATRIX_OBSTRUCTION,"R1=R2; Pi1!=Pi2","S=diag(1,-0.5,-0.5)"
+B2.8,TARGET,"signed flux control; sign convention must be frozen","kappa=nu Lambda^2/4; C_error=2.48"
+B2.10,TARGET,"critical-tail/Gronwall bridge to M3<inf","C_final target=0.62/(nu Lambda^2/2)"
+G8,TARGET,"Res_RH=empty","r=0.01; boundary |zeta|>=1e-20 target; model residual <=1e-30 target"
+G16,TARGET,"mass gap >0","Delta=1 target normalization; area-law/OS proof absent"
+G11,TARGET,"SAT not in P","unconditional lower bound absent"
+BSD,TARGET,"r_an-r_alg=0","full BSD theorem absent"
+HODGE,TARGET,"Hdg/Im(cycle)=0","full Hodge theorem absent"
