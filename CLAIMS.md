@@ -139,7 +139,7 @@ claims:
       resolved/unresolved advection expansion.
     status: ESTABLISHED
     evidence:
-      - repo: ShantiDraconis/navier-stokes-critical-barrier-audit
+      - repo: ShantiDraconis/universal-emergent-logic-
         commit: 730aa849b0d76b0202f08b490664aa11c164b2bf
         date: 2025-12-19
         file: docs/lre-navier-stokes-geometric.md
@@ -150,7 +150,7 @@ claims:
       obstruction P_N[(u·∇)u] ≠ (P_N u)·∇(P_N u).
     status: ESTABLISHED
     evidence:
-      - repo: ShantiDraconis/navier-stokes-critical-barrier-audit
+      - repo: ShantiDraconis/universal-emergent-logic-
         commit: f30ef6a9d19af290a8f461d60d70da091d73d6ed
         date: 2025-12-19T17:22:45Z
         file: docs/lre-navier-stokes-geometric.md
@@ -161,7 +161,7 @@ claims:
       operator T(u_N, u_⊥) = −P_N[(u_⊥·∇)u_N + (u_N·∇)u_⊥ + (u_⊥·∇)u_⊥].
     status: ESTABLISHED
     evidence:
-      - repo: ShantiDraconis/navier-stokes-critical-barrier-audit
+      - repo: ShantiDraconis/universal-emergent-logic-
         commit: 730aa849b0d76b0202f08b490664aa11c164b2bf
         date: 2025-12-19
 
@@ -172,7 +172,7 @@ claims:
       non-factorizable CouplingOperator K.
     status: ESTABLISHED
     evidence:
-      - repo: ShantiDraconis/navier-stokes-critical-barrier-audit
+      - repo: ShantiDraconis/universal-emergent-logic-
         commit: 14322ff2e8f38df302c6f2f6b41754db79d5a900
         pr: 37
         date: 2025-12-19
