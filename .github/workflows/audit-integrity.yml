@@ -60,7 +60,8 @@ jobs:
           lake env lean CriticalBarrier/NumericClassAudit.lean
           lake env lean CriticalBarrier/EndpointInterfaces.lean
           lake env lean CriticalBarrier/ResolutionDynamics.lean
-          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean CriticalBarrier/ResolutionDynamics.lean && exit 1 || true
+          lake env lean CriticalBarrier/B2ScalarResidualCounterexample.lean
+          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean CriticalBarrier/ResolutionDynamics.lean CriticalBarrier/B2ScalarResidualCounterexample.lean && exit 1 || true
 
       - name: Install Coq
         run: |
