@@ -1,6 +1,6 @@
 # Audit 61 — Logical scenario partition after B2.8 gap isolation
 
-Status: `SCENARIO_PARTITION_NOT_DICHOTOMY_PROOF`
+Status: `SCENARIO_PARTITION_WITH_INTERMEDIATE_CLOSURE_STATE`
 
 Date: `2026-09-13`
 
@@ -202,3 +202,154 @@ FINITE_TIME_BLOWUP = NOT_ESTABLISHED
 The value of the gap-isolation certificate is not that it proves `TRUE` and `FALSE` simultaneously. It does something more precise: it removes invalid sufficient arguments while preserving every global outcome not excluded by a valid theorem.
 
 Thus the correct post-countercertificate research state is a **partition of admissible hypotheses and mechanisms**, with explicit obligations for eliminating each scenario.
+
+## 9. Intermediate state between OPEN and CLOSED
+
+The audit should not be binary. Between an unresolved bridge and a fully established Millennium conclusion there is a mathematically useful intermediate state.
+
+Define three principal levels:
+
+```text
+OPEN
+  substantive PDE bridge absent
+
+CONDITIONALLY_CLOSED
+  all downstream implications are proved once a finite list of explicit PDE premises is supplied
+
+CLOSED
+  those PDE premises are themselves proved from the admissible Navier–Stokes hypotheses, and the endpoint/continuation map is complete
+```
+
+For the present architecture:
+
+```text
+OPEN:
+NS dynamics -> DirectionalDepletion
+
+TARGET / CONDITIONALLY_CLOSED:
+DirectionalDepletion -> signed-flux control
+signed-flux + dissipation -> decay
+critical reconstruction -> L^infinity_t L^3_x
+ESS hypotheses -> continuation
+
+CLOSED:
+all of the above, with no substantive PDE premise left assumed
+```
+
+This intermediate state is not a new truth value between `TRUE` and `FALSE`. It is a **proof-completion status**. It records that the logical machinery downstream of an explicit unresolved premise can be complete even though the original Millennium statement is not yet established.
+
+Recommended status vocabulary:
+
+```text
+OPEN_BRIDGE
+TARGET_FORMALIZED
+CONDITIONALLY_CLOSED
+PDE_CLOSED
+ENDPOINT_CLOSED
+FULLY_CLOSED
+```
+
+The present audit may therefore be summarized as:
+
+```text
+TARGET_ARCHITECTURE = FORMALIZED
+DOWNSTREAM_LOGIC = CONDITIONALLY_CLOSED
+PDE_DIRECTIONAL_BRIDGE = OPEN_BRIDGE
+MILLENNIUM_CONCLUSION = NOT_ESTABLISHED
+```
+
+## 10. Explicit positive-resolution target proposed by this audit
+
+A genuine positive resolution along the present route should be stated as a theorem whose decisive input is derived from the PDE rather than inserted as an assumption.
+
+A safe schematic target is:
+
+```text
+For every admissible maximal smooth 3D Navier-Stokes solution u,
+there exists a sufficiently high frequency scale Lambda such that
+
+Pi_Lambda(u)
+ <= [nu Lambda^2/4 + Err_Lambda(u)] R_Lambda(u)
+
+with
+
+Err_Lambda(u) < (3/4) nu Lambda^2,
+
+uniformly on [0,T*).
+```
+
+Combined with the already isolated energy/dissipation mechanism, this yields
+
+```text
+Rdot_Lambda <= -lambda_Lambda R_Lambda,
+lambda_Lambda > 0,
+```
+
+and hence conditional exponential decay.
+
+But the actual closure must continue further:
+
+```text
+signed-flux control
+ -> residual decay
+ -> high-frequency critical control
+ -> uniform low-frequency critical control
+ -> sup_{t<T*} ||u(t)||_L3 < infinity
+ -> exact ESS hypothesis map
+ -> T* = infinity.
+```
+
+The central main theorem target can therefore be compressed to:
+
+```text
+MAIN CLOSURE TARGET
+
+For every admissible maximal smooth solution u of 3D Navier-Stokes,
+
+sup_{t<T*} ||u(t)||_{L3} < infinity.
+
+Therefore T* = infinity.
+```
+
+The repository must not label this `PROVED` until the PDE-derived bridge, critical reconstruction, and exact endpoint map are discharged without circularly assuming an equivalent regularity criterion.
+
+## 11. Resolution ladder and exact meaning of the middle term
+
+The full audit ladder is now:
+
+```text
+LEVEL 0 — FALSIFIED ROUTE
+A proposed sufficient implication has a countercertificate.
+This says nothing by itself about the truth of global regularity.
+
+LEVEL 1 — OPEN
+A substantive bridge is missing.
+
+LEVEL 2 — TARGET_FORMALIZED
+The missing theorem is precisely stated and machine-encoded as an interface/target.
+
+LEVEL 3 — CONDITIONALLY_CLOSED
+Everything downstream of that target has been proved, modulo the target and any explicitly listed external theorem map.
+
+LEVEL 4 — PDE_CLOSED
+The target itself is derived from the actual Navier-Stokes hypotheses.
+
+LEVEL 5 — ENDPOINT_CLOSED
+The critical bound is rigorously matched to the endpoint theorem with all hypotheses verified.
+
+LEVEL 6 — FULLY_CLOSED
+The resulting theorem proves global regularity (or, on the negative side, an admissible finite-time singularity construction proves failure of global regularity).
+```
+
+Current placement of the repository after B2.8/B2.9 gap isolation:
+
+```text
+B2.8 proposed scalar/alignment route = LEVEL 0 for that route
+replacement directional theorem = LEVEL 2 target
+conditional decay machinery = LEVEL 3 where its premises are explicit
+PDE derivation of directional depletion = LEVEL 1 / OPEN_BRIDGE
+critical L3 completion = not yet LEVEL 5
+Millennium conclusion = not LEVEL 6
+```
+
+This ladder closes the conceptual gap between saying simply `OPEN` and saying `CLOSED`: the repository can legitimately demonstrate substantial formal completion while remaining explicit about the one or more mathematical bridges still preventing a theorem of global regularity.
