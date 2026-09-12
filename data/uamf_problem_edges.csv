@@ -1,0 +1,13 @@
+edge_id,source,target,edge_type,status,mathematical_requirement
+E01,INDET_BOUNDARY,LOCAL_GLOBAL,GENEALOGICAL,STRUCTURAL_PRECURSOR,typed boundary/reduction must be mapped to local/global state spaces
+E02,LOCAL_GLOBAL,NON_UNIFICATION,GUARDRAIL,ESTABLISHED_AS_FRAMEWORK,do not infer cross-domain implication without explicit bridge
+E03,LOCAL_GLOBAL,PHASE_ERROR,GENEALOGICAL,STRUCTURAL,define invariant normalized defect and tolerance
+E04,RH_TAIL,RH_ROOT,DOMAIN_BRIDGE,OPEN,RH finite-zero control from tail/boundary stability
+E05,PHASE_ERROR,RH_ROOT,DOMAIN_BRIDGE,OPEN,prove coordinate-invariant defect forces Re(rho)=1/2 for every finite zero
+E06,PHASE_ERROR,PNP_ROOT,DOMAIN_BRIDGE,OPEN,prove approximation/tolerance model yields exact unconditional complexity result
+E07,LOCAL_GLOBAL,NS_ROOT,DOMAIN_BRIDGE,OPEN,prove residual/projection control implies critical L3 bound or official breakdown alternative
+E08,PHASE_ERROR,BSD_HODGE_YM_ROOT,DOMAIN_BRIDGE,OPEN,derive exact arithmetic/geometric/QFT endpoints separately
+E09,NON_UNIFICATION,RH_ROOT,LIMITATION,MANDATORY,RH bridge must use native analytic number theory
+E10,NON_UNIFICATION,PNP_ROOT,LIMITATION,MANDATORY,P-vs-NP bridge must use exact computational complexity definitions
+E11,NON_UNIFICATION,NS_ROOT,LIMITATION,MANDATORY,NS bridge must use official PDE solution/forcing class
+E12,NON_UNIFICATION,BSD_HODGE_YM_ROOT,LIMITATION,MANDATORY,each target requires independent native-mathematics bridge
