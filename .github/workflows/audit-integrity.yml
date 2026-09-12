@@ -18,8 +18,13 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Unit tests for audit invariants
+      - name: Unit tests for audit invariants and certificate pipeline
         run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Syntax-check certificate tools
+        run: |
+          python -m py_compile tools/scan_sorry_certificates.py
+          python -m py_compile tools/classify_gap_obligations.py
 
       - name: Static audit-package integrity scan
         run: python scripts/audit_integrity.py > audit-integrity-report.txt
