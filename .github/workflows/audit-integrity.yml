@@ -26,6 +26,23 @@ jobs:
           python -m py_compile tools/scan_sorry_certificates.py
           python -m py_compile tools/classify_gap_obligations.py
 
+      - name: Validate canonical open-bridge registry
+        run: |
+          python - <<'PY'
+          import csv
+          from pathlib import Path
+          p = Path('data/open_bridge_registry.csv')
+          rows = list(csv.DictReader(p.open(encoding='utf-8')))
+          assert rows, 'open bridge registry is empty'
+          ids = [r['bridge_id'] for r in rows]
+          assert len(ids) == len(set(ids)), 'duplicate bridge IDs'
+          allowed = {'PROVED','CONDITIONAL','EXTERNAL_THEOREM','OPEN_BRIDGE','INCONSISTENT_SPECIFICATION','NOT_ESTABLISHED'}
+          assert all(r['current_status'] in allowed for r in rows)
+          assert any(r['bridge_id'] == 'NS-B2' and r['current_status'] == 'OPEN_BRIDGE' for r in rows)
+          assert any(r['bridge_id'] == 'PRIORITY-B1' and r['current_status'] == 'OPEN_BRIDGE' for r in rows)
+          print(f'validated {len(rows)} endpoint obligations')
+          PY
+
       - name: Static audit-package integrity scan
         run: python scripts/audit_integrity.py > audit-integrity-report.txt
 
@@ -40,7 +57,8 @@ jobs:
           lake build
           lake env lean CriticalBarrier/BridgeLogic.lean
           lake env lean CriticalBarrier/NumericClassAudit.lean
-          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean && exit 1 || true
+          lake env lean CriticalBarrier/EndpointInterfaces.lean
+          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean && exit 1 || true
 
       - name: Install Coq
         run: |
