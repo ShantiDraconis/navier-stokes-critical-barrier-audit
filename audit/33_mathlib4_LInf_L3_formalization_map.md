@@ -185,37 +185,37 @@ Mathlib4 sources.
 
 ### 1. Earliest recovered conceptual ESS/\(L^3\) occurrence
 
-- Repository: \`ShantiDraconis/millennium-navier-stokes-I\`
-- Commit: [\`f1c920dfe7e7d42f4c40417e0c0c0fb8b8c43670\`](https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/f1c920dfe7e7d42f4c40417e0c0c0fb8b8c43670)
+- Repository: `PRIVATE-SOURCE-A` (access-controlled; name withheld)
+- Commit: `f1c920dfe7e7d42f4c40417e0c0c0fb8b8c43670` (private source URL withheld)
 - Timestamp: \`2025-11-25T04:16:50Z\`
-- Historical file: [\`docs/RELATED_WORK.md\`](https://github.com/ShantiDraconis/millennium-navier-stokes-I/blob/f1c920dfe7e7d42f4c40417e0c0c0fb8b8c43670/docs/RELATED_WORK.md)
+- Historical file: `docs/RELATED_WORK.md` (private URL withheld)
 - Recovered wording: \`Escauriaza, Seregin & Šverák (2003): L^3 regularity criterion\`.
 - Classification: literature/criterion identification, not a formal proof.
 
 ### 2. Earliest recovered compact \(L^{3,\infty}\) notation
 
-- Commit: [\`80951ea236e5f069279fa34d51db95fe8d5b7937\`](https://github.com/ShantiDraconis/millennium-navier-stokes-I/commit/80951ea236e5f069279fa34d51db95fe8d5b7937)
+- Commit: `80951ea236e5f069279fa34d51db95fe8d5b7937` (private source URL withheld)
 - Timestamp: \`2025-11-25T04:18:20Z\`
 - Message: \`Fix typographical notation for L^{3,∞} in related work documentation\`.
-- Historical file: [\`docs/RELATED_WORK.md\`](https://github.com/ShantiDraconis/millennium-navier-stokes-I/blob/80951ea236e5f069279fa34d51db95fe8d5b7937/docs/RELATED_WORK.md)
+- Historical file: `docs/RELATED_WORK.md` (private URL withheld)
 - Classification: explicit compact notation and bibliographic identification.
 - Ambiguity warning: isolated \(L^{3,\infty}\) can denote a Lorentz space; normalize the intended endpoint as \(L^\infty_tL^3_x\).
 
 ### 3. Earliest recovered unambiguous Bochner endpoint plus blow-up criterion
 
-- Repository: \`ShantiDraconis/millennium-navier-stokes-classical\`
-- Commit: [\`d853205ed10e33279327b759adc3135bcd2a262c\`](https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/d853205ed10e33279327b759adc3135bcd2a262c)
+- Repository: `PRIVATE-SOURCE-B` (access-controlled; name withheld)
+- Commit: `d853205ed10e33279327b759adc3135bcd2a262c` (private source URL withheld)
 - Timestamp: \`2025-11-25T06:34:30Z\`
-- Historical file: [\`docs/07-blowup-criteria.md\`](https://github.com/ShantiDraconis/millennium-navier-stokes-classical/blob/d853205ed10e33279327b759adc3135bcd2a262c/docs/07-blowup-criteria.md)
+- Historical file: `docs/07-blowup-criteria.md` (private URL withheld)
 - Recovered statements: \(\limsup_{t\to T^{*-}}\|u(t)\|_{L^3}=\infty\), and \`u ∈ L^∞([0,T]; L³) implies regularity on [0,T]\`.
 - Classification: mathematical documentation, not a Lean-formalized proof.
 
 ### 4. Earliest recovered Lean target
 
-- Repository: \`ShantiDraconis/millennium-navier-stokes-classical\`
-- Commit: [\`5eee6ce82dda31852cd52db61104c42433ec7ae4\`](https://github.com/ShantiDraconis/millennium-navier-stokes-classical/commit/5eee6ce82dda31852cd52db61104c42433ec7ae4)
+- Repository: `PRIVATE-SOURCE-B` (access-controlled; name withheld)
+- Commit: `5eee6ce82dda31852cd52db61104c42433ec7ae4` (private source URL withheld)
 - Timestamp: \`2025-11-25T11:37:02Z\`
-- Historical file: [\`formal/lean/RegularityCriteria.lean\`](https://github.com/ShantiDraconis/millennium-navier-stokes-classical/blob/5eee6ce82dda31852cd52db61104c42433ec7ae4/formal/lean/RegularityCriteria.lean)
+- Historical file: `formal/lean/RegularityCriteria.lean` (private URL withheld)
 - Recovered target: \`u ∈ L^∞([0,T]; L³) implies regularity\`.
 - Classification: \`FORMALIZATION_SKELETON / PLACEHOLDER\`; use of \`True\` and \`sorry\` does not certify ESS.
 
