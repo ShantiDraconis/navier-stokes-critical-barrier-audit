@@ -21,10 +21,11 @@ jobs:
       - name: Unit tests for audit invariants and certificate pipeline
         run: python -m unittest discover -s tests -p 'test_*.py' -v
 
-      - name: Syntax-check certificate tools
+      - name: Syntax-check certificate and state-machine tools
         run: |
           python -m py_compile tools/scan_sorry_certificates.py
           python -m py_compile tools/classify_gap_obligations.py
+          python -m py_compile tools/resolution_state_machine.py
 
       - name: Validate canonical open-bridge registry
         run: |
@@ -58,17 +59,19 @@ jobs:
           lake env lean CriticalBarrier/BridgeLogic.lean
           lake env lean CriticalBarrier/NumericClassAudit.lean
           lake env lean CriticalBarrier/EndpointInterfaces.lean
-          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean && exit 1 || true
+          lake env lean CriticalBarrier/ResolutionDynamics.lean
+          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean CriticalBarrier/ResolutionDynamics.lean && exit 1 || true
 
       - name: Install Coq
         run: |
           sudo apt-get update
           sudo apt-get install -y coq
 
-      - name: Compile Coq audit bridge
+      - name: Compile Coq audit modules
         run: |
           coqc formal/coq/BridgeLogic.v
-          grep -nE '\bAdmitted\b|\badmit\b|\bAxiom\b' formal/coq/BridgeLogic.v && exit 1 || true
+          coqc formal/coq/ResolutionDynamics.v
+          grep -nE '\bAdmitted\b|\badmit\b|\bAxiom\b' formal/coq/BridgeLogic.v formal/coq/ResolutionDynamics.v && exit 1 || true
 
       - name: Record unexecuted prover scope
         run: |
