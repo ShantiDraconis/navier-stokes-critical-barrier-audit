@@ -77,6 +77,7 @@ jobs:
             lake env lean CriticalBarrier/CompleteClosureTargets.lean
             lake env lean CriticalBarrier/B2_8_AlignmentTarget.lean
             lake env lean CriticalBarrier/B2_ChainTarget.lean
+            lake env lean CriticalBarrier/B2_DeterministicParameterChain.lean
             lake env lean Millennium/AllClosureTargets.lean
           } 2>&1 | tee ../../lean-build.log
 
@@ -84,7 +85,7 @@ jobs:
         continue-on-error: true
         run: |
           set -o pipefail
-          if grep -RInE '\bsorry\b|\baxiom\b' formal/lean/CriticalBarrier/B2_8_AlignmentTarget.lean formal/lean/CriticalBarrier/B2_ChainTarget.lean formal/lean/Millennium/AllClosureTargets.lean > lean-proof-escape.log; then cat lean-proof-escape.log; exit 1; else echo CLEAN | tee lean-proof-escape.log; fi
+          if grep -RInE '\bsorry\b|\baxiom\b' formal/lean/CriticalBarrier/B2_8_AlignmentTarget.lean formal/lean/CriticalBarrier/B2_ChainTarget.lean formal/lean/CriticalBarrier/B2_DeterministicParameterChain.lean formal/lean/Millennium/AllClosureTargets.lean > lean-proof-escape.log; then cat lean-proof-escape.log; exit 1; else echo CLEAN | tee lean-proof-escape.log; fi
 
       - name: Install Coq
         continue-on-error: true
