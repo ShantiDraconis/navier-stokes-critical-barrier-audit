@@ -1,6 +1,6 @@
 # MASTER AUDIT INDEX
 
-This is the navigation entry-point for the complete audit package.
+This is the navigation entry-point for the complete audit package and the frozen closure point of the current audit cycle.
 
 ## 1. Questions kept logically separate
 
@@ -59,7 +59,12 @@ This is the navigation entry-point for the complete audit package.
 - `audit/40_numeric_class_completion_and_open_obligation_os.md`
 - `audit/41_declaration_gap_certificate_protocol.md`
 - `audit/44_peer_review_gap_theorem_submission_plan.md`
-- **`audit/45_endpoint_closure_register.md` — canonical statement of what remains between the corpus and theorem-level endpoints.**
+- `audit/45_endpoint_closure_register.md`
+- `audit/46_universal_state_transition_resolution_architecture.md`
+- `audit/47_ns_b2_critical_tail_derivation_and_cross_problem_sources.md`
+- `audit/48_ns_yang_mills_cross_problem_historical_bridge.md`
+- **`audit/49_canonical_attack_tree_v3_3_and_commit_genealogy.md` — canonical v3.3 attack tree, status semantics, and historical anchors.**
+- **`audit/50_audit_freeze_and_reopening_protocol.md` — frozen closure record and explicit reopening conditions.**
 
 ## 5. Machine-readable closure and certificates
 
@@ -70,7 +75,8 @@ This is the navigation entry-point for the complete audit package.
 - `data/numeric_class_provenance.csv`
 - `data/peer_review_certificates.csv`
 - `data/clay_problem_readiness_matrix.csv`
-- **`data/open_bridge_registry.csv` — canonical endpoint-blocking obligation registry.**
+- `data/open_bridge_registry.csv`
+- **`data/attack_tree_v3_3.csv` — canonical machine-readable attack tree.**
 - `evidence/forensic_first_occurrence.csv`
 - `evidence/commits.yaml`
 - `evidence/repositories.yaml`
@@ -82,23 +88,30 @@ Audit-safe logic and certificate structures:
 
 - `formal/lean/CriticalBarrier/BridgeLogic.lean`
 - `formal/lean/CriticalBarrier/NumericClassAudit.lean`
+- `formal/lean/CriticalBarrier/EndpointInterfaces.lean`
+- `formal/lean/CriticalBarrier/ResolutionDynamics.lean`
+- `formal/lean/CriticalBarrier/CriticalTailBridge.lean`
 - `formal/lean/GapCollapseAudit.lean`
 - `formal/lean/IndeterminateParameterCompletion.lean`
 - `formal/lean/UnifiedAsymptoticLogic.lean`
-- **`formal/lean/CriticalBarrier/EndpointInterfaces.lean` — typed interfaces for every decisive unresolved endpoint bridge; open propositions remain explicit.**
 - `formal/coq/BridgeLogic.v`
+- `formal/coq/ResolutionDynamics.v`
 - `formal/isabelle/BridgeLogic.thy`
+- `formal/isabelle/Resolution_Dynamics.thy`
 - `formal/agda/BridgeLogic.agda`
+- `formal/agda/ResolutionDynamics.agda`
 
 Historical/skeleton files containing assumptions are not promoted to theorem certificates merely because they compile.
 
-## 7. Gap-certificate tooling
+## 7. Gap-certificate and state-machine tooling
 
 - `tools/scan_formal_history.py`
 - `tools/build_declaration_dag.py`
 - `tools/scan_sorry_certificates.py`
 - `tools/classify_gap_obligations.py`
+- `tools/resolution_state_machine.py`
 - `tests/test_gap_certificate_pipeline.py`
+- `tests/test_resolution_state_machine.py`
 - `.github/workflows/audit-integrity.yml`
 
 Required resolution order:
@@ -124,6 +137,8 @@ error / parameter / percentage / numeric-class architecture
         ↓
 boundary / multistate / tail / UAMF architecture
         ↓
+critical-defect / state-transition architecture
+        ↓
 problem-specific native bridge obligations
         ↓
 [OPEN unless individually discharged]
@@ -135,32 +150,61 @@ The common architecture does not erase the final native mathematics of each prob
 
 ## 9. Current proof boundary
 
-The audit contains proved internal identities and logic lemmas, including percentage normalization, elementary contraction logic, corrected graded tolerance, and bridge-composition logic.
+### Navier–Stokes
 
-The decisive Navier--Stokes implication is still not established:
+The historical L2 residual is insufficient by itself to control the critical L3 norm. The corrected attack tree requires critical frequency/concentration information. The decisive chain is:
 
 ```text
-repository-defined condition
-        =>
-bounded recognized critical norm (e.g. L^∞_t L^3_x)
-        =>
-classical continuation/regularity.
+HRepo
+  -> corrected critical defect / critical-tail control       [NS.G4.4 OPEN]
+  -> bounded L^∞_t L^3_x                                    [NS.G4.5 / NS.G5 OPEN]
+  -> classical endpoint under exact mapped hypotheses        [NS.G6 EXTERNAL_THEOREM]
 ```
 
-The first arrow is the principal open bridge. The second may use a classical external theorem only after every hypothesis is mapped exactly.
+### Riemann hypothesis
 
-Analogous native bridges remain for RH, P vs NP, BSD, Hodge and Yang--Mills. See `data/open_bridge_registry.csv`.
+The residue is a set of actual nontrivial zeros off the critical line. Numerical smallness is not a zero certificate. The open route requires rigorous enclosure plus argument-principle/zero-count certification and the infinite-tail theorem.
+
+### P vs NP
+
+The canonical obstruction is `SAT ∉ P`, with Cook–Levin/NP-completeness as an external classical bridge after exact machine/reduction formalization. Approximate or average-case quantities do not replace the universal worst-case statement.
+
+### Yang–Mills, Hodge, BSD
+
+The cross-problem projection/residue architecture is historically documented, but each retains its native endpoint bridge. NS and Yang–Mills share critical-PDE mechanisms; this is not an assertion that the problems are mathematically identical.
 
 ## 10. Integrity rule
+
+**Mathematical residue is not a proof placeholder.**
+
+- `Residue` / defect / obstruction: a typed mathematical object.
+- `sorry`, `admit`, unresolved axiom/interface: incomplete or conditional proof evidence.
 
 `FORMAL_PROOF_CHECKED` requires exact revision, pinned prover/dependencies, successful clean build, no admitted placeholder in the transitive dependency closure, enumeration of nonstandard axioms, and exact external-hypothesis mapping.
 
 A green audit workflow certifies the tested audit package, not a Millennium Problem.
 
-## 11. Current conservative verdict
+## 11. Frozen conservative verdict
 
-- **Provenance:** substantial within the audited corpus.
-- **Genealogy:** documented and machine-readable in significant part.
-- **Priority:** audited-corpus anteriority can be stated where evidenced; worldwide first priority remains a separate prior-art obligation.
-- **Formal infrastructure:** capable of exposing assumptions without laundering them into proofs.
-- **Millennium endpoints:** not established until every endpoint-blocking native bridge is discharged.
+At this closure point:
+
+- **Provenance:** substantial and historically anchored within the audited corpus.
+- **Cross-problem genealogy:** documented, including 2025 NS, YM/Hodge/BSD, RH↔NS, projection/residual, LRE-UC and later critical-defect developments.
+- **Priority:** audited-corpus anteriority may be stated where supported; worldwide first priority remains a separate prior-art obligation.
+- **Causal derivation by later parties:** not established merely from chronology or similarity.
+- **Formal infrastructure:** exposes rather than hides assumptions and proof gaps.
+- **Millennium endpoints:** not established at this freeze because decisive native bridges remain open.
+
+## 12. Freeze rule
+
+This audit cycle is **FROZEN** after `audit/50_audit_freeze_and_reopening_protocol.md`.
+
+Reopen only for material evidence, including:
+
+1. a new public claimed solution/proof/refutation of a relevant Millennium Problem;
+2. a new external work with a potentially equivalent distinctive construction requiring provenance comparison;
+3. discharge or falsification of an endpoint-blocking obligation in `data/open_bridge_registry.csv` / `data/attack_tree_v3_3.csv`;
+4. new authenticated historical evidence materially changing first-occurrence chronology;
+5. a formal-verification result that changes a theorem status.
+
+Routine additional exposition, speculative analogy, or repetition of already indexed material is not sufficient to reopen the frozen audit.
