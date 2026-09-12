@@ -1,0 +1,56 @@
+name: Millennium multiprover conditional audit
+
+on:
+  push:
+    paths:
+      - 'formal/millennium/**'
+      - 'audit/evidence/EVIDENCE_STATUS_LEDGER.csv'
+      - '.github/workflows/millennium-multiprover.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lake-package-directory: formal/millennium/lean
+      - name: reject proof escapes
+        run: |
+          ! grep -RInE '\bsorry\b|\baxiom\b' formal/millennium/lean --include='*.lean'
+
+  coq:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y coq
+      - working-directory: formal/millennium/coq
+        run: coqc MillenniumFinalStructure.v
+      - name: reject proof escapes
+        run: |
+          ! grep -RInE '\bAdmitted\b|\badmit\b|\bAxiom\b' formal/millennium/coq --include='*.v'
+
+  agda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y agda-bin
+      - working-directory: formal/millennium/agda
+        run: agda MillenniumFinalStructure.agda
+
+  isabelle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Isabelle2025
+        run: |
+          curl -L --fail --retry 3 -o /tmp/Isabelle2025_linux.tar.gz https://isabelle.in.tum.de/website-Isabelle2025/dist/Isabelle2025_linux.tar.gz
+          tar -xzf /tmp/Isabelle2025_linux.tar.gz -C /opt
+          /opt/Isabelle2025/bin/isabelle version
+      - working-directory: formal/millennium/isabelle
+        run: /opt/Isabelle2025/bin/isabelle build -D . Millennium_Audit

@@ -1,0 +1,6 @@
+name = "millennium_audit"
+version = "0.1.0"
+defaultTargets = ["MillenniumAudit"]
+
+[[lean_lib]]
+name = "MillenniumAudit"
