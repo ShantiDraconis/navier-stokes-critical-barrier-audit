@@ -75,7 +75,7 @@ Corrections to the proposed transcription:
 
 1. \`EuclidianSpace\` is a misspelling; use \`EuclideanSpace\`.
 2. Use \`⊤\`, not the prose symbol \`∞\`, in Lean inequalities.
-3. The exponent of \`eLpNorm\` is an \`ℝ≥0∞\`; write \`(3 : ℝ≥0∞)\`.
+3. The exponent of \`eLpNorm\` is an \`ℝ≥0∞\`; write `f1c920dfe7e7d42f4c40417e0c0c0fb8b8c43670` (private source URL withheld)\`.
 4. \`essSup\` accepts a measure and returns an order-theoretic essential supremum; supply the restricted measure explicitly.
 5. A raw function \`ℝ³ → ℝ³\` is not itself the quotient type \`MeasureTheory.Lp\`. \`eLpNorm\` provides the extended seminorm representation; an actual \`Lp\` element additionally requires measurability and finite-norm evidence.
 6. \`IsWeakSolutionNavierStokes\` and \`IsSmoothAt\` are not supplied merely by importing the cited Mathlib modules. The project must define those predicates and its PDE theory.
@@ -162,6 +162,24 @@ Dependency chain:
 \]
 
 Mathlib supplies infrastructure near the beginning. The Navier–Stokes-specific bridge through backward uniqueness remains a separate, substantial formalization obligation.
+
+## Disclosure and verification policy
+
+The historical source repositories cited below are access-controlled. To reduce public
+metadata exposure, this public ledger uses stable source identifiers rather than private
+repository names or direct private URLs.
+
+- `PRIVATE-SOURCE-A`: earliest Navier–Stokes research source.
+- `PRIVATE-SOURCE-B`: classical/formalization source.
+
+The full commit SHA, UTC timestamp, relative path, minimal relevant quotation, and
+classification are retained. An authorized auditor can verify them after being granted
+read access to the corresponding source. A SHA without access to the source is a
+commitment/reference, not independently inspectable public evidence.
+
+This policy protects repository topology while preserving the information needed for
+controlled verification. It does not conceal the public audit repository or public
+Mathlib4 sources.
 
 ## Repository provenance chain
 
