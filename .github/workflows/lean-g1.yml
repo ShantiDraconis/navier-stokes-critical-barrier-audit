@@ -43,6 +43,9 @@ jobs:
       - name: Build 4D weak omega pairing
         shell: bash
         run: lake build G1.WeakOmega4DPairing
+      - name: Build product-space weak omega pairing
+        shell: bash
+        run: lake build G1.WeakOmegaProductPairing
       - name: Build weak omega spatial slice reduction
         shell: bash
         run: lake build G1.WeakOmegaSpatialSlice
