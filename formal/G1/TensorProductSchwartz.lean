@@ -21,9 +21,10 @@ namespace G1Audit
 
 /-- Raw tensor product on the genuine product space R x R^3. -/
 def tensorProductRaw (alpha : ℝ → ℝ) (psi : Vec3 → ℂ) : ProductSpaceTime → ℂ :=
-  fun z => (alpha z.1 : ℂ) * psi z.2
+  fun z => Complex.ofRealCLM (alpha z.1) * psi z.2
 
-/-- Smoothness of the tensor product follows from projections and multiplication. -/
+/-- Smoothness of the tensor product follows from projections, the continuous
+real-to-complex inclusion, and multiplication. -/
 theorem tensorProductRaw_contDiff
     {alpha : ℝ → ℝ} {psi : Vec3 → ℂ}
     (halpha : ContDiff ℝ (⊤ : ℕ∞) alpha)
