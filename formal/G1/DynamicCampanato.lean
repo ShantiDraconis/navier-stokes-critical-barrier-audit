@@ -214,11 +214,17 @@ structure CampanatoIteration (P : XiEpsPDE) where
   kappaThreshold : ℝ
   hkappaThreshold : 0 ≤ kappaThreshold
   hgamma_nonneg : 0 ≤ gamma
-  hgamma_lt_half : gamma < (1 / 2 : ℝ)
   hA_nonneg : 0 ≤ A
   diffusion_selects_half_contraction : kappaThreshold ≤ P.κ → gamma < (1 / 2 : ℝ)
   recursiveStep :
     ∀ ε t r, J ε t (r / 2) ≤ gamma * J ε t r + A * scaleRatio P t r
+
+/-- The strict `γ < 1/2` threshold comes from the admissible `κ` regime. -/
+theorem gamma_lt_half
+    {P : XiEpsPDE} (it : CampanatoIteration P)
+    (hκ : it.kappaThreshold ≤ P.κ) :
+    it.gamma < (1 / 2 : ℝ) :=
+  it.diffusion_selects_half_contraction hκ
 
 /-- Algebraic rewriting of the half-scale barrier. -/
 theorem half_scale_barrier_eq
