@@ -43,9 +43,9 @@ term. It must **not** be imported from `hDynamic` or any already-available
 1/2-Hölder statement, because that would use the target regularity to prove the
 Campanato bridge that is supposed to generate it.
 
-## CIRCULARIDADE status
+## CIRCULARITY / CIRCULARIDADE status
 
-**CIRCULARIDADE if violated:** any proof of the near-field gain that inserts
+**CIRCULARITY if violated:** any proof of the near-field gain that inserts
 `hDynamic` as a hypothesis should be rejected and treated as OPEN_BRIDGE.
 
 At this commit, no such insertion was made. The remaining open item is the

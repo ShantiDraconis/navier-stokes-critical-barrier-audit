@@ -37,6 +37,8 @@ def rhoStarFixed (κ K omegaL2 gradOmegaL2 : ℝ) : ℝ :=
 structure RemainderCutoffFreeWitness where
   C_rem : ℝ
   hC_rem_pos : 0 < C_rem
+  /-- Audit-level `Prop` field: this repository records the dependency claim as
+      an explicit obligation instead of silently assuming a proof term. -/
   independence_certificate : Prop
 
 /-- Window data with `R = K ρ_*`. -/
