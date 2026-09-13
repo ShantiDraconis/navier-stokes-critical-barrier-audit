@@ -28,7 +28,7 @@ The exact R^4 weak derivative pairing.  This is derived from
 theorem WeakOmegaSpaceTime.weakDx_schwartz_pairing
     (h : WeakOmegaSpaceTime) (i k : Fin 3) (Phi : 𝓢(SpaceTime, ℂ)) :
     (h.weakDxL2 i k : ScalarDist) Phi =
-      (h.omegaL2 i : ScalarDist) (- ∂_{spatialDirection k} Phi) := by
+      (h.omegaL2 i : ScalarDist) (-(∂_{spatialDirection k} Phi)) := by
   rw [← h.weakDxL2_spec i k]
   change h.dxDist i k Phi = _
   rw [WeakOmegaSpaceTime.dxDist]
@@ -42,7 +42,7 @@ transport step is phrased directly at the tempered-distribution level.
 theorem WeakOmegaSpaceTime.weakDx_schwartz_pairing_dist
     (h : WeakOmegaSpaceTime) (i k : Fin 3) (Phi : 𝓢(SpaceTime, ℂ)) :
     (h.weakDxL2 i k : ScalarDist) Phi =
-      h.omegaDist i (- ∂_{spatialDirection k} Phi) := by
+      h.omegaDist i (-(∂_{spatialDirection k} Phi)) := by
   rw [← h.weakDxL2_spec i k]
   rfl
 
