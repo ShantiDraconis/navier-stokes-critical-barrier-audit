@@ -2,15 +2,6 @@
 WeakOmegaSpatialSlice.lean
 
 Intermediate, audit-safe reduction for the 4D -> 3D weak-derivative slice.
-
-This file does NOT assume that a fixed-time slice is already an H^1_x function.
-Instead it proves the precise du Bois-Reymond reduction needed after Fubini:
-if the product-space weak derivative identity holds against every separated test
-  alpha(t) * psi(x),
-then the spatial weak-derivative residual vanishes for almost every time.
-
-The remaining bridge is to derive the separated-test identity from the transported
-R^4 tempered-distribution derivative relation.  That step is kept explicit.
 -/
 
 import G1.SpaceTimeCoordinateSplit
@@ -32,7 +23,7 @@ def SeparatedSpatialWeakDerivativeIdentity
     (f g : ProductScalarField)
     (psi dpsi : Vec3 → ℂ) : Prop :=
   ∀ alpha : ℝ → ℝ,
-    ContDiff ℝ ⊤ alpha → HasCompactSupport alpha →
+    ContDiff ℝ (⊤ : ℕ∞) alpha → HasCompactSupport alpha →
       ∫ t : ℝ,
         alpha t • spatialWeakResidual f g psi dpsi t
           ∂(volume : Measure ℝ) = 0
