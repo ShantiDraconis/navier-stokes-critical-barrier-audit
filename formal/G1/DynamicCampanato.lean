@@ -182,7 +182,7 @@ structure LocalEnergyIdentity (P : XiEpsPDE) where
 
 /-- Cubic inverse-length weight `ρ_*^{-3}`. -/
 def rhoInvCubed (ρ : ℝ) : ℝ :=
-  ρ⁻¹ ^ 3
+  (ρ ^ 3)⁻¹
 
 /--
 Far-field control must respect scaling. The bound is recorded only in averaged
