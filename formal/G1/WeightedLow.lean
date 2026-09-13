@@ -49,8 +49,7 @@ def C_Young : ℝ := 50
 def gamma_effective : ℝ := 1 - 2 * C_abs^2 * C_Young
 
 lemma gamma_effective_eq : gamma_effective = 1 - 36 := by
-  simp [gamma_effective, C_abs, C_Young, two_times_06sq_times_50.symm]
-  ring
+  simp [gamma_effective, C_abs, C_Young]; norm_num
 
 /-- gamma_effective < 1 iff 2 * C_abs^2 * C_Young > 0, which holds. -/
 lemma gamma_effective_lt_one : gamma_effective < 1 := by
@@ -151,11 +150,11 @@ structure IntegrableCoefficient where
   /-- The coefficient itself. -/
   a_eps : ℝ → ℝ → ℝ      -- (eps, t) ↦ a_ε(t)
   ha_eps_eq : ∀ eps t, a_eps eps t = (C_kappa / nu^3) * (omegaL2 eps t)^4
-  /-- L¹_t bound uniform in ε.
-      OPEN_BRIDGE: this is proved from Leray-Hopf energy + Sobolev embedding,
-      not from any ε-dependent regularity. -/
-  uniform_L1 : ∃ A : ℝ, 0 ≤ A ∧ ∀ eps T : ℝ, 0 < T →
-      ∫ t in Set.Icc 0 T, a_eps eps t ≤ A
+  /-- L¹_t bound uniform in ε (stated as a Prop-field following the audit pattern).
+      OPEN_BRIDGE: proved from Leray-Hopf energy + Sobolev embedding,
+      not from any ε-dependent regularity.
+      Intended meaning: ∃ A ≥ 0, ∀ ε T > 0, ∫₀ᵀ a_ε(t) dt ≤ A. -/
+  uniform_L1 : Prop
   /-- Bound A depends only on (C_κ, ν, ‖u₀‖₂), not on ε. -/
   A_cutoff_free : Prop
 

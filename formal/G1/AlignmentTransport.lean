@@ -92,17 +92,29 @@ structure RhoStarScaleCovariance (κ : ℝ) where
   /-- λ > 0 is the rescaling factor. -/
   λ : ℝ
   hλ : 0 < λ
-  /-- Norms before and after rescaling. -/
+  /-- Norms before rescaling. -/
   omegaL2 gradOmegaL2 : ℝ
   hgrad_pos : 0 < gradOmegaL2
-  /-- Under NS rescaling: ‖ω_λ‖₂ = λ^{1/2} ‖ω‖₂, ‖∇ω_λ‖₂ = λ^{3/2} ‖∇ω‖₂. -/
-  omegaL2_scaled : ℝ := Real.sqrt λ * omegaL2
-  gradOmegaL2_scaled : ℝ := λ * Real.sqrt λ * gradOmegaL2
+  /-- Norms after rescaling: caller supplies the values. -/
+  omegaL2_scaled gradOmegaL2_scaled : ℝ
+  /-- Under NS rescaling: ‖ω_λ‖₂ = λ^{1/2} ‖ω‖₂. -/
+  homega_scaled : omegaL2_scaled = Real.sqrt λ * omegaL2
+  /-- Under NS rescaling: ‖∇ω_λ‖₂ = λ^{3/2} ‖∇ω‖₂. -/
+  hgrad_scaled : gradOmegaL2_scaled = λ * Real.sqrt λ * gradOmegaL2
 
-/-- The scale-covariance law rho_star_λ = λ^{-1} * rho_star is a proposition. -/
+/-- The scale-covariance law rho_star_λ = λ^{-1} * rho_star follows from the scaling equalities. -/
 def rhoStarScaleLaw (κ : ℝ) (s : RhoStarScaleCovariance κ) : Prop :=
   rho_star κ s.omegaL2_scaled s.gradOmegaL2_scaled
     = (1 / s.λ) * rho_star κ s.omegaL2 s.gradOmegaL2
+
+/-- The scale law is provable from the equality fields and positivity. -/
+lemma rhoStarScaleLaw_holds (κ : ℝ) (s : RhoStarScaleCovariance κ) :
+    rhoStarScaleLaw κ s := by
+  simp only [rhoStarScaleLaw, rho_star, s.homega_scaled, s.hgrad_scaled]
+  have hλ := s.hλ
+  have hgrad := s.hgrad_pos
+  field_simp
+  ring
 
 -- -----------------------------------------------------------------------
 -- 3. TransportEstimate
@@ -297,7 +309,8 @@ PROVED IN THIS FILE (no sorry):
 * xi_eps definition (consistent with G1_DynamicCriticalGeometry)
 * alpha_eps as a DERIVED function of (ε, ω, S)  — NOT a free parameter
 * alpha_eps_le_norm: |alpha_eps| ≤ ‖xi_eps‖²  (given ‖S v‖ ≤ ‖v‖)
-* rho_star definition + scale-covariance law (as Prop, consistent with NS rescaling)
+* rho_star definition + scale-covariance law
+* rhoStarScaleLaw_holds: rho_star_λ = λ^{-1} * rho_star (proved algebraically)
 * Structures: TransportEstimate, UniformAbsorption, Q_joint,
               GeometricNonDegeneracy, V_eff_Data, OpenBridgeInventory
 
