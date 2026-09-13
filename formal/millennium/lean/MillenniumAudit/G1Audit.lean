@@ -41,18 +41,12 @@ theorem closed_depletion_implies_decay
     (hbal : EnstrophyBalance s yPrime)
     (hclosed : ClosedDepletion s δ) :
     yPrime + 2 * δ * s.z ≤ 0 := by
-  rcases hclosed with ⟨hδ, hδ1, hstretch⟩
-  dsimp [EnstrophyBalance] at hbal
-  dsimp [ClosedDepletion] at hstretch
+  rcases hclosed with ⟨_hδ, _hδ1, hstretch⟩
+  change (1 / 2 : ℝ) * yPrime + s.z = s.stretching at hbal
   linarith
 
-/-- Scalar OPEN estimate. This is deliberately represented separately from CLOSED depletion. -/
-def OpenScalarEstimate (s : Snapshot) (C : ℝ) : Prop :=
-  s.stretching ≤ C * s.y ^ (3 : ℕ) / 4 + (3 / 4 : ℝ) * s.z
-
-/-- Abstract version of the familiar Young-reduced inequality y' + z <= C y^3.
-    It records the consequence that is actually available from scalar interpolation;
-    it is not a proof of geometric depletion. -/
+/-- Young-reduced scalar OPEN estimate. It is intentionally kept distinct from
+    CLOSED depletion; the positive cubic term is the obstruction visible at this level. -/
 def YoungReducedOpen (yPrime y z C : ℝ) : Prop :=
   yPrime + z ≤ C * y ^ (3 : ℕ)
 
