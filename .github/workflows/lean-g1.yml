@@ -1,0 +1,16 @@
+name: Lean G1 audit
+
+on:
+  push:
+    branches:
+      - audit/pde-to-dynamic-campanato-20260913
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          build-args: G1.XiEpsLocalizedRealization
