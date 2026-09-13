@@ -28,6 +28,9 @@ jobs:
       - name: Build weak omega bridge
         shell: bash
         run: lake build G1.WeakOmegaBridge
+      - name: Build ball mean bound
+        shell: bash
+        run: lake build G1.BallMeanBound
       - name: Build Hminus1-H10 weighted diffusion layer
         shell: bash
         run: lake build G1.WeakDiffusionIBP
