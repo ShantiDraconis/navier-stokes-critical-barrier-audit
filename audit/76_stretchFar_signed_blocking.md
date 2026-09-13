@@ -1,220 +1,200 @@
 # Audit 76 — Signed stretchFar attack
 
-Branch: `audit/pde-to-dynamic-campanato-20260913`  
-Input commits: `c364931c`, `1b5417f`  
-XiEpsPDE definition commit: `f43ed5cf913856844f9747dd47d75f1f0a31ff5f`
+Branch: `audit/pde-to-dynamic-campanato-20260913`
 
 ## Target
 
-Attack the far-field contribution in its signed bilinear form before taking a pointwise absolute value:
+Attack the far-field contribution in signed bilinear form before pointwise absolute values:
 
 \[
-\mathcal F_{far}
-=
-\iint_{|x-y|\ge K\rho_*}
-K(x-y)D(\xi(x),\xi(y))
-|\omega(x)||\omega(y)|\phi(x)^2\,dy\,dx.
+\mathcal F_{far}=\iint_{|x-y|\ge K\rho_*}K(x-y)D(\xi(x),\xi(y))|\omega(x)||\omega(y)|\phi(x)^2\,dy\,dx.
 \]
 
-The forbidden fallback is
+The forbidden fallback remains
 
 \[
 |S^{far}|\lesssim(K\rho_*)^{-3/2}\|\omega\|_2,
 \]
 
-because squaring produces the already identified
+because squaring gives
 
 \[
 K^{-3}\rho_*^{-3}\|\omega\|_2^2.
 \]
 
-## Result of the signed Campanato check
+Status: `BLOCKING_SCALING` for this naive pointwise route.
 
-A Campanato hypothesis at scales
+## Localized identity status
 
-\[
-0<r\le\rho_*
-\]
-
-controls oscillation of \(\xi\) **inside balls of radius at most \(\rho_*\)**:
+`formal/G1/XiEpsLocalizedRealization.lean` now contains concrete MeasureTheory definitions for spatial scalar/vector integrals, ball integrals, ball volume, ball average, and the weighted Xi integral.  It also records the real localization scale
 
 \[
-J_r(x,t)\le C\frac r{\rho_*}.
+R=K\rho_*,\qquad |\nabla\phi|\sim(K\rho_*)^{-1},\qquad |D^2\phi|\sim(K\rho_*)^{-2}.
 \]
 
-The far-field domain, however, compares points satisfying
+The final `LocalEnergyIdentityData.identity` is not an input field.  It is derived through the DAG
+
+```text
+XiEpsPDE
+  + localized testedEquation
+  + real signed strainSplit
+  + diffusionIBP
+  -> XiEpsLocalizedRealization.localized_identity
+  -> LocalEnergyIdentityData.ofXiEpsPDE
+  -> LocalEnergyIdentity
+```
+
+Thus `ofXiEpsPDE` is not a renaming of an assumed final equality.  The final equality is a Lean algebraic consequence of the primitive PDE-test, kernel split, and IBP facts.
+
+Classification:
+
+```text
+LocalEnergyIdentity from primitive analytic facts   PROVED_IDENTITY
+full Sobolev/Frechet derivation of testedEquation   OPEN_LOWER_LEVEL_FORMALIZATION
+full Mathlib proof of diffusion IBP                 OPEN_LOWER_LEVEL_FORMALIZATION
+CZ / Young                                           NOT USED
+```
+
+This distinction is mandatory: `PROVED_IDENTITY` means the final localized identity is derived rather than postulated; it does not claim that every lower-level PDE differentiation theorem has already been rebuilt from first principles in Mathlib.
+
+## Why the far-field exponent is beta = 0 with current inputs
+
+The available Campanato iteration hypothesis controls
+
+\[
+J_r(x,t)\le C\frac r{\rho_*},\qquad 0<r\le\rho_*.
+\]
+
+But the far-field compares points with
 
 \[
 |x-y|\ge K\rho_*.
 \]
 
-For \(K>1\), those pairs are outside the range on which the one-ball Campanato hypothesis directly compares \(\xi(x)\) and \(\xi(y)\). Therefore the local hypothesis alone does not imply
+For `K>1`, the local one-ball estimate does not directly compare those separated directions.  Therefore current inputs do not imply
 
 \[
-|D(\xi(x),\xi(y))|
-\lesssim
-(r/\rho_*)^\beta
+|D(\xi(x),\xi(y))|\lesssim(r/\rho_*)^\beta
 \]
 
-for any \(\beta>0\) on the far-field domain.
+with any positive beta on the far-field domain.
 
-The only unconditional exponent supplied by this information is
+The guaranteed exponent is exactly
 
 \[
-\boxed{\beta=0.}
+\boxed{\beta=0}.
 \]
 
-Obtaining \(\beta>0\) would require an additional mechanism, for example:
+The formal ledger `FarFieldCampanatoExponentLedger` records this as `beta = 0` rather than silently inserting a positive exponent.
 
-1. a telescoping chain of overlapping balls with a quantitatively summable loss;
-2. cancellation/moment conditions of the actual Biot–Savart tensor kernel;
-3. a weighted mean-zero identity for the signed strain pairing;
-4. a global coherence estimate independent of the DynamicCampanato conclusion.
-
-None of these is presently derived from `XiEpsPDE` on this branch.
+A positive exponent would require an additional independently proved mechanism: a summable chain of balls, a genuine moment cancellation of the Biot–Savart tensor, a weighted mean-zero identity, or global coherence not obtained from the DynamicCampanato conclusion itself.
 
 Status: `OPEN_SIGNED_CANCELLATION / BLOCKING_WITH_CURRENT_INPUTS`.
 
-## Dimensional obstruction: a dimensionless `(r/rho_*)^beta` is not enough by itself
+## Exact dimensional deficit
 
-There is a stronger scale point. Suppose, even optimistically, that the far-field estimate gained
-
-\[
-(r/\rho_*)^\beta,
-\qquad \beta>0.
-\]
-
-This factor is dimensionless. Multiplying the naive squared scale gives
+Even if one hypothetically obtained a dimensionless gain
 
 \[
-K^{-3}
-(r/\rho_*)^\beta
-\rho_*^{-3}\|\omega\|_2^2.
+(r/\rho_*)^\beta,\qquad\beta>0,
 \]
 
-For arbitrary \(0<r\le\rho_*\), this does **not** remove the dimensional factor \(\rho_*^{-3}\). Thus a positive Campanato exponent alone cannot turn
+multiplying the naive squared far-field scale gives
 
 \[
-\int \rho_*^{-3}\|\omega\|_2^2dt
+K^{-3}(r/\rho_*)^\beta\rho_*^{-3}\|\omega\|_2^2.
 \]
 
-into the Leray-paid quantity
+The factor `(r/rho_*)^beta` is dimensionless and does not cancel `rho_*^{-3}`.  Leray pays for
 
 \[
-\int\|\nabla u\|_2^2dt.
+\int_0^T\|\nabla u\|_2^2dt
 \]
 
-The missing compensation is dimensionally equivalent to
+(and, in the standard whole-space divergence-free normalization, the corresponding time-integrated enstrophy), but not automatically for
 
 \[
-\boxed{\rho_*^{3}}
+\int_0^T\rho_*^{-3}\|\omega\|_2^2dt.
 \]
 
-(or another estimate carrying the same net length power), unless one has an independent uniform lower bound on \(\rho_*\).
-
-Equivalently, if a localized signed estimate produces a dimensional prefactor \(r^\alpha\rho_*^{-3-\alpha}\), then merely rewriting it as
+The dimensional deficit is therefore three powers of length.  A compensating mechanism must carry the net scale
 
 \[
-(r/\rho_*)^\alpha\rho_*^{-3}
+\boxed{\rho_*^3}.
 \]
 
-has not solved the Leray integrability problem.
+This is a dimensional diagnosis only.  It is NOT a theorem asserting that Navier–Stokes dynamics provides such compensation.
 
-The actual target must therefore be stronger: after all spatial averaging, kernel cancellation, and normalization, the surviving coefficient multiplying \(\|\omega\|_2^2\) must be bounded independently of negative powers of \(\rho_*\), or those negative powers must be paid for by another independently integrable quantity.
+## GeometricNonDegeneracy is the open bridge
 
-## Why using the target DynamicCampanato estimate here would risk circularity
+One possible bridge is an independently established effective-volume lower bound
 
-The iteration may assume a bound at the **current/coarser scale** in order to prove a smaller-scale estimate. That is legitimate one-step induction. But it cannot assume the final global half-Hölder/coherence consequence for pairs separated by more than \(\rho_*\) and then use that consequence to establish the PDE estimate that generates the iteration.
+\[
+V_{eff}(t)\ge\kappa\rho_*(t)^3,\qquad\kappa>0.
+\]
 
-Hence
+`formal/G1/XiEpsLocalizedRealization.lean` records this only as
+
+```text
+structure GeometricNonDegeneracy where
+  rho : R
+  kappa : R
+  effectiveVolume : R
+  ...
+  volume_lower_bound : kappa * rho^3 <= effectiveVolume
+```
+
+There is deliberately no theorem
+
+```text
+XiEpsPDE -> GeometricNonDegeneracy
+```
+
+and no constructor deriving it from dimensional analysis.
+
+Therefore:
+
+```text
+rho_*^3 dimensional compensation      NECESSARY FOR THE NAIVE DEFICIT / DIAGNOSTIC
+V_eff >= kappa rho_*^3                 OPEN_BRIDGE GeometricNonDegeneracy
+ActualNS -> GeometricNonDegeneracy      NOT ESTABLISHED
+```
+
+This prevents dimensional bookkeeping from being promoted into an analytic theorem.
+
+## Circularity guard
+
+It is legitimate for a one-step Campanato induction to assume the coarser-scale bound needed to prove a smaller-scale bound.  It is not legitimate to assume the final global pairwise coherence for `|x-y| >= K rho_*` and feed it back into the PDE estimate that is supposed to generate DynamicCampanato.
+
+The forbidden loop is
 
 ```text
 DynamicCampanato target
-  -> global pairwise far-field coherence
-  -> stretchFar small
-  -> PDE one-step estimate
-  -> DynamicCampanato target
+ -> global far-field coherence
+ -> stretchFar small
+ -> PDE one-step estimate
+ -> DynamicCampanato target.
 ```
 
-is circular unless the second arrow is replaced by an independently proved lemma.
+Until an independent signed cancellation or geometric non-degeneracy theorem breaks this loop, `stretchFar` remains open.
 
-## XiEpsPDE status after the new definition
-
-`formal/G1/XiEpsPDE.lean` now fixes
-
-\[
-|\omega|_\varepsilon
-=\sqrt{|\omega|^2+\varepsilon^2},
-\qquad
-\xi_\varepsilon=\omega/|\omega|_\varepsilon,
-\]
-
-and the exact vector equation
-
-\[
-D_t\xi_\varepsilon
-=
-P_{\xi_\varepsilon^\perp}S_\varepsilon\xi_\varepsilon
-+\nu\Delta\xi_\varepsilon
-+2\nu\nabla\log|\omega|_\varepsilon\cdot\nabla\xi_\varepsilon
-+R_1+R_2.
-\]
-
-The `R1` denominator is explicit. For `R2`, the file deliberately uses an already-contracted vector numerator: a raw `grad omega` is matrix-valued and cannot be added to the vector direction equation without specifying the contraction.
-
-The cutoff-free remainder budget is expressed solely through a Leray-paid `gradUEpsSq` quantity and does not use `sup_t ||omega||_2^2`.
-
-## OPEN_PDE_IDENTITY status
-
-The concrete `XiEpsPDE` object is now defined, but **the localized integral identity is not yet legitimately PROVED_IDENTITY**.
-
-Reason: the existing `DynamicCampanato.lean` identity is represented by scalar integral slots. To derive those slots from the new pointwise PDE rather than assuming the equality field, Lean still needs a concrete analytic layer defining:
-
-- time-dependent fields and the material derivative;
-- spatial gradient/Laplacian as actual operators rather than supplied vector fields;
-- the ball mean `(xi_eps)_{B_r}`;
-- the cutoff `phi=w_R`;
-- the spatial integrals;
-- integration by parts and boundary/decay hypotheses;
-- differentiation under the integral sign;
-- the near/far decomposition of the projected strain.
-
-Without that layer, defining `ofXiEpsPDE` by copying an assumed scalar equality would merely rename `OPEN_PDE_IDENTITY`; it would not prove it.
-
-Therefore the audit status is
+## Current ledger
 
 ```text
-XiEpsPDE regularization and pointwise equation   FORMALIZED
+XiEpsPDE regularization                         FORMALIZED
 magEps > 0 for eps > 0                          PROVED_LOGIC
-R1/R2 denominator safety                        PROVED_LOGIC
-cutoff-free remainder interface                 FORMALIZED
-XiEpsPDE -> localized integral identity          OPEN_ANALYTIC_FORMALIZATION
-signed far-field gain from local J_r alone       BLOCKING; beta = 0
+concrete spatial integrals / ball average       FORMALIZED
+R = K rho_* cutoff powers                       EXPLICIT: rho_*^-1, rho_*^-2
+signed near/far kernel support split             FORMALIZED INTERFACE
+LocalEnergyIdentity from tested PDE + IBP        PROVED_IDENTITY
+lower-level Sobolev/Frechet testedEquation       OPEN_LOWER_LEVEL_FORMALIZATION
+lower-level Mathlib diffusion IBP                OPEN_LOWER_LEVEL_FORMALIZATION
+signed far-field gain from local J_r alone       BLOCKING: beta = 0
+naive pointwise far-field route                  BLOCKING_SCALING: rho_*^-3 ||omega||_2^2
 missing dimensional compensation                 rho_*^3
-naive rho_*^-3 route                             BLOCKING_SCALING
-OPEN_CZ                                          PRESERVED
+GeometricNonDegeneracy V_eff >= kappa rho_*^3    OPEN_BRIDGE
+ActualNS -> GeometricNonDegeneracy                NOT ESTABLISHED
+scale-correct signed/averaged far-field CZ        OPEN_CZ
+PDEToDynamicCampanato                            NOT_ESTABLISHED
+FinalF                                            NOT_TOUCHED
 ```
-
-## Next exact proof obligation
-
-The next legitimate formal object is not another estimate. It is an analytic realization structure, e.g.
-
-```text
-structure XiEpsLocalizedRealization (h : XiEpsPDE) where
-  phi : ...
-  meanBr : ...
-  integral : ...
-  grad : ...
-  lap : ...
-  ibp : ...
-  diffUnderIntegral : ...
-  strainSplit : ...
-```
-
-with the hypotheses needed to prove the localized equality by rewriting `h.equation`, pairing with
-
-\[
-\phi^2(\xi_\varepsilon-(\xi_\varepsilon)_{B_r})|\omega|_\varepsilon,
-\]
-
-integrating, and applying integration by parts. Only after that theorem compiles without an equality assumption should the status be changed to `PROVED_IDENTITY`.
