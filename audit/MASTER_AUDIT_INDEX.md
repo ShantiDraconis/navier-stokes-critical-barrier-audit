@@ -40,6 +40,7 @@ This is the navigation entry-point for the complete audit package.
 - `audit/22_global_repository_gap_scan.md`
 - `audit/23_derivation_history_exact_path.md`
 - `audit/24_claim_evidence_matrix.md`
+- **`audit/70_8000_lines_commit_code_evidence_audit.md` — commit/tree/blob verification, exact historical line links, and reconciliation of the “8,000 lines” claim with the complete commit ledger.**
 - `audit/genealogy/`
 - `audit/equivalences/`
 - `priority/`
