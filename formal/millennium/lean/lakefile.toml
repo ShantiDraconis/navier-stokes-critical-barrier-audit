@@ -1,4 +1,4 @@
-name = "millennium_audit"
+name = "g1_prize_standard_v4"
 version = "0.1.0"
 defaultTargets = ["MillenniumAudit"]
 

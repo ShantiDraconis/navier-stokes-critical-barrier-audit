@@ -1,10 +1,2 @@
-import MillenniumAudit.Core
-import MillenniumAudit.G1Audit
-import MillenniumAudit.Millennium.NavierStokes
-import MillenniumAudit.Millennium.Riemann
-import MillenniumAudit.Millennium.BSD
-import MillenniumAudit.Millennium.PvsNP
-import MillenniumAudit.Millennium.Hodge
-import MillenniumAudit.Millennium.YangMills
-import MillenniumAudit.Millennium.Poincare
-import MillenniumAudit.CompleteNoSorry
+import MillenniumAudit.HypothesesComplete_v3
+import MillenniumAudit.G1_PrizeStandard_v4

@@ -52,6 +52,8 @@ theorem bulk_tail_to_depletion
     GeometricDepletion ν d := by
   rcases hBulk with ⟨hc, hbulk⟩
   rcases hTail with ⟨ht, htail⟩
+  have hBudget' : cBulk + δTail < 1 := by
+    simpa [SubcriticalBudget] using hBudget
   let δ := 1 - (cBulk + δTail)
   have hδ : 0 < δ := by
     dsimp [δ]
