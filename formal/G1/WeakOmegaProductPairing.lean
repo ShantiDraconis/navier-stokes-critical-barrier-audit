@@ -16,7 +16,7 @@ import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 noncomputable section
 
 open MeasureTheory TemperedDistribution
-open scoped LineDeriv
+open scoped LineDeriv SchwartzMap
 
 namespace G1Audit
 
