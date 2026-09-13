@@ -40,12 +40,13 @@ theorem spaceTimeProductCLE_spatialDirection (k : Fin 3) :
   unfold spaceTimeToProduct spaceTimeSplitL2
   simp only [LinearIsometryEquiv.trans_apply]
   rw [spaceTimeReindex_spatialDirection]
-  simp [reindexedSplit, firstFactorToReal, productSpatialDirection,
-    realSingletonONB, PiLp.sumPiLpEquivProdLpPiLp, Pi.single_apply]
-  constructor
-  · rfl
+  apply Prod.ext
+  · simp [reindexedSplit, firstFactorToReal, realSingletonONB,
+      PiLp.sumPiLpEquivProdLpPiLp, Pi.single_apply]
   · ext j
-    simp [EuclideanSpace.single, PiLp.single_apply]
+    simp [reindexedSplit, firstFactorToReal, productSpatialDirection,
+      realSingletonONB, PiLp.sumPiLpEquivProdLpPiLp,
+      EuclideanSpace.single, PiLp.single_apply, Pi.single_apply]
 
 inductive SpaceTimeSpatialDirectionStatus
   | pureSpatialDirectionDefined
