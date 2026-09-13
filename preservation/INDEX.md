@@ -48,21 +48,20 @@ preservation/
   ALL_REFS_PRE_UNION.txt      all refs before consolidation
   SHA256SUMS.txt              file integrity hashes
   branch_file_manifest.json   per-file SHA-256 + metadata for all snapshots
+  INDEX.md                    this file
   README.md                   restoration instructions
   branch-snapshots/
     <branch-slug>/            complete tree as of branch tip
   session-scratch-20260913/   workspace artifacts not yet on remote
 
-results/
-  formal_test_run_2026-09-13/
-    FORMAL_TEST_REPORT.md
-    g1_componentwise_ch_results.json
-    g1_joint_tail_diagnostic.json
-
 audit/         current audit documents
 formal/        Lean / Agda / Coq / Isabelle formal proofs
 scripts/       test scripts
 results/       numerical test outputs
+  formal_test_run_2026-09-13/
+    FORMAL_TEST_REPORT.md
+    g1_componentwise_ch_results.json
+    g1_joint_tail_diagnostic.json
 ```
 
 ---
