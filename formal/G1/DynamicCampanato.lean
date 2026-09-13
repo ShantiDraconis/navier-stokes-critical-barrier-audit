@@ -151,7 +151,7 @@ structure RemainderCutoffFreeWitness (P : XiEpsPDE) where
   vanishes_uniformly_in_eps :
     ∀ T ≥ 0, ∀ η > 0, ∃ ε0 > 0, ∀ ε, 0 < |ε| → |ε| ≤ ε0 →
       ∀ t, 0 ≤ t → t ≤ T → ∀ r,
-        |localRemainder ε t r| ≤ η * C_rem u0L2 P.ν
+        |localRemainder ε t r| ≤ η
 
 /--
 Exact local energy identity obtained by testing the `XiEpsPDE` with
@@ -216,7 +216,10 @@ structure CampanatoIteration (P : XiEpsPDE) where
   hgamma_nonneg : 0 ≤ gamma
   hA_nonneg : 0 ≤ A
   diffusion_selects_half_contraction : kappaThreshold ≤ P.κ → gamma < (1 / 2 : ℝ)
-  recursiveStep :
+  -- The forcing term is kept at the parent scale `r / ρ_*`, matching the
+  -- audit target `J_{r/2} ≤ γ J_r + A r / ρ_*` and the barrier condition
+  -- `2 γ C + 2 A ≤ C`.
+  recursiveStepAtParentScale :
     ∀ ε t r, J ε t (r / 2) ≤ gamma * J ε t r + A * scaleRatio P t r
 
 /-- The strict `γ < 1/2` threshold comes from the admissible `κ` regime. -/
