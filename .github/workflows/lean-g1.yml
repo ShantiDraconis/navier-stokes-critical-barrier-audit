@@ -58,6 +58,9 @@ jobs:
       - name: Build weak omega spatial slice reduction
         shell: bash
         run: lake build G1.WeakOmegaSpatialSlice
+      - name: Build countable common spatial test set
+        shell: bash
+        run: lake build G1.SeparatedSpatialWeakDerivativeIdentity
       - name: Build Hminus1-H10 weighted diffusion layer
         shell: bash
         run: lake build G1.WeakDiffusionIBP
