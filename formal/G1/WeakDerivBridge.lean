@@ -3,17 +3,13 @@ WeakDerivBridge.lean
 
 Space-time weak-derivative bridge for the regularized direction xi_eps.
 
-This file uses Mathlib's actual tempered-distribution/Sobolev API.  It does not
-encode DtXi or lapXi as arbitrary pointwise fields.  Instead it constructs the
-weak time derivative and a spatial Laplacian distribution from the distribution
-representing xi_eps.
+Mathlib's tempered-distribution Sobolev API is used componentwise.  A vector
+field in R^3 is represented as three scalar tempered distributions on R^4.
+This avoids pretending that an unsupported vector target instance exists while
+retaining the exact vector information component-by-component.
 
-Important audit boundary: Mathlib currently provides MemSobolev for tempered
-distributions and distributional line derivatives/Laplacian, but the repository
-does not yet have a theorem converting the resulting vector-valued
-space-time distributions to the precise local L2 representatives needed by the
-weighted Bochner identity.  That conversion is recorded as OPEN_MATHLIB_VECTOR,
-not hidden as an axiom or as the final PDE identity.
+No pointwise DtXi or lapXi is supplied here.  Time derivatives and the spatial
+Laplacian are distributional operators constructed from xiDist.
 -/
 
 import Mathlib.Analysis.Distribution.Sobolev
@@ -25,77 +21,67 @@ open scoped SchwartzMap Real Laplacian LineDeriv
 
 namespace G1Audit
 
+/-- Spatial R^3 and space-time R^4. -/
 abbrev Vec3 := EuclideanSpace ℝ (Fin 3)
-abbrev ScalarField := Vec3 → ℝ
-abbrev VectorField := Vec3 → Vec3
+abbrev SpaceTime := EuclideanSpace ℝ (Fin 4)
 
-/-- Space-time R x R^3. -/
-abbrev SpaceTime := ℝ × Vec3
+/-- A complex scalar component, as required by Mathlib's Sobolev API. -/
+abbrev ScalarDist := 𝓢'(SpaceTime, ℂ)
 
-/-- Complexified target used by Mathlib's tempered-distribution Sobolev API. -/
-abbrev CVec3 := EuclideanSpace ℂ (Fin 3)
-
-/-- Unit direction in time inside R x R^3. -/
-def timeDirection : SpaceTime := ((1 : ℝ), 0)
+/-- Time coordinate direction e_0 in R^4. -/
+def timeDirection : SpaceTime := fun j => if j = 0 then 1 else 0
 
 /--
-A genuine H^1 space-time distribution representing the regularized direction.
-`MemSobolev 1 2` is Mathlib's Bessel-potential/Sobolev predicate.
+A genuine vector-valued H^1 space-time distribution represented componentwise.
+Each of the three components is a Mathlib tempered distribution in H^1.
 -/
 structure WeakXiSpaceTime where
-  xiDist : 𝓢'(SpaceTime, CVec3)
-  hXiH1 : MemSobolev 1 2 xiDist
+  xiDist : Fin 3 → ScalarDist
+  hXiH1 : ∀ i, MemSobolev 1 2 (xiDist i)
 
-/-- Distributional time derivative d_t xi. -/
-def WeakXiSpaceTime.dtDist (h : WeakXiSpaceTime) : 𝓢'(SpaceTime, CVec3) :=
-  ∂_{timeDirection} h.xiDist
+/-- Distributional time derivative of component i. -/
+def WeakXiSpaceTime.dtDist (h : WeakXiSpaceTime) (i : Fin 3) : ScalarDist :=
+  ∂_{timeDirection} (h.xiDist i)
 
-/-- Distributional second time derivative. -/
-def WeakXiSpaceTime.dttDist (h : WeakXiSpaceTime) : 𝓢'(SpaceTime, CVec3) :=
-  ∂_{timeDirection} (∂_{timeDirection} h.xiDist)
-
-/--
-Spatial Laplacian as the space-time Laplacian with the second time derivative
-removed.  This is a genuine distributional operator, not a supplied vector
-field.  The equality with the coordinate sum sum_j d_{x_j}^2 is the geometric
-product-space identification that should eventually be proved as a helper lemma.
--/
-def WeakXiSpaceTime.spatialLapDist (h : WeakXiSpaceTime) : 𝓢'(SpaceTime, CVec3) :=
-  Δ h.xiDist - h.dttDist
+/-- Distributional second time derivative of component i. -/
+def WeakXiSpaceTime.dttDist (h : WeakXiSpaceTime) (i : Fin 3) : ScalarDist :=
+  ∂_{timeDirection} (∂_{timeDirection} (h.xiDist i))
 
 /--
-Mathlib's H^1 assumption is retained explicitly as the regularity certificate.
-This theorem is intentionally trivial: it exposes the exact source of Sobolev
-regularity rather than replacing it with a custom predicate.
+Spatial Laplacian componentwise, realized as the R^4 Laplacian minus the second
+time derivative.  Equality with the sum of the three spatial coordinate second
+derivatives is a separate product-coordinate lemma and is not faked here.
 -/
-theorem WeakXiSpaceTime.memSobolev_one_two (h : WeakXiSpaceTime) :
-    MemSobolev 1 2 h.xiDist := h.hXiH1
+def WeakXiSpaceTime.spatialLapDist (h : WeakXiSpaceTime) (i : Fin 3) : ScalarDist :=
+  Δ (h.xiDist i) - h.dttDist i
+
+/-- Expose the exact H^1 certificate for every component. -/
+theorem WeakXiSpaceTime.memSobolev_one_two (h : WeakXiSpaceTime) (i : Fin 3) :
+    MemSobolev 1 2 (h.xiDist i) := h.hXiH1 i
+
+/-- Every first directional derivative is H^0=L^2 at the distribution level. -/
+theorem WeakXiSpaceTime.lineDeriv_memSobolev_zero
+    (h : WeakXiSpaceTime) (i : Fin 3) (m : SpaceTime) :
+    MemSobolev 0 2 (∂_{m} (h.xiDist i)) := by
+  simpa using (h.hXiH1 i).lineDerivOp (m := m)
+
+/-- In particular, the weak time derivative is H^0=L^2. -/
+theorem WeakXiSpaceTime.dt_memSobolev_zero
+    (h : WeakXiSpaceTime) (i : Fin 3) :
+    MemSobolev 0 2 (h.dtDist i) := by
+  exact h.lineDeriv_memSobolev_zero i timeDirection
 
 /--
-The bridge still missing from Mathlib/repository infrastructure:
-
-1. obtain vector-valued L2_loc representatives of dtDist and spatialLapDist;
-2. identify them a.e. with the real-valued weak derivatives of xi_eps;
-3. support the weighted product rule/divergence theorem needed by the localized
-   test field phi^2 |omega|_eps (xi_eps-mean).
-
-No constructor from `WeakXiSpaceTime` is provided, because that would falsely
-assert the missing theorem.
+Audit boundary: H^1 controls first derivatives in L^2, but does not by itself
+upgrade the second-order spatial Laplacian to an L^1_loc function.  Weighted
+IBP must therefore use distribution/H^1 duality or additional PDE regularity.
 -/
-structure VectorWeakRepresentative where
-  dtRepresentative : SpaceTime → CVec3
-  lapRepresentative : SpaceTime → CVec3
-  dtLocallyL2 : Prop
-  lapLocallyIntegrable : Prop
-  representsDt : Prop
-  representsSpatialLap : Prop
-
-/-- Explicit audit status for the unimplemented Mathlib vector bridge. -/
 inductive WeakDerivBridgeStatus
-  | spaceTimeSobolevDistributionDefined
-  | weakTimeDerivativeDefined
-  | weakSpatialLaplacianDefined
-  | openMathlibVector
+  | componentwiseSpaceTimeSobolevDefined
+  | weakFirstDerivativesH0
+  | weakTimeDerivativeH0
+  | weakSpatialLaplacianDistributionDefined
+  | laplacianFunctionRepresentativeOpen
   | openWeightedProductRule
   | openMaterialDerivativePairing
   deriving DecidableEq, Repr
