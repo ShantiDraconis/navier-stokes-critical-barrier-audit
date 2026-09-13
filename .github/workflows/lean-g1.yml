@@ -28,6 +28,9 @@ jobs:
       - name: Build Hminus1-H10 weighted diffusion layer
         shell: bash
         run: lake build G1.WeakDiffusionIBP
+      - name: Build weak XiEps PDE
+        shell: bash
+        run: lake build G1.XiEpsPDE
       - name: Build localized XiEps realization
         shell: bash
         run: lake build G1.XiEpsLocalizedRealization
