@@ -11,7 +11,7 @@ Isolate the hDynamic constant so that the local half-Hölder coherence target is
 The updated file `formal/G1/G1_DynamicCriticalGeometry.lean` now exposes the target objects explicitly:
 
 - `xiEps(ε,t,x) = ω(t,x) / sqrt(|ω(t,x)|^2 + ε^2)`
-- `OmegaTheta(θ,t) = { x : |ω(x,t)| ≥ θ ||ω(t)||_∞ }`
+- `OmegaTheta(θ,t) = { x : |ω(t,x)| ≥ θ ||ω(t)||_∞ }`
 - `rhoStarAt(κ,t) = κ ||ω(t)||_2 / ||∇ω(t)||_2`
 - `cutoffRadius(κ,K,t) = K rhoStarAt(κ,t)` with `K` fixed in the cutoff structure, so there is no free arbitrary `R` parameter
 - `wR` is only the profile attached to that fixed derived radius
