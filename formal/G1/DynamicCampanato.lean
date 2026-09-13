@@ -62,8 +62,8 @@ def xiEps (ω : VorticityFamily) (ε t : ℝ) (x : Space) : Vec3 :=
 def omegaAbsEps (ω : VorticityFamily) (ε t : ℝ) (x : Space) : ℝ :=
   ‖ω ε t x‖
 
-/-- Origin-free ball used for Campanato oscillation. -/
-def ball (center : Space) (r : ℝ) : Set Space :=
+/-- Closed ball used for Campanato oscillation. -/
+def closedBall (center : Space) (r : ℝ) : Set Space :=
   {x | ‖x - center‖ ≤ r}
 
 /-- Scale-locked cutoff profile with moving centers. -/
