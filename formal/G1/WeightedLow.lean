@@ -25,7 +25,7 @@ FinalF.lean / final_unification_conditional remain BLOCKED.
 
 import Mathlib
 
-noncomputable section
+noncomputable section G1WeightedLowSection
 
 namespace G1WeightedLow
 
@@ -245,4 +245,4 @@ FinalF.lean / final_unification_conditional: BLOCKED.
 
 end G1WeightedLow
 
-end
+end G1WeightedLowSection

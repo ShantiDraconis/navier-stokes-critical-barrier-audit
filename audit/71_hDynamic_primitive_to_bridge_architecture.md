@@ -1,6 +1,6 @@
 # Audit 71 — hDynamic: Primitive → Bridge → Target Architecture
 
-**Status:** OPEN_BRIDGE / NOT_ESTABLISHED — C₀ estruturalmente isolado de ε/R; prova formal de `independence_certificate` e passagem Constantin-Fefferman pendentes. `FinalF.lean` bloqueado.
+**Status:** OPEN_BRIDGE / NOT_ESTABLISHED — C₀ structurally isolated from ε/R; formal proof of `independence_certificate` and Constantin-Fefferman passage pending. `FinalF.lean` blocked.
 
 ---
 

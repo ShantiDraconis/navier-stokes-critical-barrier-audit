@@ -23,7 +23,7 @@ Open obligations collected here:
 
 import Mathlib
 
-noncomputable section
+noncomputable section G1AlignmentTransportSection
 
 namespace G1AlignmentTransport
 
@@ -327,4 +327,4 @@ FinalF.lean / final_unification_conditional: BLOCKED until K1a–K1f closed.
 
 end G1AlignmentTransport
 
-end
+end G1AlignmentTransportSection
