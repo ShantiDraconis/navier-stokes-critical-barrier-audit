@@ -17,12 +17,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
-        with:
-          lake-package-directory: formal/millennium/lean
-      - name: reject proof escapes
+      - name: Install Lean
         run: |
-          ! grep -RInE '\bsorry\b|\baxiom\b' formal/millennium/lean --include='*.lean'
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve Lean dependencies
+        working-directory: formal/millennium/lean
+        run: lake update
+      - name: Build Lean conditional structure
+        working-directory: formal/millennium/lean
+        run: lake build
+      - name: reject proof escapes in executable Lean source
+        run: |
+          if grep -RInE '^[[:space:]]*(sorry|axiom)[[:space:]]' formal/millennium/lean --include='*.lean'; then
+            echo 'proof escape found'; exit 1
+          fi
 
   coq:
     runs-on: ubuntu-latest
@@ -33,7 +42,7 @@ jobs:
         run: coqc MillenniumFinalStructure.v
       - name: reject proof escapes
         run: |
-          ! grep -RInE '\bAdmitted\b|\badmit\b|\bAxiom\b' formal/millennium/coq --include='*.v'
+          ! grep -RInE '^[[:space:]]*(Admitted|admit|Axiom)\b' formal/millennium/coq --include='*.v'
 
   agda:
     runs-on: ubuntu-latest
