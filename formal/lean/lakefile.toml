@@ -1,6 +1,0 @@
-name = "critical-barrier"
-version = "0.2.0"
-defaultTargets = ["CriticalBarrier"]
-
-[[lean_lib]]
-name = "CriticalBarrier"
