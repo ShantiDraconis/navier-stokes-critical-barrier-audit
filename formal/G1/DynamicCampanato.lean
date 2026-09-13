@@ -22,6 +22,9 @@ namespace G1DynamicCampanato
 abbrev Vec3 := EuclideanSpace ℝ (Fin 3)
 abbrev Space := Vec3
 
+/-- Physical vorticity field `ω(t,x)` used to define `OmegaTheta`. -/
+abbrev BaseVorticityField := ℝ → Space → Vec3
+
 /-- `ω_ε(t,x)` family used in the regularized direction equation. -/
 abbrev VorticityFamily := ℝ → ℝ → Space → Vec3
 
@@ -47,9 +50,9 @@ def rhoStarAt (norms : VorticityNorms) (κ t : ℝ) : ℝ :=
 def cutoffRadius (norms : VorticityNorms) (κ K t : ℝ) : ℝ :=
   K * rhoStarAt norms κ t
 
-/-- High-vorticity region `|ω| ≥ θ ||ω||_∞`. -/
-def OmegaTheta (ω : VorticityFamily) (norms : VorticityNorms) (θ ε t : ℝ) : Set Space :=
-  {x | θ * norms.supNorm t ≤ ‖ω ε t x‖}
+/-- High-vorticity region `|ω| ≥ θ ||ω||_∞` for the physical limit field. -/
+def OmegaTheta (ω : BaseVorticityField) (norms : VorticityNorms) (θ t : ℝ) : Set Space :=
+  {x | θ * norms.supNorm t ≤ ‖ω t x‖}
 
 /-- Regularized denominator `(|ω_ε|² + ε²)^{1/2}`. -/
 def omegaMagEps (ω : VorticityFamily) (ε t : ℝ) (x : Space) : ℝ :=
@@ -179,7 +182,7 @@ structure LocalEnergyIdentity (P : XiEpsPDE) where
 
 /-- Cubic inverse-length weight `ρ_*^{-3}`. -/
 def rhoInvCubed (ρ : ℝ) : ℝ :=
-  ρ⁻¹ * ρ⁻¹ * ρ⁻¹
+  ρ⁻¹ ^ 3
 
 /--
 Far-field control must respect scaling. The bound is recorded only in averaged
