@@ -55,7 +55,8 @@ theorem productTensorSchwartz_spatial_lineDeriv_apply
           (productSpatialDirection k) = _
   rw [fderiv_comp z hpsiDiff.differentiableAt (by fun_prop)]
   rw [fderiv_comp z (by fun_prop) (by fun_prop)]
-  simp [productSpatialDirection, spatialTestDerivative, ContinuousLinearMap.fderiv]
+  rw [fderiv_snd, fderiv_fst]
+  simp [productSpatialDirection, spatialTestDerivative]
 
 inductive TensorProductSpatialDerivativeStatus
   | spatialDerivativeFunctionDefined
