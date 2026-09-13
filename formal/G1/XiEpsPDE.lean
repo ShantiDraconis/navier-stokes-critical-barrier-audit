@@ -9,13 +9,13 @@ No `axiom`, `sorry`, `admit`, `sup_t ||omega||_2^2`, or palinstrophy integral is
 introduced here.
 -/
 
+import G1.WeakDerivBridge
 import Mathlib
 
 noncomputable section
 
 namespace G1Audit
 
-abbrev Vec3 := EuclideanSpace ℝ (Fin 3)
 abbrev ScalarField := Vec3 → ℝ
 abbrev VectorField := Vec3 → Vec3
 
