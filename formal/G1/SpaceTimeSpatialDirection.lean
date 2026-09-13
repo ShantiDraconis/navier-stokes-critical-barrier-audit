@@ -41,9 +41,10 @@ theorem spaceTimeProductCLE_spatialDirection (k : Fin 3) :
   simp only [LinearIsometryEquiv.trans_apply]
   rw [spaceTimeReindex_spatialDirection]
   apply Prod.ext
-  · funext i
-    simp [reindexedSplit, firstFactorToReal, productSpatialDirection,
+  · simp [reindexedSplit, firstFactorToReal, productSpatialDirection,
       realSingletonONB, PiLp.sumPiLpEquivProdLpPiLp, Pi.single_apply]
+    ext i
+    rfl
   · ext j
     simp [reindexedSplit, firstFactorToReal, productSpatialDirection,
       realSingletonONB, PiLp.sumPiLpEquivProdLpPiLp,
