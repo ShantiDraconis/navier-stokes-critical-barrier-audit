@@ -37,6 +37,9 @@ jobs:
       - name: Build spacetime coordinate split
         shell: bash
         run: lake build G1.SpaceTimeCoordinateSplit
+      - name: Build 4D weak omega pairing
+        shell: bash
+        run: lake build G1.WeakOmega4DPairing
       - name: Build weak omega spatial slice reduction
         shell: bash
         run: lake build G1.WeakOmegaSpatialSlice
