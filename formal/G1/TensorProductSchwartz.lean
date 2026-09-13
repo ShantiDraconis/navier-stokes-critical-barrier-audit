@@ -26,8 +26,10 @@ def tensorProductRaw (alpha : ℝ → ℝ) (psi : Vec3 → ℂ) : ProductSpaceTi
 /-- Smoothness of the tensor product follows from projections and multiplication. -/
 theorem tensorProductRaw_contDiff
     {alpha : ℝ → ℝ} {psi : Vec3 → ℂ}
-    (halpha : ContDiff ℝ ⊤ alpha) (hpsi : ContDiff ℝ ⊤ psi) :
-    ContDiff ℝ ⊤ (tensorProductRaw alpha psi) := by
+    (halpha : ContDiff ℝ (⊤ : ℕ∞) alpha)
+    (hpsi : ContDiff ℝ (⊤ : ℕ∞) psi) :
+    ContDiff ℝ (⊤ : ℕ∞) (tensorProductRaw alpha psi) := by
+  unfold tensorProductRaw
   fun_prop
 
 /-- The pointwise support is contained in support(alpha) x support(psi). -/
@@ -61,9 +63,9 @@ theorem tensorProductRaw_hasCompactSupport
 /-- The actual Schwartz test on R x R^3. -/
 def productTensorSchwartz
     (alpha : ℝ → ℝ) (psi : Vec3 → ℂ)
-    (halphaSmooth : ContDiff ℝ ⊤ alpha)
+    (halphaSmooth : ContDiff ℝ (⊤ : ℕ∞) alpha)
     (halphaCompact : HasCompactSupport alpha)
-    (hpsiSmooth : ContDiff ℝ ⊤ psi)
+    (hpsiSmooth : ContDiff ℝ (⊤ : ℕ∞) psi)
     (hpsiCompact : HasCompactSupport psi) : 𝓢(ProductSpaceTime, ℂ) :=
   (tensorProductRaw_hasCompactSupport halphaCompact hpsiCompact).toSchwartzMap
     (tensorProductRaw_contDiff halphaSmooth hpsiSmooth)
@@ -71,9 +73,9 @@ def productTensorSchwartz
 @[simp]
 theorem productTensorSchwartz_apply
     (alpha : ℝ → ℝ) (psi : Vec3 → ℂ)
-    (halphaSmooth : ContDiff ℝ ⊤ alpha)
+    (halphaSmooth : ContDiff ℝ (⊤ : ℕ∞) alpha)
     (halphaCompact : HasCompactSupport alpha)
-    (hpsiSmooth : ContDiff ℝ ⊤ psi)
+    (hpsiSmooth : ContDiff ℝ (⊤ : ℕ∞) psi)
     (hpsiCompact : HasCompactSupport psi)
     (z : ProductSpaceTime) :
     productTensorSchwartz alpha psi halphaSmooth halphaCompact hpsiSmooth hpsiCompact z =
@@ -110,8 +112,9 @@ theorem spaceTimeTensorRaw_hasCompactSupport
 /-- The transported tensor product is C-infinity on SpaceTime. -/
 theorem spaceTimeTensorRaw_contDiff
     {alpha : ℝ → ℝ} {psi : Vec3 → ℂ}
-    (halpha : ContDiff ℝ ⊤ alpha) (hpsi : ContDiff ℝ ⊤ psi) :
-    ContDiff ℝ ⊤ (spaceTimeTensorRaw alpha psi) := by
+    (halpha : ContDiff ℝ (⊤ : ℕ∞) alpha)
+    (hpsi : ContDiff ℝ (⊤ : ℕ∞) psi) :
+    ContDiff ℝ (⊤ : ℕ∞) (spaceTimeTensorRaw alpha psi) := by
   have hprod := tensorProductRaw_contDiff halpha hpsi
   simpa only [spaceTimeTensorRaw, spaceTimeProductCLE_apply, Function.comp_def] using
     hprod.comp spaceTimeProductCLE.contDiff
@@ -119,9 +122,9 @@ theorem spaceTimeTensorRaw_contDiff
 /-- Exact Schwartz test used by the 4D distributional pairing. -/
 def spaceTimeTensorSchwartz
     (alpha : ℝ → ℝ) (psi : Vec3 → ℂ)
-    (halphaSmooth : ContDiff ℝ ⊤ alpha)
+    (halphaSmooth : ContDiff ℝ (⊤ : ℕ∞) alpha)
     (halphaCompact : HasCompactSupport alpha)
-    (hpsiSmooth : ContDiff ℝ ⊤ psi)
+    (hpsiSmooth : ContDiff ℝ (⊤ : ℕ∞) psi)
     (hpsiCompact : HasCompactSupport psi) : 𝓢(SpaceTime, ℂ) :=
   (spaceTimeTensorRaw_hasCompactSupport halphaCompact hpsiCompact).toSchwartzMap
     (spaceTimeTensorRaw_contDiff halphaSmooth hpsiSmooth)
@@ -129,9 +132,9 @@ def spaceTimeTensorSchwartz
 @[simp]
 theorem spaceTimeTensorSchwartz_apply
     (alpha : ℝ → ℝ) (psi : Vec3 → ℂ)
-    (halphaSmooth : ContDiff ℝ ⊤ alpha)
+    (halphaSmooth : ContDiff ℝ (⊤ : ℕ∞) alpha)
     (halphaCompact : HasCompactSupport alpha)
-    (hpsiSmooth : ContDiff ℝ ⊤ psi)
+    (hpsiSmooth : ContDiff ℝ (⊤ : ℕ∞) psi)
     (hpsiCompact : HasCompactSupport psi)
     (z : SpaceTime) :
     spaceTimeTensorSchwartz alpha psi halphaSmooth halphaCompact hpsiSmooth hpsiCompact z =
