@@ -31,19 +31,12 @@ namespace G1Audit
 abbrev ProductSpaceTime := ℝ × Vec3
 abbrev ProductScalarField := ProductSpaceTime → ℂ
 
-/-- The product measure dt dx used for the rigorous Fubini slicing layer. -/
 def productSpaceTimeMeasure : Measure ProductSpaceTime :=
   (volume : Measure ℝ).prod (volume : Measure Vec3)
 
-/-- Spatial slice of a genuine product-space representative. -/
 def spatialSlice (f : ProductScalarField) (t : ℝ) : Vec3 → ℂ :=
   fun x => f (t, x)
 
-/--
-An L2 function on R x R^3 has an L2 spatial slice for almost every time.
-This is the rigorous replacement for pointwise evaluation of an L2(R^4)
-equivalence class on the null set {t} x R^3.
--/
 theorem memLp_two_spatialSlice_ae
     {f : ProductScalarField}
     (hf : MemLp f 2 productSpaceTimeMeasure) :
@@ -67,11 +60,6 @@ theorem memLp_two_spatialSlice_ae
   filter_upwards [hsliceSq, hsliceMeas] with t ht htm
   exact (memLp_two_iff_integrable_sq_norm htm).2 ht
 
-/--
-Fubini identity for the quadratic L2 mass.  This is the function-level content
-of ||f||^2_{L2(RxR3)} = int ||f(t,.)||^2_{L2(R3)} dt, written without choosing
-an L2 representative on each exceptional time.
--/
 theorem integral_sq_norm_eq_iterated
     {f : ProductScalarField}
     (hf : MemLp f 2 productSpaceTimeMeasure) :
@@ -83,26 +71,16 @@ theorem integral_sq_norm_eq_iterated
   simpa [productSpaceTimeMeasure] using
     (integral_prod (fun z : ProductSpaceTime => ‖f z‖ ^ 2) hsq)
 
-/--
-Time-separation / du Bois-Reymond lemma in exactly the form needed after
-Fubini: a locally integrable complex residual whose pairing with every smooth
-compactly supported real time cutoff vanishes is zero for almost every time.
--/
+/-- Time du Bois-Reymond separation lemma used after Fubini. -/
 theorem ae_eq_zero_of_time_smooth_tests
     {r : ℝ → ℂ}
     (hr : LocallyIntegrable r (volume : Measure ℝ))
     (htest : ∀ a : ℝ → ℝ,
-      ContDiff ℝ ∞ a → HasCompactSupport a →
+      ContDiff ℝ ⊤ a → HasCompactSupport a →
         ∫ t, a t • r t ∂(volume : Measure ℝ) = 0) :
     ∀ᵐ t ∂(volume : Measure ℝ), r t = 0 := by
   exact ae_eq_zero_of_integral_contDiff_smul_eq_zero hr htest
 
-/--
-For the componentwise vorticity argument we need the function and its three
-spatial weak derivatives to have good slices simultaneously.  Since Fin 3 is
-finite, this is an a.e. finite intersection once product representatives are
-available.
--/
 def ProductOmegaSliceGood
     (omega : Fin 3 → ProductScalarField)
     (dxOmega : Fin 3 → Fin 3 → ProductScalarField)
@@ -110,35 +88,14 @@ def ProductOmegaSliceGood
   (∀ i, MemLp (spatialSlice (omega i) t) 2 (volume : Measure Vec3)) ∧
   (∀ i k, MemLp (spatialSlice (dxOmega i k) t) 2 (volume : Measure Vec3))
 
-/--
-Audit interface for the still-missing transfer from the existing EuclideanSpace
-space-time distributions to product-space representatives.
-
-These are mathematical obligations, not assumptions used to promote A2.
--/
 structure SpaceTimeProductTransfer (h : WeakOmegaSpaceTime) where
   omegaProd : Fin 3 → ProductScalarField
   dxOmegaProd : Fin 3 → Fin 3 → ProductScalarField
-
-  /-- Each product representative is genuinely L2(dt dx). -/
   omegaProd_memLp : ∀ i, MemLp (omegaProd i) 2 productSpaceTimeMeasure
   dxOmegaProd_memLp : ∀ i k, MemLp (dxOmegaProd i k) 2 productSpaceTimeMeasure
-
-  /--
-  Coordinate-transfer obligation: the chosen product functions represent the
-  same tempered distributions as omegaL2 / weakDxL2 after a measure-preserving
-  identification SpaceTime ~= R x Vec3.
-  -/
   coordinateCompatible : Prop
-
-  /--
-  Distributional slicing obligation: for a.e. t, dxOmegaProd i k(t,.) is the
-  x_k weak derivative of omegaProd i(t,.) on R^3, obtained from product tests
-  phi(t) psi(x) and Fubini.
-  -/
   spatialDerivativeSlices : Prop
 
-/-- The L2 part of the transfer already implies simultaneous L2 slices a.e. -/
 theorem SpaceTimeProductTransfer.goodSlices_ae
     {h : WeakOmegaSpaceTime} (tr : SpaceTimeProductTransfer h) :
     ∀ᵐ t ∂(volume : Measure ℝ), ProductOmegaSliceGood tr.omegaProd tr.dxOmegaProd t := by
@@ -159,7 +116,6 @@ theorem SpaceTimeProductTransfer.goodSlices_ae
   filter_upwards [hω, hdx] with t htω htdx
   exact ⟨htω, htdx⟩
 
-/-- Precise status after the function-level Fubini slice has been formalized. -/
 inductive WeakOmegaSliceStatus
   | productL2SlicesProved
   | productQuadraticFubiniProved
