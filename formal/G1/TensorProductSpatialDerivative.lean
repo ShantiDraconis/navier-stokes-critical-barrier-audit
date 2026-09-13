@@ -34,7 +34,8 @@ theorem productTensorSchwartz_spatial_lineDeriv_apply
       (alpha z.1 : ℂ) * spatialTestDerivative psi k z.2 := by
   rw [SchwartzMap.lineDerivOp_apply_eq_fderiv]
   change fderiv ℝ
-      (fun y : ProductSpaceTime => Complex.ofRealCLM (alpha y.1) * psi y.2)
+      (((fun y : ProductSpaceTime => Complex.ofRealCLM (alpha y.1)) : ProductSpaceTime → ℂ) *
+        (fun y : ProductSpaceTime => psi y.2))
       z (productSpatialDirection k) = _
   have halphaDiff : Differentiable ℝ alpha :=
     halphaSmooth.differentiable (by simp)
