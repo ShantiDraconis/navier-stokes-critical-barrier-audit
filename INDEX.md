@@ -16,6 +16,7 @@ This is the navigation layer for the audit. It separates documentary provenance,
 10. `audit/35_peer_review_master_protocol.md` — evidence and proof-status policy.
 11. `audit/44_peer_review_gap_theorem_submission_plan.md` — publication tracks and open bridge obligations.
 12. `audit/16_chat_provenance_ledger.md` — reconstructed conversation genealogy and export/hash protocol.
+13. `audit/70_8000_lines_commit_code_evidence_audit.md` — exact commit, line and code audit of the fragmented pre-cutoff corpus and the “8,000 lines” claim.
 
 ## Evidence firewall
 
@@ -53,6 +54,8 @@ Current result:
 - `audit/15_uel_structural_analysis.md`
 - `audit/16_related_commit_derivations.md`
 - `audit/48_ns_yang_mills_cross_problem_historical_bridge.md`
+- `audit/70_8000_lines_commit_code_evidence_audit.md`
+- `evidence/commits.yaml` — exhaustive commit evidence ledger (241 claim records / 133 distinct recorded SHA strings at the 2026-09-13 audit).
 
 ## Mathematical audit files
 
