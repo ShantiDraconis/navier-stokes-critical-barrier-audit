@@ -65,10 +65,10 @@ theorem spaceTimeToProduct_measurePreserving :
       (volume : Measure (WithLp 2 (ℝ × Vec3)))
       (volume : Measure ProductSpaceTime) :=
     WithLp.volume_preserving_ofLp ℝ Vec3
-  refine ⟨h2.measurable.comp h1.measurable, ?_⟩
-  change Measure.map ((@WithLp.ofLp 2 (ℝ × Vec3)) ∘ spaceTimeSplitL2)
-      (volume : Measure SpaceTime) = (volume : Measure ProductSpaceTime)
-  rw [Measure.map_map h2.measurable h1.measurable, h1.map_eq, h2.map_eq]
+  have h := h1.trans h2
+  change MeasurePreserving
+    (fun z : SpaceTime => WithLp.ofLp (spaceTimeSplitL2 z))
+  simpa only [Function.comp_def] using h
 
 def productToSpaceTime (z : ProductSpaceTime) : SpaceTime :=
   spaceTimeSplitL2.symm (WithLp.toLp 2 z)
@@ -85,10 +85,10 @@ theorem productToSpaceTime_measurePreserving :
       (volume : Measure (WithLp 2 (ℝ × Vec3)))
       (volume : Measure SpaceTime) :=
     LinearIsometryEquiv.measurePreserving spaceTimeSplitL2.symm
-  refine ⟨h2.measurable.comp h1.measurable, ?_⟩
-  change Measure.map (spaceTimeSplitL2.symm ∘ (@WithLp.toLp 2 (ℝ × Vec3)))
-      (volume : Measure ProductSpaceTime) = (volume : Measure SpaceTime)
-  rw [Measure.map_map h2.measurable h1.measurable, h1.map_eq, h2.map_eq]
+  have h := h1.trans h2
+  change MeasurePreserving
+    (fun z : ProductSpaceTime => spaceTimeSplitL2.symm (WithLp.toLp 2 z))
+  simpa only [Function.comp_def] using h
 
 /-- Continuous linear equivalence underlying the coordinate split; this is the
 form used by Schwartz-space composition and derivative transport. -/
@@ -185,8 +185,8 @@ theorem WeakOmegaSpaceTime.productSlicesGood_ae
 inductive SpaceTimeCoordinateSplitStatus
   | coordinateIsometryConstructed
   | coordinateVolumePreservingProved
-  | continuousLinearProductEquivExposed
   | productMeasureIdentified
+  | continuousLinearEquivConstructed
   | omegaL2TransferImplemented
   | weakDxL2TransferImplemented
   | productSlicesL2Proved
