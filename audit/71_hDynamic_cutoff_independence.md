@@ -18,7 +18,7 @@ The updated file `/home/runner/work/navier-stokes-critical-barrier-audit/navier-
 
 This removes the interface-level ambiguity in which a coherence constant could silently depend on a separately chosen cutoff. The Lean structure also records the dependence claim concretely through `C0_is_fixed_parameter_function : ∃ F, C0 = F(K, ||u0||_2, nu, kappa, theta)`.
 
-## Isolation of C0 (`Isolamento de C`)
+## Isolation of C0
 
 Desired implication on the intense-vorticity set:
 
@@ -55,7 +55,7 @@ D_t xi_eps
     + R_eps
 ```
 
-where the tangential projection term is encoded as `tangentialPart (xiEps ...) (strainAction ...)`, and the remaining obligation
+where the explicit first-order term is encoded literally as `strainAction - (inner xiEps strainAction) • xiEps`, and the remaining obligation
 
 ```text
 ||R_eps||_{L1} -> 0 uniformly in epsilon

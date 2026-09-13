@@ -178,7 +178,8 @@ structure RegularizedXiEvolutionFamily where
   evolution :
     ∀ ε t x,
       materialDerivative ε t x
-        = tangentialPart (xiEps ω ε t x) (strainAction ε t x)
+        = (strainAction ε t x
+            - (inner ℝ (xiEps ω ε t x) (strainAction ε t x)) • xiEps ω ε t x)
             + ν • (laplacianXi ε t x + (2 : ℝ) • gradOmegaOverOmegaEpsDotGradXi ε t x)
             + remainder ε t x
   remainder_uniform_L1_vanishes_from_leray_hopf :
