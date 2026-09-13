@@ -168,10 +168,11 @@ structure RegularizedXiEvolutionFamily where
   ω : VorticityField
   norms : VorticityNorms
   ν : ℝ
+  hν : 0 < ν
   materialDerivative : ℝ → ℝ → Space → Vec3
   strainAction : ℝ → ℝ → Space → Vec3
   laplacianXi : ℝ → ℝ → Space → Vec3
-  gradOmegaOverOmegaEpsDotGradXi : ℝ → ℝ → Space → Vec3
+  relGradOmegaDotGradXi : ℝ → ℝ → Space → Vec3
   remainder : ℝ → ℝ → Space → Vec3
   remainderL1 : ℝ → ℝ → ℝ
   hRemainderL1 : ∀ ε t, 0 ≤ remainderL1 ε t
@@ -180,7 +181,7 @@ structure RegularizedXiEvolutionFamily where
       materialDerivative ε t x
         = (strainAction ε t x
             - (inner ℝ (xiEps ω ε t x) (strainAction ε t x)) • xiEps ω ε t x)
-            + ν • (laplacianXi ε t x + (2 : ℝ) • gradOmegaOverOmegaEpsDotGradXi ε t x)
+            + ν • (laplacianXi ε t x + (2 : ℝ) • relGradOmegaDotGradXi ε t x)
             + remainder ε t x
   remainder_uniform_L1_vanishes_from_leray_hopf :
     ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, remainderL1 ε t ≤ η

@@ -8,7 +8,7 @@ Isolate the hDynamic constant so that the local half-Hölder coherence target is
 
 ## Scale-covariant normalization fixed in the Lean interface
 
-The updated file `/home/runner/work/navier-stokes-critical-barrier-audit/navier-stokes-critical-barrier-audit/formal/G1/G1_DynamicCriticalGeometry.lean` now exposes the target objects explicitly:
+The updated file `formal/G1/G1_DynamicCriticalGeometry.lean` now exposes the target objects explicitly:
 
 - `xiEps(ε,t,x) = ω(t,x) / sqrt(|ω(t,x)|^2 + ε^2)`
 - `OmegaTheta(θ,t) = { x : |ω(x,t)| ≥ θ ||ω(t)||_∞ }`
