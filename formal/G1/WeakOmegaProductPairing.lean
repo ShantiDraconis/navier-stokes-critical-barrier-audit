@@ -102,7 +102,15 @@ theorem WeakOmegaSpaceTime.weakDx_productSpatial_integral_pairing
     _ = ∫ z : ProductSpaceTime,
           (-(∂_{productSpatialDirection k} Phi) z) * h.omegaProd i z
             ∂(volume : Measure ProductSpaceTime) := by
-      rfl
+      change
+        (∫ y : SpaceTime,
+            productSchwartzPullback (-(∂_{productSpatialDirection k} Phi)) y *
+              (h.omegaL2 i) y) =
+          ∫ z : ProductSpaceTime,
+            productSchwartzPullback (-(∂_{productSpatialDirection k} Phi))
+                (productToSpaceTime z) *
+              (h.omegaL2 i) (productToSpaceTime z)
+      exact hright.symm
 
 inductive WeakOmegaProductPairingStatus
   | productSchwartzPullbackDefined
