@@ -158,6 +158,11 @@ def wR {norms : VorticityNorms} {κ : ℝ} (cutoff : FixedScaleCutoff norms κ) 
     ℝ → Space → ℝ :=
   cutoff.w
 
+
+/-- The regularized viscosity contribution in the `xi_eps` equation. -/
+def viscosityContribution (ν : ℝ) (laplacianXi relGradOmegaContractGradXi : Vec3) : Vec3 :=
+  ν • (laplacianXi + (2 : ℝ) • relGradOmegaContractGradXi)
+
 /--
 PDE-level evolution law for the regularized direction field `xi_eps`. The
 identity keeps the regularized denominator explicit and isolates the exact
@@ -172,7 +177,7 @@ structure RegularizedXiEvolutionFamily where
   materialDerivative : ℝ → ℝ → Space → Vec3
   strainAction : ℝ → ℝ → Space → Vec3
   laplacianXi : ℝ → ℝ → Space → Vec3
-  relGradOmegaDotGradXi : ℝ → ℝ → Space → Vec3
+  relGradOmegaContractGradXi : ℝ → ℝ → Space → Vec3
   remainder : ℝ → ℝ → Space → Vec3
   remainderL1 : ℝ → ℝ → ℝ
   hRemainderL1 : ∀ ε t, 0 ≤ remainderL1 ε t
@@ -181,7 +186,7 @@ structure RegularizedXiEvolutionFamily where
       materialDerivative ε t x
         = (strainAction ε t x
             - (inner ℝ (xiEps ω ε t x) (strainAction ε t x)) • xiEps ω ε t x)
-            + ν • (laplacianXi ε t x + (2 : ℝ) • relGradOmegaDotGradXi ε t x)
+            + viscosityContribution ν (laplacianXi ε t x) (relGradOmegaContractGradXi ε t x)
             + remainder ε t x
   remainder_uniform_L1_vanishes_from_leray_hopf :
     ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, remainderL1 ε t ≤ η
@@ -202,11 +207,11 @@ structure DynamicCriticalGeometry (ActualNS : Prop) where
   viscosity : ℝ
   u0L2 : ℝ
   cutoff : FixedScaleCutoff xiEvolution.regularized.norms kappa
+  boundProfile : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ
   C0 : ℝ
   hC0 : 0 ≤ C0
-  C0_is_fixed_parameter_function :
-    ∃ F : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
-      C0 = F cutoff.K u0L2 viscosity kappa theta
+  hC0_profile :
+      C0 = boundProfile cutoff.K u0L2 viscosity kappa theta
   dynamics_to_uniform_coherence :
     ActualNS → ∀ t : ℝ, ∃ q : CriticalCoherenceAtTime, q.C ≤ C0 ∧ q.holds
 

@@ -16,7 +16,7 @@ The updated file `formal/G1/G1_DynamicCriticalGeometry.lean` now exposes the tar
 - `cutoffRadius(κ,K,t) = K rhoStarAt(κ,t)` with `K` fixed in the cutoff structure, so there is no free arbitrary `R` parameter
 - `wR` is only the profile attached to that fixed derived radius
 
-This removes the interface-level ambiguity in which a coherence constant could silently depend on a separately chosen cutoff. The Lean structure also records the dependence claim concretely through `C0_is_fixed_parameter_function : ∃ F, C0 = F(K, ||u0||_2, nu, kappa, theta)`.
+This removes the interface-level ambiguity in which a coherence constant could silently depend on a separately chosen cutoff. The Lean structure also records the dependence claim concretely through a `boundProfile` field and the equality `C0 = boundProfile(K, ||u0||_2, nu, kappa, theta)`.
 
 ## Isolation of C0
 
@@ -55,7 +55,7 @@ D_t xi_eps
     + R_eps
 ```
 
-where the explicit first-order term is encoded literally as `strainAction - (inner xiEps strainAction) • xiEps`, and the remaining obligation
+where the explicit first-order term is encoded literally as `strainAction - (inner xiEps strainAction) • xiEps`, the viscosity contribution is grouped in `viscosityContribution`, and the remaining obligation
 
 ```text
 ||R_eps||_{L1} -> 0 uniformly in epsilon
