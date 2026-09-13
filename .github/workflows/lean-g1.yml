@@ -43,3 +43,12 @@ jobs:
       - name: Build localized XiEps realization
         shell: bash
         run: lake build G1.XiEpsLocalizedRealization
+      - name: Build tensorial strain-kernel architecture
+        shell: bash
+        run: lake build G1.StrainKernel
+      - name: Build signed far-field target
+        shell: bash
+        run: lake build G1.SignedFarField
+      - name: Build Campanato arithmetic layer
+        shell: bash
+        run: lake build G1.DynamicCampanatoArithmetic
