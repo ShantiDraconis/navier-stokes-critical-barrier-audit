@@ -9,6 +9,7 @@ No pointwise DtXi or lapXi is supplied here.
 -/
 
 import Mathlib.Analysis.Distribution.Sobolev
+import Mathlib.Analysis.InnerProductSpace.PiL2
 
 noncomputable section
 
@@ -22,11 +23,11 @@ abbrev SpaceTime := EuclideanSpace ℝ (Fin 4)
 abbrev ScalarDist := 𝓢'(SpaceTime, ℂ)
 
 /-- Time coordinate e_0 in R^4. -/
-def timeDirection : SpaceTime := fun j => if j = 0 then 1 else 0
+def timeDirection : SpaceTime := EuclideanSpace.single (0 : Fin 4) 1
 
 /-- Spatial coordinate e_{k+1} in R^4. -/
 def spatialDirection (k : Fin 3) : SpaceTime :=
-  fun j => if j = k.succ then 1 else 0
+  EuclideanSpace.single k.succ 1
 
 structure WeakXiSpaceTime where
   xiDist : Fin 3 → ScalarDist
