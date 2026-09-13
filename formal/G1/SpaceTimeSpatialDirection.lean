@@ -14,6 +14,13 @@ open Module WithLp
 
 namespace G1Audit
 
+/-- The chosen Fin 4 = Fin 1 ⊕ Fin 3 reindexing sends coordinate k+1 to
+exactly the spatial summand coordinate k. -/
+@[simp]
+theorem finFourEquivTimeSpace_spatial (k : Fin 3) :
+    finFourEquivTimeSpace k.succ = Sum.inr k := by
+  fin_cases k <;> rfl
+
 /-- Pure x_k direction in the product model R x R^3. -/
 def productSpatialDirection (k : Fin 3) : ProductSpaceTime :=
   (0, EuclideanSpace.single k 1)
@@ -22,24 +29,14 @@ def productSpatialDirection (k : Fin 3) : ProductSpaceTime :=
 exactly the pure x_k product direction. -/
 theorem spaceTimeProductCLE_spatialDirection (k : Fin 3) :
     spaceTimeProductCLE (spatialDirection k) = productSpatialDirection k := by
-  fin_cases k
-  all_goals
-    apply Prod.ext
-    · ext i
-      fin_cases i
-      simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
-        reindexedSplit, firstFactorToReal, spatialDirection,
-        productSpatialDirection, finFourEquivTimeSpace, realSingletonONB,
-        PiLp.sumPiLpEquivProdLpPiLp]
-    · ext j
-      fin_cases j <;>
-        simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
-          reindexedSplit, firstFactorToReal, spatialDirection,
-          productSpatialDirection, finFourEquivTimeSpace, realSingletonONB,
-          PiLp.sumPiLpEquivProdLpPiLp]
+  simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
+    reindexedSplit, firstFactorToReal, spatialDirection,
+    productSpatialDirection, realSingletonONB,
+    PiLp.sumPiLpEquivProdLpPiLp]
 
 inductive SpaceTimeSpatialDirectionStatus
   | pureSpatialDirectionDefined
+  | finFourSpatialReindexProved
   | canonicalSpatialDirectionIdentified
   deriving DecidableEq, Repr
 
