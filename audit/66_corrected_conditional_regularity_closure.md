@@ -222,7 +222,7 @@ The following statements are unsupported or incorrectly normalized:
 - “A large helicity forces the stretching term to change sign.” No such general
   implication has been established here; viscosity also prevents treating helicity as
   a universally conserved Navier–Stokes quantity.
-- “G2 is completely proved” when the Lean item still contains \`sorry\` or only an
+- “G2 is completely proved” when the Lean item still contains `sorry` or only an
   abstract projector inequality.
 - “G4 is only formalization.” A theorem invocation is mathematically legitimate on
   paper once its hypotheses are checked, but a fully internal Lean proof would require
@@ -313,14 +313,14 @@ conjecture; it is not a uniform theorem and does not prove G1.
 
 The corrected companion file is:
 
-\`formal/G1/G1_PrizeStandard_Interface.lean\`
+`formal/G1/G1_PrizeStandard_Interface.lean`
 
 It removes the earlier definition
 
-\`DynamicCriticalGeometry := True\`
+`DynamicCriticalGeometry := True`
 
 and replaces it with an explicit proposition parameter plus a bridge structure. It
-also restores viscosity in G1 and represents fractional powers with \`Real.rpow\`.
+also restores viscosity in G1 and represents fractional powers with `Real.rpow`.
 
 Its proved declarations certify conditional algebra and logical composition only.
 
@@ -335,7 +335,7 @@ Its proved declarations certify conditional algebra and logical composition only
 
 ## 13. Final audit verdict
 
-\`\`\`text
+```text
 CONDITIONAL_THEOREM = VALID AFTER EXACT ANALYTIC HYPOTHESES
 G1_AS_SUFFICIENT_TERMINAL_DEPLETION = OPEN_FROM_ACTUAL_NS
 G1_EQUIVALENT_TO_MILLENNIUM = NOT ESTABLISHED
@@ -345,4 +345,4 @@ ESS_SMALLNESS_THRESHOLD_REQUIRED = NO
 DYNAMIC_COHERENCE_TO_G1 = OPEN
 LEAN_UNCONDITIONAL_PROOF = ABSENT
 NAVIER_STOKES_GLOBAL_REGULARITY = NOT ESTABLISHED
-\`\`\`
+```
