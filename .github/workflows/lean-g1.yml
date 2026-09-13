@@ -25,6 +25,9 @@ jobs:
       - name: Build vector local representative
         shell: bash
         run: lake build G1.VectorLocalRep
+      - name: Build Hminus1-H10 weighted diffusion layer
+        shell: bash
+        run: lake build G1.WeakDiffusionIBP
       - name: Build localized XiEps realization
         shell: bash
         run: lake build G1.XiEpsLocalizedRealization
