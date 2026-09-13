@@ -37,7 +37,7 @@ Comportamento de escala: sob `u → lambda u`, `x → lambda^{-1} x`,
 
 1. Existência global de solução Leray-Hopf `u ∈ L^∞(0,T; L^2) ∩ L^2(0,T; H^1)`.
 2. Desigualdade de energia: `d/dt ||u||^2 + 2 ||∇u||^2 ≤ 0` (caso força nula).
-3. Definições scale-covariant acima são consistentes e bem definadas q.t.p.
+3. Definições scale-covariant acima são consistentes e bem definidas q.t.p.
 
 ### CriticalBridge (OBRIGAÇÃO EM ABERTO)
 

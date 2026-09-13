@@ -154,6 +154,7 @@ def OmegaTheta (theta omegaInf : ℝ) (omegaNorm : Vec3 → ℝ) : Set Vec3 :=
 Scale-covariant coherence radius.  Identical to `rhoStar` above; re-stated
 here in the fixed-K form so R is NOT a free parameter.
 `K` is a universal large constant (e.g. K = 4); fixing it removes R-dependence.
+Requires `gradOmegaL2 > 0` (i.e., the flow is not identically potential).
 -/
 noncomputable def rhoStarFixed (κ K omegaL2 gradOmegaL2 : ℝ) : ℝ :=
   K * (κ * omegaL2 / gradOmegaL2)
@@ -162,8 +163,10 @@ noncomputable def rhoStarFixed (κ K omegaL2 gradOmegaL2 : ℝ) : ℝ :=
 Window function supported in B(0, R) with R = K * ρ_*.
 Crucially R is determined by the flow data, not chosen freely.
 Any bound derived using `w_R` therefore carries no free cutoff parameter.
+Parameter order matches `rhoStarFixed`: (κ K omegaL2 gradOmegaL2).
 -/
-structure w_R_Data (K κ omegaL2 gradOmegaL2 : ℝ) where
+structure w_R_Data (κ K omegaL2 gradOmegaL2 : ℝ) where
+  hgrad : 0 < gradOmegaL2
   R : ℝ
   hR : R = rhoStarFixed κ K omegaL2 gradOmegaL2
   hR_pos : 0 < R
