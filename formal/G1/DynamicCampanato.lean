@@ -33,6 +33,7 @@ structure VorticityNorms where
   hsupNorm : ∀ t, 0 ≤ supNorm t
   hl2 : ∀ t, 0 ≤ l2 t
   hgradL2 : ∀ t, 0 ≤ gradL2 t
+  hgradL2_pos : ∀ t, 0 < gradL2 t
 
 /-- Scale-covariant radius `ρ_* = κ ||ω||₂ / ||∇ω||₂`. -/
 def rhoStar (κ omegaL2 gradOmegaL2 : ℝ) : ℝ :=
@@ -177,7 +178,7 @@ structure LocalEnergyIdentity (P : XiEpsPDE) where
             + R1 ε t r + R2 ε t r + remainderWitness.localRemainder ε t r
 
 /-- Cubic inverse-length weight `ρ_*^{-3}`. -/
-def rhoWeight (ρ : ℝ) : ℝ :=
+def rhoInvCubed (ρ : ℝ) : ℝ :=
   ρ⁻¹ * ρ⁻¹ * ρ⁻¹
 
 /--
@@ -194,7 +195,7 @@ structure FarFieldAveragedScaling (P : XiEpsPDE) where
   averagedBound :
     ∀ ε t r, 0 ≤ r → 0 < rhoStarAt P.norms P.κ t → r ≤ rhoStarAt P.norms P.κ t →
       averageFarFieldSq ε t r
-        ≤ constant * rhoWeight (rhoStarAt P.norms P.κ t)
+        ≤ constant * rhoInvCubed (rhoStarAt P.norms P.κ t)
             * omegaEpsL2Sq ε t
             * Real.rpow (r / rhoStarAt P.norms P.κ t) beta
   beta_selected_by_local_identity : Prop
@@ -225,7 +226,11 @@ structure CampanatoIteration (P : XiEpsPDE) where
   recursiveStepAtParentScale :
     ∀ ε t r, J ε t (r / 2) ≤ gamma * J ε t r + A * scaleRatio P t r
 
-/-- The strict `γ < 1/2` threshold comes from the admissible `κ` regime. -/
+/--
+The strict `γ < 1/2` threshold comes from the admissible `κ` regime.
+This is the audit-level form needed for the dyadic barrier inequality; a merely
+non-strict `γ ≤ 1/2` would not leave room for the additive forcing term.
+-/
 theorem gamma_lt_half
     {P : XiEpsPDE} (it : CampanatoIteration P)
     (hκ : it.kappaThreshold ≤ P.κ) :
