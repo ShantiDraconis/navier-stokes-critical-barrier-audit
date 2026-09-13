@@ -90,6 +90,20 @@ theorem productToSpaceTime_measurePreserving :
     (fun z : ProductSpaceTime => spaceTimeSplitL2.symm (WithLp.toLp 2 z))
   simpa only [Function.comp_def] using h
 
+@[simp]
+theorem spaceTimeToProduct_productToSpaceTime (z : ProductSpaceTime) :
+    spaceTimeToProduct (productToSpaceTime z) = z := by
+  unfold spaceTimeToProduct productToSpaceTime
+  rw [LinearIsometryEquiv.apply_symm_apply]
+  rfl
+
+@[simp]
+theorem productToSpaceTime_spaceTimeToProduct (z : SpaceTime) :
+    productToSpaceTime (spaceTimeToProduct z) = z := by
+  unfold productToSpaceTime spaceTimeToProduct
+  rw [WithLp.toLp_ofLp]
+  exact spaceTimeSplitL2.symm_apply_apply z
+
 /-- Continuous linear equivalence underlying the coordinate split; this is the
 form used by Schwartz-space composition and derivative transport. -/
 def spaceTimeProductCLE : SpaceTime ≃L[ℝ] ProductSpaceTime :=
@@ -185,6 +199,7 @@ theorem WeakOmegaSpaceTime.productSlicesGood_ae
 inductive SpaceTimeCoordinateSplitStatus
   | coordinateIsometryConstructed
   | coordinateVolumePreservingProved
+  | coordinateInverseIdentitiesProved
   | productMeasureIdentified
   | continuousLinearEquivConstructed
   | omegaL2TransferImplemented
