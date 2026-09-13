@@ -46,6 +46,9 @@ jobs:
       - name: Build tensor-product Schwartz test
         shell: bash
         run: lake build G1.TensorProductSchwartz
+      - name: Build tensor-product spatial derivative
+        shell: bash
+        run: lake build G1.TensorProductSpatialDerivative
       - name: Build 4D weak omega pairing
         shell: bash
         run: lake build G1.WeakOmega4DPairing
