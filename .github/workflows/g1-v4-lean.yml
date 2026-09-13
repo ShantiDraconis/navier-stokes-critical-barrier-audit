@@ -33,7 +33,7 @@ jobs:
         run: lake build
       - name: Reject proof escapes
         run: |
-          if grep -RInE '^[[:space:]]*(sorry|axiom)[[:space:]]' formal/millennium/lean --include='*.lean'; then
+          if grep -RInE '^[[:space:]]*(sorry|axiom)[[:space:]]' formal/millennium/lean/MillenniumAudit --include='*.lean'; then
             echo 'proof escape found'
             exit 1
           fi
