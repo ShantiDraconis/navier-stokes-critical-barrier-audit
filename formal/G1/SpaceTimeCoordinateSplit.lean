@@ -102,7 +102,6 @@ theorem productToSpaceTime_spaceTimeToProduct (z : SpaceTime) :
     productToSpaceTime (spaceTimeToProduct z) = z := by
   unfold productToSpaceTime spaceTimeToProduct
   rw [WithLp.toLp_ofLp]
-  exact spaceTimeSplitL2.symm_apply_apply z
 
 /-- Continuous linear equivalence underlying the coordinate split; this is the
 form used by Schwartz-space composition and derivative transport. -/
