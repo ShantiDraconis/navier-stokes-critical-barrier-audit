@@ -378,11 +378,17 @@ structure FullChain (ActualNS : Prop) where
   /-- OPEN_BRIDGE: WeightedAbsorption × ε→0 → SignedDepletion.
       Requires K1e (lower semicontinuity) + Aubin-Lions tightness. -/
   absorption_to_depletion : Prop → SignedDepletionIface
-  /-- Full chain composition (logical only; open obligations are fields above). -/
-  full_chain : ActualNS → SignedDepletionIface :=
-    fun hNS => absorption_to_depletion
-      (weightedLow_to_absorption
-        (hDynamic_to_weightedLow (actNS_to_hDynamic hNS)))
+
+/--
+Full chain composition as a standalone function (not a default structure field,
+since Lean 4 structure defaults cannot reference sibling fields by name).
+Given a FullChain, compose the open bridges to obtain SignedDepletionIface.
+-/
+def FullChain.compose {ActualNS : Prop} (fc : FullChain ActualNS)
+    (hNS : ActualNS) : SignedDepletionIface :=
+  fc.absorption_to_depletion
+    (fc.weightedLow_to_absorption
+      (fc.hDynamic_to_weightedLow (fc.actNS_to_hDynamic hNS)))
 
 /-
 AUDIT VERDICT

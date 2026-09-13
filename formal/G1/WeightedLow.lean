@@ -46,7 +46,7 @@ def C_abs : ℝ := 0.6
 def C_Young : ℝ := 50
 
 /-- gamma_effective = 1 - 2 * C_abs^2 * C_Young. -/
-noncomputable def gamma_effective : ℝ := 1 - 2 * C_abs^2 * C_Young
+def gamma_effective : ℝ := 1 - 2 * C_abs^2 * C_Young
 
 lemma gamma_effective_eq : gamma_effective = 1 - 36 := by
   simp [gamma_effective, C_abs, C_Young, two_times_06sq_times_50.symm]
@@ -119,7 +119,8 @@ def canonicalAbsorption : WeightedAbsorptionData := {
   γ := gamma_effective
   hγ_pos := by simp [gamma_effective, C_abs, C_Young]; norm_num
   hγ_lt_one := gamma_effective_lt_one
-  γ_eps_independent := True  -- gamma_effective is a literal; ε-independence is manifest
+  /-- gamma_effective = 1 - 36 is a literal; its value does not depend on ε. -/
+  γ_eps_independent := gamma_effective = 1 - 36
   γ_from_constant := le_refl _
 }
 

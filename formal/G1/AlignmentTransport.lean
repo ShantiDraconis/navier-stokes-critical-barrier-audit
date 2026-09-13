@@ -275,16 +275,20 @@ def TODO_K1f : Prop := sorry
 /--
 Inventory of all open obligations. A WeightedLowChain is closed iff all
 six entries admit proofs not relying on sorry.
+
+No default values are provided — callers must explicitly supply each
+proof (or explicitly acknowledge sorry with a comment). This prevents
+silent inheritance of sorry-backed obligations via `{}` construction.
 -/
 structure OpenBridgeInventory where
-  K1a : Prop := TODO_K1a
-  K1b : Prop := TODO_K1b
-  K1c : Prop := TODO_K1c
-  K1d : Prop := TODO_K1d
-  K1e : Prop := TODO_K1e
-  K1f : Prop := TODO_K1f
-  /-- Status string; NOT a proof. -/
-  status : String := "OPEN_BRIDGE / NOT_ESTABLISHED"
+  K1a : Prop
+  K1b : Prop
+  K1c : Prop
+  K1d : Prop
+  K1e : Prop
+  K1f : Prop
+  /-- Status string; NOT a proof — for human-readable reporting only. -/
+  status : String
 
 /-
 AUDIT VERDICT — AlignmentTransport.lean
