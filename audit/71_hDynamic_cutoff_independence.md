@@ -51,7 +51,7 @@ The Lean interface now keeps the desired regularized PDE in explicit audit form:
 ```text
 D_t xi_eps
   = S_eps xi_eps - (xi_eps · S_eps xi_eps) xi_eps
-    + nu (Delta xi_eps + 2 (grad|omega| / |omega|_eps) · grad xi_eps)
+    + nu (Delta xi_eps + 2 relGradOmegaContractGradXi)
     + R_eps
 ```
 
@@ -61,7 +61,7 @@ where the explicit first-order term is encoded literally as `strainAction - (inn
 ||R_eps||_{L1} -> 0 uniformly in epsilon
 ```
 
-is kept explicit as `remainder_uniform_L1_vanishes_from_leray_hopf`, now stated as a concrete uniform small-`ε` bound on `remainderL1` rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
+is kept explicit as `remainder_uniform_in_eps`, now stated as a concrete uniform small-`ε` bound on `remainderL1` rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
 
 ## Constantin-Fefferman connection
 

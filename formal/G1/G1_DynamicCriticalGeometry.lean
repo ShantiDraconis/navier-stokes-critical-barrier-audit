@@ -193,7 +193,7 @@ structure RegularizedXiEvolutionFamily where
             - (inner ℝ (xiEps ω ε t x) (strainAction ε t x)) • xiEps ω ε t x)
             + viscosityContribution ν (laplacianXi ε t x) (relGradOmegaContractGradXi ε t x)
             + remainder ε t x
-  remainder_uniform_L1_vanishes_from_leray_hopf :
+  remainder_uniform_in_eps :
     ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, remainderL1 ε t ≤ η
 
 /-- Audit interface for the `xi_eps` evolution theorem. -/
@@ -285,7 +285,7 @@ Machine-checked logical content in this file:
 
 Still open / not asserted:
 * derivation of `RegularizedXiEvolutionFamily.evolution` from actual Leray-Hopf dynamics in Mathlib calculus notation
-* proof that `remainder_uniform_L1_vanishes_from_leray_hopf` follows from energy control alone, uniformly in `ε`
+* proof that `remainder_uniform_in_eps` follows from energy control alone, uniformly in `ε`
 * proof that the coherence constant is independent of the derived cutoff radius `R = K ρ_*`
 * ActualNS -> uniform critical coherence on `OmegaTheta`
 * critical coherence -> kernel-weighted coherence / signed Constantin-Fefferman depletion
