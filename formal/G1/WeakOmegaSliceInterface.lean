@@ -53,10 +53,14 @@ theorem memLp_two_spatialSlice_ae
       ∀ᵐ t ∂(volume : Measure ℝ),
         Integrable (fun x : Vec3 => ‖f (t, x)‖ ^ 2) (volume : Measure Vec3) := by
     simpa [productSpaceTimeMeasure] using hsq.prod_right_ae
+  have hsliceMeasRaw :
+      ∀ᵐ t ∂(volume : Measure ℝ),
+        AEStronglyMeasurable (fun x : Vec3 => f (t, x)) (volume : Measure Vec3) := by
+    simpa [productSpaceTimeMeasure] using hf.1.prodMk_left
   have hsliceMeas :
       ∀ᵐ t ∂(volume : Measure ℝ),
         AEStronglyMeasurable (spatialSlice f t) (volume : Measure Vec3) := by
-    simpa [productSpaceTimeMeasure, spatialSlice] using hf.1.prodMk_left
+    simpa [spatialSlice] using hsliceMeasRaw
   filter_upwards [hsliceSq, hsliceMeas] with t ht htm
   exact (memLp_two_iff_integrable_sq_norm htm).2 ht
 
@@ -73,7 +77,8 @@ theorem integral_sq_norm_eq_iterated
         ∂(volume : Measure ℝ) := by
   have hsq : Integrable (fun z : ProductSpaceTime => ‖f z‖ ^ 2) productSpaceTimeMeasure := by
     exact (memLp_two_iff_integrable_sq_norm hf.1).mp hf
-  simpa [productSpaceTimeMeasure] using hsq.integral_prod
+  simpa [productSpaceTimeMeasure] using
+    (integral_prod (fun z : ProductSpaceTime => ‖f z‖ ^ 2) hsq)
 
 /--
 For the componentwise vorticity argument we need the function and its three
