@@ -2,21 +2,19 @@
 G1_PrizeStandard_Interface.lean
 
 Formal audit interface for the shortest conditional route from a signed
-vortex-stretching estimate to the critical L^∞_t L^3_x endpoint.
+vortex-stretching estimate to the critical L-infinity_t L3_x endpoint.
 
 THIS FILE DOES NOT PROVE GLOBAL REGULARITY.
-The genuinely open theorem is deliberately represented as a hypothesis.
-The purpose is to prevent the open bridge from being hidden inside algebra.
+The genuinely open PDE bridge is an explicit parameter, never True, an axiom,
+or a theorem hidden behind a placeholder.
 -/
 
 import Mathlib
 
 noncomputable section
-open Real
 
 namespace G1Audit
 
-/-- Abstract nonnegative time-dependent quantities. -/
 structure EnstrophyData where
   y : ℝ → ℝ
   z : ℝ → ℝ
@@ -24,66 +22,93 @@ structure EnstrophyData where
   hy : ∀ t, 0 ≤ y t
   hz : ∀ t, 0 ≤ z t
 
-/-- Exact/weak enstrophy balance represented at the audit level. -/
-def EnstrophyBalance (d : EnstrophyData) : Prop :=
-  ∀ t, (1 / 2 : ℝ) * deriv d.y t + d.z t = d.stretch t
-
-/-- The signed coercive bridge that would close G1. -/
-def G1Closed (d : EnstrophyData) : Prop :=
-  ∃ δ : ℝ, 0 < δ ∧ ∀ t, d.stretch t ≤ (1 - δ) * d.z t
-
-/-- The scalar OPEN route after Young has a D^4 remainder. -/
-def ScalarYoungD4 (D y z : ℝ) (ε Cε : ℝ) : Prop :=
-  D * y ^ (3 : ℕ) / 4 * z ^ (3 : ℕ) / 4 ≤ ε * z + Cε * D^4 * y^3
-
-/-- A purely logical target: G1Closed plus the balance gives a dissipative inequality. -/
-def DissipativeEnstrophy (d : EnstrophyData) : Prop :=
-  ∃ δ : ℝ, 0 < δ ∧ ∀ t, deriv d.y t + 2 * δ * d.z t ≤ 0
+/-- Audit-level enstrophy balance with viscosity ν. -/
+def EnstrophyBalance (ν : ℝ) (d : EnstrophyData) : Prop :=
+  ∀ t, (1 / 2 : ℝ) * deriv d.y t + ν * d.z t = d.stretch t
 
 /--
-This implication should be proved without any PDE novelty once the analytic
-encoding of the balance is finalized.
+Signed sub-viscous production bound. This is a sufficient closure condition,
+not a proved consequence of arbitrary 3D Navier-Stokes dynamics.
 -/
-def G1ClosedToDissipation : Prop :=
-  ∀ d : EnstrophyData,
-    EnstrophyBalance d → G1Closed d → DissipativeEnstrophy d
+def G1Closed (ν : ℝ) (d : EnstrophyData) : Prop :=
+  ∃ δ : ℝ, 0 < δ ∧ δ ≤ 1 ∧
+    ∀ t, d.stretch t ≤ (1 - δ) * ν * d.z t
 
-/-- Abstract endpoint data used to expose the downstream logical structure. -/
+/--
+The scalar route after Young has a D^4 remainder.
+Real.rpow y (3/4) represents y^(3/4); y ^ 3 / 4 would not.
+-/
+def ScalarYoungD4 (D y z ε Cε : ℝ) : Prop :=
+  0 ≤ D ∧ 0 ≤ y ∧ 0 ≤ z ∧ 0 < ε ∧
+  D * Real.rpow y ((3 : ℝ) / 4) * Real.rpow z ((3 : ℝ) / 4)
+    ≤ ε * z + Cε * D ^ 4 * y ^ 3
+
+def DissipativeEnstrophy (ν : ℝ) (d : EnstrophyData) : Prop :=
+  ∃ δ : ℝ, 0 < δ ∧ δ ≤ 1 ∧
+    ∀ t, deriv d.y t + 2 * δ * ν * d.z t ≤ 0
+
+/-- Pure algebra after the analytic premises are supplied. -/
+theorem g1Closed_to_dissipation
+    (ν : ℝ) (hν : 0 ≤ ν) (d : EnstrophyData)
+    (hbal : EnstrophyBalance ν d) (hg1 : G1Closed ν d) :
+    DissipativeEnstrophy ν d := by
+  rcases hg1 with ⟨δ, hδ, hδone, hstretch⟩
+  refine ⟨δ, hδ, hδone, ?_⟩
+  intro t
+  have hz0 := d.hz t
+  have hνz : 0 ≤ ν * d.z t := mul_nonneg hν hz0
+  have hprod : d.stretch t ≤ (1 - δ) * (ν * d.z t) := by
+    simpa [mul_assoc] using hstretch t
+  have hbalance := hbal t
+  linarith
+
 structure CriticalEndpointData where
   energyBound : Prop
   enstrophyBound : Prop
-  LinftyL3Bound : Prop
+  linftyL3Bound : Prop
   noFiniteBlowup : Prop
 
-/-- Known-analysis bridge: energy + enstrophy control imply a uniform L^3 bound. -/
-def EnergyEnstrophyToL3 (d : CriticalEndpointData) : Prop :=
-  d.energyBound → d.enstrophyBound → d.LinftyL3Bound
+/-- Explicit dependency interface; its fields are assumptions, not proofs created here. -/
+structure EndpointBridge (d : CriticalEndpointData) where
+  energy_enstrophy_to_L3 :
+    d.energyBound → d.enstrophyBound → d.linftyL3Bound
+  ess_endpoint :
+    d.linftyL3Bound → d.noFiniteBlowup
 
-/-- External ESS endpoint interface. -/
-def ESSEndpoint (d : CriticalEndpointData) : Prop :=
-  d.LinftyL3Bound → d.noFiniteBlowup
+theorem endpoint_composition
+    (d : CriticalEndpointData) (bridge : EndpointBridge d)
+    (hEnergy : d.energyBound) (hEnstrophy : d.enstrophyBound) :
+    d.noFiniteBlowup :=
+  bridge.ess_endpoint (bridge.energy_enstrophy_to_L3 hEnergy hEnstrophy)
 
 /--
-The only genuinely new object in the intended proof architecture:
-Navier--Stokes dynamics must force critical local geometry near a hypothetical
-first singular time. This is *not* proved here.
+The open geometry proposition is a parameter. It is not defined as True and
+is not asserted by this file.
 -/
-def DynamicCriticalGeometry : Prop :=
-  True  -- placeholder proposition until the analytic objects are encoded
+structure DynamicGeometryInterface
+    (DynamicCriticalGeometry : Prop) (ν : ℝ) (d : EnstrophyData) where
+  geometry_to_signed_depletion :
+    DynamicCriticalGeometry → G1Closed ν d
 
-/-- Geometry must imply a signed/coercive vortex-stretching estimate. -/
-def GeometryImpliesG1Closed : Prop :=
-  DynamicCriticalGeometry → ∀ d : EnstrophyData, G1Closed d
-
-/-- Full conditional architecture, still explicitly conditional on the open bridge. -/
-def ConditionalRegularityArchitecture : Prop :=
-  DynamicCriticalGeometry →
-  GeometryImpliesG1Closed →
-  G1ClosedToDissipation
+theorem conditional_regularization
+    (DynamicCriticalGeometry : Prop)
+    (ν : ℝ) (hν : 0 ≤ ν) (e : EnstrophyData)
+    (hBalance : EnstrophyBalance ν e)
+    (geometryBridge : DynamicGeometryInterface DynamicCriticalGeometry ν e)
+    (hGeometry : DynamicCriticalGeometry) :
+    DissipativeEnstrophy ν e :=
+  g1Closed_to_dissipation ν hν e hBalance
+    (geometryBridge.geometry_to_signed_depletion hGeometry)
 
 /-
-No theorem asserting `DynamicCriticalGeometry` is present.
-No theorem asserting unconditional Navier--Stokes regularity is present.
+Audit status:
+- g1Closed_to_dissipation: proved algebraic implication.
+- endpoint_composition: proved logical composition.
+- conditional_regularization: proved conditional composition.
+- DynamicCriticalGeometry: not asserted.
+- geometry -> G1Closed: not proved; supplied through an explicit interface.
+- enstrophy -> uniform L3 and ESS: interface fields, not internal proofs.
+- unconditional global regularity: not asserted.
 -/
 
 end G1Audit
