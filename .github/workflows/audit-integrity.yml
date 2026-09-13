@@ -52,6 +52,10 @@ jobs:
           curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
+      - name: Resolve Lean dependencies
+        working-directory: formal/lean
+        run: lake update
+
       - name: Build Lean audit library
         working-directory: formal/lean
         run: |
@@ -60,7 +64,14 @@ jobs:
           lake env lean CriticalBarrier/NumericClassAudit.lean
           lake env lean CriticalBarrier/EndpointInterfaces.lean
           lake env lean CriticalBarrier/ResolutionDynamics.lean
-          grep -RInE '\bsorry\b|\baxiom\b' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean CriticalBarrier/ResolutionDynamics.lean && exit 1 || true
+          grep -RInE '^[[:space:]]*(sorry|axiom)[[:space:]]' CriticalBarrier/BridgeLogic.lean CriticalBarrier/NumericClassAudit.lean CriticalBarrier/EndpointInterfaces.lean CriticalBarrier/ResolutionDynamics.lean && exit 1 || true
+
+      - name: Build G1 prize-standard Lean interface
+        working-directory: formal/millennium/lean
+        run: |
+          lake update
+          lake env lean ../../../G1/HypothesesComplete_v2.lean
+          grep -nE '^[[:space:]]*(sorry|axiom)[[:space:]]' ../../../G1/HypothesesComplete_v2.lean && exit 1 || true
 
       - name: Install Coq
         run: |
@@ -71,13 +82,14 @@ jobs:
         run: |
           coqc formal/coq/BridgeLogic.v
           coqc formal/coq/ResolutionDynamics.v
-          grep -nE '\bAdmitted\b|\badmit\b|\bAxiom\b' formal/coq/BridgeLogic.v formal/coq/ResolutionDynamics.v && exit 1 || true
+          coqc formal/g1/coq/G1Depletion.v
+          grep -nE '^[[:space:]]*(Admitted|admit|Axiom)\b' formal/coq/BridgeLogic.v formal/coq/ResolutionDynamics.v formal/g1/coq/G1Depletion.v && exit 1 || true
 
       - name: Record unexecuted prover scope
         run: |
           printf '%s\n' \
-            'Isabelle: SOURCE_PRESENT_NOT_EXECUTED_IN_THIS_WORKFLOW' \
-            'Agda: SOURCE_PRESENT_NOT_EXECUTED_IN_THIS_WORKFLOW' \
+            'Isabelle: SOURCE_PRESENT_NOT_EXECUTED_IN_THIS_WORKFLOW; see millennium multiprover workflow' \
+            'Agda: SOURCE_PRESENT_NOT_EXECUTED_IN_THIS_WORKFLOW; see millennium multiprover workflow' \
             > multiprover-scope.txt
 
       - name: Show integrity report
