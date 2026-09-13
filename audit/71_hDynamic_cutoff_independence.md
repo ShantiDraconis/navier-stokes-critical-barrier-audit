@@ -55,7 +55,7 @@ D_t xi_eps
     + R_eps
 ```
 
-where the explicit first-order term is encoded literally as `strainAction - (inner xiEps strainAction) • xiEps`, the viscosity contribution is grouped in `viscosityContribution`, and the remaining obligation
+where the explicit first-order term is encoded literally as `strainAction - (inner xiEps strainAction) • xiEps`, the viscosity contribution is grouped in `viscosityContribution`, any `|∇xi_eps|^2 xi_eps` correction is tracked inside `R_eps`, and the remaining obligation
 
 ```text
 ||R_eps||_{L1} -> 0 uniformly in epsilon

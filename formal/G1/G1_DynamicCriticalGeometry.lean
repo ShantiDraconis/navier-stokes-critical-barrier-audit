@@ -159,7 +159,11 @@ def wR {norms : VorticityNorms} {κ : ℝ} (cutoff : FixedScaleCutoff norms κ) 
   cutoff.w
 
 
-/-- The regularized viscosity contribution in the `xi_eps` equation. -/
+/--
+The regularized viscosity contribution kept explicit in the audit target.
+Any additional `|∇ξ_eps|² ξ_eps`-type correction is recorded inside the
+remainder term rather than hidden in the cutoff-independent constant.
+-/
 def viscosityContribution (ν : ℝ) (laplacianXi relGradOmegaContractGradXi : Vec3) : Vec3 :=
   ν • (laplacianXi + (2 : ℝ) • relGradOmegaContractGradXi)
 
@@ -167,7 +171,8 @@ def viscosityContribution (ν : ℝ) (laplacianXi relGradOmegaContractGradXi : V
 PDE-level evolution law for the regularized direction field `xi_eps`. The
 identity keeps the regularized denominator explicit and isolates the exact
 uniform-in-`ε` remainder obligation instead of hiding it in a cutoff-dependent
-constant.
+constant. In the reduced hDynamic target used here, any `|∇ξ_eps|² ξ_eps`
+correction is absorbed into `remainder`.
 -/
 structure RegularizedXiEvolutionFamily where
   ω : VorticityField
