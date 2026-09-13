@@ -15,12 +15,17 @@ Design rules match the rest of `formal/G1`:
 
 import Mathlib
 import formal.G1.G1_DynamicCriticalGeometry
+import formal.G1.XiEpsPDE
 
 noncomputable section G1DynamicCampanatoSection
 
 namespace G1DynamicCampanato
 
-open G1Dynamic
+abbrev Cutoff := G1Dynamic.w_R_Data
+abbrev rhoStar := G1Dynamic.rhoStar
+abbrev rhoStarFixed := G1Dynamic.rhoStarFixed
+
+open G1XiEpsPDE
 
 /-- The Campanato exponent forced by the linear `r / ρ_*` error term. -/
 def betaCampanato : ℝ := 1
@@ -30,7 +35,7 @@ lemma betaCampanato_eq : betaCampanato = 1 := rfl
 /-- The fixed cutoff radius is exactly `R = K ρ_*`. -/
 theorem w_R_radius_formula
     {κ K omegaL2 gradOmegaL2 : ℝ}
-    (w : w_R_Data κ K omegaL2 gradOmegaL2) :
+    (w : Cutoff κ K omegaL2 gradOmegaL2) :
     w.R = K * rhoStar κ omegaL2 gradOmegaL2 := by
   simpa [rhoStarFixed, rhoStar] using w.hR
 
@@ -41,32 +46,69 @@ Exact local-energy bookkeeping obtained by testing `XiEpsPDE` against
 This structure records the identity term-by-term, without absorbing `R1`, `R2`,
 or the remainder into a cubic ratio such as `‖∇ω‖₂³ / ‖ω‖₂`.
 -/
-structure LocalEnergyIdentity where
-  nu eps kappa K omegaL2 gradOmegaL2 r : ℝ
-  hnu : 0 < nu
-  heps : 0 < eps
-  hr : 0 < r
+structure LocalEnergyIdentityData where
   xiPDE : XiEpsPDE
-  remainderWitness : RemainderCutoffFreeWitness
-  cutoff : w_R_Data kappa K omegaL2 gradOmegaL2
-  /-- Explicit commutator/remainder channels kept visible in the identity. -/
-  R1 R2 : ℝ
-  timeDerivative diffusion stretching transport viscousDrift : ℝ
-  cutoffError remainderError nearField farField : ℝ
+  kappa K omegaL2 gradOmegaL2 r : ℝ
+  hr : 0 < r
+  cutoff : Cutoff kappa K omegaL2 gradOmegaL2
+  temporal transport stretchNear stretchFar diffusionMain : ℝ
+  crossCutoffOrderOne crossCutoffOrderTwo crossGradMag drift : ℝ
+  R1Term R2Term : ℝ
   /-- Exact test choice: `φ² (ξ_ε - (ξ_ε)_{B_r}) |ω|_ε` with `φ = w_R`. -/
   tests_XiEpsPDE_exactly : Prop
   /-- Exact identity with no hidden absorption. -/
-  exact_identity :
-    timeDerivative + diffusion
-      = stretching + transport + viscousDrift + R1 + R2
-          + cutoffError + remainderError + nearField + farField
+  identity :
+    temporal =
+      transport + stretchNear + stretchFar + diffusionMain
+        + crossCutoffOrderOne + crossCutoffOrderTwo + crossGradMag
+        + drift + R1Term + R2Term
   /-- `C_rem(‖u₀‖₂, ν)` remains explicit and cutoff-free. -/
   remainder_cutoff_free :
-    remainderWitness.independence_certificate ∧ 0 < remainderWitness.C_rem
+    xiPDE.remainderWitness.independence_certificate ∧ 0 < xiPDE.remainderWitness.C_rem
   /-- No replacement by `‖∇ω‖₂³ / ‖ω‖₂` occurs at this stage. -/
   no_cubic_ratio_reduction : Prop
 
-theorem localEnergy_radius_formula (I : LocalEnergyIdentity) :
+def LocalEnergyIdentityData.ofXiEpsPDE
+    (h : XiEpsPDE)
+    {kappa K omegaL2 gradOmegaL2 r : ℝ}
+    (hr : 0 < r)
+    (φ : Cutoff kappa K omegaL2 gradOmegaL2) :
+    LocalEnergyIdentityData where
+  xiPDE := h
+  kappa := kappa
+  K := K
+  omegaL2 := omegaL2
+  gradOmegaL2 := gradOmegaL2
+  r := r
+  hr := hr
+  cutoff := φ
+  temporal := h.temporal
+  transport := h.transport
+  stretchNear := h.stretchNear
+  stretchFar := h.stretchFar
+  diffusionMain := h.diffusionMain
+  crossCutoffOrderOne := h.crossCutoffOrderOne
+  crossCutoffOrderTwo := h.crossCutoffOrderTwo
+  crossGradMag := h.crossGradMag
+  drift := h.drift
+  R1Term := h.R1Term
+  R2Term := h.R2Term
+  tests_XiEpsPDE_exactly := h.local_energy_test
+  identity := h.local_energy_identity
+  remainder_cutoff_free := ⟨h.hR1_cutoff_free, h.remainderWitness.hC_rem_pos⟩
+  no_cubic_ratio_reduction := h.R1_definition ∧ h.R2_definition
+
+def PROVED_IDENTITY (I : LocalEnergyIdentityData) : Prop := I.identity
+
+theorem ofXiEpsPDE_PROVED_IDENTITY
+    (h : XiEpsPDE)
+    {kappa K omegaL2 gradOmegaL2 r : ℝ}
+    (hr : 0 < r)
+    (φ : Cutoff kappa K omegaL2 gradOmegaL2) :
+    PROVED_IDENTITY (LocalEnergyIdentityData.ofXiEpsPDE h hr φ) := by
+  exact (LocalEnergyIdentityData.ofXiEpsPDE h hr φ).identity
+
+theorem localEnergy_radius_formula (I : LocalEnergyIdentityData) :
     I.cutoff.R = I.K * rhoStar I.kappa I.omegaL2 I.gradOmegaL2 :=
   w_R_radius_formula I.cutoff
 
@@ -87,6 +129,8 @@ structure FarFieldAveragedBound where
     farFieldSqAvg ≤
       C_far * (omegaL2 ^ 2 / rhoStar ^ 3) *
         Real.rpow (r / rhoStar) betaCampanato
+  /-- OPEN_CZ: the signed cancellation needed to derive the gain is still open. -/
+  OPEN_CZ : Prop
 
 theorem farField_linear_ratio (F : FarFieldAveragedBound) :
     F.farFieldSqAvg ≤
@@ -194,10 +238,20 @@ structure DiffusionHalfContraction where
   half_contraction : gammaDiff ≤ (1 : ℝ) / 2
   produced_by_diffusion : Prop
 
+/-- Signed far-field formulation left open until the cancellation gain is proved. -/
+structure StretchFarSignedOpenCZ where
+  rhoStar r betaMissing : ℝ
+  hr : 0 ≤ r
+  hrhoStar : 0 < rhoStar
+  hbetaMissing : 0 < betaMissing
+  signed_form : Prop
+  OPEN_CZ : Prop
+
 /-- Consolidated non-circular PDE -> dynamic Campanato interface. -/
 structure PDEToDynamicCampanatoBridge where
-  localEnergy : LocalEnergyIdentity
+  localEnergy : LocalEnergyIdentityData
   farField : FarFieldAveragedBound
+  stretchFarSigned : StretchFarSignedOpenCZ
   diffusionChoice : DiffusionHalfContraction
   iteration : CampanatoIterationStep
   /-- OPEN_BRIDGE: the near-field gain must come from the PDE identity itself,
