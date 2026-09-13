@@ -21,13 +21,26 @@ structure IModel where
 
 /-- Seven characteristic observables. Their analytic interpretation is external to this interface. -/
 structure N7 (α : Type) where
-  n1 : α; n2 : α; n3 : α; n4 : α; n5 : α; n6 : α; n7 : α
+  n1 : α
+  n2 : α
+  n3 : α
+  n4 : α
+  n5 : α
+  n6 : α
+  n7 : α
 
 /-- Eight-component family, kept abstract until each component is independently formalized. -/
 structure F1F8 (α : Type) where
-  f1 : α; f2 : α; f3 : α; f4 : α; f5 : α; f6 : α; f7 : α; f8 : α
+  f1 : α
+  f2 : α
+  f3 : α
+  f4 : α
+  f5 : α
+  f6 : α
+  f7 : α
+  f8 : α
 
-/-- A conditional theorem interface: the bridge is an explicit premise, not hidden as sorry/axiom. -/
+/-- A conditional theorem interface: the bridge is an explicit premise, not hidden as a proof escape. -/
 structure Bridge (Premise Conclusion : Prop) where
   close : Premise → Conclusion
 
