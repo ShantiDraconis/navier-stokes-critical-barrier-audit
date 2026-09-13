@@ -4,13 +4,12 @@ TensorProductSchwartz.lean
 Audit-safe tensor-product test functions for the 4D -> (time x space)
 slicing bridge.  This file constructs the exact compactly supported smooth
 product test on R x R^3 and transports it to SpaceTime through the already
-formalized coordinate homeomorphism.  It does not promote fixed-time H1,
-chain rules, Green identities, A2, or DynamicCampanato.
+formalized coordinate continuous-linear equivalence.  It does not promote
+fixed-time H1, chain rules, Green identities, A2, or DynamicCampanato.
 -/
 
 import G1.SpaceTimeIntegralTransport
 import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
-import Mathlib.Analysis.Normed.Lp.ProdLp
 import Mathlib.Topology.Algebra.Support
 
 noncomputable section
@@ -83,8 +82,7 @@ theorem productTensorSchwartz_apply
 
 /-- Topological equivalence underlying the already-used coordinate split. -/
 def spaceTimeProductHomeomorph : SpaceTime ≃ₜ ProductSpaceTime :=
-  spaceTimeSplitL2.toHomeomorph.trans
-    (WithLp.uniformEquivProd (p := (2 : ℝ≥0∞)) (α := ℝ) (β := Vec3)).toHomeomorph
+  spaceTimeProductCLE.toHomeomorph
 
 @[simp]
 theorem spaceTimeProductHomeomorph_apply (z : SpaceTime) :
@@ -115,7 +113,8 @@ theorem spaceTimeTensorRaw_contDiff
     (halpha : ContDiff ℝ ⊤ alpha) (hpsi : ContDiff ℝ ⊤ psi) :
     ContDiff ℝ ⊤ (spaceTimeTensorRaw alpha psi) := by
   have hprod := tensorProductRaw_contDiff halpha hpsi
-  exact hprod.comp spaceTimeSplitL2.contDiff
+  simpa only [spaceTimeTensorRaw, spaceTimeProductCLE_apply, Function.comp_def] using
+    hprod.comp spaceTimeProductCLE.contDiff
 
 /-- Exact Schwartz test used by the 4D distributional pairing. -/
 def spaceTimeTensorSchwartz
