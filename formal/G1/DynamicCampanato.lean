@@ -151,14 +151,14 @@ structure RemainderCutoffFreeWitness (P : XiEpsPDE) where
   u0L2 : ℝ
   C_rem : ℝ → ℝ → ℝ
   hC_rem : ∀ u0' ν', 0 ≤ C_rem u0' ν'
-  localRemainder : ℝ → ℝ → ℝ → ℝ
+  localRemainder : ℝ → ℝ → ℝ
   cutoff_free_bound :
-    ∀ T ≥ 0, ∀ ε t r, 0 < |ε| → 0 ≤ t → t ≤ T →
-      |localRemainder ε t r| ≤ C_rem u0L2 P.ν
+    ∀ T ≥ 0, ∀ ε t, 0 < |ε| → 0 ≤ t → t ≤ T →
+      |localRemainder ε t| ≤ C_rem u0L2 P.ν
   vanishes_uniformly_in_eps :
     ∀ T ≥ 0, ∀ η > 0, ∃ ε0 > 0, ∀ ε, 0 < |ε| → |ε| ≤ ε0 →
-      ∀ t, 0 ≤ t → t ≤ T → ∀ r,
-        |localRemainder ε t r| ≤ η
+      ∀ t, 0 ≤ t → t ≤ T →
+        |localRemainder ε t| ≤ η
 
 /--
 Exact local energy identity obtained by testing the `XiEpsPDE` with
@@ -178,7 +178,7 @@ structure LocalEnergyIdentity (P : XiEpsPDE) where
     ∀ ε t r,
       timeTerm ε t r + diffusionTerm ε t r
         = strainTerm ε t r + transportTerm ε t r + cutoffMainTerm ε t r
-            + R1 ε t r + R2 ε t r + remainderWitness.localRemainder ε t r
+            + R1 ε t r + R2 ε t r + remainderWitness.localRemainder ε t
 
 /-- Cubic inverse-length weight `ρ_*^{-3}`. -/
 def rhoInvCubed (ρ : ℝ) : ℝ :=
@@ -189,8 +189,8 @@ Far-field control must respect scaling. The bound is recorded only in averaged
 form; the invalid route `|S_far| ≤ C(K) ||∇u||₂` is intentionally absent.
 -/
 structure FarFieldAveragedScaling (P : XiEpsPDE) where
-  beta : ℝ
-  hbeta_nonneg : 0 ≤ beta
+  farFieldExponent : ℝ
+  hfarFieldExponent_nonneg : 0 ≤ farFieldExponent
   constant : ℝ
   hconstant : 0 ≤ constant
   averageFarFieldSq : ℝ → ℝ → ℝ → ℝ
@@ -200,7 +200,7 @@ structure FarFieldAveragedScaling (P : XiEpsPDE) where
       averageFarFieldSq ε t r
         ≤ constant * rhoInvCubed (rhoStarAt P.norms P.κ t)
             * omegaEpsL2Sq ε t
-            * Real.rpow (r / rhoStarAt P.norms P.κ t) beta
+            * Real.rpow (r / rhoStarAt P.norms P.κ t) farFieldExponent
   beta_selected_by_local_identity : Prop
   energy_only_leray_integrability : Prop
   no_palinstrophy_input : Prop
@@ -303,7 +303,7 @@ Machine-checkable content in this file:
 Still open / not asserted:
 * derivation of `LocalEnergyIdentity.exactIdentity` from Leray-Hopf dynamics
 * proof of the far-field averaged scaling from energy alone with no palinstrophy
-* proof that the resulting exponent `beta` yields the required integrability
+* proof that the resulting far-field exponent yields the required integrability
 * non-circular near-field gain delivering the `γ < 1/2` threshold
 * unconditional Navier-Stokes regularity
 -/
