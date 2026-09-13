@@ -1,6 +1,11 @@
 name = "critical-barrier"
-version = "0.2.0"
+version = "0.2.1"
 defaultTargets = ["CriticalBarrier"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "v4.19.0"
 
 [[lean_lib]]
 name = "CriticalBarrier"

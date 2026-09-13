@@ -1,0 +1,11 @@
+id,date_utc,repository,sha,concept,classification,proof_status
+INF_RH_I,2025-11-23T02:05:34Z,ShantiDraconis/millennium-riemann-I,b1d2ab7fbdecd7b3acb161d306e23c29f6cc04d8,imaginary-unit emphasis in RH,STRUCTURAL_PRECURSOR,HISTORICAL_PROVENANCE
+TAIL_RH,2025-11-25T18:42:47Z,ShantiDraconis/millennium-riemann-classical,5db1a345af289e56c4a85dd1534d796689d5edc9,tail behavior and asymptotic zero analysis,STRUCTURAL_PRECURSOR,MIXED_FORMAL_NUMERICAL
+DUAL_LAYER,2025-11-29T20:55:06Z,ShantiDraconis/millennium-hypothesi,200a83d3db44a892a588c94f7c94136469e01829,classical versus symbolic Millennium architecture,PROGRAMMATIC_PRECURSOR,DOCUMENT_ARCHITECTURE
+DUAL_STATE,2025-12-01T20:29:39Z,ShantiDraconis/Meta-mathematical-foundation-00,b4f8e32b6ce7898b95c9f5a4890462e5caba5af8,dual-state meta-framework,CONCEPTUALLY_RELATED,HYPOTHESIS
+TRANSFINITE,2025-12-20T20:37:23Z,ShantiDraconis/Millennium,7b80c7d9dc517e8d53e0d11d701c4cdd99f5a863,transfinite ordinals beyond infinity,CONCEPTUALLY_RELATED,NOT_GEOMETRIC_INFINITY
+PHASE_ERROR,2026-01-02T01:06:21Z,ShantiDraconis/universal-emergent-logic-,20c8f0974b1d85076b29ce842706d1d702eb5ccd,real-imaginary phase-error decomposition,VERY_STRONG_STRUCTURAL_PRECURSOR,SOURCE_CLAIM_UNVERIFIED
+SINGULARITY_I,2026-01-16T16:52:49Z,ShantiDraconis/Singulariity,3db89298b3306e1c290e16d6d9e29f9ff45b08ad,logical uncertainty unified to imaginary unit,CONCEPTUALLY_RELATED,AXIOMATIC_META_FRAMEWORK
+PHASE_DESC_1,2026-09-06T08:21:24Z,ShantiDraconis/universal-emergent-logic-,6b638abde231e61b02493a4fc270fd4b26370225,imaginary phase nullification Millennium unification,DESCENDANT,SOURCE_CLAIM_UNVERIFIED
+PHASE_DESC_2,2026-09-06T08:22:30Z,ShantiDraconis/universal-emergent-logic-,2c737199ccf11b76c56f5858ab2acd041a88e683,complex-conjugate real-imaginary error decomposition,DESCENDANT,SOURCE_CLAIM_UNVERIFIED
+BRH_FORMAL,2026-09-12T09:24:00Z,ShantiDraconis/navier-stokes-critical-barrier-audit,33bc1f989ed9eeab5474183a1db37777b8c6d217,boundary-at-infinity realification hypothesis,NEW_FORMALIZATION,HYPOTHESIS_WITH_COUNTEREXAMPLES
