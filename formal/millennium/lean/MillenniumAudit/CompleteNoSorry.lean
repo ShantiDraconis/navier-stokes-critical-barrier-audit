@@ -9,10 +9,10 @@ Important semantic firewall:
 * `I_reg eps = eps / eps` is only evaluated under `eps ≠ 0`.
 * `I = 1` below is an operational carrier chosen by definition; it is **not** a theorem that
   ordinary real division `0 / 0 = 1`.
-* Millennium conclusions are represented by explicit bridge structures.  The file proves only
+* Millennium conclusions are represented by explicit bridge structures. The file proves only
   composition of supplied bridges; it does not assert that the open bridges are available for
   the actual mathematical problems.
-* No `sorry`, `axiom`, `admit`, or target-as-`True` shortcut is used.
+* No target-as-`True` shortcut is used.
 -/
 
 namespace MillenniumAudit
@@ -49,7 +49,8 @@ theorem Phi_pos : 0 < Phi := lt_trans (by norm_num) Phi_gt_one
 theorem Phi_inv_sq_lt_one : 1 / Phi ^ 2 < 1 := by
   have hsq : 1 < Phi ^ 2 := by
     nlinarith [Phi_gt_one]
-  have hp : 0 < Phi ^ 2 := by positivity
+  have hp : 0 < Phi ^ 2 := by
+    exact sq_pos_of_pos Phi_pos
   rw [div_lt_iff₀ hp]
   nlinarith
 
@@ -57,7 +58,7 @@ noncomputable def damping : ℝ := 1 / Phi ^ 2
 
 theorem damping_pos : 0 < damping := by
   unfold damping
-  positivity
+  exact div_pos (by norm_num) (sq_pos_of_pos Phi_pos)
 
 theorem damping_lt_one : damping < 1 := by
   exact Phi_inv_sq_lt_one
@@ -71,7 +72,6 @@ structure FFactors where
   F6 : ℝ
   F7 : ℝ
   F8 : ℝ
-  deriving DecidableEq
 
 def F_example : FFactors :=
   { F1 := 6.2, F2 := 5.1, F3 := 5.0, F4 := 4.8,
@@ -87,7 +87,7 @@ theorem U_pos : 0 < U_calc F_example := by
   rw [U_example_eq]
   norm_num
 
-/-- Seven explicit numerical coordinates.  This is a finite-dimensional audit object, not a
+/-- Seven explicit numerical coordinates. This is a finite-dimensional audit object, not a
     Navier–Stokes theorem. -/
 noncomputable def N7 (x : ℝ) : Fin 7 → ℝ :=
   ![x,
@@ -102,7 +102,7 @@ theorem N7_component_zero (x : ℝ) : N7 x 0 = x := by
   simp [N7]
 
 /-- Every coordinate of a finite seven-component vector is bounded by some finite constant.
-    The earlier proposed *linear-in-B* bound was not retained because the second component is
+    The earlier proposed linear-in-B bound was not retained because the second component is
     `x^2`, so a universal linear bound in `B` is false for large `B`. -/
 theorem N7_bounded (x : ℝ) : ∃ C : ℝ, ∀ i : Fin 7, |N7 x i| ≤ C := by
   let C : ℝ := ∑ i : Fin 7, |N7 x i|
@@ -148,7 +148,7 @@ theorem N7_controls_component_zero (x : ℝ) :
   rw [← N7_component_zero x]
   exact Finset.single_le_sum (fun j _ => abs_nonneg (N7 x j)) (Finset.mem_univ (0 : Fin 7))
 
-/-- Existence of a nonnegative multiplicative constant for a scalar residual.  This is algebraic
+/-- Existence of a nonnegative multiplicative constant for a scalar residual. This is algebraic
     bookkeeping only and contains no PDE regularity content. -/
 theorem N7_controls_residue_closed (Lambda x : ℝ) :
     ∃ C : ℝ, 0 ≤ C ∧
@@ -162,7 +162,7 @@ end Core
 
 namespace Conditional
 
-/-- Explicit Navier–Stokes dependency interface.  Supplying a value of this structure is exactly
+/-- Explicit Navier–Stokes dependency interface. Supplying a value of this structure is exactly
     where the substantive mathematical obligations live. -/
 structure NavierStokesBridge where
   ActualNS : Prop
