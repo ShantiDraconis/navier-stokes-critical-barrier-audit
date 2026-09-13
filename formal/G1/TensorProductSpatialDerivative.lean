@@ -24,22 +24,29 @@ def spatialTestDerivative (psi : Vec3 → ℂ) (k : Fin 3) : Vec3 → ℂ :=
 only psi. -/
 theorem productTensorSchwartz_spatial_lineDeriv_apply
     (alpha : ℝ → ℝ) (psi : Vec3 → ℂ)
-    (halphaSmooth : ContDiff ℝ ⊤ alpha)
+    (halphaSmooth : ContDiff ℝ (⊤ : ℕ∞) alpha)
     (halphaCompact : HasCompactSupport alpha)
-    (hpsiSmooth : ContDiff ℝ ⊤ psi)
+    (hpsiSmooth : ContDiff ℝ (⊤ : ℕ∞) psi)
     (hpsiCompact : HasCompactSupport psi)
     (k : Fin 3) (z : ProductSpaceTime) :
     (∂_{productSpatialDirection k}
       (productTensorSchwartz alpha psi halphaSmooth halphaCompact hpsiSmooth hpsiCompact)) z =
       (alpha z.1 : ℂ) * spatialTestDerivative psi k z.2 := by
   rw [SchwartzMap.lineDerivOp_apply_eq_fderiv]
-  change fderiv ℝ (tensorProductRaw alpha psi) z (productSpatialDirection k) = _
-  have ha : DifferentiableAt ℝ (fun y : ProductSpaceTime => (alpha y.1 : ℂ)) z := by
+  change fderiv ℝ
+      (fun y : ProductSpaceTime => Complex.ofRealCLM (alpha y.1) * psi y.2)
+      z (productSpatialDirection k) = _
+  have halphaDiff : Differentiable ℝ alpha :=
+    halphaSmooth.differentiable (by simp)
+  have hpsiDiff : Differentiable ℝ psi :=
+    hpsiSmooth.differentiable (by simp)
+  have ha : DifferentiableAt ℝ
+      (fun y : ProductSpaceTime => Complex.ofRealCLM (alpha y.1)) z := by
     fun_prop
   have hp : DifferentiableAt ℝ (fun y : ProductSpaceTime => psi y.2) z := by
     fun_prop
   rw [fderiv_mul ha hp]
-  simp [tensorProductRaw, productSpatialDirection, spatialTestDerivative,
+  simp [productSpatialDirection, spatialTestDerivative,
     ContinuousLinearMap.add_apply, ContinuousLinearMap.smul_apply]
 
 inductive TensorProductSpatialDerivativeStatus
