@@ -21,26 +21,21 @@ open MeasureTheory Module WithLp
 
 namespace G1Audit
 
-/-- The canonical one-dimensional orthonormal basis of R indexed by Fin 1. -/
 def realSingletonONB : OrthonormalBasis (Fin 1) ℝ ℝ :=
   OrthonormalBasis.singleton (Fin 1) ℝ
 
-/-- Typed reindexing equivalence Fin 4 = Fin (1+3) -> Fin 1 ⊕ Fin 3. -/
 def finFourEquivTimeSpace : Fin 4 ≃ Fin 1 ⊕ Fin 3 :=
   (finSumFinEquiv : Fin 1 ⊕ Fin 3 ≃ Fin (1 + 3)).symm
 
-/-- Reindex the four Euclidean coordinates as time ⊕ space. -/
 def spaceTimeReindex :
     SpaceTime ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 1 ⊕ Fin 3) :=
   LinearIsometryEquiv.piLpCongrLeft 2 ℝ ℝ finFourEquivTimeSpace
 
-/-- Split the reindexed Euclidean space into its 1D and 3D L2 factors. -/
 def reindexedSplit :
     EuclideanSpace ℝ (Fin 1 ⊕ Fin 3) ≃ₗᵢ[ℝ]
       WithLp 2 (EuclideanSpace ℝ (Fin 1) × Vec3) :=
   PiLp.sumPiLpEquivProdLpPiLp 2 (fun _ : Fin 1 ⊕ Fin 3 => ℝ)
 
-/-- Identify the first Euclidean factor with R while leaving Vec3 unchanged. -/
 def firstFactorToReal :
     WithLp 2 (EuclideanSpace ℝ (Fin 1) × Vec3) ≃ₗᵢ[ℝ]
       WithLp 2 (ℝ × Vec3) :=
@@ -48,48 +43,60 @@ def firstFactorToReal :
     realSingletonONB.repr.symm
     (LinearIsometryEquiv.refl ℝ Vec3)
 
-/-- Coordinate-aligned L2 isometry: x ↦ (x_0, (x_1,x_2,x_3)). -/
 def spaceTimeSplitL2 : SpaceTime ≃ₗᵢ[ℝ] WithLp 2 (ℝ × Vec3) :=
   spaceTimeReindex.trans (reindexedSplit.trans firstFactorToReal)
 
-/-- The L2-valued coordinate split preserves canonical volume. -/
 theorem spaceTimeSplitL2_measurePreserving :
     MeasurePreserving spaceTimeSplitL2 :=
   LinearIsometryEquiv.measurePreserving spaceTimeSplitL2
 
-/-- Ordinary product-valued coordinate map obtained by forgetting the WithLp wrapper. -/
 def spaceTimeToProduct (z : SpaceTime) : ProductSpaceTime :=
   WithLp.ofLp (spaceTimeSplitL2 z)
 
-/-- The ordinary product coordinate map preserves canonical volume. -/
 theorem spaceTimeToProduct_measurePreserving :
     MeasurePreserving spaceTimeToProduct := by
-  have h := spaceTimeSplitL2_measurePreserving.trans
-    (WithLp.volume_preserving_ofLp ℝ Vec3)
-  simpa only [spaceTimeToProduct, Function.comp_def] using h
+  have h1 : MeasurePreserving
+      (spaceTimeSplitL2 : SpaceTime → WithLp 2 (ℝ × Vec3))
+      (volume : Measure SpaceTime)
+      (volume : Measure (WithLp 2 (ℝ × Vec3))) :=
+    spaceTimeSplitL2_measurePreserving
+  have h2 : MeasurePreserving
+      (@WithLp.ofLp 2 (ℝ × Vec3))
+      (volume : Measure (WithLp 2 (ℝ × Vec3)))
+      (volume : Measure ProductSpaceTime) :=
+    WithLp.volume_preserving_ofLp ℝ Vec3
+  have h := h1.trans h2
+  change MeasurePreserving (fun z : SpaceTime => WithLp.ofLp (spaceTimeSplitL2 z))
+  simpa only [Function.comp_def] using h
 
-/-- Inverse product coordinate map. -/
 def productToSpaceTime (z : ProductSpaceTime) : SpaceTime :=
   spaceTimeSplitL2.symm (WithLp.toLp 2 z)
 
-/-- The inverse product coordinate map preserves canonical volume. -/
 theorem productToSpaceTime_measurePreserving :
     MeasurePreserving productToSpaceTime := by
-  have h := (WithLp.volume_preserving_toLp ℝ Vec3).trans
-    (LinearIsometryEquiv.measurePreserving spaceTimeSplitL2.symm)
-  simpa only [productToSpaceTime, Function.comp_def] using h
+  have h1 : MeasurePreserving
+      (@WithLp.toLp 2 (ℝ × Vec3))
+      (volume : Measure ProductSpaceTime)
+      (volume : Measure (WithLp 2 (ℝ × Vec3))) :=
+    WithLp.volume_preserving_toLp ℝ Vec3
+  have h2 : MeasurePreserving
+      (spaceTimeSplitL2.symm : WithLp 2 (ℝ × Vec3) → SpaceTime)
+      (volume : Measure (WithLp 2 (ℝ × Vec3)))
+      (volume : Measure SpaceTime) :=
+    LinearIsometryEquiv.measurePreserving spaceTimeSplitL2.symm
+  have h := h1.trans h2
+  change MeasurePreserving
+    (fun z : ProductSpaceTime => spaceTimeSplitL2.symm (WithLp.toLp 2 z))
+  simpa only [Function.comp_def] using h
 
-/-- The target canonical volume is the product measure used by Fubini. -/
 theorem productSpaceTimeMeasure_eq_volume :
     productSpaceTimeMeasure = (volume : Measure ProductSpaceTime) := by
   rfl
 
-/-- Transport an L2 representative on Euclidean R^4 to R x R^3. -/
 def l2RepToProduct
     (F : Lp ℂ 2 (volume : Measure SpaceTime)) : ProductScalarField :=
   fun z => F (productToSpaceTime z)
 
-/-- Measure-preserving pullback keeps an L2 representative in canonical product-space L2. -/
 theorem l2RepToProduct_memLp_volume
     (F : Lp ℂ 2 (volume : Measure SpaceTime)) :
     MemLp (l2RepToProduct F) 2 (volume : Measure ProductSpaceTime) := by
@@ -97,52 +104,46 @@ theorem l2RepToProduct_memLp_volume
       MemLp ((fun x : SpaceTime => F x) ∘ productToSpaceTime) 2
         (volume : Measure ProductSpaceTime) :=
     (Lp.memLp F).comp_measurePreserving productToSpaceTime_measurePreserving
-  simpa only [l2RepToProduct, Function.comp_def] using hcomp
+  change MemLp (fun z : ProductSpaceTime => F (productToSpaceTime z)) 2
+    (volume : Measure ProductSpaceTime)
+  simpa only [Function.comp_def] using hcomp
 
-/-- The same pullback belongs to the explicit dt dx product measure used by Fubini. -/
 theorem l2RepToProduct_memLp
     (F : Lp ℂ 2 (volume : Measure SpaceTime)) :
     MemLp (l2RepToProduct F) 2 productSpaceTimeMeasure := by
   rw [productSpaceTimeMeasure_eq_volume]
   exact l2RepToProduct_memLp_volume F
 
-/-- Canonically transported omega representative. -/
 def WeakOmegaSpaceTime.omegaProd
     (h : WeakOmegaSpaceTime) (i : Fin 3) : ProductScalarField :=
   l2RepToProduct (h.omegaL2 i)
 
-/-- Canonically transported weak spatial derivative representative. -/
 def WeakOmegaSpaceTime.weakDxProd
     (h : WeakOmegaSpaceTime) (i k : Fin 3) : ProductScalarField :=
   l2RepToProduct (h.weakDxL2 i k)
 
-/-- The transported omega representative is genuinely L2(dt dx). -/
 theorem WeakOmegaSpaceTime.omegaProd_memLp
     (h : WeakOmegaSpaceTime) (i : Fin 3) :
     MemLp (h.omegaProd i) 2 productSpaceTimeMeasure := by
   exact l2RepToProduct_memLp (h.omegaL2 i)
 
-/-- Every transported weak spatial derivative is genuinely L2(dt dx). -/
 theorem WeakOmegaSpaceTime.weakDxProd_memLp
     (h : WeakOmegaSpaceTime) (i k : Fin 3) :
     MemLp (h.weakDxProd i k) 2 productSpaceTimeMeasure := by
   exact l2RepToProduct_memLp (h.weakDxL2 i k)
 
-/-- Hence omega has L2 spatial slices for almost every time. -/
 theorem WeakOmegaSpaceTime.omegaProd_slice_memLp_ae
     (h : WeakOmegaSpaceTime) (i : Fin 3) :
     ∀ᵐ t ∂(volume : Measure ℝ),
       MemLp (spatialSlice (h.omegaProd i) t) 2 (volume : Measure Vec3) :=
   memLp_two_spatialSlice_ae (h.omegaProd_memLp i)
 
-/-- The weak spatial derivative representatives have L2 slices a.e. in time. -/
 theorem WeakOmegaSpaceTime.weakDxProd_slice_memLp_ae
     (h : WeakOmegaSpaceTime) (i k : Fin 3) :
     ∀ᵐ t ∂(volume : Measure ℝ),
       MemLp (spatialSlice (h.weakDxProd i k) t) 2 (volume : Measure Vec3) :=
   memLp_two_spatialSlice_ae (h.weakDxProd_memLp i k)
 
-/-- All three components and all nine spatial derivatives are good simultaneously a.e. -/
 theorem WeakOmegaSpaceTime.productSlicesGood_ae
     (h : WeakOmegaSpaceTime) :
     ∀ᵐ t ∂(volume : Measure ℝ),
