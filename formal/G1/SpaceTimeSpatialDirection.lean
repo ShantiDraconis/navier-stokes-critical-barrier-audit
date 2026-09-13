@@ -31,8 +31,8 @@ theorem spaceTimeProductCLE_spatialDirection (k : Fin 3) :
     ext j <;>
     simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
       reindexedSplit, firstFactorToReal, spatialDirection,
-      productSpatialDirection, finFourEquivTimeSpace, realSingletonONB,
-      PiLp.sumPiLpEquivProdLpPiLp, Pi.single_apply, Fin.addCases]
+      productSpatialDirection, finFourEquivTimeSpace_spatial, realSingletonONB,
+      PiLp.sumPiLpEquivProdLpPiLp, Pi.single_apply]
 
 inductive SpaceTimeSpatialDirectionStatus
   | pureSpatialDirectionDefined
