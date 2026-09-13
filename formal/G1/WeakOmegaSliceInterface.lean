@@ -2,18 +2,6 @@
 WeakOmegaSliceInterface.lean
 
 Rigorous product-space slicing layer for the vorticity audit.
-
-This file proves the part of the 4D -> 3D passage supplied directly by
-Mathlib/Fubini: an L2 function on R x R^3 has L2 spatial slices for almost every
-time, and its quadratic L2 mass satisfies the iterated Fubini identity.
-
-The existing distributional model uses
-  SpaceTime = EuclideanSpace R (Fin 4),
-not the product type R x Vec3.  Hence two further obligations remain explicit:
-(1) a measure-preserving coordinate identification SpaceTime ~= R x Vec3, and
-(2) passage of the spatial weak-derivative identity through that identification
-and Fubini to obtain the fixed-time distributional derivative for a.e. t.
-No evaluation of an L2(R^4) class on a null time slice is used.
 -/
 
 import G1.WeakOmegaBridge
@@ -76,7 +64,7 @@ theorem ae_eq_zero_of_time_smooth_tests
     {r : ℝ → ℂ}
     (hr : LocallyIntegrable r (volume : Measure ℝ))
     (htest : ∀ a : ℝ → ℝ,
-      ContDiff ℝ ⊤ a → HasCompactSupport a →
+      ContDiff ℝ (⊤ : ℕ∞) a → HasCompactSupport a →
         ∫ t, a t • r t ∂(volume : Measure ℝ) = 0) :
     ∀ᵐ t ∂(volume : Measure ℝ), r t = 0 := by
   exact ae_eq_zero_of_integral_contDiff_smul_eq_zero hr htest
