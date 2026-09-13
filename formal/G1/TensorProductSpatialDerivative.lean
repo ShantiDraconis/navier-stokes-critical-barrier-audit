@@ -42,28 +42,9 @@ theorem productTensorSchwartz_spatial_lineDeriv_apply
   simp [tensorProductRaw, productSpatialDirection, spatialTestDerivative,
     ContinuousLinearMap.add_apply, ContinuousLinearMap.smul_apply]
 
-/-- The corresponding SpaceTime derivative is obtained by coordinate transport. -/
-theorem spaceTimeTensorSchwartz_spatial_lineDeriv
-    (alpha : ℝ → ℝ) (psi : Vec3 → ℂ)
-    (halphaSmooth : ContDiff ℝ ⊤ alpha)
-    (halphaCompact : HasCompactSupport alpha)
-    (hpsiSmooth : ContDiff ℝ ⊤ psi)
-    (hpsiCompact : HasCompactSupport psi)
-    (k : Fin 3) :
-    ∂_{spatialDirection k}
-      (spaceTimeTensorSchwartz alpha psi halphaSmooth halphaCompact hpsiSmooth hpsiCompact) =
-      productSchwartzPullback
-        (∂_{productSpatialDirection k}
-          (productTensorSchwartz alpha psi halphaSmooth halphaCompact hpsiSmooth hpsiCompact)) := by
-  rw [← spaceTimeProductCLE_spatialDirection k]
-  exact SchwartzMap.lineDerivOp_compCLMOfContinuousLinearEquiv
-    (spatialDirection k) spaceTimeProductCLE
-    (productTensorSchwartz alpha psi halphaSmooth halphaCompact hpsiSmooth hpsiCompact)
-
 inductive TensorProductSpatialDerivativeStatus
   | spatialDerivativeFunctionDefined
   | productDerivativeFormulaProved
-  | spaceTimeDerivativeTransported
   deriving DecidableEq, Repr
 
 end G1Audit
