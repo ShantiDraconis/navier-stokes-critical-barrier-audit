@@ -49,6 +49,9 @@ jobs:
       - name: Build tensorial strain-kernel architecture
         shell: bash
         run: lake build G1.StrainKernel
+      - name: Build strain-kernel moment parity layer
+        shell: bash
+        run: lake build G1.StrainKernelMoments
       - name: Build signed far-field target
         shell: bash
         run: lake build G1.SignedFarField
