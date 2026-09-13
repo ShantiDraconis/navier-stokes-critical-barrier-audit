@@ -47,13 +47,15 @@ theorem productTensorSchwartz_spatial_lineDeriv_apply
   have hp : DifferentiableAt ℝ (fun y : ProductSpaceTime => psi y.2) z := by
     fun_prop
   rw [fderiv_mul ha hp]
-  rw [fderiv_comp]
-  · rw [fderiv_comp]
-    · simp [productSpatialDirection, spatialTestDerivative, ContinuousLinearMap.fderiv]
-    · exact halphaDiff.differentiableAt
-    · fun_prop
-  · exact hpsiDiff.differentiableAt
-  · fun_prop
+  simp only [add_apply, smul_apply]
+  change Complex.ofRealCLM (alpha z.1) *
+        (fderiv ℝ (psi ∘ Prod.snd) z) (productSpatialDirection k) +
+      psi z.2 *
+        (fderiv ℝ ((fun r : ℝ => Complex.ofRealCLM (alpha r)) ∘ Prod.fst) z)
+          (productSpatialDirection k) = _
+  rw [fderiv_comp z hpsiDiff.differentiableAt (by fun_prop)]
+  rw [fderiv_comp z (by fun_prop) (by fun_prop)]
+  simp [productSpatialDirection, spatialTestDerivative, ContinuousLinearMap.fderiv]
 
 inductive TensorProductSpatialDerivativeStatus
   | spatialDerivativeFunctionDefined
