@@ -61,7 +61,8 @@ theorem memLp_two_spatialSlice_ae
       ∀ᵐ t ∂(volume : Measure ℝ),
         AEStronglyMeasurable (spatialSlice f t) (volume : Measure Vec3) := by
     filter_upwards [hsliceMeasRaw] with t ht
-    simpa only [spatialSlice] using ht
+    change AEStronglyMeasurable (fun x : Vec3 => f (t, x)) (volume : Measure Vec3)
+    exact ht
   filter_upwards [hsliceSq, hsliceMeas] with t ht htm
   exact (memLp_two_iff_integrable_sq_norm htm).2 ht
 
