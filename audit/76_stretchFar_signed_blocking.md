@@ -24,38 +24,100 @@ K^{-3}\rho_*^{-3}\|\omega\|_2^2.
 
 Status: `BLOCKING_SCALING` for this naive pointwise route.
 
-## Localized identity status
+## Localized PDE pairing status
 
-`formal/G1/XiEpsLocalizedRealization.lean` now contains concrete MeasureTheory definitions for spatial scalar/vector integrals, ball integrals, ball volume, ball average, and the weighted Xi integral.  It also records the real localization scale
+`formal/G1/XiEpsLocalizedRealization.lean` now defines the real Bochner pairing
+
+```text
+bochnerPair v w = ∫ <v(x),w(x)> dx
+```
+
+and the exact localized test field
+
+\[
+\psi(x)=\phi(x)^2|\omega_\varepsilon(x)|
+\left(\xi_\varepsilon(x)-(\xi_\varepsilon)_{B_r}\right).
+\]
+
+The pointwise equation in `XiEpsPDE` is rewritten as the field identity
+
+```text
+DtXi = rhs
+```
+
+and therefore yields, as a theorem rather than a structure field,
+
+```text
+bochnerPair DtXi psi = bochnerPair rhs psi.
+```
+
+Thus the previous scalar `testedEquation` assumption has been removed.  The scalar tested equation is reconstructed from:
+
+1. the proved Bochner pairing of the pointwise PDE;
+2. `lhsPairingExpansion`, which is the time/material-derivative differentiation-under-the-integral bookkeeping;
+3. `pairingExpansion`, which is the integrability/linearity expansion of the full RHS into stretch, Laplacian, drift, R1 and R2 terms.
+
+The resulting `XiEpsLocalizedRealization.testedEquation` is a theorem.
+
+## Diffusion IBP status
+
+The diffusion layer is now isolated at the exact weak integral identity
+
+\[
+\int \phi^2\langle \Delta\xi_\varepsilon,
+\xi_\varepsilon-(\xi_\varepsilon)_{B_r}\rangle
+|\omega_\varepsilon|\,dx
+\]
+
+\[
+= -\int \phi^2|\nabla\xi_\varepsilon|^2|\omega_\varepsilon|\,dx
+- \text{cutoff cross}
+- \text{weight cross}.
+\]
+
+Equivalently this is the expansion of
+
+\[
+-\int \operatorname{div}
+\bigl(\phi^2|\omega_\varepsilon|\nabla\xi_\varepsilon\bigr)
+\cdot\left(\xi_\varepsilon-(\xi_\varepsilon)_{B_r}\right)\,dx.
+\]
+
+The repository does not currently contain a complete Sobolev/divergence theorem formalization proving this exact weighted vector identity from first principles in Mathlib.  Accordingly, the remaining obligation is not hidden under `LocalEnergyIdentity`; it is exposed as the smallest lower-level assumption `WeakDiffusionIBP.weakIBP`.
+
+This is the correct audit boundary:
+
+```text
+pointwise XiEpsPDE -> Bochner pairing          PROVED_LOGIC
+scalar testedEquation from pairing expansions PROVED_LOGIC
+weighted weak Sobolev IBP                     OPEN_ANALYTIC_LEMMA
+LocalEnergyIdentity once weakIBP is supplied  PROVED_IDENTITY_CONDITIONAL_ON_WEAK_IBP
+CZ / Young                                    NOT USED
+```
+
+Therefore it is NOT yet correct to claim a completely unconditional `PROVED_IDENTITY via Mathlib Sobolev IBP`.  What is proved is that no final energy identity is postulated, and the remaining analytic gap has been reduced to a precise weak-IBP theorem plus time-pairing expansion.
+
+## Localization powers
+
+The concrete localization still records
 
 \[
 R=K\rho_*,\qquad |\nabla\phi|\sim(K\rho_*)^{-1},\qquad |D^2\phi|\sim(K\rho_*)^{-2}.
 \]
 
-The final `LocalEnergyIdentityData.identity` is not an input field.  It is derived through the DAG
+The positive diffusion term generated after weak IBP is
 
-```text
-XiEpsPDE
-  + localized testedEquation
-  + real signed strainSplit
-  + diffusionIBP
-  -> XiEpsLocalizedRealization.localized_identity
-  -> LocalEnergyIdentityData.ofXiEpsPDE
-  -> LocalEnergyIdentity
-```
+\[
+\int \phi^2|\nabla\xi_\varepsilon|^2|\omega_\varepsilon|\,dx,
+\]
 
-Thus `ofXiEpsPDE` is not a renaming of an assumed final equality.  The final equality is a Lean algebraic consequence of the primitive PDE-test, kernel split, and IBP facts.
+with cutoff and weight cross terms kept signed and separate.  The drift term remains the exact
 
-Classification:
+\[
+2\nu\nabla\log|\omega|_\varepsilon\cdot\nabla\xi_\varepsilon
+\]
 
-```text
-LocalEnergyIdentity from primitive analytic facts   PROVED_IDENTITY
-full Sobolev/Frechet derivation of testedEquation   OPEN_LOWER_LEVEL_FORMALIZATION
-full Mathlib proof of diffusion IBP                 OPEN_LOWER_LEVEL_FORMALIZATION
-CZ / Young                                           NOT USED
-```
-
-This distinction is mandatory: `PROVED_IDENTITY` means the final localized identity is derived rather than postulated; it does not claim that every lower-level PDE differentiation theorem has already been rebuilt from first principles in Mathlib.
+pairing; no Young inequality is used here.
 
 ## Why the far-field exponent is beta = 0 with current inputs
 
@@ -71,7 +133,7 @@ But the far-field compares points with
 |x-y|\ge K\rho_*.
 \]
 
-For `K>1`, the local one-ball estimate does not directly compare those separated directions.  Therefore current inputs do not imply
+For `K>1`, the local one-ball estimate does not directly compare those separated directions. Therefore current inputs do not imply
 
 \[
 |D(\xi(x),\xi(y))|\lesssim(r/\rho_*)^\beta
@@ -85,9 +147,7 @@ The guaranteed exponent is exactly
 \boxed{\beta=0}.
 \]
 
-The formal ledger `FarFieldCampanatoExponentLedger` records this as `beta = 0` rather than silently inserting a positive exponent.
-
-A positive exponent would require an additional independently proved mechanism: a summable chain of balls, a genuine moment cancellation of the Biot–Savart tensor, a weighted mean-zero identity, or global coherence not obtained from the DynamicCampanato conclusion itself.
+A positive exponent would require an additional independently proved mechanism: a summable chain of balls, genuine moment cancellation of the Biot–Savart tensor, a weighted mean-zero identity, or global coherence not obtained from the final DynamicCampanato conclusion.
 
 Status: `OPEN_SIGNED_CANCELLATION / BLOCKING_WITH_CURRENT_INPUTS`.
 
@@ -105,68 +165,39 @@ multiplying the naive squared far-field scale gives
 K^{-3}(r/\rho_*)^\beta\rho_*^{-3}\|\omega\|_2^2.
 \]
 
-The factor `(r/rho_*)^beta` is dimensionless and does not cancel `rho_*^{-3}`.  Leray pays for
-
-\[
-\int_0^T\|\nabla u\|_2^2dt
-\]
-
-(and, in the standard whole-space divergence-free normalization, the corresponding time-integrated enstrophy), but not automatically for
-
-\[
-\int_0^T\rho_*^{-3}\|\omega\|_2^2dt.
-\]
-
-The dimensional deficit is therefore three powers of length.  A compensating mechanism must carry the net scale
+The dimensionless factor does not cancel `rho_*^{-3}`. The dimensional deficit is therefore three powers of length, so a compensating mechanism must carry net scale
 
 \[
 \boxed{\rho_*^3}.
 \]
 
-This is a dimensional diagnosis only.  It is NOT a theorem asserting that Navier–Stokes dynamics provides such compensation.
+This is a dimensional diagnosis only, not a theorem about Navier–Stokes dynamics.
 
-## GeometricNonDegeneracy is the open bridge
+## GeometricNonDegeneracy remains the open bridge
 
-One possible bridge is an independently established effective-volume lower bound
+One possible independently proved bridge is
 
 \[
 V_{eff}(t)\ge\kappa\rho_*(t)^3,\qquad\kappa>0.
 \]
 
-`formal/G1/XiEpsLocalizedRealization.lean` records this only as
+The formal file records this only as `GeometricNonDegeneracy`; there remains deliberately no theorem
 
 ```text
-structure GeometricNonDegeneracy where
-  rho : R
-  kappa : R
-  effectiveVolume : R
-  ...
-  volume_lower_bound : kappa * rho^3 <= effectiveVolume
+XiEpsPDE -> GeometricNonDegeneracy.
 ```
 
-There is deliberately no theorem
+Hence:
 
 ```text
-XiEpsPDE -> GeometricNonDegeneracy
+rho_*^3 dimensional compensation               DIAGNOSTIC
+V_eff >= kappa rho_*^3                          OPEN_BRIDGE GeometricNonDegeneracy
+ActualNS -> GeometricNonDegeneracy               NOT ESTABLISHED
 ```
-
-and no constructor deriving it from dimensional analysis.
-
-Therefore:
-
-```text
-rho_*^3 dimensional compensation      NECESSARY FOR THE NAIVE DEFICIT / DIAGNOSTIC
-V_eff >= kappa rho_*^3                 OPEN_BRIDGE GeometricNonDegeneracy
-ActualNS -> GeometricNonDegeneracy      NOT ESTABLISHED
-```
-
-This prevents dimensional bookkeeping from being promoted into an analytic theorem.
 
 ## Circularity guard
 
-It is legitimate for a one-step Campanato induction to assume the coarser-scale bound needed to prove a smaller-scale bound.  It is not legitimate to assume the final global pairwise coherence for `|x-y| >= K rho_*` and feed it back into the PDE estimate that is supposed to generate DynamicCampanato.
-
-The forbidden loop is
+The forbidden loop remains
 
 ```text
 DynamicCampanato target
@@ -184,11 +215,14 @@ Until an independent signed cancellation or geometric non-degeneracy theorem bre
 XiEpsPDE regularization                         FORMALIZED
 magEps > 0 for eps > 0                          PROVED_LOGIC
 concrete spatial integrals / ball average       FORMALIZED
+real Bochner localized test field               FORMALIZED
+pointwise PDE -> Bochner pairing                 PROVED_LOGIC
+scalar testedEquation from real pairing          PROVED_LOGIC
 R = K rho_* cutoff powers                       EXPLICIT: rho_*^-1, rho_*^-2
 signed near/far kernel support split             FORMALIZED INTERFACE
-LocalEnergyIdentity from tested PDE + IBP        PROVED_IDENTITY
-lower-level Sobolev/Frechet testedEquation       OPEN_LOWER_LEVEL_FORMALIZATION
-lower-level Mathlib diffusion IBP                OPEN_LOWER_LEVEL_FORMALIZATION
+weighted weak Sobolev diffusion IBP              OPEN_ANALYTIC_LEMMA
+time/material lhs pairing expansion              OPEN_ANALYTIC_LEMMA
+LocalEnergyIdentity from these analytic facts    PROVED_IDENTITY_CONDITIONAL_ON_ABOVE
 signed far-field gain from local J_r alone       BLOCKING: beta = 0
 naive pointwise far-field route                  BLOCKING_SCALING: rho_*^-3 ||omega||_2^2
 missing dimensional compensation                 rho_*^3
