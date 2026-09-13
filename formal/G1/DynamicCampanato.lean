@@ -13,17 +13,20 @@ Design rules match the rest of `formal/G1`:
 * `FinalF.lean` is not touched here
 -/
 
-import Mathlib
-import formal.G1.G1_DynamicCriticalGeometry
+import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
+import Mathlib.Tactic.Ring
 import formal.G1.XiEpsPDE
 
 noncomputable section G1DynamicCampanatoSection
 
 namespace G1DynamicCampanato
 
-abbrev Cutoff := G1Dynamic.w_R_Data
-abbrev rhoStar := G1Dynamic.rhoStar
-abbrev rhoStarFixed := G1Dynamic.rhoStarFixed
+abbrev Cutoff := G1XiEpsPDE.Cutoff
+abbrev rhoStar := G1XiEpsPDE.rhoStar
+abbrev rhoStarFixed := G1XiEpsPDE.rhoStarFixed
 
 open G1XiEpsPDE
 

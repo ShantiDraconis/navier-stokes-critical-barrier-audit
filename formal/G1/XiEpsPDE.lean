@@ -12,17 +12,39 @@ This file fixes the regularisation conventions:
 * the cutoff-free remainder witness `C_rem(‖u₀‖₂, ν)` stays explicit
 -/
 
-import Mathlib
-import formal.G1.G1_DynamicCriticalGeometry
+import Mathlib.Analysis.InnerProductSpace.PiL2
+import Mathlib.Data.Matrix.Basic
+import Mathlib.Data.Real.Sqrt
 
 noncomputable section G1XiEpsPDESection
 
 namespace G1XiEpsPDE
 
-abbrev Vec3 := G1Dynamic.Vec3
+abbrev Vec3 := EuclideanSpace ℝ (Fin 3)
 abbrev ScalarField := Vec3 → ℝ
 abbrev VectorField := Vec3 → Vec3
 abbrev MatrixField := Vec3 → Matrix (Fin 3) (Fin 3) ℝ
+
+/-- Scale-covariant coherence radius `ρ_* = κ ‖ω‖₂ / ‖∇ω‖₂`. -/
+def rhoStar (κ omegaL2 gradOmegaL2 : ℝ) : ℝ :=
+  κ * omegaL2 / gradOmegaL2
+
+/-- Fixed cutoff radius `R = K ρ_*`. -/
+def rhoStarFixed (κ K omegaL2 gradOmegaL2 : ℝ) : ℝ :=
+  K * rhoStar κ omegaL2 gradOmegaL2
+
+/-- Cutoff-free witness for the remainder constant `C_rem(‖u₀‖₂, ν)`. -/
+structure RemainderCutoffFreeWitness where
+  C_rem : ℝ
+  hC_rem_pos : 0 < C_rem
+  independence_certificate : Prop
+
+/-- Window data with `R = K ρ_*`. -/
+structure Cutoff (κ K omegaL2 gradOmegaL2 : ℝ) where
+  hgrad : 0 < gradOmegaL2
+  R : ℝ
+  hR : R = rhoStarFixed κ K omegaL2 gradOmegaL2
+  hR_pos : 0 < R
 
 /-- `|ω|_ε = sqrt(|ω|² + ε²)`. -/
 def magEps (ω : VectorField) (ε : ℝ) (x : Vec3) : ℝ :=
@@ -39,7 +61,7 @@ structure XiEpsPDE where
   u_ε : VectorField
   /-- Symmetric strain matrix field `S_ε = sym ∇u_ε`. -/
   S_ε : MatrixField
-  remainderWitness : G1Dynamic.RemainderCutoffFreeWitness
+  remainderWitness : RemainderCutoffFreeWitness
   /-- `R1 = [J_ε, u · ∇] ω / |ω|_ε`. -/
   R1 : VectorField
   /-- `R2 = ε² ∇ω_ε / |ω|_ε³`. -/
