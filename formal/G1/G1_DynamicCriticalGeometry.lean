@@ -150,8 +150,9 @@ radius `R = K ρ_*`.
 structure FixedScaleCutoff (norms : VorticityNorms) (κ : ℝ) where
   K : ℝ
   hK : 0 < K
+  center : ℝ → Space
   w : ℝ → Space → ℝ
-  supportedInside : ∀ t x, w t x ≠ 0 → ‖x‖ ≤ cutoffRadius norms κ K t
+  supportedInside : ∀ t x, w t x ≠ 0 → ‖x - center t‖ ≤ cutoffRadius norms κ K t
 
 /-- Notation for the fixed-radius cutoff profile. -/
 def wR {norms : VorticityNorms} {κ : ℝ} (cutoff : FixedScaleCutoff norms κ) :
@@ -162,10 +163,12 @@ def wR {norms : VorticityNorms} {κ : ℝ} (cutoff : FixedScaleCutoff norms κ) 
 /--
 The regularized viscosity contribution kept explicit in the audit target.
 Any additional `|∇ξ_eps|² ξ_eps`-type correction is recorded inside the
-remainder term rather than hidden in the cutoff-independent constant.
+remainder term rather than hidden in the cutoff-independent constant. The
+vector argument `relGradOmegaDotGradXi` denotes the contracted drift
+`((∇|ω|)/|ω|_eps)·∇ξ_eps`.
 -/
-def viscosityContribution (ν : ℝ) (laplacianXi relGradOmegaContractGradXi : Vec3) : Vec3 :=
-  ν • (laplacianXi + (2 : ℝ) • relGradOmegaContractGradXi)
+def viscosityContribution (ν : ℝ) (laplacianXi relGradOmegaDotGradXi : Vec3) : Vec3 :=
+  ν • (laplacianXi + (2 : ℝ) • relGradOmegaDotGradXi)
 
 /--
 PDE-level evolution law for the regularized direction field `xi_eps`. The
@@ -183,7 +186,7 @@ structure RegularizedXiEvolutionFamily where
   materialDerivative : ℝ → ℝ → Space → Vec3
   strainAction : ℝ → ℝ → Space → Vec3
   laplacianXi : ℝ → ℝ → Space → Vec3
-  relGradOmegaContractGradXi : ℝ → ℝ → Space → Vec3
+  relGradOmegaDotGradXi : ℝ → ℝ → Space → Vec3
   remainder : ℝ → ℝ → Space → Vec3
   remainderL1 : ℝ → ℝ → ℝ
   hRemainderL1 : ∀ ε t, 0 ≤ remainderL1 ε t
@@ -192,10 +195,10 @@ structure RegularizedXiEvolutionFamily where
       materialDerivative ε t x
         = (strainAction ε t x
             - (inner ℝ (xiEps ω ε t x) (strainAction ε t x)) • xiEps ω ε t x)
-            + viscosityContribution ν (laplacianXi ε t x) (relGradOmegaContractGradXi ε t x)
+            + viscosityContribution ν (laplacianXi ε t x) (relGradOmegaDotGradXi ε t x)
             + remainder ε t x
   remainder_uniform_in_eps :
-    ∀ T ≥ 0, ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, 0 ≤ t → t ≤ T → remainderL1 ε t ≤ η
+    ∀ T ≥ 0, ∀ η > 0, ∃ ε0 > 0, ∀ ε, 0 < |ε| → |ε| ≤ ε0 → ∀ t, 0 ≤ t → t ≤ T → remainderL1 ε t ≤ η
 
 /-- Audit interface for the `xi_eps` evolution theorem. -/
 structure XiEvolutionLaw where

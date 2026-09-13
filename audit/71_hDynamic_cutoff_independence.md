@@ -14,7 +14,7 @@ The updated file `formal/G1/G1_DynamicCriticalGeometry.lean` now exposes the tar
 - `OmegaTheta(θ,t) = { x : |ω(t,x)| ≥ θ ||ω(t)||_∞ }`
 - `rhoStarAt(κ,t) = κ ||ω(t)||_2 / ||∇ω(t)||_2`
 - `cutoffRadius(κ,K,t) = K rhoStarAt(κ,t)` with `K` fixed in the cutoff structure, so there is no free arbitrary `R` parameter
-- `wR` is only the profile attached to that fixed derived radius
+- `wR` is only the profile attached to that fixed derived radius, centered by a time-dependent `center(t)` rather than forced to the origin
 
 This removes the interface-level ambiguity in which a coherence constant could silently depend on a separately chosen cutoff. The Lean structure also records the dependence claim concretely through a `boundProfile` field and the equality `C0 = boundProfile(K, ||u0||_2, nu, kappa, theta)`.
 
@@ -51,7 +51,7 @@ The Lean interface now keeps the desired regularized PDE in explicit audit form:
 ```text
 D_t xi_eps
   = S_eps xi_eps - (xi_eps · S_eps xi_eps) xi_eps
-    + nu (Delta xi_eps + 2 relGradOmegaContractGradXi)
+    + nu (Delta xi_eps + 2 relGradOmegaDotGradXi)
     + R_eps
 ```
 
@@ -61,7 +61,7 @@ where the explicit first-order term is encoded literally as `strainAction - (inn
 ||R_eps||_{L1} -> 0 uniformly in epsilon
 ```
 
-is kept explicit as `remainder_uniform_in_eps`, now stated as a concrete uniform small-`ε` bound on `remainderL1` over bounded nonnegative time intervals rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
+is kept explicit as `remainder_uniform_in_eps`, now stated as a concrete uniform small-`ε` bound on `remainderL1` over bounded nonnegative time intervals, with `0 < |ε| ≤ ε0`, rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
 
 ## Constantin-Fefferman connection
 
