@@ -4,12 +4,11 @@ WeakOmegaProductPairing.lean
 Transport the already-proved R^4 weak spatial derivative pairing to Schwartz
 tests on the genuine product space R x R^3.
 
-This file deliberately stops before separated alpha(t) psi(x) factorization and
-Fubini.  It closes the coordinate/Schwartz derivative transport arrow without
-claiming a fixed-time H1_x representative.
+This file stops before the Fubini/du-Bois-Reymond slicing step.  The product
+spatial derivative direction itself is now fully identified with (0,e_k).
 -/
 
-import G1.SpaceTimeCoordinateSplit
+import G1.SpaceTimeSpatialDirection
 import G1.WeakOmega4DPairing
 import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 
@@ -46,11 +45,7 @@ theorem neg_lineDeriv_productSchwartzPullback
   rw [lineDeriv_productSchwartzPullback]
   rfl
 
-/--
-The R^4 weak derivative pairing, rewritten for an arbitrary product-space
-Schwartz test.  The derivative direction on the product side is exactly the
-image of the canonical R^4 spatial direction under the coordinate equivalence.
--/
+/-- R^4 weak spatial derivative pairing transported to the product coordinates. -/
 theorem WeakOmegaSpaceTime.weakDx_productSchwartz_pairing
     (h : WeakOmegaSpaceTime) (i k : Fin 3)
     (Phi : 𝓢(ProductSpaceTime, ℂ)) :
@@ -61,11 +56,21 @@ theorem WeakOmegaSpaceTime.weakDx_productSchwartz_pairing
   congr 1
   exact neg_lineDeriv_productSchwartzPullback (spatialDirection k) Phi
 
+/-- Same pairing with the derivative direction written canonically as (0,e_k). -/
+theorem WeakOmegaSpaceTime.weakDx_productSpatial_pairing
+    (h : WeakOmegaSpaceTime) (i k : Fin 3)
+    (Phi : 𝓢(ProductSpaceTime, ℂ)) :
+    (h.weakDxL2 i k : ScalarDist) (productSchwartzPullback Phi) =
+      (h.omegaL2 i : ScalarDist)
+        (productSchwartzPullback (-(∂_{productSpatialDirection k} Phi))) := by
+  simpa [spaceTimeProductCLE_spatialDirection k] using
+    h.weakDx_productSchwartz_pairing i k Phi
+
 inductive WeakOmegaProductPairingStatus
   | productSchwartzPullbackDefined
   | derivativeCommutesWithPullbackProved
   | productSchwartzWeakPairingProved
-  | canonicalProductSpatialDirectionOpen
+  | canonicalProductSpatialDirectionProved
   | separatedCompactProductTestOpen
   | productFubiniReductionOpen
   | commonAETimeDensePassageOpen
