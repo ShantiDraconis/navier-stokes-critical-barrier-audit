@@ -1,0 +1,106 @@
+source_type,source_repository,source_identifier,target_object_id,exact_expression,normalized_expression,author_date,committer_date,tier
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26715,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26711,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26709,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26707,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26704,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26701,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26690,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-40582,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-40576,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-40563,smooth compactly supported data to finite-time blowup branch,smooth compactly supported data to finite-time blowup branch,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-37477,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-37476,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-37450,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26715,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26711,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26709,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26707,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26704,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26701,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-26690,self-similar or asymptotically self-similar blowup strategy,self-similar or asymptotically self-similar blowup strategy,2025-12-04T18:43:53Z,2025-12-04T18:43:53Z,TIER_4
+candidate,Millennium,c70b6f72197085ae6ecc3130b75e685028a61d10,OPENAI-33112,scaling + concentration-compactness + profile decomposition + Liouville pipeline,scaling + concentration-compactness + profile decomposition + liouville pipeline,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-40085,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-39222,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-39221,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-39202,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35087,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35086,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35077,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35076,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-34893,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-34892,reference-jet / primitive-jet style machinery,reference-jet / primitive-jet style machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-38810,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35410,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35408,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35406,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35399,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-35398,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-31626,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-29672,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-29671,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,UNKNOWN,UNKNOWN,OPENAI-29653,smooth forcing cancellation and pressure-tail cancellation machinery,smooth forcing cancellation and pressure-tail cancellation machinery,UNKNOWN,UNKNOWN,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-39469,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-38341,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-37488,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-35548,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34674,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34404,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34383,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-33354,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32906,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32851,P_N[(u\cdot\nabla)u]\neq (P_Nu)\cdot\nabla(P_Nu),p_n[(u\cdot\nabla)u]\neq (p_nu)\cdot\nabla(p_nu),2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-39469,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-38341,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-37488,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-35548,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34674,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34404,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34383,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-33354,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32906,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32851,u=P_\Lambda u+(I-P_\Lambda)u,u=p_\lambda u+(i-p_\lambda)u,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40582,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40581,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40575,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40574,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40372,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40371,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40369,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40365,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40364,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-40363,R_\Lambda(u)=\text{high-frequency residual},r_\lambda(u)=\text{high-frequency residual},2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-39469,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-38341,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-37488,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-35548,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34674,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34404,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34383,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-33354,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32906,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32851,R(u)=\|u-P_Nu\|^2,r(u)=\|u-p_nu\|^2,2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-39469,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-38341,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-37488,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-35548,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34674,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34404,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-34383,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-33354,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32906,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+candidate,REPORTED_MULTI_REPO,UNKNOWN,OPENAI-32851,"\mathcal T(u_N,u_\perp)= -P_N\!\left[ (u_\perp\cdot\nabla)u_N+ (u_N\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]","\mathcal t(u_n,u_\perp)= -p_n\!\left[ (u_\perp\cdot\nabla)u_n+ (u_n\cdot\nabla)u_\perp+ (u_\perp\cdot\nabla)u_\perp \right]",2025-12-18,2025-12-18,TIER_4
+zenodo_record,ZENODO:14934901,,,,,,,TIER_4
+zenodo_record,ZENODO:14948466,,,,,,,TIER_4
+zenodo_record,ZENODO:14950453,,,,,,,TIER_4
+zenodo_record,ZENODO:14977667,,,,,,,TIER_4
+zenodo_record,ZENODO:15040732,,,,,,,TIER_4
+zenodo_record,ZENODO:15080581,,,,,,,TIER_4
+zenodo_record,ZENODO:15170089,,,,,,,TIER_4
+zenodo_record,ZENODO:15172871,,,,,,,TIER_4
+zenodo_record,ZENODO:15220150,,,,,,,TIER_4
+zenodo_record,ZENODO:15220186,,,,,,,TIER_4
+zenodo_record,ZENODO:15220196,,,,,,,TIER_4
+zenodo_record,ZENODO:15220224,,,,,,,TIER_4
+zenodo_record,ZENODO:15768350,,,,,,,TIER_4
+zenodo_record,ZENODO:16399978,,,,,,,TIER_4

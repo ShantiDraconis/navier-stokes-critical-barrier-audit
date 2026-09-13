@@ -1,0 +1,204 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,longtable,hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\title{NS-B2: Journal-Grade Analytic Obligations and Decisive Coercivity Test}
+\author{Audit dossier for the ShantiDraconis Navier--Stokes critical-barrier program}
+\date{12 September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This note freezes the mathematical content required to turn the repository's projection/residual architecture into a defensible Navier--Stokes theorem. It separates a proved negative coercivity observation from the still-open positive critical-space bridge. No claim of a solution to the Clay Millennium Problem is made.
+\end{abstract}
+
+\section{Setting}
+Fix either $\mathbb R^3$ or $\mathbb T^3$ and state the choice in the theorem under review. Let $u$ solve the incompressible Navier--Stokes equations
+\begin{equation}
+ \partial_tu-\nu\Delta u+(u\cdot\nabla)u+\nabla p=f,
+ \qquad \nabla\cdot u=0,
+\end{equation}
+with $\nu>0$, under an explicitly stated solution and forcing class.
+
+Let $\Delta_j$ be a Littlewood--Paley decomposition and
+\[
+P_{\le J}u=\sum_{j\le J}\Delta_j u,
+\qquad
+P_{>J}u=\sum_{j>J}\Delta_j u.
+\]
+Write $u_\ell=P_{\le J}u$ and $u_h=P_{>J}u$.
+
+\section{The negative coercivity theorem}
+\begin{proposition}[Scalar $L^2$ concentration defect is insufficient]
+There is no universal coercive principle based solely on the size of an $L^2$ high-frequency residual that can, for arbitrary smooth divergence-free concentrated states, bound the critical $L^3$ norm.
+\end{proposition}
+\begin{proof}
+Choose a nonzero $\phi\in C_c^\infty(\mathbb R^3)$ and
+\[
+f_n(x)=n^\alpha\phi(nx).
+\]
+Then
+\[
+\|f_n\|_{L^p}=n^{\alpha-3/p}\|\phi\|_{L^p}.
+\]
+For $1<\alpha<3/2$, and in particular $\alpha=5/4$,
+\[
+\|f_n\|_2=n^{-1/4}\|\phi\|_2\to0,
+\qquad
+\|f_n\|_3=n^{1/4}\|\phi\|_3\to\infty.
+\]
+To obtain divergence-free vector fields, take a nonzero smooth compactly supported vector potential $A$ and set
+\[
+u_n=\nabla\times\bigl(n^{\alpha-1}A(nx)\bigr).
+\]
+The same amplitude/length scaling applies and $\nabla\cdot u_n=0$. Hence $L^2$ smallness does not prevent critical $L^3$ concentration. A scalar residual containing only this $L^2$ information is therefore insufficient for the desired critical coercivity without additional frequency/concentration information.
+\end{proof}
+
+\section{B2.1: frequency decomposition}
+The review must verify the multiplier definition, boundedness, support properties, reconstruction, and all commutations used later. For a sharp spectral split, orthogonality may be available in $L^2$; for smooth Littlewood--Paley cutoffs, only the appropriate almost-orthogonality statement should be claimed.
+
+\section{B2.2: projected equation}
+Applying $P_{>J}$ gives
+\begin{equation}
+ \partial_tu_h-\nu\Delta u_h+P_{>J}(u\cdot\nabla u)+\nabla p_h=f_h.
+\end{equation}
+If the Helmholtz--Leray projector $\mathbb P$ is used, the pressure-free formulation is
+\[
+\partial_tu_h-\nu\Delta u_h+P_{>J}\mathbb P\nabla\cdot(u\otimes u)=P_{>J}\mathbb P f,
+\]
+provided the multiplier commutations are justified in the selected setting.
+
+\section{B2.3: pressure}
+In the standard whole-space setting,
+\[
+-\Delta p=\partial_i\partial_j(u_i u_j),
+\qquad
+p=R_iR_j(u_i u_j)
+\]
+up to the sign convention for the Riesz transforms. Thus the critical pressure scale paired with $u\in L^3$ is $p\in L^{3/2}$. Any local argument must retain the pressure contribution or prove exactly how it is eliminated.
+
+\section{B2.4: high-frequency energy identity}
+Define
+\[
+E_h(t)=\frac12\|u_h(t)\|_2^2.
+\]
+For sufficiently regular solutions, pairing the projected equation with $u_h$ gives
+\begin{equation}
+\frac{d}{dt}E_h+\nu\|\nabla u_h\|_2^2
+=-\langle P_{>J}(u\cdot\nabla u),u_h\rangle
++\langle f_h,u_h\rangle,
+\end{equation}
+with the pressure term absent under the justified divergence-free pairing. Define once and for all
+\[
+\Pi_J(u):=-\langle P_{>J}(u\cdot\nabla u),u_h\rangle.
+\]
+The sign convention must not change later.
+
+\section{B2.5: nonlinear channels}
+Expand
+\[
+(u\cdot\nabla)u
+=(u_\ell\cdot\nabla)u_\ell
++(u_\ell\cdot\nabla)u_h
++(u_h\cdot\nabla)u_\ell
++(u_h\cdot\nabla)u_h.
+\]
+A journal-grade proof must replace every schematic ellipsis by an explicit estimate, with the exact function spaces and constants or harmless universal constants specified. Bony's decomposition may be used to separate low--high, high--low, and high--high interactions.
+
+\section{B2.6: dissipative coercivity}
+For high-frequency support $|\xi|\gtrsim2^J$,
+\[
+\|\nabla u_h\|_2^2\gtrsim2^{2J}\|u_h\|_2^2
+=2^{2J+1}E_h.
+\]
+The exact constant depends on the multiplier support convention.
+
+\section{B2.7: critical interpolation and Bernstein}
+In dimension three,
+\[
+\|\Delta_j u\|_3\lesssim 2^{j/2}\|\Delta_j u\|_2.
+\]
+Consequently
+\[
+\|P_{\le J}u\|_3\lesssim2^{J/2}\|u\|_2.
+\]
+Define the critical tail
+\[
+H_J(u)=\sum_{j>J}\|\Delta_j u\|_3.
+\]
+Then
+\begin{equation}
+\|u\|_3\lesssim2^{J/2}\|u\|_2+H_J(u).
+\end{equation}
+This is a genuine critical-space bridge only if $J$ and $H_J$ are controlled in a manner that does not already assume the desired regularity.
+
+\section{B2.8: concentration-to-flux obligation}
+Ordinary H\"older/Sobolev estimates generally yield an upper bound on $|\Pi_J|$. They do not provide a signed lower bound. Therefore any claim of the form
+\[
+\Pi_J(u)\ge \kappa_J E_h-\operatorname{Err}_J
+\]
+must be proved from additional structure, not inferred from concentration alone. Relevant missing information may include Fourier phases, resonant triads, alignment, helicity, or vorticity geometry.
+
+\section{B2.9: decisive sufficiency/falsification test}
+The scalar-residual sufficiency question is
+\[
+R_J(u)\stackrel{?}{\Longrightarrow}\Pi_J(u).
+\]
+A direct falsification strategy is to construct admissible divergence-free $u,v$ satisfying
+\[
+R_J(u)=R_J(v),
+\qquad
+\Pi_J(u)\ne\Pi_J(v).
+\]
+Such a pair proves that no single-valued map $F$ can satisfy
+\[
+\Pi_J(w)=F(R_J(w))
+\]
+throughout that admissible class.
+
+This statement must not be confused with the stronger question of whether $R_J$ can participate in a one-sided inequality together with additional coordinates.
+
+\section{B2.10: corrected critical defect and endpoint}
+Use a vector defect, for example
+\[
+\mathcal D_{\mathrm{crit}}(u,p;J,r)
+=(H_J,C_r,P_r,N_r,F_r,A_r),
+\]
+where the coordinates retain critical tail, concentration, pressure, nonlinear interaction, forcing/scaling, and admissibility information.
+
+The positive theorem target is:
+\begin{theorem}[NS-B2 target, open]
+Under the exact admissible Navier--Stokes hypotheses, the repository dynamics imply a uniform bound on a critical defect strong enough to yield
+\[
+\sup_{0<t<T}\|u(t)\|_{L^3}<\infty.
+\]
+Combined with an endpoint continuation theorem under its exact hypotheses, the solution continues past $T$.
+\end{theorem}
+
+The first implication is the open content. It may not be assumed as an axiom, hidden in a definition, or replaced by a numerical threshold.
+
+\section{Fixed-cutoff conditional bridge}
+\begin{lemma}
+Assume a fixed integer $J$, an energy bound $\sup_{t<T}\|u(t)\|_2\le E_0$, and a critical-tail bound $\sup_{t<T}H_J(u(t))\le H_0$. Then
+\[
+\sup_{t<T}\|u(t)\|_3
+\lesssim2^{J/2}E_0+H_0<\infty.
+\]
+\end{lemma}
+\begin{proof}
+Apply the low-frequency Bernstein estimate and the definition of $H_J$ at each time and take the supremum.
+\end{proof}
+
+\begin{remark}
+If $J=J(t)\to\infty$, the factor $2^{J(t)/2}E_0$ can diverge. A moving cutoff therefore requires a sharper scale-invariant argument.
+\end{remark}
+
+\section{Release gate}
+A positive NS theorem manuscript is not release-ready until B2.1--B2.10 are instantiated without schematic placeholders and the critical-tail/coercivity bridge is proved or rigorously refuted under the stated admissible class. Formal source files certify only the propositions they actually type-check without unreported assumptions.
+
+\end{document}

@@ -1,0 +1,8 @@
+id,kind,claimed_or_verified_date,status,source_independence,mathematical_match_status,note
+13c41ff1cdddfbd981c37132fb5b280f8b5492a7,git_commit,2026-09-12T23:26:07Z,VERIFIED,PRIMARY_REPOSITORY,VERIFIED_DOCUMENT_EXISTENCE,"Audit 62 closure ladder; GitHub author/committer timestamp verified"
+5f7e4dad066fbe2f2bfffd32063a1b06e6b7278c,git_commit,2026-09-12T23:32:50Z,VERIFIED,PRIMARY_REPOSITORY,VERIFIED_DOCUMENT_EXISTENCE,"Audit 63 two-layer closure protocol; GitHub author/committer timestamp verified"
+zenodo:15164501,zenodo_record,2025-04-06,VERIFIED_PUBLIC_METADATA,PUBLIC_RECORD,REPORTED_CONTENT_NOT_PROOF,"Zenodo metadata exposes Created 2025-04-06 and Modified 2026-08-30; broader mathematical claims are not independently validated here"
+zenodo:14733549,zenodo_record,2025-01-??,PENDING_PRIMARY_VERIFICATION,UNKNOWN,NOT_ESTABLISHED,"User-reported anchor; exact public metadata not independently recovered in this run"
+zenodo:14934822,zenodo_record,2025-02-??,PENDING_PRIMARY_VERIFICATION,UNKNOWN,NOT_ESTABLISHED,"User-reported anchor; exact public metadata not independently recovered in this run"
+zenodo:22706247,zenodo_record,2026-09-11,PENDING_PRIMARY_VERIFICATION,UNKNOWN,NOT_ESTABLISHED,"User-reported Phi primordial anchor; exact primary metadata not independently recovered in this run"
+N7-2026-08-30,script_or_result,2026-08-30,REPORTED_PENDING_ARTIFACT,NOT_INDEPENDENT,MISSING,"Draconis_Shanti_N7_completo.py / N7 calculation reported by user; script bytes/checksum not present here"

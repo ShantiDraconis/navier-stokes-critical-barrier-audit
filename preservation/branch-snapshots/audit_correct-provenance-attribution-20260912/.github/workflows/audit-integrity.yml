@@ -1,0 +1,31 @@
+name: Audit integrity
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Unit tests for audit invariants
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+      - name: Static audit-package integrity scan
+        run: python scripts/audit_integrity.py > audit-integrity-report.txt
+      - name: Show integrity report
+        if: always()
+        run: cat audit-integrity-report.txt || true
+      - name: Upload integrity report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-integrity-report
+          path: audit-integrity-report.txt

@@ -1,0 +1,188 @@
+zenodo_records:
+  - id: ZENODO:15164501
+    role: ZENODO_PUBLIC_PRIOR_ART
+    verification_status: PUBLIC_URL_USER_REPORTED_PENDING_DIRECT_METADATA_CAPTURE
+    record_url: https://zenodo.org/records/15164501
+    doi: 10.5281/zenodo.15164501
+    title: Equations of Major Unsolved Problems in Mathematics
+    creators:
+      - Tiago Fagliari aka Draconis Shanti
+    zenodo_creation_date: 2025-04-06
+    publication_type: preprint
+    license: CC-BY-4.0
+    subjects:
+      - Navier-Stokes
+      - Millennium
+    version: original_april_2025_version_preserved
+    files:
+      - file_name: UNKNOWN_IN_CURRENT_ENVIRONMENT
+        md5_or_zenodo_checksum: UNKNOWN_IN_CURRENT_ENVIRONMENT
+        note: Zenodo file list/checksum not directly retrievable from this sandbox at update time.
+    github_linkage:
+      repo: REQUIRES_CONTENT_COMPARISON
+      path: REQUIRES_CONTENT_COMPARISON
+      first_introduction_sha: REQUIRES_CONTENT_COMPARISON
+      parent_sha: REQUIRES_CONTENT_COMPARISON
+      author_committer_utc: REQUIRES_CONTENT_COMPARISON
+      pr: REQUIRES_CONTENT_COMPARISON
+    formula_targets:
+      - formula: "u -> π(u) -> C(u) -> Res(u)"
+        mathematical_function: projection / closure / residual decomposition
+        classification: CANDIDATE_CHAIN_TARGET_ONLY
+      - formula: "d/dt π(u) = F(π(u)) + K(R(u), π(u))"
+        mathematical_function: projected evolution with residual coupling
+        classification: CANDIDATE_CHAIN_TARGET_ONLY
+      - formula: "u_{q+1} = u_q + C_q"
+        mathematical_function: explicit iterative correction step
+        classification: MISSING_FROM_CURRENT_CAPTURE
+      - formula: "R_{q+1} = R(u_{q+1})"
+        mathematical_function: residual evolution
+        classification: MISSING_FROM_CURRENT_CAPTURE
+    source_basis:
+      - User-supplied Zenodo URL and metadata in the task statement
+      - Current sandbox could not resolve zenodo.org directly; direct API/file capture remains pending
+  - id: ZENODO:17204147
+    role: UNVERIFIED_RELATED_ZENODO
+    verification_status: SECONDARY_SEARCH_REPORTED_ONLY
+    record_url: https://zenodo.org/records/17204147
+    doi: 10.5281/zenodo.17204147
+    title: "Navier–Stokes Existence and Smoothness: A Hybrid Approach Integrating Symbolic Reformulation, Functional Analysis, and Certified Computation (Copy)"
+    creators:
+      - Tiago Fagliari
+    zenodo_creation_date: UNKNOWN
+    publication_type: UNKNOWN
+    license: UNKNOWN
+    subjects:
+      - UNKNOWN
+    version: UNKNOWN
+    files:
+      - file_name: UNKNOWN
+        md5_or_zenodo_checksum: UNKNOWN
+        note: Only a secondary-search report was available; no direct Zenodo metadata capture exists in this environment.
+    source_basis:
+      - Secondary-search result reported a potentially related Zenodo record
+      - No direct Zenodo API/page verification was possible in the current environment
+  - id: ZENODO:14950453
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/14950453
+    doi: 10.5281/zenodo.14950453
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:14977667
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/14977667
+    doi: 10.5281/zenodo.14977667
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15170089
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15170089
+    doi: 10.5281/zenodo.15170089
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15172871
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15172871
+    doi: 10.5281/zenodo.15172871
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220150
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220150
+    doi: 10.5281/zenodo.15220150
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220186
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220186
+    doi: 10.5281/zenodo.15220186
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220196
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220196
+    doi: 10.5281/zenodo.15220196
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15220224
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15220224
+    doi: 10.5281/zenodo.15220224
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:15768350
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: ID_ONLY_USER_SUPPLIED_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/15768350
+    doi: 10.5281/zenodo.15768350
+    doi_status: INFERRED_FROM_RECORD_PATTERN_NOT_PRIMARY_VERIFIED
+    title: UNKNOWN
+    zenodo_publication_date: UNKNOWN
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_modified_timestamp: UNKNOWN
+  - id: ZENODO:16399978
+    role: ZENODO_HISTORICAL_CORPUS_CANDIDATE
+    verification_status: USER_REPORTED_METADATA_PENDING_PRIMARY_CAPTURE
+    record_url: https://zenodo.org/records/16399978
+    doi: 10.5281/zenodo.16399978
+    doi_status: USER_REPORTED_EXACT_DOI
+    title: "Symbolic Curvature and the Universal Collapse Constant I = 0/0: A Unified Resolution of Scientific Paradigms"
+    creators:
+      - Tiago Fagliari
+    zenodo_publication_date: 2025-07-24
+    zenodo_publication_date_status: REPORTED
+    zenodo_created_timestamp: UNKNOWN
+    zenodo_created_timestamp_status: MISSING
+    zenodo_modified_timestamp: UNKNOWN
+    zenodo_modified_timestamp_status: MISSING
+    version: v1
+    version_status: REPORTED
+    historical_access_status: public_record_restricted_files_in_indexed_snapshot
+    historical_access_status_status: REPORTED
+    current_access_status: UNKNOWN
+    current_access_status_status: MISSING
+    source_basis:
+      - User supplied title, DOI, date, version, and restricted-files historical note
+      - Direct Zenodo API/page verification was not available in the current environment
+
+zenodo_search_targets:
+  - id: ZENODO:N7_EXPERIMENTAL_VALIDATION
+    status: MISSING
+    relationship: NOT_ESTABLISHED
+    description: specific experimental validation of Navier-Stokes N7
+    note: >
+      No concrete primary-source DOI, record URL, file, or metadata packet has been
+      identified. Similar titles, subjects, dates, or neighboring Zenodo records are
+      not treated as proof of this relationship.
