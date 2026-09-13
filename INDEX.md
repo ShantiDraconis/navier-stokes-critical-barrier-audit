@@ -11,162 +11,146 @@ This file is the navigation layer for the complete audit. It tells a reviewer wh
 5. `LIMITATIONS.md` — explicit limitations and unresolved evidentiary gaps.
 6. `METHODOLOGY.md` — audit methodology.
 7. `PRIORITY.md` — priority/provenance summary.
-8. `audit/16_chat_provenance_ledger.md` — reconstructed ChatGPT-conversation genealogy and hash/export protocol.
+8. `audit/59_final_public_freeze_evidence_ledger.md` — frozen evidence/status ledger.
+9. `audit/61_logical_scenario_partition_after_gap_isolation.md` — post-countercertificate scenario partition and intermediate closure ladder.
+10. `audit/62_intermediate_closure_status_and_external_precedents.md` — proof-status taxonomy and external-precedent comparison.
+11. `audit/63_reference_crosswalk_and_nonclosure_certificate.md` — literature crosswalk and exact nonclosure certificate.
+12. `audit/64_b2_8_closure_blueprint_and_final_proof_spec.md` — three-route B2 closure blueprint and final-proof specification.
 
 ## Evidence firewall
 
-The repository distinguishes five questions that must never be collapsed into one another:
+The repository distinguishes documentary priority, mathematical equivalence, public availability, external exposure, causal derivation, formal target encoding, and actual theorem closure. These must not be collapsed.
 
-- documentary priority;
-- mathematical equivalence;
-- public availability;
-- submission/exposure to an external system;
-- causal derivation.
-
-A date proves chronology only to the extent that its source is independently verifiable. A structural match does not prove copying. A submission does not prove training use. Causal derivation remains unresolved unless direct evidence establishes it.
+A timestamp proves chronology only to the extent independently verifiable. Structural similarity does not prove copying. A machine-checked implication does not prove its supplied premises. An explicit target interface is not a proof of the target.
 
 ## Root files
 
-- `README.md` — executive overview and navigation.
-- `INDEX.md` — this complete navigation map.
+- `README.md` — executive overview.
+- `INDEX.md` — this navigation map.
 - `STATUS.md` — current evidentiary/scientific status.
-- `TIMELINE.md` — dated chronology.
+- `TIMELINE.md` — chronology.
 - `CLAIMS.md` — claim ledger.
 - `PRIORITY.md` — priority summary.
 - `METHODOLOGY.md` — audit method.
-- `LIMITATIONS.md` — limitations and evidentiary cautions.
+- `LIMITATIONS.md` — limitations.
 - `CITATION.cff` — citation metadata.
 - `CONTRIBUTING.md` — contribution rules.
 - `LICENSE` — repository license.
 
-## Audit files
+## Core mathematical audit sequence
 
-### External target and hypothesis extraction
+- `audit/03_L3_consistency_test.md` through `audit/12_open_questions.md` — compatibility, scaling, cancellations, contradictions, and open questions.
+- `audit/45_endpoint_closure_register.md` — endpoint closure register.
+- `audit/46_universal_state_transition_resolution_architecture.md` — state/operator resolution architecture.
+- `audit/47_ns_b2_critical_tail_derivation_and_cross_problem_sources.md` — critical-tail route.
+- `audit/50_audit_freeze_and_reopening_protocol.md` — freeze/reopening rules.
+- `audit/51_b2_scalar_residual_counterexample_and_sign_correction.md` — finite Fourier scalar-residual countercertificate and sign correction.
+- `audit/52_multiprover_complete_closure_target_specification.md` — multiprover closure targets.
+- `audit/56_complete_closure_operator_lemma_axiom_tree.md` — closure target tree.
+- `audit/59_final_public_freeze_evidence_ledger.md` — frozen public evidence ledger.
+- `audit/60_youtube_live_historical_claim_evidence.md` — historical-claim provenance addendum.
+- `audit/61_logical_scenario_partition_after_gap_isolation.md` — eight admissible research scenarios; no false dichotomy.
+- `audit/62_intermediate_closure_status_and_external_precedents.md` — OPEN → TARGET_FORMALIZED → CONDITIONALLY_CLOSED → PDE_CLOSED → ENDPOINT_CLOSED → FULLY_CLOSED taxonomy.
+- `audit/63_reference_crosswalk_and_nonclosure_certificate.md` — literature crosswalk; reference gap substantially closed, PDE bridge not closed.
+- `audit/64_b2_8_closure_blueprint_and_final_proof_spec.md` — Route A geometric depletion, Route B vector/tensor defect, Route C enstrophy-production depletion; exact final-proof dependency specification.
 
-- `audit/01_external_claims.md` — external claims being audited.
-- `audit/02_exact_hypotheses.md` — precise hypotheses used in the mathematical audit.
+## Provenance and comparison
 
-### Mathematical compatibility tests
-
-- `audit/03_L3_consistency_test.md` — critical-L3 consistency.
-- `audit/04_energy_concentration_test.md` — energy/concentration analysis.
-- `audit/05_forcing_smoothness_test.md` — smooth-forcing compatibility.
-- `audit/06_pressure_compatibility_test.md` — pressure compatibility.
-- `audit/07_support_compatibility_test.md` — support/localization compatibility.
-- `audit/08_scaling_exponents.md` — scaling exponents.
-- `audit/09_required_cancellations.md` — cancellation requirements.
-- `audit/10_candidate_contradictions.md` — candidate contradiction ledger.
-- `audit/11_failed_refutation_attempts.md` — failed/insufficient refutation attempts, retained for auditability.
-- `audit/12_open_questions.md` — unresolved mathematical questions.
-
-### Provenance, cross-repository and architecture comparison
-
-- `audit/13_cross_repository_forensic_index.md` — cross-repository forensic map.
-- `audit/13_final_status.md` — prior final-status checkpoint.
-- `audit/14_openai_formula_provenance.md` — formula-level provenance comparison against the later public OpenAI repository.
-- `audit/15_correction_architecture_comparison.md` — residual/correction architecture comparison.
-- `audit/15_git_provenance_full.md` — full Git provenance ledger and principal historical SHAs.
-- `audit/15_projection_chain_audit_map.md` — projection → unresolved component → residual/closure chain.
-- `audit/15_uel_structural_analysis.md` — Universal Emergent Logic structural analysis.
-- `audit/16_chat_provenance_ledger.md` — conversation-derived genealogy, verification levels, export/hash procedure.
-- `audit/16_cosmology_baseline.md` — cosmology-baseline material used as genealogical context, not as proof of Navier–Stokes equivalence by itself.
-- `audit/16_related_commit_derivations.md` — related historical commit derivations.
-
-## Evidence directory
-
-Use `evidence/` for primary-source-oriented evidence packs, commit/path inventories, integrity records, formula crosswalks, and the LRE evidence inventory. The central item referenced by `STATUS.md` is:
-
-- `evidence/lre_evidence_inventory.md` — object-by-object inventory of what is established, structural, absent, or unresolved.
-
-Also use `evidence/provenance_chain.md` where referenced by `STATUS.md` for the chronological Git chain.
-
-## Priority directory
-
-Use `priority/` for structured prior-work summaries and pre-2026-09-08 chronology. These files are intended to answer: “what object existed, where, and by what date?”
-
-## Theory directory
-
-Use `theory/` for the mathematical framework, classical dependencies, definitions, and the target dichotomy. Theory files do not by themselves establish provenance; they should be cross-referenced with Git/Zenodo evidence.
+- `audit/13_cross_repository_forensic_index.md`
+- `audit/14_openai_formula_provenance.md`
+- `audit/15_correction_architecture_comparison.md`
+- `audit/15_git_provenance_full.md`
+- `audit/15_projection_chain_audit_map.md`
+- `audit/16_chat_provenance_ledger.md`
+- `audit/16_related_commit_derivations.md`
 
 ## Formal directories
 
-- `formal/lean/` — Lean formalization/scaffolding.
-- `formal/coq/` — Coq formalization/scaffolding.
+Four prover families are now represented:
 
-Any theorem marked with placeholders, assumptions, axioms, `sorry`, `admit`, or equivalent must not be described as a completed proof without an independent proof audit.
+- `formal/lean/` — Lean 4 / Mathlib formalization and tested targets.
+- `formal/coq/` — Coq formalization and configured targets.
+- `formal/isabelle/` — Isabelle source targets; execution status must be reported separately.
+- `formal/agda/` — Agda source targets; execution status must be reported separately.
 
-## Numerical / computational directories
+### B2 gap and closure target files
 
-- `python/` — scripts for numerical or consistency checks.
-- `data/` — input or derived audit data.
-- `results/` — verified/falsified/numerical/unresolved outputs.
-- `graph/` — node-edge provenance/evidence graph and visual maps.
+Lean:
+- `formal/lean/CriticalBarrier/B2ScalarResidualCounterexample.lean`
+- `formal/lean/CriticalBarrier/B2_8_AlignmentTarget.lean`
+- `formal/lean/CriticalBarrier/B2_8_SignedFlux_GapIsolation.lean`
+- `formal/lean/CriticalBarrier/B2_DeterministicParameterChain.lean`
+- `formal/lean/CriticalBarrier/B2_ChainTarget.lean`
+- `formal/lean/CriticalBarrier/B2_ClosureObligations.lean` — Route A/B/C and downstream closure composition; open PDE statements are explicit certificate fields.
+
+Coq:
+- `formal/coq/B2_8_AlignmentTarget.v`
+- `formal/coq/CompleteClosureTargets.v`
+- `formal/coq/B2_ClosureObligations.v` — Route A/B/C implication composition.
+
+Isabelle:
+- `formal/isabelle/B2_8_Alignment_Target.thy`
+- `formal/isabelle/Complete_Closure_Targets.thy`
+- `formal/isabelle/B2_Closure_Obligations.thy` — Route A/B/C implication composition.
+
+Agda:
+- `formal/agda/B2_8_AlignmentTarget.agda`
+- `formal/agda/CompleteClosureTargets.agda`
+- `formal/agda/B2ClosureObligations.agda` — Route A/B/C implication composition.
+
+Formal-source presence must not be conflated with execution. Lean/Coq files should be described as checked only when the relevant compiler/CI step succeeds. Isabelle/Agda remain `SOURCE_PRESENT_NOT_EXECUTED` until an actual toolchain run is recorded.
+
+## Current B2 dependency graph
+
+```text
+actual admissible 3D NS dynamics
+  -> [OPEN] PDE-derived directional depletion / vector-tensor / enstrophy mechanism
+  -> [TARGET] signed high-frequency flux upper bound
+  -> [CONDITIONAL LOGIC] dissipative domination
+  -> [CONDITIONAL LOGIC] residual decay
+  -> [OPEN/CONDITIONAL] high-frequency critical L3
+  +  [OPEN] low-frequency critical L3
+  -> [OPEN] uniform L^infinity_t L3_x
+  -> [EXTERNAL + MAP OPEN] ESS endpoint
+  -> continuation / T*=infinity.
+```
+
+Current conclusion:
+
+```text
+TARGET_ARCHITECTURE = FORMALIZED
+DOWNSTREAM_LOGIC = CONDITIONALLY_CLOSED
+DIRECTIONAL_DEPLETION_FROM_NS = OPEN_BRIDGE
+SIGNED_FLUX_FOR_ACTUAL_NS = OPEN_BRIDGE
+CRITICAL_L3_RECONSTRUCTION = OPEN_BRIDGE
+ESS_FORMAL_HYPOTHESIS_MAP = OPEN/EXTERNAL
+GLOBAL_REGULARITY = NOT_ESTABLISHED
+FINITE_TIME_BLOWUP = NOT_ESTABLISHED
+```
+
+## Literature crosswalk
+
+See `audit/63_reference_crosswalk_and_nonclosure_certificate.md`. The current crosswalk includes foundational geometric depletion/directional-coherence work, the ESS endpoint theorem, and contemporary depletion/defect/flux-audit approaches. Generic directional depletion and frequency/flux-depletion ideas have prior art. Exact equivalence to the current multiprover B2 audit architecture is not established.
+
+## Evidence, priority, theory, numerical, graph
+
+- `evidence/` — primary-source evidence packs, integrity records, formula crosswalks.
+- `priority/` — structured prior-work summaries and chronology.
+- `theory/` — mathematical framework and classical dependencies.
+- `python/`, `data/`, `results/` — computational checks and outputs.
+- `graph/` — provenance/evidence graphs.
 
 ## Automation / integrity
 
 - `.github/workflows/audit-integrity.yml` — automated integrity checks.
 - `.github/agents/` — audit-agent configuration/scaffolding.
 
-## Principal dated anchors
+## Principal provenance anchors
 
-### Public archival / publication anchors
-
-- `2025-04-06` — Zenodo record `15164501`, DOI `10.5281/zenodo.15164501`, currently treated as a reported public prior-art anchor until all archival/checksum evidence is independently captured in-repository.
-- `2026-09-08` — public comparison snapshot in `openai/NavierStokesAndEuler`, SHA `8937a8f4cbc7abaab5e9e97d1cc7f5d2319d9538`.
-
-### Git provenance anchors
-
-- `2025-11-23` — `millennium-navier-stokes-I`, SHA `64bc633ecdb3a90ccfbf1c0863963c4bdd238d0f`.
-- `2025-11-25` — collapse/formal NS expansion, including `777d58e6f1eda3872a809492183ce432ead4f030` and HEAD checkpoint `63b248dd29f1817c457acdb00e116e2e9b0687cc`.
-- `2025-11-26` — `millennium-navier-stokes-classical`, first I-architecture anchor `53c91d97c2ace924b4436825f3a53aa67ab87ad7`; later checkpoint `867045e966812b50b2304f0460288cf6449d8221`.
-- `2025-12-18T20:26:33Z` — `b033ea87fca138224200dd1acf2cf4043315f846`, LRE-NS framework / compression barrier cluster.
-- `2025-12-18T20:28:57Z` — `30bf8c53008c548a8a9dada3fd69d6d2b2b1df2c`, NS documentation.
-- `2025-12-18T21:03:13Z` — `a992d144c235572ac2b7413b015e58535a864a41`, formal closure.
-- `2025-12-18T21:07:43Z` — `4cdb6a61ae7a9189eab551b1099895578a8fbb56`, critical jets / microlocal analysis.
-- `2025-12-19T13:56:01Z` — `f7f414d2ea66fa7a04d4de390f0e9357dfd980ae`, residual-to-dynamical correction genealogy.
-- `2025-12-19T17:17:28Z` — `730aa849b0d76b0202f08b490664aa11c164b2bf`, reference section / geometric NS decomposition.
-- `2025-12-19T20:24:44Z` — `2854eaf70a4cf91cef3b936304ae080ec69f4fb1`, additive high-frequency perturbation architecture.
-- `2026-08-30` — `navier-stokes-noncircular`, SHA `8f12748eb160b937174825fe3e7bdccf05e8f9af`.
-
-## Conversation-provenance chronology
-
-Conversation-derived dates are a separate evidence class. Until checked against an original ChatGPT account export, they MUST be labeled `REPORTED_CONVERSATION_METADATA` rather than primary-source verified timestamps.
-
-Current reconstructed milestones include:
-
-- `2023-04-08T21:18:05Z` — earliest currently recovered ChatGPT interaction in available context; account-creation date remains unverified.
-- `2023-05-28T20:39:02Z` — second early recovered interaction.
-- `2024-02-26T20:08:52Z` — quantitative/cross-scale precursor.
-- `2024-03-12T05:06:48Z` — earliest reconstructed symbolic-indeterminacy architecture involving `1/0` and `1/infinity`.
-- `2024-04-18T21:15:21Z` — indeterminacy treated as a reusable/universal mechanism.
-- `2025-01-28` — reconstructed explicit `I = 0/0` universal-object stage.
-- `2025-01-29T10:58:33Z` — difference/limit/indeterminacy stage.
-- `2025-03-02T05:19:54Z` — adaptive parameter chosen locally to satisfy a constraint.
-- `2025-04-14T23:03:04Z` — reconstructed joint treatment of the seven Millennium Problems.
-- `2025-07-09T08:24:00Z` — reconstructed common difference/Delta architecture.
-- `2025-07-10T12:29:42Z` — reconstructed `0/0 = I` application across multiple Millennium Problems.
-- `2025-08-06T13:43:58Z` — common formalization stage in Lean.
-- `2025-09-14T02:48:01Z` — common HorizonLab formal-structure stage.
-
-See `audit/16_chat_provenance_ledger.md` for the full reconstructed genealogy and verification protocol.
-
-## ChatGPT export requirement
-
-The following item is still missing and is necessary to turn reconstructed conversation chronology into primary-source evidence:
-
-`Original ChatGPT account export` — expected to contain `conversations.json` and/or HTML/JSON export artifacts.
-
-Required procedure:
-
-1. preserve the ZIP unchanged;
-2. compute SHA-256 before parsing;
-3. extract conversation/message IDs and timestamps;
-4. hash derived conversation/message artifacts;
-5. build Chat → Git → Zenodo crosswalks;
-6. publish hashes and relevant excerpts, not unrelated private conversations.
+The detailed chronology remains in `TIMELINE.md` and the provenance ledgers. Important Git anchors include the November–December 2025 projection/residual/correction lineage and the September 2026 formal audit/countercertificate lineage. Conversation-derived dates remain a separate evidence class unless verified against an original export.
 
 ## Current comparison conclusion
 
-The audit currently supports documentary anteriority for multiple pre-2026 objects and very strong programmatic structural overlap in parts of the residual/projection/correction architecture. It does NOT currently establish a distinctive-construction identity for the entire later construction, causal derivation, plagiarism, training use, or a completed Clay Millennium solution.
+The audit supports public Git genealogy and multiple dated prior objects. It identifies substantial structural overlap with several mathematical traditions and later constructions, but does not establish causal derivation, plagiarism, worldwide priority, or a completed Clay Millennium solution.
 
-See `STATUS.md`, `audit/15_correction_architecture_comparison.md`, and `audit/16_chat_provenance_ledger.md` for the current boundary conditions.
+The immediate mathematical remainder is no longer ambiguous: prove from actual 3D Navier–Stokes dynamics a non-circular critical mechanism strong enough to control signed high-frequency flux and reconstruct a uniform critical L3 bound, then verify the exact ESS endpoint map.

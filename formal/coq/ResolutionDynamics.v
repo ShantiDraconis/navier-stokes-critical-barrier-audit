@@ -1,5 +1,6 @@
 Require Import Reals.
 Require Import Lia.
+Require Import Lra.
 Open Scope R_scope.
 
 Section ResolutionDynamics.
