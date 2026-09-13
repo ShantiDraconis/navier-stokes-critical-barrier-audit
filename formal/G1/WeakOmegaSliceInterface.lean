@@ -19,6 +19,7 @@ No evaluation of an L2(R^4) class on a null time slice is used.
 import G1.WeakOmegaBridge
 import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.MeasureTheory.Function.L2Space
+import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
 noncomputable section
 
@@ -81,6 +82,20 @@ theorem integral_sq_norm_eq_iterated
     exact (memLp_two_iff_integrable_sq_norm hf.1).mp hf
   simpa [productSpaceTimeMeasure] using
     (integral_prod (fun z : ProductSpaceTime => ‖f z‖ ^ 2) hsq)
+
+/--
+Time-separation / du Bois-Reymond lemma in exactly the form needed after
+Fubini: a locally integrable complex residual whose pairing with every smooth
+compactly supported real time cutoff vanishes is zero for almost every time.
+-/
+theorem ae_eq_zero_of_time_smooth_tests
+    {r : ℝ → ℂ}
+    (hr : LocallyIntegrable r (volume : Measure ℝ))
+    (htest : ∀ a : ℝ → ℝ,
+      ContDiff ℝ ∞ a → HasCompactSupport a →
+        ∫ t, a t • r t ∂(volume : Measure ℝ) = 0) :
+    ∀ᵐ t ∂(volume : Measure ℝ), r t = 0 := by
+  exact ae_eq_zero_of_integral_contDiff_smul_eq_zero hr htest
 
 /--
 For the componentwise vorticity argument we need the function and its three
@@ -149,6 +164,7 @@ inductive WeakOmegaSliceStatus
   | productL2SlicesProved
   | productQuadraticFubiniProved
   | simultaneousComponentSlicesProved
+  | timeSmoothTestSeparationProved
   | euclideanSpaceToProductCoordinatesOpen
   | spatialWeakDerivativeSliceOpen
   | xiEpsOmegaSliceLinkOpen
