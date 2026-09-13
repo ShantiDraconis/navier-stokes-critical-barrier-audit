@@ -1,0 +1,39 @@
+name: G1 prize-standard v4 Lean audit
+
+on:
+  push:
+    branches:
+      - audit/g1-prize-standard-v4-20260913
+    paths:
+      - 'formal/millennium/lean/**'
+      - '.github/workflows/g1-v4-lean.yml'
+  pull_request:
+    paths:
+      - 'formal/millennium/lean/**'
+      - '.github/workflows/g1-v4-lean.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve dependencies
+        working-directory: formal/millennium/lean
+        run: lake update
+      - name: Build v3 and v4
+        working-directory: formal/millennium/lean
+        run: lake build
+      - name: Reject proof escapes
+        run: |
+          if grep -RInE '^[[:space:]]*(sorry|axiom)[[:space:]]' formal/millennium/lean --include='*.lean'; then
+            echo 'proof escape found'
+            exit 1
+          fi
