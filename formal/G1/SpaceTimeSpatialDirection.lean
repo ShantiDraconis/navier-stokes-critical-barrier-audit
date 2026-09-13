@@ -22,12 +22,21 @@ def productSpatialDirection (k : Fin 3) : ProductSpaceTime :=
 exactly the pure x_k product direction. -/
 theorem spaceTimeProductCLE_spatialDirection (k : Fin 3) :
     spaceTimeProductCLE (spatialDirection k) = productSpatialDirection k := by
-  fin_cases k <;>
-    ext j <;>
-    simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
-      reindexedSplit, firstFactorToReal, spatialDirection,
-      productSpatialDirection, finFourEquivTimeSpace, realSingletonONB,
-      PiLp.sumPiLpEquivProdLpPiLp]
+  fin_cases k
+  all_goals
+    apply Prod.ext
+    · ext i
+      fin_cases i
+      simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
+        reindexedSplit, firstFactorToReal, spatialDirection,
+        productSpatialDirection, finFourEquivTimeSpace, realSingletonONB,
+        PiLp.sumPiLpEquivProdLpPiLp]
+    · ext j
+      fin_cases j <;>
+        simp [spaceTimeProductCLE, spaceTimeSplitL2, spaceTimeReindex,
+          reindexedSplit, firstFactorToReal, spatialDirection,
+          productSpatialDirection, finFourEquivTimeSpace, realSingletonONB,
+          PiLp.sumPiLpEquivProdLpPiLp]
 
 inductive SpaceTimeSpatialDirectionStatus
   | pureSpatialDirectionDefined
