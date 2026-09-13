@@ -61,7 +61,7 @@ where the explicit first-order term is encoded literally as `strainAction - (inn
 ||R_eps||_{L1} -> 0 uniformly in epsilon
 ```
 
-is kept explicit as `remainder_uniform_in_eps`, now stated as a concrete uniform small-`ε` bound on `remainderL1` rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
+is kept explicit as `remainder_uniform_in_eps`, now stated as a concrete uniform small-`ε` bound on `remainderL1` over bounded nonnegative time intervals rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
 
 ## Constantin-Fefferman connection
 

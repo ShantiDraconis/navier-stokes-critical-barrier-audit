@@ -175,7 +175,7 @@ constant. In the reduced hDynamic target used here, any `|∇ξ_eps|² ξ_eps`
 correction is absorbed into `remainder`.
 -/
 structure RegularizedXiEvolutionFamily where
-  /- Each field below uses argument order `(ε t : ℝ)` before the spatial point. -/
+  -- Each field below uses argument order `(ε t : ℝ)` before the spatial point.
   ω : VorticityField
   norms : VorticityNorms
   ν : ℝ
@@ -195,7 +195,7 @@ structure RegularizedXiEvolutionFamily where
             + viscosityContribution ν (laplacianXi ε t x) (relGradOmegaContractGradXi ε t x)
             + remainder ε t x
   remainder_uniform_in_eps :
-    ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, remainderL1 ε t ≤ η
+    ∀ T ≥ 0, ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, 0 ≤ t → t ≤ T → remainderL1 ε t ≤ η
 
 /-- Audit interface for the `xi_eps` evolution theorem. -/
 structure XiEvolutionLaw where
@@ -213,7 +213,7 @@ structure DynamicCriticalGeometry (ActualNS : Prop) where
   viscosity : ℝ
   u0L2 : ℝ
   cutoff : FixedScaleCutoff xiEvolution.regularized.norms kappa
-  /- `boundProfile` takes arguments in the order `(K, ||u₀||₂, ν, κ, θ)`. -/
+  -- `boundProfile` takes arguments in the order `(K, ||u₀||₂, ν, κ, θ)`.
   boundProfile : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ
   C0 : ℝ
   hC0 : 0 ≤ C0
