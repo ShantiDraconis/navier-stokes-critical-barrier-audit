@@ -4,3 +4,6 @@ import CriticalBarrier.EndpointInterfaces
 import CriticalBarrier.ResolutionDynamics
 import CriticalBarrier.CriticalTailBridge
 import CriticalBarrier.EntropyObstruction
+import CriticalBarrier.MillenniumCore
+import CriticalBarrier.WeightedLow
+import CriticalBarrier.AlignmentTransport
