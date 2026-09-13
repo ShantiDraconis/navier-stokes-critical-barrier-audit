@@ -108,26 +108,103 @@ structure CH95AtTime where
 def UniformCH95 (obs : ℕ → CH95AtTime) : Prop :=
   ∃ C0 : ℝ, 0 ≤ C0 ∧ ∀ n, (obs n).C95 ≤ C0
 
+/-- Spatial points for the audit-level vorticity geometry. -/
+abbrev Space := Vec3
+
+/-- Time-dependent vorticity field on `R^3`. -/
+abbrev VorticityField := ℝ → Space → Vec3
+
+/-- Abstract norm data attached to a vorticity field. -/
+structure VorticityNorms where
+  supNorm : ℝ → ℝ
+  l2 : ℝ → ℝ
+  gradL2 : ℝ → ℝ
+  hsupNorm : ∀ t, 0 ≤ supNorm t
+  hl2 : ∀ t, 0 ≤ l2 t
+  hgradL2 : ∀ t, 0 ≤ gradL2 t
+
+/-- Regularized magnitude `(|ω|² + ε²)^{1/2}`. -/
+def omegaMagEps (ω : VorticityField) (ε t : ℝ) (x : Space) : ℝ :=
+  Real.sqrt (‖ω t x‖^2 + ε^2)
+
+/-- Regularized direction `ω / (|ω|² + ε²)^{1/2}`. -/
+def xiEps (ω : VorticityField) (ε t : ℝ) (x : Space) : Vec3 :=
+  (omegaMagEps ω ε t x)⁻¹ • ω t x
+
+/-- High-vorticity region `|ω| ≥ θ ||ω||_∞`. -/
+def OmegaTheta (ω : VorticityField) (norms : VorticityNorms) (θ t : ℝ) : Set Space :=
+  {x | θ * norms.supNorm t ≤ ‖ω t x‖}
+
+/-- Scale-covariant radius `ρ_* = κ ||ω||₂ / ||∇ω||₂` at time `t`. -/
+def rhoStarAt (norms : VorticityNorms) (κ t : ℝ) : ℝ :=
+  rhoStar κ (norms.l2 t) (norms.gradL2 t)
+
+/-- The cutoff radius is fixed at `R = K ρ_*`, not an arbitrary free scale. -/
+def cutoffRadius (norms : VorticityNorms) (κ K t : ℝ) : ℝ :=
+  K * rhoStarAt norms κ t
+
 /--
-PDE-level evolution law for ξ, kept as an explicit mathematical interface.
-The intended analytic identity is
-
-D_t ξ = P_{ξ^⊥} S ξ
-      + ν(Δξ + |∇ξ|² ξ + 2 (∇|ω|/|ω|)·∇ξ)
-
-on the region |ω|>0.
+A scale-locked cutoff profile. `w_R` is supplied only at the derived
+radius `R = K ρ_*`.
 -/
+structure FixedScaleCutoff (norms : VorticityNorms) (κ : ℝ) where
+  K : ℝ
+  hK : 0 < K
+  w : ℝ → Space → ℝ
+  supportedInside : ∀ t x, w t x ≠ 0 → ‖x‖ ≤ cutoffRadius norms κ K t
+
+/-- Notation for the fixed-radius cutoff profile. -/
+def wR {norms : VorticityNorms} {κ : ℝ} (cutoff : FixedScaleCutoff norms κ) :
+    ℝ → Space → ℝ :=
+  cutoff.w
+
+/--
+PDE-level evolution law for the regularized direction field `xi_eps`. The
+identity keeps the regularized denominator explicit and isolates the exact
+uniform-in-`ε` remainder obligation instead of hiding it in a cutoff-dependent
+constant.
+-/
+structure RegularizedXiEvolution where
+  ω : VorticityField
+  norms : VorticityNorms
+  ε : ℝ
+  ν : ℝ
+  materialDerivative : ℝ → Space → Vec3
+  strainAction : ℝ → Space → Vec3
+  laplacianXi : ℝ → Space → Vec3
+  gradOmegaOverOmegaEpsDotGradXi : ℝ → Space → Vec3
+  remainder : ℝ → Space → Vec3
+  remainderL1 : ℝ → ℝ
+  hRemainderL1 : ∀ t, 0 ≤ remainderL1 t
+  evolution :
+    ∀ t x,
+      materialDerivative t x
+        = tangentialPart (xiEps ω ε t x) (strainAction t x)
+            + ν • (laplacianXi t x + (2 : ℝ) • gradOmegaOverOmegaEpsDotGradXi t x)
+            + remainder t x
+  remainder_uniform_L1_vanishes_from_leray_hopf : Prop
+
+/-- Audit interface for the `xi_eps` evolution theorem. -/
 structure XiEvolutionLaw where
-  statement : Prop
+  regularized : RegularizedXiEvolution
 
 /--
 The genuinely open dynamic statement: actual Navier–Stokes evolution produces
-uniform critical directional geometry on the dynamically relevant region.
+uniform critical directional geometry on the dynamically relevant region, with
+a constant depending only on the fixed scale lock `K`, `||u₀||₂`, `ν`, and `θ`.
 -/
 structure DynamicCriticalGeometry (ActualNS : Prop) where
   xiEvolution : XiEvolutionLaw
+  theta : ℝ
+  kappa : ℝ
+  viscosity : ℝ
+  u0L2 : ℝ
+  cutoff : FixedScaleCutoff xiEvolution.regularized.norms kappa
   C0 : ℝ
   hC0 : 0 ≤ C0
+  C0_depends_only_on_K_u0_L2_nu_theta : Prop
+  C0_independent_of_eps : Prop
+  C0_independent_of_cutoff_radius : Prop
   dynamics_to_uniform_coherence :
     ActualNS → ∀ t : ℝ, ∃ q : CriticalCoherenceAtTime, q.C ≤ C0 ∧ q.holds
 
@@ -195,9 +272,11 @@ Machine-checked logical content in this file:
 * composition DynamicCriticalGeometry -> kernel -> signed depletion
 
 Still open / not asserted:
-* the full PDE proof of XiEvolutionLaw in Mathlib calculus notation
-* ActualNS -> uniform critical coherence
-* critical coherence -> kernel-weighted coherence
+* derivation of `RegularizedXiEvolution.evolution` from actual Leray-Hopf dynamics in Mathlib calculus notation
+* proof that `remainder_uniform_L1_vanishes_from_leray_hopf` follows from energy control alone, uniformly in `ε`
+* proof that the coherence constant is independent of the derived cutoff radius `R = K ρ_*`
+* ActualNS -> uniform critical coherence on `OmegaTheta`
+* critical coherence -> kernel-weighted coherence / signed Constantin-Fefferman depletion
 * kernel-weighted coherence -> signed coercive depletion
 * global regularity
 -/
