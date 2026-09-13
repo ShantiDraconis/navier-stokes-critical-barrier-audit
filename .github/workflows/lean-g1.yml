@@ -11,6 +11,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
-        with:
-          build-args: G1.XiEpsLocalizedRealization
+      - name: Install Lean/Elan
+        shell: bash
+        run: |
+          curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve Lake dependencies
+        shell: bash
+        run: lake update
+      - name: Build weak-derivative bridge
+        shell: bash
+        run: lake build G1.WeakDerivBridge
+      - name: Build localized XiEps realization
+        shell: bash
+        run: lake build G1.XiEpsLocalizedRealization
