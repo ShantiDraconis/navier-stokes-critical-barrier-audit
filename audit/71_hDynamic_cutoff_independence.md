@@ -16,9 +16,9 @@ The updated file `/home/runner/work/navier-stokes-critical-barrier-audit/navier-
 - `cutoffRadius(κ,K,t) = K rhoStarAt(κ,t)` with `K` fixed in the cutoff structure, so there is no free arbitrary `R` parameter
 - `wR` is only the profile attached to that fixed derived radius
 
-This removes the interface-level ambiguity in which a coherence constant could silently depend on a separately chosen cutoff.
+This removes the interface-level ambiguity in which a coherence constant could silently depend on a separately chosen cutoff. The Lean structure also records the dependence claim concretely through `C0_is_fixed_parameter_function : ∃ F, C0 = F(K, ||u0||_2, nu, kappa, theta)`.
 
-## Isolamento de C
+## Isolation of C0 (`Isolamento de C`)
 
 Desired implication on the intense-vorticity set:
 
@@ -61,7 +61,7 @@ where the tangential projection term is encoded as `tangentialPart (xiEps ...) (
 ||R_eps||_{L1} -> 0 uniformly in epsilon
 ```
 
-is kept explicit as `remainder_uniform_L1_vanishes_from_leray_hopf`. This avoids any hidden division by `|omega|` without regularization.
+is kept explicit as `remainder_uniform_L1_vanishes_from_leray_hopf`, now stated as a concrete uniform small-`ε` bound on `remainderL1` rather than a bare placeholder proposition. This avoids any hidden division by `|omega|` without regularization.
 
 ## Constantin-Fefferman connection
 

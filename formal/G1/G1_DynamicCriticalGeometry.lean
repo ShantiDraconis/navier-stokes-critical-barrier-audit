@@ -164,29 +164,29 @@ identity keeps the regularized denominator explicit and isolates the exact
 uniform-in-`ε` remainder obligation instead of hiding it in a cutoff-dependent
 constant.
 -/
-structure RegularizedXiEvolution where
+structure RegularizedXiEvolutionFamily where
   ω : VorticityField
   norms : VorticityNorms
-  ε : ℝ
   ν : ℝ
-  materialDerivative : ℝ → Space → Vec3
-  strainAction : ℝ → Space → Vec3
-  laplacianXi : ℝ → Space → Vec3
-  gradOmegaOverOmegaEpsDotGradXi : ℝ → Space → Vec3
-  remainder : ℝ → Space → Vec3
-  remainderL1 : ℝ → ℝ
-  hRemainderL1 : ∀ t, 0 ≤ remainderL1 t
+  materialDerivative : ℝ → ℝ → Space → Vec3
+  strainAction : ℝ → ℝ → Space → Vec3
+  laplacianXi : ℝ → ℝ → Space → Vec3
+  gradOmegaOverOmegaEpsDotGradXi : ℝ → ℝ → Space → Vec3
+  remainder : ℝ → ℝ → Space → Vec3
+  remainderL1 : ℝ → ℝ → ℝ
+  hRemainderL1 : ∀ ε t, 0 ≤ remainderL1 ε t
   evolution :
-    ∀ t x,
-      materialDerivative t x
-        = tangentialPart (xiEps ω ε t x) (strainAction t x)
-            + ν • (laplacianXi t x + (2 : ℝ) • gradOmegaOverOmegaEpsDotGradXi t x)
-            + remainder t x
-  remainder_uniform_L1_vanishes_from_leray_hopf : Prop
+    ∀ ε t x,
+      materialDerivative ε t x
+        = tangentialPart (xiEps ω ε t x) (strainAction ε t x)
+            + ν • (laplacianXi ε t x + (2 : ℝ) • gradOmegaOverOmegaEpsDotGradXi ε t x)
+            + remainder ε t x
+  remainder_uniform_L1_vanishes_from_leray_hopf :
+    ∀ η > 0, ∃ ε0 > 0, ∀ ε, |ε| ≤ ε0 → ∀ t, remainderL1 ε t ≤ η
 
 /-- Audit interface for the `xi_eps` evolution theorem. -/
 structure XiEvolutionLaw where
-  regularized : RegularizedXiEvolution
+  regularized : RegularizedXiEvolutionFamily
 
 /--
 The genuinely open dynamic statement: actual Navier–Stokes evolution produces
@@ -202,9 +202,9 @@ structure DynamicCriticalGeometry (ActualNS : Prop) where
   cutoff : FixedScaleCutoff xiEvolution.regularized.norms kappa
   C0 : ℝ
   hC0 : 0 ≤ C0
-  C0_depends_only_on_K_u0_L2_nu_theta : Prop
-  C0_independent_of_eps : Prop
-  C0_independent_of_cutoff_radius : Prop
+  C0_is_fixed_parameter_function :
+    ∃ F : ℝ → ℝ → ℝ → ℝ → ℝ → ℝ,
+      C0 = F cutoff.K u0L2 viscosity kappa theta
   dynamics_to_uniform_coherence :
     ActualNS → ∀ t : ℝ, ∃ q : CriticalCoherenceAtTime, q.C ≤ C0 ∧ q.holds
 
@@ -272,7 +272,7 @@ Machine-checked logical content in this file:
 * composition DynamicCriticalGeometry -> kernel -> signed depletion
 
 Still open / not asserted:
-* derivation of `RegularizedXiEvolution.evolution` from actual Leray-Hopf dynamics in Mathlib calculus notation
+* derivation of `RegularizedXiEvolutionFamily.evolution` from actual Leray-Hopf dynamics in Mathlib calculus notation
 * proof that `remainder_uniform_L1_vanishes_from_leray_hopf` follows from energy control alone, uniformly in `ε`
 * proof that the coherence constant is independent of the derived cutoff radius `R = K ρ_*`
 * ActualNS -> uniform critical coherence on `OmegaTheta`
