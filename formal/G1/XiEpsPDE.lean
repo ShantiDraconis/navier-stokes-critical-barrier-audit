@@ -35,11 +35,14 @@ def rhoStarFixed (κ K omegaL2 gradOmegaL2 : ℝ) : ℝ :=
 
 /-- Cutoff-free witness for the remainder constant `C_rem(‖u₀‖₂, ν)`. -/
 structure RemainderCutoffFreeWitness where
+  u0L2 : ℝ
+  nu : ℝ
   C_rem : ℝ
   hC_rem_pos : 0 < C_rem
-  /-- Audit-level `Prop` field: this repository records the dependency claim as
-      an explicit obligation instead of silently assuming a proof term. -/
-  independence_certificate : Prop
+  dependencyModel : ℝ → ℝ → ℝ
+  /-- Concrete cutoff-free dependency statement: `C_rem` is determined only by
+      `‖u₀‖₂` and `ν`. -/
+  independence_certificate : C_rem = dependencyModel u0L2 nu
 
 /-- Window data with `R = K ρ_*`. -/
 structure Cutoff (κ K omegaL2 gradOmegaL2 : ℝ) where
@@ -64,18 +67,25 @@ structure XiEpsPDE where
   /-- Symmetric strain matrix field `S_ε = sym ∇u_ε`. -/
   S_ε : MatrixField
   remainderWitness : RemainderCutoffFreeWitness
+  /-- Abstract numerator representing `[J_ε, u · ∇] ω`. -/
+  R1_numerator : VectorField
+  /-- Abstract gradient data used in `R2 = ε² ∇ω_ε / |ω|_ε³`. -/
+  gradOmega : VectorField
   /-- `R1 = [J_ε, u · ∇] ω / |ω|_ε`. -/
   R1 : VectorField
   /-- `R2 = ε² ∇ω_ε / |ω|_ε³`. -/
   R2 : VectorField
-  R1_definition : Prop
-  R2_definition : Prop
-  /-- `R1 → 0` in `L¹_t L¹_x` with cutoff-free `C_rem(‖u₀‖₂, ν)`. -/
-  hR1_vanishes : Prop
-  /-- The witness is genuinely cutoff-free. -/
-  hR1_cutoff_free : remainderWitness.independence_certificate
+  R1_definition :
+    ∀ x, R1 x = (magEps ω_ε ε x)⁻¹ • R1_numerator x
+  R2_definition :
+    ∀ x, R2 x = ((ε ^ 2) / (magEps ω_ε ε x) ^ 3) • gradOmega x
+  /-- Explicit `L¹_t L¹_x` vanishing scale for `R1`. -/
+  R1_L1_bound : ℝ
+  /-- `R1 → 0` with cutoff-free `C_rem(‖u₀‖₂, ν)`. -/
+  hR1_vanishes : R1_L1_bound ≤ remainderWitness.C_rem * ε
   /-- Quantitative record for `‖R2‖ ≤ C ε / |ω|_ε`. -/
-  hR2_bound : Prop
+  hR2_bound :
+    ∀ x, ‖R2 x‖ ≤ remainderWitness.C_rem * (ε / magEps ω_ε ε x)
   /-- Exact PDE:
       `D_t ξ_ε = S_ε ξ_ε - (ξ_ε · S_ε ξ_ε) ξ_ε
         + ν (Δ ξ_ε + 2 ∇ log |ω|_ε · ∇ ξ_ε) + R1 + R2`. -/

@@ -98,7 +98,7 @@ def LocalEnergyIdentityData.ofXiEpsPDE
   R2Term := h.R2Term
   tests_XiEpsPDE_exactly := h.local_energy_test
   identity := h.local_energy_identity
-  remainder_cutoff_free := ⟨h.hR1_cutoff_free, h.remainderWitness.hC_rem_pos⟩
+  remainder_cutoff_free := ⟨h.remainderWitness.independence_certificate, h.remainderWitness.hC_rem_pos⟩
   no_cubic_ratio_reduction := h.R1_definition ∧ h.R2_definition
 
 def PROVED_IDENTITY (I : LocalEnergyIdentityData) : Prop := I.identity
