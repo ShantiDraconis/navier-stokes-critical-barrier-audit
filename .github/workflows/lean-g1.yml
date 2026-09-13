@@ -34,6 +34,9 @@ jobs:
       - name: Build weak omega slice interface
         shell: bash
         run: lake build G1.WeakOmegaSliceInterface
+      - name: Build spacetime coordinate split
+        shell: bash
+        run: lake build G1.SpaceTimeCoordinateSplit
       - name: Build Hminus1-H10 weighted diffusion layer
         shell: bash
         run: lake build G1.WeakDiffusionIBP
