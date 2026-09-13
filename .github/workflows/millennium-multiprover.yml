@@ -1,0 +1,77 @@
+name: Millennium multiprover conditional audit
+
+on:
+  push:
+    paths:
+      - 'formal/millennium/**'
+      - 'formal/G1/**'
+      - 'formal/g1/**'
+      - 'audit/evidence/EVIDENCE_STATUS_LEDGER.csv'
+      - '.github/workflows/millennium-multiprover.yml'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Lean
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Resolve Lean dependencies
+        working-directory: formal/millennium/lean
+        run: lake update
+      - name: Build Lean conditional structure and G1 interfaces
+        working-directory: formal/millennium/lean
+        run: |
+          lake build
+          lake env lean ../../../G1/HypothesesComplete_v2.lean
+          lake env lean ../../../g1/lean/G1Depletion.lean
+      - name: reject proof escapes in executable Lean source
+        run: |
+          if grep -RInE '^[[:space:]]*(sorry|axiom)[[:space:]]' formal/millennium/lean formal/G1 formal/g1/lean --include='*.lean'; then
+            echo 'proof escape found'; exit 1
+          fi
+
+  coq:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y coq
+      - name: Compile Coq conditional structure and G1 interface
+        run: |
+          coqc formal/millennium/coq/MillenniumFinalStructure.v
+          coqc formal/g1/coq/G1Depletion.v
+      - name: reject proof escapes
+        run: |
+          ! grep -RInE '^[[:space:]]*(Admitted|admit|Axiom)\b' formal/millennium/coq formal/g1/coq --include='*.v'
+
+  agda:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update && sudo apt-get install -y agda-bin
+      - name: Compile Agda conditional structure and G1 interface
+        run: |
+          agda formal/millennium/agda/MillenniumFinalStructure.agda
+          agda formal/g1/agda/G1Depletion.agda
+
+  isabelle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Isabelle2025
+        run: |
+          curl -L --fail --retry 3 -o /tmp/Isabelle2025_linux.tar.gz https://isabelle.in.tum.de/website-Isabelle2025/dist/Isabelle2025_linux.tar.gz
+          tar -xzf /tmp/Isabelle2025_linux.tar.gz -C /opt
+          /opt/Isabelle2025/bin/isabelle version
+      - name: Build Isabelle Millennium session
+        working-directory: formal/millennium/isabelle
+        run: /opt/Isabelle2025/bin/isabelle build -D . Millennium_Audit
+      - name: Check G1 Isabelle theory
+        run: /opt/Isabelle2025/bin/isabelle process -e 'use_thy "formal/g1/isabelle/G1_Depletion"'

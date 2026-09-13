@@ -1,0 +1,77 @@
+{
+  "warning": "synthetic sampled proxy; not a Navier-Stokes theorem",
+  "rows": [
+    {
+      "N": 256,
+      "ell": 0.0625,
+      "kappa": 0.25,
+      "rho": 0.009980004252551846,
+      "accepted_pairs": 100000,
+      "ch95": 0.14888567482983633,
+      "ch95_over_sqrt_kappa": 0.29777134965967267,
+      "exceptional_pair_fraction": 0.05,
+      "exceptional_kernel_proxy_share": 0.11671875742876829,
+      "classification": "empirical_proxy_not_analytic_bound"
+    },
+    {
+      "N": 256,
+      "ell": 0.0625,
+      "kappa": 0.5,
+      "rho": 0.01990454703194791,
+      "accepted_pairs": 100000,
+      "ch95": 0.2974100740074813,
+      "ch95_over_sqrt_kappa": 0.42060136024776595,
+      "exceptional_pair_fraction": 0.05,
+      "exceptional_kernel_proxy_share": 0.1000241528044936,
+      "classification": "empirical_proxy_not_analytic_bound"
+    },
+    {
+      "N": 256,
+      "ell": 0.0625,
+      "kappa": 1.0,
+      "rho": 0.03995983505732451,
+      "accepted_pairs": 100000,
+      "ch95": 0.5780720974166521,
+      "ch95_over_sqrt_kappa": 0.5780720974166521,
+      "exceptional_pair_fraction": 0.05,
+      "exceptional_kernel_proxy_share": 0.08455740904720813,
+      "classification": "empirical_proxy_not_analytic_bound"
+    },
+    {
+      "N": 256,
+      "ell": 0.0625,
+      "kappa": 2.0,
+      "rho": 0.07877508277899559,
+      "accepted_pairs": 100000,
+      "ch95": 0.9966029108955653,
+      "ch95_over_sqrt_kappa": 0.7047046764445067,
+      "exceptional_pair_fraction": 0.05,
+      "exceptional_kernel_proxy_share": 0.08652805419290668,
+      "classification": "empirical_proxy_not_analytic_bound"
+    },
+    {
+      "N": 256,
+      "ell": 0.0625,
+      "kappa": 4.0,
+      "rho": 0.15742770546408716,
+      "accepted_pairs": 100000,
+      "ch95": 1.2177387197554645,
+      "ch95_over_sqrt_kappa": 0.6088693598777323,
+      "exceptional_pair_fraction": 0.05,
+      "exceptional_kernel_proxy_share": 0.1565103892876493,
+      "classification": "empirical_proxy_not_analytic_bound"
+    },
+    {
+      "N": 256,
+      "ell": 0.0625,
+      "kappa": 8.0,
+      "rho": 0.3162760980677574,
+      "accepted_pairs": 100000,
+      "ch95": 1.6418855396554914,
+      "ch95_over_sqrt_kappa": 0.580494199511266,
+      "exceptional_pair_fraction": 0.05,
+      "exceptional_kernel_proxy_share": 0.18815724855817226,
+      "classification": "empirical_proxy_not_analytic_bound"
+    }
+  ]
+}

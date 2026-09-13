@@ -1,0 +1,7 @@
+family,example_modules,source_snapshot,classification_note
+jets,"ReferenceJetBounds.lean; JetBounds.lean; BaseChartJets.lean",openai/NavierStokesAndEuler:NavierStokes,present in external tree
+pressure,"R3PressureKernel.lean; R3StressPressureEstimate.lean; CorrectedPressureBounds.lean",openai/NavierStokesAndEuler:NavierStokes,present in external tree
+residual,"ResidualCalculus.lean; ResidualStability.lean; PhysicalResidualJetBounds.lean",openai/NavierStokesAndEuler:NavierStokes,present in external tree
+correction,"CorrectionStep.lean; CorrectionState.lean; CorrectionInitialization.lean",openai/NavierStokesAndEuler:NavierStokes,present in external tree
+transport_primitive,"TransportPrimitive.lean; ActualCarrierTransport.lean",openai/NavierStokesAndEuler:NavierStokes,present in external tree
+data_pipeline,"InitialPhysicalData.lean; ActualMeanPhysicalData.lean; SmoothFourierData.lean",openai/NavierStokesAndEuler:NavierStokes,present in external tree

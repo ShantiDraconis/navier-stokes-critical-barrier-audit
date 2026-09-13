@@ -1,0 +1,21 @@
+edge_id,source,target,edge_type,status,evidence,comment
+E-001,NS_COLLAPSE_2025,NS_CLASSICAL_FORMALIZATION,REFINES,SUPPORTED,millennium-navier-stokes-I→millennium-navier-stokes-classical,Symbolic/collapse line followed by classical and multiprover translation
+E-002,NS_CLASSICAL_FORMALIZATION,LOCAL_GLOBAL_BRIDGE,REFINES,SUPPORTED,c70b6f72197085ae6ecc3130b75e685028a61d10,Research focus expands to local/global and blow-up-profile strategy
+E-003,LOCAL_GLOBAL_BRIDGE,PROJECTION_RESIDUAL,RELATED_TO,SUPPORTED,Millennium Dec-2025 LRE cluster,Critical obstruction program and projection/residual program are historically adjacent; logical derivation not asserted
+E-004,PROJECTION_RESIDUAL,RESIDUAL_CORRECTION,REFINES,SUPPORTED,UEL Dec-19/20 cluster,Residual becomes dynamical/coupled correction object
+E-005,RESIDUAL_CORRECTION,ERROR_AS_PARAMETER,STRUCTURAL_PRECURSOR,SUPPORTED,audit/18 and audit/23,Residual/gap/correction architecture motivates measurable unresolved coordinates; uniqueness not asserted
+E-006,ERROR_AS_PARAMETER,WEIGHTED_ERROR_DECOMPOSITION,REFINES,VERIFIED,f7b51f6ac1cc95d357888aa60e4eeeaea24a49cf,Explicit weighted scalarization and percentage contribution
+E-007,WEIGHTED_ERROR_DECOMPOSITION,SENSITIVITY_DECOMPOSITION,PARALLEL_REFINEMENT,VERIFIED,08d468c32fd0ba600488887b4c325d6f1b4222dc,Local sensitivity times parameter gap used as alternate contribution rule
+E-008,WEIGHTED_ERROR_DECOMPOSITION,ERROR_COORDINATE_GEOMETRY,GENERALIZES,SUPPORTED,bfc4cf5b804bc58348efe930651512bc079c33d4,Scalar contribution bookkeeping develops into vector state geometry
+E-009,SENSITIVITY_DECOMPOSITION,ERROR_COORDINATE_GEOMETRY,RELATED_TO,SUPPORTED,Dec-31 chronology,Both parameterize unresolved gaps; no general mathematical equivalence asserted
+E-010,ERROR_COORDINATE_GEOMETRY,ERROR_REDUCTION_TRAJECTORY,DEFINITIONAL_EXTENSION,VERIFIED,ERROR_COORDINATE_SYSTEM.md,Proof/process represented as monotone coordinate reduction toward zero
+E-011,ERROR_REDUCTION_TRAJECTORY,NS_ERROR_RATIO,SPECIALIZES,SUPPORTED,current UEL NS formula,General error idea specialized to a concrete PDE ratio
+E-012,ERROR_COORDINATE_GEOMETRY,PHASE_ERROR_MODEL,GENERALIZES,SUPPORTED,later UEL phase-error documents,Error state gains real/imaginary phase structure
+E-013,PHASE_ERROR_MODEL,PHASE_CANCELLATION,DERIVED_FROM,PARTIAL,proofs/audit_bridge_lemmas.md,Only pure periodic-mode cancellation is proved; general phase nullification remains open
+E-014,PHASE_CANCELLATION,BOUNDED_CRITICAL_L3,OPEN_BRIDGE,OPEN,audit/26_bridge_obligations.md,No theorem currently establishes this implication
+E-015,ERROR_ZERO,BOUNDED_CRITICAL_L3,OPEN_BRIDGE,OPEN,audit/26_bridge_obligations.md,Decisive repository-to-classical bridge not established
+E-016,BOUNDED_CRITICAL_L3,NS_REGULARITY,CLASSICAL_THEOREM,DEPENDENCY,ESS endpoint framework,Requires exact classical hypotheses and solution class mapping
+E-017,NS_NONCIRCULAR_2026,CURRENT_AUDIT,PRECEDES,VERIFIED,8f12748eb160b937174825fe3e7bdccf05e8f9af,Specialized critical/profile program predates current audit
+E-018,GIT_CHRONOLOGY,GLOBAL_PRIORITY,OPEN_BRIDGE,NOT_ESTABLISHED,PRIORITY.md,Repository chronology alone cannot establish worldwide priority
+E-019,STRUCTURAL_OVERLAP,CAUSAL_DERIVATION,OPEN_BRIDGE,NOT_ESTABLISHED,PRIORITY.md; evidence/provenance_chain.md,Similarity and chronology do not prove third-party access/derivation
+E-020,FINITE_NUMERICAL_TESTS,UNIVERSAL_NS_THEOREM,OPEN_BRIDGE,OPEN,audit/26_bridge_obligations.md,Finite computation cannot discharge universal quantification without analytic theorem

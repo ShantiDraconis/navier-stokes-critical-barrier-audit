@@ -1,0 +1,24 @@
+{
+  "static": {
+    "forbidden_tokens": {
+      "sorry": false,
+      "admit": false,
+      "axiom": false,
+      "unsafe": false
+    },
+    "unconditional_theorem": false
+  },
+  "algebra": {
+    "theta": 0.81,
+    "strict_margin": 0.18999999999999995,
+    "integral_a_for_factor_4_17": 0.7139580179053551,
+    "exp_72": 1.8586717452841279e+31,
+    "phi": 2.4,
+    "phi_scaled": 2.4000000000000004,
+    "explicit_C2_time_budget": 36.0,
+    "theta_from_phi": 0.37499999999999994,
+    "dissipative_margin_nu_001": 0.0125
+  },
+  "lean_kernel": "NOT_RUN_ENVIRONMENT_MISSING",
+  "numerical_diagnostics": "PASS_SYNTHETIC_ONLY"
+}
