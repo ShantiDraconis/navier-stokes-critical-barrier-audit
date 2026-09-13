@@ -36,7 +36,7 @@ theorem lineDeriv_productSchwartzPullback
     ∂_{m} (productSchwartzPullback Phi) =
       productSchwartzPullback (∂_{spaceTimeProductCLE m} Phi) := by
   exact SchwartzMap.lineDerivOp_compCLMOfContinuousLinearEquiv
-    m spaceTimeProductCLE Phi
+    (𝕜 := ℂ) (m := m) (g := spaceTimeProductCLE) (f := Phi)
 
 /-- Negation also commutes definitionally with the product Schwartz pullback. -/
 theorem neg_lineDeriv_productSchwartzPullback
@@ -102,8 +102,7 @@ theorem WeakOmegaSpaceTime.weakDx_productSpatial_integral_pairing
     _ = ∫ z : ProductSpaceTime,
           (-(∂_{productSpatialDirection k} Phi) z) * h.omegaProd i z
             ∂(volume : Measure ProductSpaceTime) := by
-      symm
-      simpa [WeakOmegaSpaceTime.omegaProd, l2RepToProduct] using hright
+      simpa [WeakOmegaSpaceTime.omegaProd, l2RepToProduct] using hright.symm
 
 inductive WeakOmegaProductPairingStatus
   | productSchwartzPullbackDefined
