@@ -65,7 +65,7 @@ theorem spaceTimeToProduct_measurePreserving :
       (volume : Measure (WithLp 2 (ℝ × Vec3)))
       (volume : Measure ProductSpaceTime) :=
     WithLp.volume_preserving_ofLp ℝ Vec3
-  have h := h1.trans h2
+  have h := h2.comp h1
   change MeasurePreserving
     (fun z : SpaceTime => WithLp.ofLp (spaceTimeSplitL2 z))
   simpa only [Function.comp_def] using h
@@ -85,7 +85,7 @@ theorem productToSpaceTime_measurePreserving :
       (volume : Measure (WithLp 2 (ℝ × Vec3)))
       (volume : Measure SpaceTime) :=
     LinearIsometryEquiv.measurePreserving spaceTimeSplitL2.symm
-  have h := h1.trans h2
+  have h := h2.comp h1
   change MeasurePreserving
     (fun z : ProductSpaceTime => spaceTimeSplitL2.symm (WithLp.toLp 2 z))
   simpa only [Function.comp_def] using h
