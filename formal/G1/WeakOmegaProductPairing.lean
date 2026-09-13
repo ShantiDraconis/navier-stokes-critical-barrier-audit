@@ -103,6 +103,7 @@ theorem WeakOmegaSpaceTime.weakDx_productSpatial_integral_pairing
           (-(∂_{productSpatialDirection k} Phi) z) * h.omegaProd i z
             ∂(volume : Measure ProductSpaceTime) := by
       simpa [WeakOmegaSpaceTime.omegaProd, l2RepToProduct] using hright.symm
+      rfl
 
 inductive WeakOmegaProductPairingStatus
   | productSchwartzPullbackDefined
