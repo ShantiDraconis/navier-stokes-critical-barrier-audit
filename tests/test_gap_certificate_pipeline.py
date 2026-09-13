@@ -27,11 +27,19 @@ class GapPipelineTests(unittest.TestCase):
         cls.route = load('classify_gap_obligations', 'tools/classify_gap_obligations.py')
 
     def test_declaration_local_gap_not_file_global(self):
-        text = '''theorem clean : True := by trivial\n\ntheorem gap : True := by\n  sorry\n'''
+        # Avoid `True` in the clean theorem because the scanner intentionally treats
+        # target-as-True declarations as placeholders requiring review.
+        text = '''theorem clean : (1 : Nat) = 1 := by rfl\n\ntheorem gap : (1 : Nat) = 1 := by\n  sorry\n'''
         ds = self.scan.declaration_blocks(text, 'lean')
         self.assertEqual(len(ds), 2)
         self.assertFalse(self.scan.has_gap(ds[0]))
         self.assertTrue(self.scan.has_gap(ds[1]))
+
+    def test_true_target_is_placeholder(self):
+        text = '''theorem placeholder : True := by trivial\n'''
+        ds = self.scan.declaration_blocks(text, 'lean')
+        self.assertEqual(len(ds), 1)
+        self.assertTrue(self.scan.has_gap(ds[0]))
 
     def test_false_or_open_claim_not_auto_proved(self):
         d = {'kind': 'theorem', 'block': 'theorem x : True := by sorry -- open problem',
