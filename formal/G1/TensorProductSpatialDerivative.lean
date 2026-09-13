@@ -47,8 +47,13 @@ theorem productTensorSchwartz_spatial_lineDeriv_apply
   have hp : DifferentiableAt ℝ (fun y : ProductSpaceTime => psi y.2) z := by
     fun_prop
   rw [fderiv_mul ha hp]
-  simp [productSpatialDirection, spatialTestDerivative,
-    ContinuousLinearMap.add_apply, ContinuousLinearMap.smul_apply]
+  rw [fderiv_comp]
+  · rw [fderiv_comp]
+    · simp [productSpatialDirection, spatialTestDerivative, ContinuousLinearMap.fderiv]
+    · exact halphaDiff.differentiableAt
+    · fun_prop
+  · exact hpsiDiff.differentiableAt
+  · fun_prop
 
 inductive TensorProductSpatialDerivativeStatus
   | spatialDerivativeFunctionDefined
