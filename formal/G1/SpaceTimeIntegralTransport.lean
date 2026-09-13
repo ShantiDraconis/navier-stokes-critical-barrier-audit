@@ -35,7 +35,8 @@ theorem integral_comp_productToSpaceTime (F : SpaceTime → ℂ) :
     ∫ z : ProductSpaceTime, F (productToSpaceTime z) =
       ∫ y : SpaceTime, F y := by
   have hmp : MeasurePreserving spaceTimeProductMeasurableEquiv.symm := by
-    simpa using productToSpaceTime_measurePreserving
+    change MeasurePreserving (fun z : ProductSpaceTime => productToSpaceTime z)
+    exact productToSpaceTime_measurePreserving
   simpa using hmp.integral_comp' F
 
 /-- Integral transport in the forward coordinate direction. -/
@@ -43,7 +44,8 @@ theorem integral_comp_spaceTimeToProduct (F : ProductSpaceTime → ℂ) :
     ∫ z : SpaceTime, F (spaceTimeToProduct z) =
       ∫ y : ProductSpaceTime, F y := by
   have hmp : MeasurePreserving spaceTimeProductMeasurableEquiv := by
-    simpa using spaceTimeToProduct_measurePreserving
+    change MeasurePreserving (fun z : SpaceTime => spaceTimeToProduct z)
+    exact spaceTimeToProduct_measurePreserving
   simpa using hmp.integral_comp' F
 
 inductive SpaceTimeIntegralTransportStatus
