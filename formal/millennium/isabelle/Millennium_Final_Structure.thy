@@ -11,14 +11,14 @@ record provenance_anchor =
   anchor_note :: string
 
 locale navier_stokes_closure =
-  fixes ActualNS DirectionalDepletion SignedFluxControl HighCritical LowL3 UniformL3 ESS Global :: "'s ⇒ bool"
-  assumes ns_to_depletion: "ActualNS s ⟹ DirectionalDepletion s"
-      and depletion_to_flux: "DirectionalDepletion s ⟹ SignedFluxControl s"
-      and flux_to_high: "SignedFluxControl s ⟹ HighCritical s"
-      and high_to_low: "HighCritical s ⟹ LowL3 s"
-      and high_low_to_uniform: "⟦HighCritical s; LowL3 s⟧ ⟹ UniformL3 s"
-      and uniform_to_ess: "UniformL3 s ⟹ ESS s"
-      and ess_to_global: "ESS s ⟹ Global s"
+  fixes ActualNS DirectionalDepletion SignedFluxControl HighCritical LowL3 UniformL3 ESS Global :: "'s \<Rightarrow> bool"
+  assumes ns_to_depletion: "ActualNS s \<Longrightarrow> DirectionalDepletion s"
+      and depletion_to_flux: "DirectionalDepletion s \<Longrightarrow> SignedFluxControl s"
+      and flux_to_high: "SignedFluxControl s \<Longrightarrow> HighCritical s"
+      and high_to_low: "HighCritical s \<Longrightarrow> LowL3 s"
+      and high_low_to_uniform: "\<lbrakk>HighCritical s; LowL3 s\<rbrakk> \<Longrightarrow> UniformL3 s"
+      and uniform_to_ess: "UniformL3 s \<Longrightarrow> ESS s"
+      and ess_to_global: "ESS s \<Longrightarrow> Global s"
 begin
 
 theorem conditional_global_regularity:
@@ -38,11 +38,11 @@ end
 
 locale problem_closure =
   fixes Primitive Critical Target :: bool
-  assumes primitive_to_bridge: "Primitive ⟹ Critical"
-      and bridge_to_target: "Critical ⟹ Target"
+  assumes primitive_to_bridge: "Primitive \<Longrightarrow> Critical"
+      and bridge_to_target: "Critical \<Longrightarrow> Target"
 begin
 
-theorem conditional: "Primitive ⟹ Target"
+theorem conditional: "Primitive \<Longrightarrow> Target"
   using primitive_to_bridge bridge_to_target by blast
 end
 
