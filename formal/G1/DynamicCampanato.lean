@@ -79,7 +79,10 @@ def wR {norms : VorticityNorms} {κ : ℝ} (cutoff : FixedScaleCutoff norms κ) 
     ℝ → Space → ℝ :=
   cutoff.w
 
-/-- Averaged oscillation center `(ξ_ε)_{B_r}` supplied by the analytic layer. -/
+/--
+Averaged oscillation center `(ξ_ε)_{B_r}` supplied by the analytic layer.
+Argument order: regularization `ε`, time `t`, radius `r`.
+-/
 abbrev XiBallAverage := ℝ → ℝ → ℝ → Vec3
 
 /-- Oscillation `ξ_ε - (ξ_ε)_{B_r}`. -/
@@ -143,7 +146,7 @@ never on `R`, `K`, `r`, or `ε`.
 structure RemainderCutoffFreeWitness (P : XiEpsPDE) where
   u0L2 : ℝ
   C_rem : ℝ → ℝ → ℝ
-  hC_rem : ∀ u0 ν, 0 ≤ C_rem u0 ν
+  hC_rem : ∀ u0' ν', 0 ≤ C_rem u0' ν'
   localRemainder : ℝ → ℝ → ℝ → ℝ
   cutoff_free_bound :
     ∀ T ≥ 0, ∀ ε t r, 0 < |ε| → 0 ≤ t → t ≤ T →
@@ -189,7 +192,7 @@ structure FarFieldAveragedScaling (P : XiEpsPDE) where
   averageFarFieldSq : ℝ → ℝ → ℝ → ℝ
   omegaEpsL2Sq : ℝ → ℝ → ℝ
   averagedBound :
-    ∀ ε t r, 0 ≤ r → r ≤ rhoStarAt P.norms P.κ t →
+    ∀ ε t r, 0 ≤ r → 0 < rhoStarAt P.norms P.κ t → r ≤ rhoStarAt P.norms P.κ t →
       averageFarFieldSq ε t r
         ≤ constant * rhoWeight (rhoStarAt P.norms P.κ t)
             * omegaEpsL2Sq ε t
