@@ -80,6 +80,192 @@ theorem remainder_integral_from_energy
   have hmul := mul_le_mul_of_nonneg_left hEnergy d.hCkappa_nonneg
   exact le_trans b.aIntegral_le_Ckappa_gradIntegral hmul
 
+/-! ## Exact localized XiEps identity before estimates -/
+
+/--
+Bookkeeping for the localized test
+
+  psi = phi^2 (xi_eps - (xi_eps)_{B_r}) |omega_eps|,
+  phi = w_R,  R = K rho_*.
+
+No Calderon--Zygmund estimate and no absolute-value estimate is encoded here.
+Each scalar is the corresponding signed integral after pairing XiEpsPDE with psi.
+
+The convention is that `diffusionBulk` is the positive integral
+
+  ∫ phi^2 |grad xi_eps|^2 |omega_eps|,
+
+so the tested PDE places `nu * diffusionBulk` on the dissipative side.
+The `diffusionWeightCross` and `logDrift` fields are kept separate on purpose:
+when |omega|_eps is the same regularized magnitude used in log|omega|_eps,
+the analytic derivation may combine one copy after integration by parts, but
+this file does not assume that cancellation until it is proved.
+-/
+structure LocalEnergyIdentityData where
+  r : ℝ
+  rho : ℝ
+  K : ℝ
+  R : ℝ
+  ballVolume : ℝ
+  nu : ℝ
+
+  /-- (1/2) d/dt ∫ phi^2 |xi_eps - mean|^2 |omega_eps|. -/
+  timeEnergyDerivative : ℝ
+  /-- Terms from d/dt(phi^2 |omega_eps|) and d/dt(mean_{B_r} xi_eps). -/
+  timeWeightAndMean : ℝ
+  /-- Transport contribution after the same localization, before estimation. -/
+  transport : ℝ
+
+  /-- Signed near-field stretching pairing. -/
+  stretchNear : ℝ
+  /-- Signed far-field stretching pairing; this is where S_eps^far occurs. -/
+  stretchFar : ℝ
+
+  /-- Positive bulk diffusion integral ∫ phi^2 |grad xi_eps|^2 |omega_eps|. -/
+  diffusionBulk : ℝ
+  /-- Cross term from grad(phi): 2∫ phi |omega| (xi-mean) grad phi : grad xi. -/
+  diffusionCutoffCross : ℝ
+  /-- Cross term from grad|omega_eps| in integration by parts. -/
+  diffusionWeightCross : ℝ
+  /-- 2∫ phi^2 |omega| (xi-mean)·(grad log|omega| · grad xi). -/
+  logDrift : ℝ
+
+  /-- Mollification/regularization remainder R1 paired with psi. -/
+  R1 : ℝ
+  /-- Mollification/regularization remainder R2 paired with psi. -/
+  R2 : ℝ
+
+  hr_pos : 0 < r
+  hrho_pos : 0 < rho
+  hK_pos : 0 < K
+  hnu_pos : 0 < nu
+  hR : R = K * rho
+  hballVolume_pos : 0 < ballVolume
+
+  /-- Exact signed identity after the localized test and integration by parts. -/
+  identity :
+    timeEnergyDerivative + timeWeightAndMean + transport + nu * diffusionBulk =
+      stretchNear + stretchFar
+        - nu * diffusionCutoffCross
+        - nu * diffusionWeightCross
+        + nu * logDrift
+        + R1 + R2
+
+/--
+`LocalEnergyIdentity` is deliberately an extraction lemma: it records the exact
+identity that the analytic XiEpsPDE derivation must instantiate.  It does not
+manufacture that derivation from an absent formal PDE definition.
+-/
+theorem LocalEnergyIdentity (d : LocalEnergyIdentityData) :
+    d.timeEnergyDerivative + d.timeWeightAndMean + d.transport + d.nu * d.diffusionBulk =
+      d.stretchNear + d.stretchFar
+        - d.nu * d.diffusionCutoffCross
+        - d.nu * d.diffusionWeightCross
+        + d.nu * d.logDrift
+        + d.R1 + d.R2 :=
+  d.identity
+
+/-- The localization radius is exactly R = K rho_*. -/
+theorem localization_radius_scale (d : LocalEnergyIdentityData) :
+    d.R = d.K * d.rho :=
+  d.hR
+
+/--
+Explicit scale ledger used before any CZ estimate.  `invBallVolume` represents
+|B_r|^{-1}; `cutoffGradScale` and `cutoffLapScale` record the powers generated
+by a cutoff w_R with R = K rho_*.
+-/
+structure LocalizedScaleLedger where
+  r : ℝ
+  rho : ℝ
+  K : ℝ
+  R : ℝ
+  ballVolume : ℝ
+  invBallVolume : ℝ
+  cutoffGradScale : ℝ
+  cutoffLapScale : ℝ
+  hr_pos : 0 < r
+  hrho_pos : 0 < rho
+  hK_pos : 0 < K
+  hR : R = K * rho
+  hballVolume_pos : 0 < ballVolume
+  hinvBall : invBallVolume = ballVolume⁻¹
+  hgradScale : cutoffGradScale = R⁻¹
+  hlapScale : cutoffLapScale = (R⁻¹)^2
+
+/-- Substituting R = K rho_* exposes the exact cutoff power rho_*^{-1}. -/
+theorem cutoff_grad_rho_power (s : LocalizedScaleLedger) :
+    s.cutoffGradScale = (s.K * s.rho)⁻¹ := by
+  rw [s.hgradScale, s.hR]
+
+/-- Substituting R = K rho_* exposes the exact cutoff power rho_*^{-2}. -/
+theorem cutoff_lap_rho_power (s : LocalizedScaleLedger) :
+    s.cutoffLapScale = ((s.K * s.rho)⁻¹)^2 := by
+  rw [s.hlapScale, s.hR]
+
+/--
+Poincare ledger at scale r:
+
+  fint_{B_r} |xi - (xi)_{B_r}|^2
+    <= C_P r^2 fint_{B_r} |grad xi|^2.
+
+The statement is represented at the scalar-integral level so the audit can
+check powers before a concrete measure-theoretic realization is introduced.
+-/
+structure PoincareCampanatoStep where
+  r : ℝ
+  oscAverage : ℝ
+  gradAverage : ℝ
+  CP : ℝ
+  hr_pos : 0 < r
+  hosc_nonneg : 0 ≤ oscAverage
+  hgrad_nonneg : 0 ≤ gradAverage
+  hCP_nonneg : 0 ≤ CP
+  poincare : oscAverage ≤ CP * r^2 * gradAverage
+
+/--
+If the PDE/Caccioppoli calculation produces gamma = C(K) * kappa, then choosing
+kappa < 1/(2 C(K)) gives the contraction required by the linear r/rho target.
+This theorem is pure arithmetic; it does not assert that the PDE actually gives
+such a gamma.
+-/
+theorem gamma_lt_half_of_CK_kappa
+    (CK kappa gamma : ℝ)
+    (hCK : 0 < CK)
+    (hkappa_nonneg : 0 ≤ kappa)
+    (hgamma : gamma = CK * kappa)
+    (hkappa : kappa < 1 / (2 * CK)) :
+    gamma < (1 / 2 : ℝ) := by
+  rw [hgamma]
+  have hmul := mul_lt_mul_of_pos_left hkappa hCK
+  have hCKne : CK ≠ 0 := ne_of_gt hCK
+  calc
+    CK * kappa < CK * (1 / (2 * CK)) := hmul
+    _ = (1 / 2 : ℝ) := by field_simp [hCKne]
+
+/--
+Scale of the naive pointwise far-field Cauchy--Schwarz bound for a |x-y|^{-3}
+kernel in dimension three:
+
+  |S_far|^2 ~ C K^{-3} rho_*^{-3} ||omega||_2^2.
+
+This is only a scale ledger.  It is NOT a CZ theorem and is not assumed by the
+Campanato bridge.  It exists so the audit can detect whether a later Young/CZ
+step creates a nonintegrable rho_*^{-3} coefficient.
+-/
+structure FarFieldScalingLedger where
+  K : ℝ
+  rho : ℝ
+  omegaL2Sq : ℝ
+  CK : ℝ
+  farSquaredScale : ℝ
+  hK_pos : 0 < K
+  hrho_pos : 0 < rho
+  homega_nonneg : 0 ≤ omegaL2Sq
+  hCK_nonneg : 0 ≤ CK
+  exactPower :
+    farSquaredScale = CK * K⁻¹^3 * rho⁻¹^3 * omegaL2Sq
+
 /-! ## PDE testing and Caccioppoli interfaces -/
 
 /--
@@ -89,7 +275,8 @@ The concrete local-energy test requested in the analytic program:
     phi^2 (xi_eps - (xi_eps)_{B_r}) |omega_eps|.
 
 The scalar fields below stand for the realized integrals after all integration by
-parts.  This structure is not a theorem; it is the exact proof obligation.
+parts.  This structure is not a theorem; it is the exact proof obligation after
+one begins estimating the signed identity above.
 -/
 structure LocalEnergyEstimate where
   r : ℝ
@@ -109,7 +296,7 @@ structure LocalEnergyEstimate where
   hR1_nonneg : 0 ≤ R1
   hR2_nonneg : 0 ≤ R2
   hC_nonneg : 0 ≤ Ccacc
-  /-- Caccioppoli form produced by the PDE test. -/
+  /-- Caccioppoli form produced only after estimating the exact identity. -/
   caccioppoli :
     lhs ≤ Ccacc * (r⁻¹)^2 * osc2 + aTerm + R1 + R2
 
@@ -252,6 +439,7 @@ inductive ForbiddenCircularInput
 /-- Current status of the analytic attack. -/
 inductive DynamicCampanatoStatus
   | provedLogic
+  | openPDEIdentity
   | openCZ
   | blockingScaling
   | blockingContraction
@@ -263,19 +451,32 @@ CURRENT AUDIT RESULT
 ====================
 
 1. `remainder_integral_from_energy`: PROVED_LOGIC.
-2. The requested Caccioppoli shape is now typed explicitly in `LocalEnergyEstimate`.
-3. A pointwise far-field estimate `|S_far| <= C(K)||grad u||_2` without a scale
-   factor is NOT accepted: it is not scale-homogeneous.  The proof must instead
-   provide a scale-correct localized/averaged CZ estimate, uniform in epsilon.
-4. For a recurrence
+2. `LocalEnergyIdentity` now records the signed localized XiEps bookkeeping before
+   any CZ or Young estimate.  Because XiEpsPDE itself is not defined in this
+   branch, derivation of `LocalEnergyIdentityData.identity` from the concrete PDE
+   remains OPEN_PDE_IDENTITY rather than being fabricated.
+3. The positive diffusion quantity is isolated explicitly as
+      ∫ phi^2 |grad xi_eps|^2 |omega_eps|.
+   The far-field stretching pairing is isolated separately as `stretchFar`.
+4. The cutoff ledger exposes R = K rho_*, |grad phi| ~ (K rho_*)^{-1}, and
+   second-derivative scale ~(K rho_*)^{-2}; ball averaging retains |B_r|^{-1}.
+5. Poincare supplies the r^2 conversion from oscillation to gradient energy.
+   It does NOT by itself prove gamma < 1/2.  If the PDE estimate yields
+      gamma = C(K) kappa,
+   then `gamma_lt_half_of_CK_kappa` proves that kappa < 1/(2 C(K)) is sufficient.
+6. A naive pointwise far-field |x-y|^{-3} Cauchy--Schwarz step squares to the
+   scale K^{-3} rho_*^{-3} ||omega||_2^2.  Unless another positive power of
+   r/rho_* or a lower bound on rho_* compensates it, the Leray energy budget
+   controls ∫||omega||_2^2 dt but not ∫rho_*^{-3}||omega||_2^2 dt.
+   This is a candidate BLOCKING_SCALING mechanism and must be checked against
+   the exact signed/local-averaged far-field estimate before CZ is invoked.
+7. For a recurrence
       J_{r/2} <= gamma J_r + A r/rho,
    `gamma < 1` alone does NOT preserve the target J_r <= C r/rho.  The algebraic
    closure condition is `2 gamma C + 2 A <= C`; in particular one typically
    needs gamma < 1/2 (or a sharper recurrence with smaller remainder).
-5. Therefore `PDEToDynamicCampanato.target` remains BLOCKING.  We do not assert
+8. Therefore `PDEToDynamicCampanato.target` remains BLOCKING.  We do not assert
    FinalF, hDynamic, or SignedDepletion from this file.
-6. If the only available near-field closure requires hDynamic itself, or terms
-   such as ||grad omega||_2^3 / ||omega||_2, the branch must remain BLOCKING.
 -/
 
 end G1Audit
