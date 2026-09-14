@@ -108,7 +108,7 @@ theorem WeakOmegaSpaceTime.weakDx_productSpatial_integral_pairing
                   (productToSpaceTime z) *
                 (h.omegaL2 i) (productToSpaceTime z) := hright.symm
         _ = _ := by
-          simp [WeakOmegaSpaceTime.omegaProd, l2RepToProduct]
+          simp [WeakOmegaSpaceTime.omegaProd, l2RepToProduct] <;> rfl
 
 inductive WeakOmegaProductPairingStatus
   | productSchwartzPullbackDefined
