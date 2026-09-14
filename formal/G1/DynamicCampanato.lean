@@ -106,7 +106,7 @@ theorem geometric_half_sum_le_two (n : ℕ) :
         calc
           Finset.sum (Finset.range m) (fun k => ((1 : ℝ) / 2) ^ k) + ((1 : ℝ) / 2) ^ m
               ≤ (2 - 2 * ((1 : ℝ) / 2) ^ m) + ((1 : ℝ) / 2) ^ m := by
-                exact add_le_add_right ih _
+                linarith [ih]
           _ = 2 - 2 * ((1 : ℝ) / 2) ^ (m + 1) := by
                 rw [pow_succ]
                 ring
