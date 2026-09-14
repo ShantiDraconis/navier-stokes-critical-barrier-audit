@@ -11,6 +11,8 @@ import Mathlib
 
 noncomputable section
 
+open scoped BigOperators
+
 namespace G1Audit
 
 structure DynamicCampanatoData where
@@ -59,8 +61,8 @@ theorem recurrence_step_bound
     mul_le_mul_of_nonneg_left hJ s.hgamma
   calc
     s.JrHalf ≤ s.gamma * s.Jr + s.A * scaleRatio s := hrec.recurrence
-    _ ≤ s.gamma * (s.q * scaleRatio s) + s.A * scaleRatio s :=
-      add_le_add_right hgammaJ _
+    _ ≤ s.gamma * (s.q * scaleRatio s) + s.A * scaleRatio s := by
+      linarith
     _ = (s.gamma * s.q + s.A) * scaleRatio s := recurrence_rhs_factor s
 
 /-- Arithmetic closure condition for a linear Campanato rate. -/
@@ -127,7 +129,8 @@ def gronwallFactor (s : CampanatoSignature) : ℝ := Real.exp (2 * s.aIntegral)
 /-- The specific audit numbers theta<1,C=2,∫a=36 imply exp(72), not 4.17. -/
 theorem gronwall_factor_36 (s : CampanatoSignature) (ha : s.aIntegral = 36) :
     gronwallFactor s = Real.exp 72 := by
-  simp [gronwallFactor, ha]
+  rw [gronwallFactor, ha]
+  norm_num
 
 /-- One-step Campanato recurrence used by the localized direction argument. -/
 structure OneStepCampanato where
@@ -166,8 +169,8 @@ theorem linear_rate_one_step
       s.JrHalf ≤ s.gamma * (C * (s.r / s.rho)) + s.A * (s.r / s.rho) := by
     calc
       s.JrHalf ≤ s.gamma * s.Jr + s.A * (s.r / s.rho) := s.recurrence
-      _ ≤ s.gamma * (C * (s.r / s.rho)) + s.A * (s.r / s.rho) :=
-        add_le_add_right h1 (s.A * (s.r / s.rho))
+      _ ≤ s.gamma * (C * (s.r / s.rho)) + s.A * (s.r / s.rho) := by
+        linarith
   have hrho_ne : s.rho ≠ 0 := ne_of_gt s.hrho_pos
   have hr_nonneg : 0 ≤ s.r := le_of_lt s.hr_pos
   have hratio_nonneg : 0 ≤ s.r / s.rho := div_nonneg hr_nonneg (le_of_lt s.hrho_pos)
