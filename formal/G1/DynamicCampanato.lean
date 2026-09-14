@@ -94,7 +94,7 @@ theorem linearClosure_of_C
 
 /-- Dyadic geometric-series helper. -/
 theorem geometric_half_sum_le_two (n : ℕ) :
-    ∑ k in Finset.range n, ((1 : ℝ) / 2) ^ k ≤ 2 := by
+    Finset.sum (Finset.range n) (fun k => ((1 : ℝ) / 2) ^ k) ≤ 2 := by
   induction n with
   | zero => norm_num
   | succ n ih =>
