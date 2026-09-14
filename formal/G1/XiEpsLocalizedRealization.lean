@@ -35,11 +35,11 @@ def spatialIntegralVector (f : VectorField) : Vec3 :=
 
 /-- Real Bochner/Lebesgue pairing on R^3. -/
 def bochnerPair (v w : VectorField) : ℝ :=
-  spatialIntegralScalar (fun x => ⟪v x, w x⟫_ℝ)
+  spatialIntegralScalar (fun x => inner ℝ (v x) (w x))
 
-/-- Volume of B_r(c). -/
+/-- Volume of B_r(c), represented as a real number. -/
 def ballVolume (r : ℝ) (c : Vec3) : ℝ :=
-  volume (Metric.ball c r)
+  (volume (Metric.ball c r)).toReal
 
 def ballIntegralVector (r : ℝ) (c : Vec3) (f : VectorField) : Vec3 :=
   ∫ x in Metric.ball c r, f x ∂(volume : Measure Vec3)
@@ -323,6 +323,46 @@ theorem XiEpsLocalizedRealization.localized_identity
   rw [hsplit] at htested
   rw [hibp] at htested
   linarith
+
+/-- Exact scalar data exported by the localized identity. -/
+structure LocalEnergyIdentityData where
+  r : ℝ
+  rho : ℝ
+  K : ℝ
+  R : ℝ
+  ballVolume : ℝ
+  nu : ℝ
+  timeEnergyDerivative : ℝ
+  timeWeightAndMean : ℝ
+  transport : ℝ
+  stretchNear : ℝ
+  stretchFar : ℝ
+  diffusionBulk : ℝ
+  diffusionCutoffCross : ℝ
+  diffusionWeightCross : ℝ
+  logDrift : ℝ
+  R1 : ℝ
+  R2 : ℝ
+  hr_pos : 0 < r
+  hrho_pos : 0 < rho
+  hK_pos : 0 < K
+  hnu_pos : 0 < nu
+  hR : R = K * rho
+  hballVolume_pos : 0 < ballVolume
+  identity :
+    timeEnergyDerivative + timeWeightAndMean + transport + nu * diffusionBulk =
+      stretchNear + stretchFar
+        - nu * diffusionCutoffCross
+        - nu * diffusionWeightCross
+        + nu * logDrift + R1 + R2
+
+/-- Proposition exposed for downstream audit code. -/
+def LocalEnergyIdentity (d : LocalEnergyIdentityData) : Prop :=
+  d.timeEnergyDerivative + d.timeWeightAndMean + d.transport + d.nu * d.diffusionBulk =
+    d.stretchNear + d.stretchFar
+      - d.nu * d.diffusionCutoffCross
+      - d.nu * d.diffusionWeightCross
+      + d.nu * d.logDrift + d.R1 + d.R2
 
 def LocalEnergyIdentityData.ofXiEpsPDE
     (h : XiEpsLocalizedRealization) : LocalEnergyIdentityData where
