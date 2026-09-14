@@ -95,13 +95,23 @@ theorem linearClosure_of_C
 /-- Dyadic geometric-series helper. -/
 theorem geometric_half_sum_le_two (n : ℕ) :
     Finset.sum (Finset.range n) (fun k => ((1 : ℝ) / 2) ^ k) ≤ 2 := by
-  induction n with
-  | zero => norm_num
-  | succ n ih =>
-      rw [Finset.sum_range_succ]
-      have hpow : ((1 : ℝ) / 2) ^ n ≤ 1 := by
-        exact pow_le_one₀ (by norm_num) (by norm_num)
-      linarith
+  have hstrong : ∀ m : ℕ,
+      Finset.sum (Finset.range m) (fun k => ((1 : ℝ) / 2) ^ k)
+        ≤ 2 - 2 * ((1 : ℝ) / 2) ^ m := by
+    intro m
+    induction m with
+    | zero => norm_num
+    | succ m ih =>
+        rw [Finset.sum_range_succ]
+        calc
+          Finset.sum (Finset.range m) (fun k => ((1 : ℝ) / 2) ^ k) + ((1 : ℝ) / 2) ^ m
+              ≤ (2 - 2 * ((1 : ℝ) / 2) ^ m) + ((1 : ℝ) / 2) ^ m := by
+                exact add_le_add_right ih _
+          _ = 2 - 2 * ((1 : ℝ) / 2) ^ (m + 1) := by
+                rw [pow_succ]
+                ring
+  have hpow_nonneg : 0 ≤ ((1 : ℝ) / 2) ^ n := by positivity
+  linarith [hstrong n]
 
 /--
 Audit marker: the algebra is formalized, while the actual PDE-to-recurrence
