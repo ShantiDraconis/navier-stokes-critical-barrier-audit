@@ -90,6 +90,14 @@ theorem WeakOmegaSpaceTime.weakDx_productSpatial_integral_pairing
     (fun y : SpaceTime =>
       productSchwartzPullback (-(∂_{productSpatialDirection k} Phi)) y *
         (h.omegaL2 i) y)
+  have hident :
+      (∫ z : ProductSpaceTime,
+          productSchwartzPullback (-(∂_{productSpatialDirection k} Phi))
+              (productToSpaceTime z) *
+            (h.omegaL2 i) (productToSpaceTime z)) =
+        ∫ z : ProductSpaceTime,
+          (-(∂_{productSpatialDirection k} Phi) z) * h.omegaProd i z := by
+    simp [WeakOmegaSpaceTime.omegaProd, l2RepToProduct]
   calc
     (∫ z : ProductSpaceTime,
         Phi z * h.weakDxProd i k z ∂(volume : Measure ProductSpaceTime)) =
@@ -101,14 +109,7 @@ theorem WeakOmegaSpaceTime.weakDx_productSpatial_integral_pairing
             (h.omegaL2 i) y := hp
     _ = ∫ z : ProductSpaceTime,
           (-(∂_{productSpatialDirection k} Phi) z) * h.omegaProd i z
-            ∂(volume : Measure ProductSpaceTime) := by
-      calc
-        _ = ∫ z : ProductSpaceTime,
-              productSchwartzPullback (-(∂_{productSpatialDirection k} Phi))
-                  (productToSpaceTime z) *
-                (h.omegaL2 i) (productToSpaceTime z) := hright.symm
-        _ = _ := by
-          simp [WeakOmegaSpaceTime.omegaProd, l2RepToProduct] <;> rfl
+            ∂(volume : Measure ProductSpaceTime) := hright.symm.trans hident
 
 inductive WeakOmegaProductPairingStatus
   | productSchwartzPullbackDefined
