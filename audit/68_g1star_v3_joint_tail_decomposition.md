@@ -31,7 +31,7 @@ w(x,y)=\frac{|\omega(x)|^2|\omega(y)|\,|\sin\theta(x,y)|}{|x-y|^3}.
 \]
 
 It is evaluated on a synthetic divergence-free packet. It is neither the signed
-stretching integral nor a Navier--Stokes trajectory.
+stretching integral nor a Navier–Stokes trajectory.
 
 ## Correct formal decomposition
 
@@ -77,7 +77,7 @@ The formal source deliberately does not assert:
 2. the joint law implies a bulk coefficient c_bulk;
 3. the exceptional 5% satisfies the required kernel-weighted tail inequality;
 4. the sum c_bulk+delta_tail is strictly below one;
-5. actual Navier--Stokes dynamics supplies these premises.
+5. actual Navier–Stokes dynamics supplies these premises.
 
 The earlier proposal compressed items 2--4 into two labels. The exact formal budget
 shows that there are three analytic tasks: bulk conversion, tail control, and strict
