@@ -59,9 +59,12 @@ theorem WeakOmegaSpaceTime.spatialDerivativeCommonFullSet_compl_null
         (h.omegaProd i) (h.weakDxProd i k) (psi n) (dpsi n)) :
     (volume : Measure ℝ)
       (spatialDerivativeCommonFullSet h i k psi dpsi)ᶜ = 0 := by
-  rw [← ae_iff]
-  simpa [spatialDerivativeCommonFullSet] using
-    h.spatialDerivative_testSeq_ae_common i k psi dpsi hlocal hsep
+  have hae :
+      ∀ᵐ t ∂(volume : Measure ℝ),
+        t ∈ spatialDerivativeCommonFullSet h i k psi dpsi := by
+    simpa [spatialDerivativeCommonFullSet] using
+      h.spatialDerivative_testSeq_ae_common i k psi dpsi hlocal hsep
+  exact ae_iff.mp hae
 
 /-- Audit ledger: the countable intersection is proved, while the construction
 of an H^1-dense countable test family and extension by continuity remain the
