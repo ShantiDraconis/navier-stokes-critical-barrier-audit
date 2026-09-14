@@ -57,11 +57,11 @@ theorem StrainKernelData.apply_trace_zero
     ∑ i : Fin 3, K.apply z ω i i = 0 := by
   simp only [StrainKernelData.apply]
   rw [Finset.sum_comm]
-  simp_rw [← Finset.mul_sum]
   apply Finset.sum_eq_zero
   intro k hk
+  rw [← Finset.sum_mul]
   rw [K.traceFree]
-  simp
+  exact zero_mul (ω k)
 
 /--
 Principal-value strain realization remains an analytic object.  This structure
